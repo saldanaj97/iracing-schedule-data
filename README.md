@@ -8,9 +8,7 @@ The purpose of this project is to abstract away the complexities of interacting 
 
 ## Features
 
-- Fetch schedule information for various racing series.
-- Retrieve race details, including track, date, time, and session information.
-- Support for retrieving results and standings data.
+Coming soon!
 
 ## Installation
 
@@ -26,4 +24,4 @@ Coming soon!
 
 ## Roadmap
 
-This project is currently a work in progress. Soon we will add planned enhancements.
+This project is currently a work in progress. Documentation will improve as time goes on.
