@@ -1,0 +1,22 @@
+{
+  "name": "iracing-schedule-api",
+  "version": "1.0.0",
+  "description": "An npm package for interacting with the iRacing API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "iracing",
+    "api",
+    "schedule"
+  ],
+  "author": "Juan Saldana",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "typescript": "^4.6.3"
+  }
+}
