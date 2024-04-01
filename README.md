@@ -20,7 +20,27 @@ npm install iracing-schedule-api
 
 ## Usage
 
-Coming soon!
+```javascript
+import iracingScheduleApi from 'iracing-schedule-api'
+
+// Get the authentication cookie for all requests
+const auth = await iracingScheduleApi.fetchAuthCookie({ username: '***', password: '***' })
+
+// Get the series data for a specific year and season and store away in respective file
+const specificSeasonSeriesData = await iracingScheduleApi.getCertainSeriesData({ year: '2022', quarter: '2' })
+
+// Get the current seasons series data (more generalized data such as series ID, name, licenses etc..)
+const generalizedSeriesData = await iracingScheduleApi.getSeriesData()
+
+// Get the detailed data for the season series
+const detailedSeriesData = await iracingScheduleApi.getDetailedSeriesData()
+
+// Get the data for each vehicle
+const carData = await iracingScheduleApi.getListOfAllCars()
+
+// Get all the tracks offered in the game
+const trackData = await iracingScheduleApi.getTrackData()
+```
 
 ## Roadmap
 
