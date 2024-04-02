@@ -1,3 +1,34 @@
+type SessionStartData = {
+  repeating: boolean
+  super_session: boolean
+  session_minutes: number
+  session_times: string[]
+}
+
+type Track = {
+  track_id: number
+  track_name: string
+  config_name: string
+  category_id: number
+  category: string
+}
+
+type TrackGeneralInfo = {
+  id: string
+  name: string
+  category: string
+}
+
+type ScheduleEntry = {
+  race_week_num: number
+  race_lap_limit: number
+  race_time_limit: number | null
+  session_start_data: SessionStartData[]
+  track: Track
+}
+
+type Schedule = ScheduleEntry[]
+
 type SeriesData = {
   season_id: number
   series_id: number
@@ -10,24 +41,10 @@ type SeriesData = {
   schedule: Schedule[]
 }
 
-type Schedule = {
-  race_week_num: number
-  race_lap_limit: string
-  race_time_limit: string
-  session_start_data: string
-  track: string
-}
-
 type CarData = {
   id: number
   name: string
   shortName: string
-}
-
-type Track = {
-  id: number
-  name: string
-  category: string
 }
 
 type AuthData = {
@@ -42,4 +59,4 @@ type AuthData = {
   ssoCookieValue: string
 }
 
-export { AuthData, CarData, Schedule, SeriesData, Track }
+export { AuthData, CarData, Schedule, ScheduleEntry, SeriesData, SessionStartData, Track, TrackGeneralInfo }
