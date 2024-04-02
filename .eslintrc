@@ -4,11 +4,11 @@
   "plugins": ["@typescript-eslint"],
   "overrides": [
     {
-      "files": ["/src/__tests__/**/*"],
+      "files": ["./src/__tests__/**/*"],
       "env": {
-        "jest": true,
-      },
-    },
+        "jest": true
+      }
+    }
   ],
-  "root": true,
+  "root": true
 }
