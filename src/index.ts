@@ -17,9 +17,9 @@ const client = wrapper(
 )
 
 /**  Function that will authenticate with iRacing API for any subsequent requests
- * @return: Returns a token for the cookie-jar
+ *   @return: Returns a token for the cookie-jar
  */
-const fetchAuthCookie = async ({ username, password }: { username: string; password: string }) => {
+export const fetchAuthCookie = async ({ username, password }: { username: string; password: string }) => {
   const iRacingEmail = username
   const iRacingPassword = password
 
@@ -29,9 +29,10 @@ const fetchAuthCookie = async ({ username, password }: { username: string; passw
 
   // Make the request to the link provided in the docs and retrieve the cookie data for subsequent requests
   try {
+    console.log('Attempting to authenticate with iRacing API...')
     const URL = 'https://members-ng.iracing.com/auth'
     const { data } = await client.post(URL, {
-      email: iRacingEmail,
+      username: iRacingEmail,
       password: hashInBase64,
     })
     console.log('Successfully authenticated with iRacing API')
@@ -45,7 +46,7 @@ const fetchAuthCookie = async ({ username, password }: { username: string; passw
 /** Function to get series data for a specific year and season
  * @return: Basic data about a specific series using year and quarter
  */
-const getCertainSeriesData = async ({ year, quarter }: { year: string; quarter: string }) => {
+export const getCertainSeriesData = async ({ year, quarter }: { year: string; quarter: string }) => {
   try {
     // Make the request to the season link provided in the docs at: https://members-ng.iracing.com/data/doc/series
     const URL = `https://members-ng.iracing.com/data/season/list?season_year=${year}&season_quarter=${quarter}`
@@ -66,7 +67,7 @@ const getCertainSeriesData = async ({ year, quarter }: { year: string; quarter: 
  * @returns: BASIC data about every active series in this season
  */
 // TODO: Distinguish difference between this function and the one below
-const getSeriesData = async () => {
+export const getSeriesData = async () => {
   try {
     const URL = `https://members-ng.iracing.com/data/series/get`
     const { link } = await client.get(URL).then((response) => response.data)
@@ -82,7 +83,7 @@ const getSeriesData = async () => {
  * Retrieves the detailed season series data for EVERY series in the current season.
  * @returns {Promise<Array<Object>>} The season series data.
  */
-const getDetailedSeriesData = async (): Promise<SeriesData[] | undefined> => {
+export const getDetailedSeriesData = async (): Promise<SeriesData[] | undefined> => {
   try {
     const URL = 'https://members-ng.iracing.com/data/series/seasons?include_series=1'
     const { link } = (await client.get(URL)).data
@@ -123,7 +124,7 @@ const getDetailedSeriesData = async (): Promise<SeriesData[] | undefined> => {
 /**  Function that will grab EVERY car available on the service
  * @returns: A list containing each cars id and the corresponding vehicle in natural language
  */
-const getListOfAllCars = async (): Promise<CarData[] | undefined> => {
+export const getListOfAllCars = async (): Promise<CarData[] | undefined> => {
   try {
     const URL = 'https://members-ng.iracing.com/data/carclass/get'
     const { link } = (await client.get(URL)).data
@@ -144,7 +145,7 @@ const getListOfAllCars = async (): Promise<CarData[] | undefined> => {
 /**  Function that will grab all the tracks available on the service
  * @returns: A list containing each track with its id, name, and category
  */
-const getTrackData = async (): Promise<Track[] | undefined> => {
+export const getTrackData = async (): Promise<Track[] | undefined> => {
   const trackData: Track[] = []
   const seen: Set<string> = new Set() // Use a set to efficiently check for duplicates
 
@@ -172,27 +173,27 @@ const getTrackData = async (): Promise<Track[] | undefined> => {
  * @returns: N/A
  */
 // TODO: Add error handling/logging/remove altogether potentially
-const writeDataToFile = ({ jsonData, fileName }: { jsonData: string; fileName: string }) => {
+export const writeDataToFile = ({ jsonData, fileName }: { jsonData: string; fileName: string }) => {
   fs.writeFile(fileName, jsonData, function (error) {
     if (error) return console.log(`An error occured while writing data to ${fileName}...`, error)
   })
   console.log(`Data has been successfully written to ${fileName}`)
 }
 
-// Get the authentication cookie for all requests
-const auth = await fetchAuthCookie({ username: '***', password: '***' })
+// // Get the authentication cookie for all requests
+// const auth = await fetchAuthCookie({ username: '***', password: '***' })
 
-// Get the series data for a specific year and season and store away in respective file
-const specificSeasonSeriesData = await getCertainSeriesData({ year: '2022', quarter: '2' })
+// // Get the series data for a specific year and season and store away in respective file
+// const specificSeasonSeriesData = await getCertainSeriesData({ year: '2022', quarter: '2' })
 
-// Get the current seasons series data (more generalized data such as series ID, name, licenses etc..)
-const generalizedSeriesData = await getSeriesData()
+// // Get the current seasons series data (more generalized data such as series ID, name, licenses etc..)
+// const generalizedSeriesData = await getSeriesData()
 
-// Get the detailed data for the season series
-const detailedSeriesData = await getDetailedSeriesData()
+// // Get the detailed data for the season series
+// const detailedSeriesData = await getDetailedSeriesData()
 
-// Get the data for each vehicle
-const carData = await getListOfAllCars()
+// // Get the data for each vehicle
+// const carData = await getListOfAllCars()
 
-// Get all the tracks offered in the game
-const trackData = await getTrackData()
+// // Get all the tracks offered in the game
+// const trackData = await getTrackData()

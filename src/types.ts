@@ -30,4 +30,16 @@ type Track = {
   category: string
 }
 
-export { CarData, Schedule, SeriesData, Track }
+type AuthData = {
+  authcode: string
+  autoLoginSeries: null
+  autoLoginToken: null
+  custId: number
+  email: string
+  ssoCookieDomain: string
+  ssoCookieName: string
+  ssoCookiePath: string
+  ssoCookieValue: string
+}
+
+export { AuthData, CarData, Schedule, SeriesData, Track }
