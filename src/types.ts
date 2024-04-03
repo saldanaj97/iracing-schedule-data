@@ -59,4 +59,21 @@ type AuthData = {
   ssoCookieValue: string
 }
 
-export { AuthData, CarData, Schedule, ScheduleEntry, SeriesData, SessionStartData, Track, TrackGeneralInfo }
+type AuthResponse = {
+  authcode?: number
+  inactive?: boolean
+  message?: string
+  verificationRequired?: boolean
+}
+
+export {
+  AuthData,
+  AuthResponse,
+  CarData,
+  Schedule,
+  ScheduleEntry,
+  SeriesData,
+  SessionStartData,
+  Track,
+  TrackGeneralInfo,
+}
