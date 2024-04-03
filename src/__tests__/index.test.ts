@@ -1,4 +1,4 @@
-import { fetchAuthCookieMock } from '../__mocks__/fetchAuthCookieMock'
+import { fetchAuthCookieMock } from '../__mocks__/iracingMocks'
 
 jest.mock('../index', () => ({
   fetchAuthCookieMock,
