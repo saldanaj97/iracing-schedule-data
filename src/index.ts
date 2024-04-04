@@ -44,12 +44,11 @@ export const fetchAuthCookie = async ({ username, password }: { username: string
 /** Function to get series data current season (not as much detail as the get series data function)
  * @returns: BASIC data about every active series in this season
  */
-// TODO: Distinguish difference between this function and the one below
 export const getSeriesData = async () => {
   try {
     const URL = `https://members-ng.iracing.com/data/series/get`
     const { link } = await client.get(URL).then((response) => response.data)
-    const { data } = await client.get(link).then((response) => response)
+    const { data } = await client.get(link).then((response) => response.data)
     return data
   } catch (error) {
     return undefined
@@ -176,23 +175,23 @@ export const writeDataToFile = ({ jsonData, fileDir }: { jsonData: string; fileD
 //  Get the authentication cookie for all requests
 const auth = await fetchAuthCookie({ username: 'saldanaj97@gmail.com', password: 'JuaSal97!' })
 
-// Get the current seasons series data (more generalized data such as series ID, name, licenses etc..)
-const generalizedSeriesData = await getSeriesData()
-writeDataToFile({
-  jsonData: JSON.stringify(generalizedSeriesData),
-  fileDir: './src/__mocks__/test-data/generalizedSeriesData.json',
-})
+// // Get the current seasons series data (more generalized data such as series ID, name, licenses etc..)
+// const generalizedSeriesData = await getSeriesData()
+// writeDataToFile({
+//   jsonData: JSON.stringify(generalizedSeriesData),
+//   fileDir: './src/__mocks__/test-data/generalizedSeriesData.json',
+// })
 
-// Get the detailed data for the season series
-const detailedSeriesData = await getDetailedSeriesData()
-writeDataToFile({
-  jsonData: JSON.stringify(detailedSeriesData),
-  fileDir: './src/__mocks__/test-data/detailedSeriesData.json',
-})
+// // Get the detailed data for the season series
+// const detailedSeriesData = await getDetailedSeriesData()
+// writeDataToFile({
+//   jsonData: JSON.stringify(detailedSeriesData),
+//   fileDir: './src/__mocks__/test-data/detailedSeriesData.json',
+// })
 
-// Get the data for each vehicle
-const carData = await getListOfAllCars()
-writeDataToFile({ jsonData: JSON.stringify(carData), fileDir: './src/__mocks__/test-data/carList.json' })
+// // Get the data for each vehicle
+// const carData = await getListOfAllCars()
+// writeDataToFile({ jsonData: JSON.stringify(carData), fileDir: './src/__mocks__/test-data/carList.json' })
 
 // // Get all the tracks offered in the game
 // const trackData = await getTrackData()

@@ -1,9 +1,8 @@
-import { fetchAuthCookieMock } from '../__mocks__/iracingMocks'
+import { fetchAuthCookieMock, getSeriesDataMock } from '../__mocks__/iracingMocks'
 
 jest.mock('../index', () => ({
-  fetchAuthCookieMock,
-  getCertainSeriesData: jest.fn(),
-  getSeriesData: jest.fn(),
+  fetchAuthCookieMock: () => fetchAuthCookieMock({ username: 'sampleUsername', password: 'samplePassword' }),
+  getSeriesData: () => getSeriesDataMock(),
   getDetailedSeriesData: jest.fn(),
   getListOfAllCars: jest.fn(),
   getTrackData: jest.fn(),
@@ -30,15 +29,31 @@ describe('index.ts', () => {
       })
     })
   })
-  describe('getCertainSeriesData', () => {
-    it('should return basic data about a specific series', async () => {
-      // Test implementation here
-    })
-  })
 
   describe('getSeriesData', () => {
-    it('should return basic data about every active series in the current season', async () => {
-      // Test implementation here
+    it('should retrieve the basic data about every active series in the current season', async () => {
+      const mockSeriesData = await getSeriesDataMock()
+      expect(mockSeriesData).toContainEqual({
+        allowed_licenses: expect.arrayContaining([
+          expect.objectContaining({
+            license_group: expect.any(Number),
+            min_license_level: expect.any(Number),
+            max_license_level: expect.any(Number),
+            group_name: expect.any(String),
+          }),
+        ]),
+        category: expect.any(String),
+        category_id: expect.any(Number),
+        eligible: expect.any(Boolean),
+        forum_url: expect.any(String),
+        max_starters: expect.any(Number),
+        min_starters: expect.any(Number),
+        oval_caution_type: expect.any(Number),
+        road_caution_type: expect.any(Number),
+        series_id: expect.any(Number),
+        series_name: expect.any(String),
+        series_short_name: expect.any(String),
+      })
     })
   })
 
