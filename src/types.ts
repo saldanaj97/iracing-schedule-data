@@ -66,13 +66,60 @@ type AuthResponse = {
   verificationRequired?: boolean
 }
 
+type Car = {
+  car_dirpath: string
+  car_id: number
+  rain_enabled: boolean
+  retired: boolean
+}
+
+type CarClass = {
+  car_class_id: number
+  cars_in_class: Car[]
+  cust_id: number
+  name: string
+  rain_enabled: boolean
+  relative_speed: number
+  short_name: string
+}
+
+type CarClasses = CarClass[]
+
+type LicenseRange = {
+  license_group: number
+  min_license_level: number
+  max_license_level: number
+  group_name: string
+}
+
+type Series = {
+  allowed_licenses: LicenseRange[]
+  category: string
+  category_id: number
+  eligible: boolean
+  forum_url?: string
+  max_starters: number
+  min_starters: number
+  oval_caution_type: number
+  road_caution_type: number
+  search_filters?: string
+  series_id: number
+  series_name: string
+  series_short_name: string
+}
+
+type SeriesList = Series[]
+
 export {
   AuthData,
   AuthResponse,
+  CarClasses,
   CarData,
   Schedule,
   ScheduleEntry,
+  Series,
   SeriesData,
+  SeriesList,
   SessionStartData,
   Track,
   TrackGeneralInfo,

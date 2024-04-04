@@ -12,7 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node", // Corrected module resolution setting
     "allowJs": true,
-    "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"]
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"],
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]

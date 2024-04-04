@@ -1,14 +1,20 @@
+import generalizedSeriesData from '../__mocks__/test-data/generalizedSeriesData.json'
+import successfulAuthResponse from '../__mocks__/test-data/successfulAuth.json'
+
 // Mock the post method of Axios
 export const axiosMockPost = jest.fn().mockResolvedValueOnce({
-  data: {
-    authcode: '*****************',
-    autoLoginSeries: null,
-    autoLoginToken: null,
-    custId: 693109,
-    email: 'sampleEmail@email.com',
-    ssoCookieDomain: '.iracing.com',
-    ssoCookieName: 'irsso_membersv2',
-    ssoCookiePath: '/',
-    ssoCookieValue: '******',
-  },
+  data: successfulAuthResponse,
 })
+
+export const axiosMockGetSeries = jest
+  .fn()
+  .mockResolvedValueOnce({
+    data: {
+      link: 'https://example.com/seriesData',
+    },
+  })
+  .mockResolvedValueOnce({
+    data: {
+      all_series_available: generalizedSeriesData,
+    },
+  })
