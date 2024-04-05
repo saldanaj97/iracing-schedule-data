@@ -1,10 +1,10 @@
 import { Url } from 'url'
-import { Series, SeriesList } from '../types'
-import { axiosMockGetSeries, axiosMockPost } from './axiosMocks'
+import { Car, Series, SeriesScheduleData } from '../types'
+import { apiAuthPostMock, getGeneralizedSeriesDataMock } from './axiosMocks'
 
 export const fetchAuthCookieMock = jest.fn(async ({ username, password }: { username: string; password: string }) => {
   if (username === 'sampleUsername' && password === 'samplePassword') {
-    const response = await axiosMockPost('https://members-ng.iracing.com/auth', {
+    const response = await apiAuthPostMock('https://members-ng.iracing.com/auth', {
       username: 'sampleUsername',
       password: 'samplePassword',
     })
@@ -14,19 +14,80 @@ export const fetchAuthCookieMock = jest.fn(async ({ username, password }: { user
   }
 })
 
-export const getSeriesDataMock = jest.fn(async (): Promise<SeriesList | undefined> => {
-  const { link } = await axiosMockGetSeries('https://members-ng.iracing.com/data/series/get').then(
-    (response: { data: Url }) => response.data
-  )
-  if (!link) throw new Error('\nFailed to get series link required for gathering the rest of the data. \n')
-  const { all_series_available } = await axiosMockGetSeries(link).then((response: { data: Series[] }) => response.data)
-  if (!all_series_available) throw new Error('\nFailed to get series data for the season. \n')
-  return all_series_available
+export const getAllSeriesMock = jest.fn(async (): Promise<Series[] | undefined> => {
+  try {
+    const { link } = await getGeneralizedSeriesDataMock('https://members-ng.iracing.com/data/series/get').then(
+      (response: { data: Url }) => response.data
+    )
+
+    if (!link) {
+      throw new Error(`Failed to get series link required for gathering the rest of the data.`)
+    }
+
+    const { all_series_available } = await getGeneralizedSeriesDataMock(link).then(
+      (response: { data: Series[] }) => response.data
+    )
+
+    if (!all_series_available) {
+      throw new Error('Failed to get series data for the season.')
+    }
+
+    return all_series_available
+  } catch (error) {
+    console.error(
+      `'getGeneralizedSeriesData' request failed. An error occurred while fetching available series: ${error}`
+    )
+    return undefined
+  }
 })
 
-export const getDetailedSeriesDataMock = jest.fn()
+export const getAllSeriesSchedulesMock = jest.fn(async (): Promise<SeriesScheduleData | undefined> => {
+  try {
+    const { link } = await getGeneralizedSeriesDataMock(
+      'https://members-ng.iracing.com/data/series/seasons?include_series=1'
+    ).then((response: { data: Url }) => response.data)
 
-export const getListOfAllCarsMock = jest.fn()
+    if (!link) {
+      throw new Error(`Failed to get series link required for gathering the rest of the data.`)
+    }
+
+    const { detailed_series_data } = await getGeneralizedSeriesDataMock(link).then(
+      (response: { data: SeriesScheduleData[] }) => response.data
+    )
+
+    if (!detailed_series_data) {
+      throw new Error('Failed to get series schedules for the season.')
+    }
+
+    return detailed_series_data
+  } catch (error) {
+    console.error(`'getAllSeriesSchedules' request failed. An error occurred while fetching series schedules: ${error}`)
+    return undefined
+  }
+})
+
+export const getListOfAllCarsMock = jest.fn(async (): Promise<Car[] | undefined> => {
+  try {
+    const { link } = await getGeneralizedSeriesDataMock('https://members.iracing.com/membersite/member/Cars.do').then(
+      (response: { data: Url }) => response.data
+    )
+
+    if (!link) {
+      throw new Error(`Failed to get car link required for gathering the rest of the data.`)
+    }
+
+    const { cars } = await getGeneralizedSeriesDataMock(link).then((response: { data: Car[] }) => response.data)
+
+    if (!cars) {
+      throw new Error('Failed to get car list.')
+    }
+
+    return cars
+  } catch (error) {
+    console.error(`'getListOfAllCars' request failed. An error occurred while fetching car list: ${error}`)
+    return undefined
+  }
+})
 
 export const getTrackDataMock = jest.fn()
 
