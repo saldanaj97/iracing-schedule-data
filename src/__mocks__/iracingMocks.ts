@@ -1,10 +1,16 @@
 import { Url } from 'url'
-import { Car, Series, SeriesScheduleData } from '../types'
-import { apiAuthPostMock, getGeneralizedSeriesDataMock } from './axiosMocks'
+import { Car, Series, SeriesSchedule, Track } from '../types'
+import {
+  apiAuthPostAxiosMock,
+  getDetailedSeriesDataAxiosMock,
+  getGeneralizedSeriesDataAxiosMock,
+  getListOfAllCarsAxiosMock,
+  getListOfAllTracksAxiosMock,
+} from './axiosMocks'
 
 export const fetchAuthCookieMock = jest.fn(async ({ username, password }: { username: string; password: string }) => {
   if (username === 'sampleUsername' && password === 'samplePassword') {
-    const response = await apiAuthPostMock('https://members-ng.iracing.com/auth', {
+    const response = await apiAuthPostAxiosMock('https://members-ng.iracing.com/auth', {
       username: 'sampleUsername',
       password: 'samplePassword',
     })
@@ -16,7 +22,7 @@ export const fetchAuthCookieMock = jest.fn(async ({ username, password }: { user
 
 export const getAllSeriesMock = jest.fn(async (): Promise<Series[] | undefined> => {
   try {
-    const { link } = await getGeneralizedSeriesDataMock('https://members-ng.iracing.com/data/series/get').then(
+    const { link } = await getGeneralizedSeriesDataAxiosMock('https://members-ng.iracing.com/data/series/get').then(
       (response: { data: Url }) => response.data
     )
 
@@ -24,7 +30,7 @@ export const getAllSeriesMock = jest.fn(async (): Promise<Series[] | undefined> 
       throw new Error(`Failed to get series link required for gathering the rest of the data.`)
     }
 
-    const { all_series_available } = await getGeneralizedSeriesDataMock(link).then(
+    const { all_series_available } = await getGeneralizedSeriesDataAxiosMock(link).then(
       (response: { data: Series[] }) => response.data
     )
 
@@ -41,9 +47,9 @@ export const getAllSeriesMock = jest.fn(async (): Promise<Series[] | undefined> 
   }
 })
 
-export const getAllSeriesSchedulesMock = jest.fn(async (): Promise<SeriesScheduleData | undefined> => {
+export const getAllSeriesSchedulesMock = jest.fn(async (): Promise<SeriesSchedule[] | undefined> => {
   try {
-    const { link } = await getGeneralizedSeriesDataMock(
+    const { link } = await getDetailedSeriesDataAxiosMock(
       'https://members-ng.iracing.com/data/series/seasons?include_series=1'
     ).then((response: { data: Url }) => response.data)
 
@@ -51,8 +57,8 @@ export const getAllSeriesSchedulesMock = jest.fn(async (): Promise<SeriesSchedul
       throw new Error(`Failed to get series link required for gathering the rest of the data.`)
     }
 
-    const { detailed_series_data } = await getGeneralizedSeriesDataMock(link).then(
-      (response: { data: SeriesScheduleData[] }) => response.data
+    const { detailed_series_data } = await getDetailedSeriesDataAxiosMock(link).then(
+      (response: { data: SeriesSchedule[] }) => response.data
     )
 
     if (!detailed_series_data) {
@@ -66,9 +72,9 @@ export const getAllSeriesSchedulesMock = jest.fn(async (): Promise<SeriesSchedul
   }
 })
 
-export const getListOfAllCarsMock = jest.fn(async (): Promise<Car[] | undefined> => {
+export const getAllCarsMock = jest.fn(async (): Promise<Car[] | undefined> => {
   try {
-    const { link } = await getGeneralizedSeriesDataMock('https://members.iracing.com/membersite/member/Cars.do').then(
+    const { link } = await getListOfAllCarsAxiosMock('https://members.iracing.com/membersite/member/Cars.do').then(
       (response: { data: Url }) => response.data
     )
 
@@ -76,12 +82,11 @@ export const getListOfAllCarsMock = jest.fn(async (): Promise<Car[] | undefined>
       throw new Error(`Failed to get car link required for gathering the rest of the data.`)
     }
 
-    const { cars } = await getGeneralizedSeriesDataMock(link).then((response: { data: Car[] }) => response.data)
+    const { cars } = await getListOfAllCarsAxiosMock(link).then((response: { data: Car[] }) => response.data)
 
     if (!cars) {
       throw new Error('Failed to get car list.')
     }
-
     return cars
   } catch (error) {
     console.error(`'getListOfAllCars' request failed. An error occurred while fetching car list: ${error}`)
@@ -89,6 +94,25 @@ export const getListOfAllCarsMock = jest.fn(async (): Promise<Car[] | undefined>
   }
 })
 
-export const getTrackDataMock = jest.fn()
+export const getAllTracksMock = jest.fn(async (): Promise<Track[] | undefined> => {
+  try {
+    const { link } = await getListOfAllTracksAxiosMock('https://members.iracing.com/membersite/member/Tracks.do').then(
+      (response: { data: Url }) => response.data
+    )
+
+    if (!link) {
+      throw new Error(`Failed to get track link required for gathering the rest of the data.`)
+    }
+
+    const { tracks } = await getListOfAllTracksAxiosMock(link).then((response: { data: Track[] }) => response.data)
+    if (!tracks) {
+      throw new Error('Failed to get track list.')
+    }
+    return tracks
+  } catch (error) {
+    console.error(`'getTrackData' request failed. An error occurred while fetching track data: ${error}`)
+    return undefined
+  }
+})
 
 export const writeDataToFileMock = jest.fn()
