@@ -26,4 +26,5 @@ yarn-error.log*
 *.sln
 
 # Data files
-/src/__mocks__/test-data/**/*
+/src/__mocks__/test-data/*
+api_docs.json
