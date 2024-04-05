@@ -2,17 +2,18 @@ import listOfAllCars from '../__mocks__/test-data/carList.json'
 import detailedSeriesData from '../__mocks__/test-data/detailedSeriesData.json'
 import generalizedSeriesData from '../__mocks__/test-data/generalizedSeriesData.json'
 import successfulAuthResponse from '../__mocks__/test-data/successfulAuth.json'
+import listOfAllTracks from '../__mocks__/test-data/trackList.json'
 
 // Mock the post method of Axios
-export const apiAuthPostMock = jest.fn().mockResolvedValueOnce({
+export const apiAuthPostAxiosMock = jest.fn().mockResolvedValueOnce({
   data: successfulAuthResponse,
 })
 
-export const getGeneralizedSeriesDataMock = jest
+export const getGeneralizedSeriesDataAxiosMock = jest
   .fn()
   .mockResolvedValueOnce({
     data: {
-      link: 'https://example.com/seriesData',
+      link: 'https://example.com/seriesList',
     },
   })
   .mockResolvedValueOnce({
@@ -21,7 +22,7 @@ export const getGeneralizedSeriesDataMock = jest
     },
   })
 
-export const getDetailedSeriesDataMock = jest
+export const getDetailedSeriesDataAxiosMock = jest
   .fn()
   .mockResolvedValueOnce({
     data: {
@@ -34,15 +35,28 @@ export const getDetailedSeriesDataMock = jest
     },
   })
 
-export const getListOfAllCarsMock = jest
+export const getListOfAllCarsAxiosMock = jest
   .fn()
   .mockResolvedValueOnce({
     data: {
-      link: 'https://example.com/detailedSeriesData',
+      link: 'https://example.com/carlist',
     },
   })
   .mockResolvedValueOnce({
     data: {
       cars: listOfAllCars,
+    },
+  })
+
+export const getListOfAllTracksAxiosMock = jest
+  .fn()
+  .mockResolvedValueOnce({
+    data: {
+      link: 'https://example.com/trackList',
+    },
+  })
+  .mockResolvedValueOnce({
+    data: {
+      tracks: listOfAllTracks,
     },
   })
