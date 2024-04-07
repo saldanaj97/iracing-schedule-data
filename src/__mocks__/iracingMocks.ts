@@ -1,5 +1,5 @@
 import { Url } from 'url'
-import { Car, Series, SeriesSchedule, Track } from '../types'
+import { Car, RacingSeason, Series, Track } from '../types'
 import {
   apiAuthPostAxiosMock,
   getDetailedSeriesDataAxiosMock,
@@ -47,7 +47,7 @@ export const getAllSeriesMock = jest.fn(async (): Promise<Series[] | undefined> 
   }
 })
 
-export const getAllSeriesSchedulesMock = jest.fn(async (): Promise<SeriesSchedule[] | undefined> => {
+export const getAllSeriesSchedulesMock = jest.fn(async (): Promise<RacingSeason[] | undefined> => {
   try {
     const { link } = await getDetailedSeriesDataAxiosMock(
       'https://members-ng.iracing.com/data/series/seasons?include_series=1'
@@ -58,14 +58,15 @@ export const getAllSeriesSchedulesMock = jest.fn(async (): Promise<SeriesSchedul
     }
 
     const { detailed_series_data } = await getDetailedSeriesDataAxiosMock(link).then(
-      (response: { data: SeriesSchedule[] }) => response.data
+      (response: { data: RacingSeason[] }) => response.data
     )
 
     if (!detailed_series_data) {
       throw new Error('Failed to get series schedules for the season.')
     }
 
-    return detailed_series_data
+    // Return only the first three entries of the response array since we have alot of entries
+    return detailed_series_data.slice(0, 5)
   } catch (error) {
     console.error(`'getAllSeriesSchedules' request failed. An error occurred while fetching series schedules: ${error}`)
     return undefined
