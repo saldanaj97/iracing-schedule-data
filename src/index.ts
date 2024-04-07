@@ -5,7 +5,7 @@ import CryptoJs from 'crypto-js'
 import fs from 'fs'
 import { dirname } from 'path'
 import { CookieJar } from 'tough-cookie'
-import type { CarData, Schedule, ScheduleEntry, SeriesData } from './types'
+import type { Car, Series, SeriesData, Track } from './types'
 
 // TODO: BETTER ERROR HANDLING ACROSS THE BOARD
 
@@ -17,8 +17,9 @@ const client = wrapper(
   })
 )
 
-/**  Function that will authenticate with iRacing API for any subsequent requests
- *   @return: Returns a token for the cookie-jar
+/**
+ * Function that will authenticate with iRacing API for any subsequent requests
+ * @return: Returns a token for the cookie-jar
  */
 export const fetchAuthCookie = async ({ username, password }: { username: string; password: string }) => {
   // Hash the password as instructed from iRacing team here: https://forums.iracing.com/discussion/15068/general-availability-of-data-api/p1
@@ -41,10 +42,11 @@ export const fetchAuthCookie = async ({ username, password }: { username: string
   }
 }
 
-/** Function to get series data current season (not as much detail as the get series data function)
+/**
+ * Function to get series data current season (not as much detail as the get series data function)
  * @returns: BASIC data about every active series in this season
  */
-export const getSeriesData = async () => {
+export const getAllSeriesInCurrentSeason = async (): Promise<Series[] | undefined> => {
   try {
     const URL = `https://members-ng.iracing.com/data/series/get`
     const { link } = await client.get(URL).then((response) => response.data)
@@ -76,16 +78,8 @@ export const getDetailedSeriesData = async (): Promise<SeriesData[] | undefined>
         fixed_setup,
         official,
         license_group,
-        schedules,
+        schedule,
       } = series
-
-      const singleSeriesSchedule: Schedule[] = schedules.map((schedule: ScheduleEntry) => ({
-        race_week_num: schedule.race_week_num,
-        race_lap_limit: schedule.race_lap_limit,
-        race_time_limit: schedule.race_time_limit,
-        session_start_data: schedule.session_start_data,
-        track: schedule.track,
-      }))
 
       seasonSeriesData.push({
         season_id,
@@ -96,7 +90,7 @@ export const getDetailedSeriesData = async (): Promise<SeriesData[] | undefined>
         fixed_setup,
         official,
         license_group,
-        schedule: singleSeriesSchedule,
+        schedule,
       })
     }
 
@@ -107,19 +101,36 @@ export const getDetailedSeriesData = async (): Promise<SeriesData[] | undefined>
   }
 }
 
-/**  Function that will grab EVERY car available on the service
+/**
+ * Function that will grab EVERY car available on the service
  * @returns: A list containing each cars id and the corresponding vehicle in natural language
  */
-export const getListOfAllCars = async (): Promise<CarData[] | undefined> => {
+export const getListOfAllCars = async (): Promise<Car[] | undefined> => {
   try {
     const URL = 'https://members-ng.iracing.com/data/carclass/get'
     const { link } = (await client.get(URL)).data
 
-    const listOfAvailableCars: CarData[] = (await client.get(link)).data.map((car: CarData) => ({
-      id: car.id,
-      name: car.name,
-      shortName: car.shortName,
-    }))
+    const listOfAvailableCars: Car[] = []
+    const seen: Set<string> = new Set() // Use a set to efficiently check for duplicates
+
+    const response = (await client.get(link)).data
+    for (const car of response) {
+      const { car_class_id, cars_in_class, cust_id, name, rain_enabled, relative_speed, short_name } = car
+      if (!seen.has(name)) {
+        seen.add(name)
+        listOfAvailableCars.push({
+          car_class_id,
+          cars_in_class,
+          cust_id,
+          name,
+          rain_enabled,
+          relative_speed,
+          short_name,
+        })
+      }
+    }
+
+    console.log(listOfAvailableCars)
 
     return listOfAvailableCars
   } catch (error) {
@@ -128,34 +139,143 @@ export const getListOfAllCars = async (): Promise<CarData[] | undefined> => {
   }
 }
 
-/**  Function that will grab all the tracks available on the service
+/**
+ * Function that will grab all the tracks available on the service
  * @returns: A list containing each track with its id, name, and category
  */
-// export const getTrackData = async (): Promise<Track[] | undefined> => {
-//   const trackData: Track[] = []
-//   const seen: Set<string> = new Set() // Use a set to efficiently check for duplicates
+export const getTrackData = async (): Promise<Track[] | undefined> => {
+  const trackData: Track[] = []
+  const seen: Set<string> = new Set()
+  try {
+    const URL = 'https://members-ng.iracing.com/data/track/get'
+    const { link } = (await client.get<{ link: string }>(URL)).data
 
-//   try {
-//     const URL = 'https://members-ng.iracing.com/data/track/get'
-//     const { link } = (await client.get(URL)).data
+    const response: Track[] = (await client.get<Track[]>(link)).data
+    for (const track of response) {
+      const {
+        ai_enabled,
+        allow_pitlane_collisions,
+        allow_rolling_start,
+        allow_standing_start,
+        award_exempt,
+        category,
+        category_id,
+        closes,
+        config_name,
+        corners_per_lap,
+        created,
+        first_sale,
+        free_with_subscription,
+        fully_lit,
+        grid_stalls,
+        has_opt_path,
+        has_short_parade_lap,
+        has_start_zone,
+        has_svg_map,
+        is_dirt,
+        is_oval,
+        is_ps_purchasable,
+        lap_scoring,
+        latitude,
+        location,
+        longitude,
+        max_cars,
+        night_lighting,
+        nominal_lap_time,
+        number_pitstalls,
+        opens,
+        package_id,
+        pit_road_speed_limit,
+        price,
+        price_display,
+        priority,
+        purchasable,
+        qualify_laps,
+        rain_enabled,
+        restart_on_left,
+        retired,
+        search_filters,
+        site_url,
+        sku,
+        solo_laps,
+        start_on_left,
+        supports_grip_compound,
+        tech_track,
+        time_zone,
+        track_config_length,
+        track_dirpath,
+        track_id,
+        track_name,
+        track_types,
+      } = track
+      if (!seen.has(track_name)) seen.add(track_name)
+      trackData.push({
+        ai_enabled,
+        allow_pitlane_collisions,
+        allow_rolling_start,
+        allow_standing_start,
+        award_exempt,
+        category,
+        category_id,
+        closes,
+        config_name,
+        corners_per_lap,
+        created,
+        first_sale,
+        free_with_subscription,
+        fully_lit,
+        grid_stalls,
+        has_opt_path,
+        has_short_parade_lap,
+        has_start_zone,
+        has_svg_map,
+        is_dirt,
+        is_oval,
+        is_ps_purchasable,
+        lap_scoring,
+        latitude,
+        location,
+        longitude,
+        max_cars,
+        night_lighting,
+        nominal_lap_time,
+        number_pitstalls,
+        opens,
+        package_id,
+        pit_road_speed_limit,
+        price,
+        price_display,
+        priority,
+        purchasable,
+        qualify_laps,
+        rain_enabled,
+        restart_on_left,
+        retired,
+        search_filters,
+        site_url,
+        sku,
+        solo_laps,
+        start_on_left,
+        supports_grip_compound,
+        tech_track,
+        time_zone,
+        track_config_length,
+        track_dirpath,
+        track_id,
+        track_name,
+        track_types,
+      })
+    }
 
-//     const response = (await client.get(link)).data
-//     for (const track of response) {
-//       const { track_id, track_name, category } = track
-//       if (!seen.has(track_name)) {
-//         seen.add(track_name)
-//         trackData.push({ id: track_id, name: track_name, category: category })
-//       }
-//     }
+    return trackData
+  } catch (error) {
+    console.error(error)
+    return undefined
+  }
+}
 
-//     return trackData
-//   } catch (error) {
-//     console.error(error)
-//     return undefined
-//   }
-// }
-
-/**  Function to write JSON data to specified file.
+/**
+ * Function to write JSON data to specified file.
  * @returns: N/A
  */
 // TODO: Add error handling/logging/remove altogether potentially
@@ -173,7 +293,7 @@ export const writeDataToFile = ({ jsonData, fileDir }: { jsonData: string; fileD
 }
 
 //  Get the authentication cookie for all requests
-const auth = await fetchAuthCookie({ username: 'saldanaj97@gmail.com', password: 'JuaSal97!' })
+// const auth = await fetchAuthCookie({ username: 'saldanaj97@gmail.com', password: 'JuaSal97!' })
 
 // // Get the current seasons series data (more generalized data such as series ID, name, licenses etc..)
 // const generalizedSeriesData = await getSeriesData()
