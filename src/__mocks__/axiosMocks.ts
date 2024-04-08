@@ -4,11 +4,18 @@ import generalizedSeriesData from '../__mocks__/mock-data/generalizedSeriesData.
 import successfulAuthResponse from '../__mocks__/mock-data/successfulAuth.json'
 import listOfAllTracks from '../__mocks__/mock-data/trackList.json'
 
-// Mock the post method of Axios
+/**
+ * Mocks the post method of Axios for authentication.
+ * Resolves with a successful authentication response.
+ */
 export const apiAuthPostAxiosMock = jest.fn().mockResolvedValueOnce({
   data: successfulAuthResponse,
 })
 
+/**
+ * Mocks the Axios request for fetching generalized series data.
+ * Resolves with a link to the series list and the generalized series data.
+ */
 export const getGeneralizedSeriesDataAxiosMock = jest
   .fn()
   .mockResolvedValueOnce({
@@ -22,6 +29,10 @@ export const getGeneralizedSeriesDataAxiosMock = jest
     },
   })
 
+/**
+ * Mocks the Axios request for fetching detailed series data.
+ * Resolves with a link to the detailed series data and the detailed series data itself.
+ */
 export const getDetailedSeriesDataAxiosMock = jest
   .fn()
   .mockResolvedValueOnce({
@@ -35,6 +46,10 @@ export const getDetailedSeriesDataAxiosMock = jest
     },
   })
 
+/**
+ * Mocks the Axios request for fetching the list of all cars.
+ * Resolves with a link to the car list and the list of all cars.
+ */
 export const getListOfAllCarsAxiosMock = jest
   .fn()
   .mockResolvedValueOnce({
@@ -48,6 +63,10 @@ export const getListOfAllCarsAxiosMock = jest
     },
   })
 
+/**
+ * Mocks the Axios request for fetching the list of all tracks.
+ * Resolves with a link to the track list and the list of all tracks.
+ */
 export const getListOfAllTracksAxiosMock = jest
   .fn()
   .mockResolvedValueOnce({
