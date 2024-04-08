@@ -27,6 +27,43 @@ type Car = {
   short_name: string
 }
 
+type CarInfo = {
+  ai_enabled: boolean
+  allow_number_colors: boolean
+  allow_number_font: boolean
+  allow_sponsor1: boolean
+  allow_sponsor2: boolean
+  allow_wheel_color: boolean
+  award_exempt: boolean
+  car_dirpath: string
+  car_id: number
+  car_name: string
+  car_name_abbreviated: string
+  car_types: { car_type: string }[]
+  car_weight: number
+  categories: string[]
+  created: string // Assuming a string format for dates
+  first_sale: string // Assuming a string format for dates
+  forum_url: string
+  free_with_subscription: boolean
+  has_headlights: boolean
+  has_multiple_dry_tire_types: boolean
+  has_rain_capable_tire_types: boolean
+  hp: number
+  is_ps_purchasable: boolean
+  max_power_adjust_pct: number
+  max_weight_penalty_kg: number
+  min_power_adjust_pct: number
+  package_id: number
+  patterns: number
+  price: number
+  price_display: string
+  rain_enabled: boolean
+  retired: boolean
+  search_filters: string
+  sku: number
+}
+
 type CarDetails = {
   car_dirpath: string
   car_id: number
@@ -152,11 +189,11 @@ type TrackType = {
   track_type: string
 }
 
-interface CarType {
+type CarType = {
   car_type: string
 }
 
-interface CarRestriction {
+type CarRestriction = {
   car_id: number
   max_dry_tire_sets: number
   max_pct_fuel_fill: number
@@ -164,14 +201,14 @@ interface CarRestriction {
   weight_penalty_kg: number
 }
 
-interface RaceTimeDescriptor {
+type RaceTimeDescriptor = {
   repeating: boolean
   session_minutes: number
   session_times: string[]
   super_session: boolean
 }
 
-interface TrackInfo {
+type TrackInfo = {
   category: string
   category_id: number
   config_name: string
@@ -179,7 +216,7 @@ interface TrackInfo {
   track_name: string
 }
 
-interface WeatherInfo {
+type WeatherInfo = {
   fog: number
   rel_humidity: number
   simulated_start_time: string
@@ -199,7 +236,7 @@ interface WeatherInfo {
   wind_value: number
 }
 
-interface Schedule {
+type Schedule = {
   season_id: number
   race_week_num: number
   car_restrictions: CarRestriction[]
@@ -228,7 +265,7 @@ interface Schedule {
   weather: WeatherInfo
 }
 
-interface RacingSeason {
+type RacingSeason = {
   active: boolean
   allowed_season_members: null
   car_class_ids: number[]
@@ -283,6 +320,7 @@ export {
   AuthData,
   AuthResponse,
   Car,
+  CarInfo,
   CarRestriction,
   CarType,
   RaceTimeDescriptor,

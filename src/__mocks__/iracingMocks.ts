@@ -1,5 +1,5 @@
 import { Url } from 'url'
-import { Car, RacingSeason, Series, Track } from '../types'
+import { Car, CarInfo, RacingSeason, Series, Track } from '../types'
 import {
   apiAuthPostAxiosMock,
   getDetailedSeriesDataAxiosMock,
@@ -73,7 +73,7 @@ export const getAllSeriesSchedulesMock = jest.fn(async (): Promise<RacingSeason[
   }
 })
 
-export const getAllCarsMock = jest.fn(async (): Promise<Car[] | undefined> => {
+export const getAllCarsMock = jest.fn(async (): Promise<CarInfo[] | undefined> => {
   try {
     const { link } = await getListOfAllCarsAxiosMock('https://members.iracing.com/membersite/member/Cars.do').then(
       (response: { data: Url }) => response.data
