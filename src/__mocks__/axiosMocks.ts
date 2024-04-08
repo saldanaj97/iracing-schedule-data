@@ -1,8 +1,8 @@
-import listOfAllCars from '../__mocks__/test-data/carList.json'
-import detailedSeriesData from '../__mocks__/test-data/detailedSeriesData.json'
-import generalizedSeriesData from '../__mocks__/test-data/generalizedSeriesData.json'
-import successfulAuthResponse from '../__mocks__/test-data/successfulAuth.json'
-import listOfAllTracks from '../__mocks__/test-data/trackList.json'
+import listOfAllCars from '../__mocks__/mock-data/carList.json'
+import detailedSeriesData from '../__mocks__/mock-data/detailedSeriesData.json'
+import generalizedSeriesData from '../__mocks__/mock-data/generalizedSeriesData.json'
+import successfulAuthResponse from '../__mocks__/mock-data/successfulAuth.json'
+import listOfAllTracks from '../__mocks__/mock-data/trackList.json'
 
 // Mock the post method of Axios
 export const apiAuthPostAxiosMock = jest.fn().mockResolvedValueOnce({

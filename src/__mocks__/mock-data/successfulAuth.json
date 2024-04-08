@@ -1,0 +1,11 @@
+{
+  "authcode": "your_generated_authcode",
+  "autoLoginSeries": null,
+  "autoLoginToken": null,
+  "custId": 123456,
+  "email": "test@example.com:",
+  "ssoCookieDomain": "example.com",
+  "ssoCookieName": "your_cookie_name",
+  "ssoCookiePath": "/your/cookie/path",
+  "ssoCookieValue": "your_cookie_value"
+}
