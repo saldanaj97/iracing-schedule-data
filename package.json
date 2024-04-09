@@ -23,5 +23,14 @@
     "tsup": "^8.0.2",
     "typescript": "^5.4.4",
     "vitest": "^1.4.0"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "trailingComma": "es5",
+    "semi": false,
+    "printWidth": 120,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "useTabs": false
   }
 }
