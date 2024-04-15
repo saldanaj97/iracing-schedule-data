@@ -3,9 +3,17 @@ import { client } from "./utils/axiosSetup"
 
 /**
  * Function to retrieve hosted sessions.
+ *
+ * Example usage:
+ * ```typescript
+ * getHostedSessions({ mine: true }) //  Returns only sessions created by the user
+ * or
+ * getHostedSessions({ }) //  Returns all league sessions
+ * ```
+ *
+ * Optional Params:
  * @param {boolean} [mine] - If true, returns only sessions created by the user.
  * @param {number} [package_id] - If set, returns only sessions using this car or track package ID (per the official API docs).
- * @returns {Promise<HostedSession[] | undefined>} A list of sessions that can be joined as a driver or spectator, including non-league pending sessions for the user.
  */
 export const getCustomLeagueSession = async ({
   mine,
@@ -29,7 +37,6 @@ export const getCustomLeagueSession = async ({
 
 /**
  * Retrieve league directory info with OPTIONAL parameters in the form of an object.
- * For now, please only include ONE of the OPTIONAL parameters: `search`, `tag`, `restrict_to_member`, `restrict_to_recruiting`, `restrict_to_friends`, `restrict_to_watched`, `minimum_roster_count`, `maximum_roster_count`, `lowerbound`, `upperbound`, `sort`, `order`.
  *
  * Example usage:
  * ```typescript
