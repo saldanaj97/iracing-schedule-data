@@ -139,9 +139,7 @@ export const getLeague = async ({
   include_licenses?: boolean
 }): Promise<LeagueInfo | undefined> => {
   let URL = `https://members-ng.iracing.com/data/league/get?league_id=${league_id}`
-  if (include_licenses !== undefined) {
-    include_licenses === true ? (URL += `&include_licenses=1`) : (URL += `&include_licenses=0`)
-  }
+  if (include_licenses !== undefined) include_licenses === true ? (URL += `&include_licenses=1`) : null
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
@@ -173,6 +171,40 @@ export const getLeague = async ({
 export const getLeaguePointSystem = async ({ league_id, season_id }: { league_id: number; season_id?: number }) => {
   let URL = `https://members-ng.iracing.com/data/league/get_points_systems?league_id=${league_id}`
   if (season_id !== undefined) URL += `&season_id=${season_id}`
+  try {
+    const { link } = await client.get(URL).then((response) => response.data)
+    const data = await client.get(link).then((response) => response.data)
+    return data
+  } catch (error) {
+    console.error(error)
+    return undefined
+  }
+}
+
+/**
+ * Retrieve a list of leagues the user owns if not set to private.
+ *
+ * Example usage:
+ * ```typescript
+ * getLeaguesOwnedByCustomer({ cust_id: 12345, include_league: true }) // Returns the leagues customer 12345 is the owner of if not set to private
+ * ```
+ *
+ * Required Params:
+ * @param {number} cust_id - If different from the authenticated member, the following resrictions apply:
+ * - Caller cannot be on requested customer's block list or an empty list will result;
+ * - Requested customer cannot have their online activity prefrence set to hidden or an empty list will result;
+ * - Only leagues for which the requested customer is an admin and the league roster is not private are returned
+ * @param {boolean} include_league - If true, includes the league information in the response.
+ */
+export const getLeaguesOwnedByCustomer = async ({
+  cust_id,
+  include_league,
+}: {
+  cust_id: number
+  include_league?: boolean
+}) => {
+  let URL = `https://members-ng.iracing.com/data/league/membership?cust_id=${cust_id}`
+  if (include_league) URL += `&include_league=1`
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
