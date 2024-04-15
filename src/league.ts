@@ -1,4 +1,4 @@
-import { CustomLeagueSession } from "./types"
+import { CustomLeagueSession, LeagueInfo } from "./types"
 import { client } from "./utils/axiosSetup"
 
 /**
@@ -88,6 +88,7 @@ export const getLeagueDirectory = async ({
 }): Promise<CustomLeagueSession | undefined> => {
   let URL = `https://members-ng.iracing.com/data/league/directory`
 
+  // FIX THESE BY CHANGING '?' TO '&'
   if (search !== undefined) {
     encodeURIComponent(search)
     URL += `?search=${search}`
@@ -110,6 +111,72 @@ export const getLeagueDirectory = async ({
     const { link } = await client.get(URL).then((response) => response.data)
     const { results_page } = await client.get(link).then((response) => response.data)
     return results_page
+  } catch (error) {
+    console.error(error)
+    return undefined
+  }
+}
+
+/**
+ * Retrieve a specific league by league ID.
+ *
+ * Example usage:
+ * ```typescript
+ * getSpecificLeague({ league_id: 12345 }) // Returns the league with the ID of 12345
+ * ```
+ *
+ * Required Params:
+ * @param {number} league_id - The ID of the league you want to retrieve.
+ *
+ * Optional Params:
+ * @param {number} include_licenses - For faster responses, only request when necessary. Return licenses for each member.
+ */
+export const getLeague = async ({
+  league_id,
+  include_licenses,
+}: {
+  league_id: number
+  include_licenses?: boolean
+}): Promise<LeagueInfo | undefined> => {
+  let URL = `https://members-ng.iracing.com/data/league/get?league_id=${league_id}`
+  if (include_licenses !== undefined) {
+    include_licenses === true ? (URL += `&include_licenses=1`) : (URL += `&include_licenses=0`)
+  }
+  try {
+    const { link } = await client.get(URL).then((response) => response.data)
+    const data = await client.get(link).then((response) => response.data)
+    return data
+  } catch (error) {
+    console.error(error)
+    return undefined
+  }
+}
+
+/**
+ * Retrieve a specific league by league ID.
+ *
+ * Example usage:
+ * ```typescript
+ * getSpecificLeague({ league_id: 12345 }) // Returns the league with the ID of 12345
+ *
+ * OR
+ *
+ * getSpecificLeague({ league_id: 12345, season_id: 12345 }) // Returns the league with the ID of 12345 and the season with the ID of 12345
+ * ```
+ *
+ * Required Params:
+ * @param {number} league_id - The ID of the league you want to retrieve.
+ *
+ * Optional Params:
+ * @param {number} season_id - If included and the season is using custom points (points_system_id:2) then the custom points option is included in the returned list. Otherwise the custom points option is not returned.
+ */
+export const getLeaguePointSystem = async ({ league_id, season_id }: { league_id: number; season_id?: number }) => {
+  let URL = `https://members-ng.iracing.com/data/league/get_points_systems?league_id=${league_id}`
+  if (season_id !== undefined) URL += `&season_id=${season_id}`
+  try {
+    const { link } = await client.get(URL).then((response) => response.data)
+    const data = await client.get(link).then((response) => response.data)
+    return data
   } catch (error) {
     console.error(error)
     return undefined

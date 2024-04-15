@@ -755,6 +755,55 @@ type League = {
   owner: LeagueOwner
 }
 
+type LeagueInfo = {
+  league_id: number
+  owner_id: number
+  league_name: string
+  created: string
+  hidden: boolean
+  message: string
+  about: string
+  url: string
+  recruiting: boolean
+  rules: string
+  private_wall: boolean
+  private_roster: boolean
+  private_schedule: boolean
+  private_results: boolean
+  is_owner: boolean
+  is_admin: boolean
+  roster_count: number
+  owner: LeagueOwner
+  image: {
+    small_logo: any
+    large_logo: any
+  }
+  tags: {
+    categorized: any[][]
+    not_categorized: any[]
+  }
+  league_applications: any[]
+  pending_requests: any[]
+  is_member: boolean
+  is_applicant: boolean
+  is_invite: boolean
+  is_ignored: boolean
+  roster: LeagueRosterMember[]
+}
+
+type LeagueRosterMember = {
+  cust_id: number
+  display_name: string
+  helmet: Helmet
+  owner: boolean
+  admin: boolean
+  league_mail_opt_out: boolean
+  league_pm_opt_out: boolean
+  league_member_since: string
+  car_number: number | null
+  nick_name: string | null
+}
+
 export type {
   AuthData,
   AuthResponse,
@@ -766,6 +815,7 @@ export type {
   CustomLeagueSession,
   HostedSession,
   League,
+  LeagueInfo,
   RacingSeason,
   Schedule,
   ScheduledRace,
