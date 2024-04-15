@@ -77,6 +77,14 @@ const main = async () => {
 
   // const hostedSessions = await getHostedSessions({ session_type: "sessions" })
   // if (!hostedSessions) return
+
+  // const hostedSessions = await getCustomLeagueSession({})
+  // if (!hostedSessions) return
+
+  // const leagueDirectory = await getLeagueDirectory({
+  //   search: "NASCAR",
+  // })
+  // if (!leagueDirectory) return
 }
 
 main()
