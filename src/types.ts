@@ -636,18 +636,7 @@ type CustomLeagueSession = {
   category_id: number
   category: string
   session_full: boolean
-  host: {
-    cust_id: number
-    display_name: string
-    helmet: {
-      pattern: number
-      color1: string
-      color2: string
-      color3: string
-      face_type: number
-      helmet_type: number
-    }
-  }
+  host: HostedSessionAdmin
   track: {
     category_id: number
     config_name: string
@@ -692,18 +681,7 @@ type CustomLeagueSession = {
     image_path: string
     displayed: boolean
   }
-  admins: {
-    cust_id: number
-    display_name: string
-    helmet: {
-      pattern: number
-      color1: string
-      color2: string
-      color3: string
-      face_type: number
-      helmet_type: number
-    }
-  }[]
+  admins: HostedSessionAdmin[]
   allowed_clubs: any[]
   allowed_teams: any[]
   allowed_leagues: number[]
@@ -753,6 +731,30 @@ type CustomLeagueSession = {
   max_ir: number
 }
 
+type LeagueOwner = {
+  cust_id: number
+  display_name: string
+  helmet: Helmet
+  car_number: null | number
+  nick_name: null | string
+}
+
+type League = {
+  league_id: number
+  owner_id: number
+  league_name: string
+  created: string
+  about: string
+  url: string | null
+  roster_count: number
+  recruiting: boolean
+  is_admin: boolean
+  is_member: boolean
+  pending_application: boolean
+  pending_invitation: boolean
+  owner: LeagueOwner
+}
+
 export type {
   AuthData,
   AuthResponse,
@@ -763,6 +765,7 @@ export type {
   ConstantType,
   CustomLeagueSession,
   HostedSession,
+  League,
   RacingSeason,
   Schedule,
   ScheduledRace,
