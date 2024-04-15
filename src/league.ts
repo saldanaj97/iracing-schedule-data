@@ -30,12 +30,15 @@ export const getCustomLeagueSession = async ({
 /**
  * Retrieve league directory info with OPTIONAL parameters in the form of an object.
  * For now, please only include ONE of the OPTIONAL parameters: `search`, `tag`, `restrict_to_member`, `restrict_to_recruiting`, `restrict_to_friends`, `restrict_to_watched`, `minimum_roster_count`, `maximum_roster_count`, `lowerbound`, `upperbound`, `sort`, `order`.
- *  * Example usage:
+ *
+ * Example usage:
  * ```typescript
  * getLeagueDirectory({}) // Returns all leagues
  * or
  * getLeagueDirectory({ search: "NASCAR"}) // Returns all leagues with "NASCAR" in the name, description, owner, or league ID.
  * ```
+ *
+ * Optional Params (only choose one for now):
  * - `search`: Will search against league name, description, owner, and league ID.
  * - `tag`: One or more tags, comma-separated.
  * - `restrict_to_member`: If true include only leagues for which customer is a member.
@@ -46,9 +49,8 @@ export const getCustomLeagueSession = async ({
  * - `maximum_roster_count`: If set include leagues with no more than this number of members.
  * - `lowerbound`: First row of results to return.  Defaults to 1.
  * - `upperbound`: Last row of results to results to lowerbound + 39.
- * - `sort`: One of relevance, teamname, rostercount. Displayname is owners's name. Defaults to relevance. (SORT NOT WORKING AS OF 04-14-2024)
+ * - `sort`: One of relevance, teamname, rostercount. Displayname is owners's name. Defaults to relevance.
  * - `order`: "One of asc or desc.  Defaults to asc.
- *
  */
 export const getLeagueDirectory = async ({
   search,
