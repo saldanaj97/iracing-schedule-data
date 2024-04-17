@@ -217,6 +217,18 @@ type TrackInfo = {
   track_name: string
 }
 
+type TrackState = {
+  leave_marbles: boolean
+  practice_grip_compound: number
+  practice_rubber: number
+  qualify_grip_compound: number
+  qualify_rubber: number
+  race_grip_compound: number
+  race_rubber: number
+  warmup_grip_compound: number
+  warmup_rubber: number
+}
+
 type WeatherInfo = {
   fog: number
   rel_humidity: number
@@ -664,17 +676,7 @@ type CustomLeagueSession = {
     wind_units: number
     wind_value: number
   }
-  track_state: {
-    leave_marbles: boolean
-    practice_grip_compound: number
-    practice_rubber: number
-    qualify_grip_compound: number
-    qualify_rubber: number
-    race_grip_compound: number
-    race_rubber: number
-    warmup_grip_compound: number
-    warmup_rubber: number
-  }
+  track_state: TrackState
   farm: {
     farm_id: number
     display_name: string
@@ -804,6 +806,70 @@ type LeagueRosterMember = {
   nick_name: string | null
 }
 
+type LeagueSeason = {
+  league_id: number
+  season_id: number
+  points_system_id: number
+  season_name: string
+  active: boolean
+  hidden: boolean
+  num_drops: number
+  no_drops_on_or_after_race_num: number
+  points_cars: any[] // You may want to define a type for this array if possible
+  driver_points_car_classes: any[] // You may want to define a type for this array if possible
+  team_points_car_classes: any[] // You may want to define a type for this array if possible
+  points_system_name: string
+  points_system_desc: string
+}
+
+type LeagueSession = {
+  cars: Car[]
+  driver_changes: boolean
+  entry_count: number
+  has_results: boolean
+  launch_at: string
+  league_id: number
+  league_season_id: number
+  lone_qualify: boolean
+  pace_car_class_id: number | null
+  pace_car_id: number | null
+  password_protected: boolean
+  practice_length: number
+  private_session_id: number
+  qualify_laps: number
+  qualify_length: number
+  race_laps: number
+  race_length: number
+  session_id: number
+  status: number
+  subsession_id: number
+  team_entry_count: number
+  time_limit: number
+  track: Track
+  track_state: TrackState
+  weather: LeagueSessionWeather
+  winner_id: number
+  winner_name: string
+}
+
+type LeagueSessionWeather = {
+  allow_fog: boolean
+  fog: number
+  precip_option: number
+  rel_humidity: number
+  skies: number
+  temp_units: number
+  temp_value: number
+  track_water: number
+  type: number
+  version: number
+  weather_var_initial: number
+  weather_var_ongoing: number
+  wind_dir: number
+  wind_units: number
+  wind_value: number
+}
+
 export type {
   AuthData,
   AuthResponse,
@@ -816,6 +882,8 @@ export type {
   HostedSession,
   League,
   LeagueInfo,
+  LeagueSeason,
+  LeagueSession,
   RacingSeason,
   Schedule,
   ScheduledRace,
