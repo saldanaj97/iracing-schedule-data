@@ -1,4 +1,4 @@
-import { CustomLeagueSession, LeagueInfo } from "./types"
+import { CustomLeagueSession, LeagueInfo, LeagueSeason } from "./types"
 import { client } from "./utils/axiosSetup"
 
 /**
@@ -205,6 +205,115 @@ export const getLeaguesOwnedByCustomer = async ({
 }) => {
   let URL = `https://members-ng.iracing.com/data/league/membership?cust_id=${cust_id}`
   if (include_league) URL += `&include_league=1`
+  try {
+    const { link } = await client.get(URL).then((response) => response.data)
+    const data = await client.get(link).then((response) => response.data)
+    return data
+  } catch (error) {
+    console.error(error)
+    return undefined
+  }
+}
+
+/**
+ * Retrieve the seasons for a specific league.
+ *
+ * Example usage:
+ * ```typescript
+ * getLeagueSeasons({ league_id: 12345 }) // Returns the seasons for the league with the ID of 12345
+ * ```
+ *
+ * Required Params:
+ * @param {number} league_id - The ID of the league you want to retrieve the seasons for.
+ *
+ * Optional Params:
+ * @param {boolean} retired - If true, include retired seasons.
+ */
+export const getLeagueSeasons = async ({
+  league_id,
+  retired,
+}: {
+  league_id: number
+  retired?: boolean
+}): Promise<LeagueSeason | undefined> => {
+  let URL = `https://members-ng.iracing.com/data/league/seasons?league_id=${league_id}`
+  if (retired) URL += `&retired=1`
+  try {
+    const { link } = await client.get(URL).then((response) => response.data)
+    const data = await client.get(link).then((response) => response.data)
+    return data
+  } catch (error) {
+    console.error(error)
+    return undefined
+  }
+}
+
+/**
+ * Retrieve the standings for a specific league and season.
+ *
+ * Example usage:
+ * ```typescript
+ * getLeagueSeasonStandings({ league_id: 12345 }) // Returns the sessions for the league with the ID of 12345
+ * ```
+ *
+ * Required Params:
+ * @param {number} league_id - The ID of the league you want to retrieve the sessions for.
+ * @param {number} season_id - The ID of the season you want to retrieve the sessions for.
+ *
+ * Optional Params:
+ * @param {boolean} car_class_id - The ID of the car class
+ * @param {boolean} car_id - If car_class_id is included then the standings are for the car in that car class, otherwise they are for the car across car classes.
+ */
+export const getLeagueSeasonStandings = async ({
+  league_id,
+  season_id,
+  car_class_id,
+  car_id,
+}: {
+  league_id: number
+  season_id: number
+  car_class_id?: number
+  car_id?: number
+}) => {
+  let URL = `https://members-ng.iracing.com/data/league/season_standings?league_id=${league_id}&season_id=${season_id}`
+  if (car_class_id) URL += `&car_class_id=${car_class_id}`
+  if (car_id) URL += `&car_id=${car_id}`
+  try {
+    const { link } = await client.get(URL).then((response) => response.data)
+    const data = await client.get(link).then((response) => response.data)
+    return data
+  } catch (error) {
+    console.error(error)
+    return undefined
+  }
+}
+
+/**
+ * Retrieve each session in a season for a specific league.
+ *
+ * Example usage:
+ * ```typescript
+ * getLeagueSeasonSessions({ league_id: 12345, season_id: 12345 }) // Returns the sessions for the league with the ID of 12345
+ * ```
+ *
+ * Required Params:
+ * @param {number} league_id - The ID of the league you want to retrieve the sessions for.
+ * @param {number} season_id - The ID of the season you want to retrieve the sessions for.
+ *
+ * Optional Params:
+ * @param {boolean} results_only - If true, include only sessions for which results are available.
+ */
+export const getLeagueSeasonSessions = async ({
+  league_id,
+  season_id,
+  results_only,
+}: {
+  league_id: number
+  season_id: number
+  results_only?: boolean
+}) => {
+  let URL = `https://members-ng.iracing.com/data/league/season_sessions?league_id=${league_id}&season_id=${season_id}`
+  if (results_only) URL += `&results_only=1`
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
