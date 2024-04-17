@@ -66,7 +66,7 @@ export const lookupCountries = async () => {
  * Optional Params:
  * @param league_id - ID of the league you want to search in. Narrows the search to the roster of the given league.
  */
-export const lookupDrivers = async ({ cust_id, league_id }: { cust_id: number; league_id?: number }) => {
+export const lookupDrivers = async ({ cust_id, league_id }: { cust_id: string; league_id?: number }) => {
   let URL = `https://members-ng.iracing.com/data/lookup/drivers?search_term=${cust_id}`
   if (league_id) URL += `&league_id=${league_id}`
   try {
