@@ -870,6 +870,14 @@ type LeagueSessionWeather = {
   wind_value: number
 }
 
+type Club = {
+  club_id: number
+  club_name: string
+  season_yar: number
+  season_quarter: number
+  region: string
+}
+
 export type {
   AuthData,
   AuthResponse,
@@ -877,6 +885,7 @@ export type {
   CarInfo,
   CarRestriction,
   CarType,
+  Club,
   ConstantType,
   CustomLeagueSession,
   HostedSession,
