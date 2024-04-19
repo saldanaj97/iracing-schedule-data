@@ -936,6 +936,31 @@ type TeamInfo = {
   roster: TeamMember[]
 }
 
+type TrackAssets = {
+  coordinates: string
+  detail_copy: string
+  detail_techspecs_copy: string | null
+  detail_video: string | null
+  folder: string
+  gallery_images: string
+  gallery_prefix: string
+  large_image: string
+  logo: string
+  north: string
+  num_svg_images: number
+  small_image: string
+  track_id: number
+  track_map: string
+  track_map_layers: {
+    background: string
+    inactive: string
+    active: string
+    pitroad: string
+    "start-finish": string
+    turns: string
+  }
+}
+
 export type {
   AuthData,
   AuthResponse,
@@ -958,6 +983,7 @@ export type {
   SeriesSchedule,
   TeamInfo,
   Track,
+  TrackAssets,
   TrackInfo,
   WeatherInfo,
 }
