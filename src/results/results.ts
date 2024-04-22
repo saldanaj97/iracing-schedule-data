@@ -9,11 +9,11 @@ import type { SearchSeriesResults } from "./types"
  * Example Usage:
  *
  * ```typescript
- * getTeamProfile({team_id: 12345})
+ * getSubsessionResults({subsession_id: 12345, included_licenses: true}) // Returns the results of the subsession.
  * ```
  *
  * Required Params:
- * @parem subsession_id - The ID of the subsession to get results for.
+ * @param subsession_id - The ID of the subsession to get results for.
  *
  * Optional Params:
  * @param included_licenses - Whether or not to include license data in the response.
@@ -179,7 +179,8 @@ export const searchHostedSeriesResults = async ({}: {}) => {
  *
  * Example Usage:
  * ```typescript
- * getSearchSeriesResults({subsession_id: 12345, simsession_number: 0}) // Returns the lap chart data
+ * // Returns all session data for customer 123456 in the 2024 season 2nd quarter.
+ * getSearchSeriesResults({season_year: 2024, season_quarter: 2, cust_id: 123456})
  * ```
  *
  * Required Params:
