@@ -20,11 +20,13 @@ import type { SearchSeriesResults } from "./types"
  */
 export const getSubsessionResults = async ({
   subsession_id,
+  included_licenses,
 }: {
   subsession_id: number
   included_licenses?: boolean
 }) => {
-  const URL = `https://members-ng.iracing.com/data/results/get?subsession_id=${subsession_id}`
+  const params = { subsession_id, included_licenses }
+  const URL = appendParams("https://members-ng.iracing.com/data/results/get?", params)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
@@ -54,7 +56,8 @@ export const getSubsessionEventLog = async ({
   subsession_id: number
   simsession_number: number
 }) => {
-  const URL = `https://members-ng.iracing.com/data/results/event_log?subsession_id=${subsession_id}&simsession_number=${simsession_number}`
+  const params = { subsession_id, simsession_number }
+  const URL = appendParams("https://members-ng.iracing.com/data/results/event_log?", params)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
@@ -85,7 +88,8 @@ export const getSubsessionLapChartData = async ({
   subsession_id: number
   simsession_number: number
 }) => {
-  const URL = `https://members-ng.iracing.com/data/results/lap_chart_data?subsession_id=${subsession_id}&simsession_number=${simsession_number}`
+  const params = { subsession_id, simsession_number }
+  const URL = appendParams("https://members-ng.iracing.com/data/results/lap_chart_data?", params)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
@@ -121,9 +125,8 @@ export const getSubsessionLapData = async ({
   cust_id?: number
   team_id?: number
 }) => {
-  let URL = `https://members-ng.iracing.com/data/results/lap_data?subsession_id=${subsession_id}&simsession_number=${simsession_number}`
-  if (cust_id) URL += `&cust_id=${cust_id}`
-  if (team_id) URL += `&team_id=${team_id}`
+  const params = { cust_id, team_id }
+  const URL = appendParams("https://members-ng.iracing.com/data/results/lap_data?", params)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
@@ -298,7 +301,8 @@ export const getSeasonResults = async ({
   event_type?: number
   race_week_num?: number
 }) => {
-  const URL = `https://members-ng.iracing.com/data/results/season_results?season_id=${season_id}&event_type=${event_type}&race_week`
+  const params = { season_id, event_type, race_week_num }
+  const URL = appendParams("https://members-ng.iracing.com/data/results/season_results?", params)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
