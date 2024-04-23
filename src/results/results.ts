@@ -1,7 +1,7 @@
 import { appendParams } from "../utils/appendParams"
 import { client } from "../utils/axiosSetup"
 import { dateParamErrorChecking } from "../utils/errorChecking"
-import type { SearchSeriesResults } from "./types"
+import type { SearchHostedResults, SearchSeriesResults } from "./types"
 
 /**
  * Get the results of a subsession, if authorized to view them. series_logo image paths are relative to https://images-static.iracing.com/img/logos/series/
@@ -138,27 +138,110 @@ export const getSubsessionLapData = async ({
 }
 
 /**
- * Get the lap chart data for the provided subsession.
+ * Get the lap chart data for the provided subsession. One of the primary filters needs to be included. Primary filters include host, driver, team, or session name.
  *
- * Hosted and league sessions.  Maximum time frame of 90 days. Results split into one or more files with chunks of results. For scraping results the most effective approach is to keep track of the maximum end_time found during
+ * Hosted and league sessions.  Maximum time frame of 90 days. Results split into one or more files with chunks of results.
+ *
+ * For scraping results the most effective approach is to keep track of the maximum end_time found during
  * a search then make the subsequent call using that date/time as the finish_range_begin and skip any subsessions that are duplicated.
  * Results are ordered by subsessionid which is a proxy for start time. Requires one of: start_range_begin, finish_range_begin.
  * Requires one of: cust_id, team_id, host_cust_id, session_name.
  *
  * Example Usage:
  * ```typescript
- * searchHostedSeriesResults({subsession_id: 12345, simsession_number: 0}) // Returns the lap chart data
+ * // Returns hosted session data for the host with customer ID 345352.
+ * searchHostedSeriesResults({
+ *  host_cust_id: 345352,
+ *  start_range_begin: "2024-02-01T00:00:00Z",
+ *  start_range_end: "2024-03-31T00:00:00Z",
+ *  finish_range_begin: "2024-02-01T00:00:00Z",
+ *  finish_range_end: "2024-03-31T00:00:00Z"
+ * })
  * ```
  *
  * Required Params:
- * @param subsession_id - The ID of the subsession to get the event log for.
- * @param simsession_number - The simsession number to get the event log for. The main event is 0; the preceding event is -1, and so on.
+ * @param cust_id - Include only sessions in which this customer participated. Ignored if team_id is supplied.
+ * @param team_id - Include only sessions in which this team participated. Takes priority over cust_id if both are supplied.
+ * @param host_cust_id - The host's customer ID.
+ * @param session_name - Part or all of the session's name.
+ *
+ * Optional Params:
+ * @param start_range_begin - Session start times. ISO-8601 UTC time zero offset: "2022-04-01T15:45Z".
+ * @param start_range_end - ISO-8601 UTC time zero offset: "2022-04-01T15:45Z". Exclusive. May be omitted if start_range_begin is less than 90 days in the past.
+ * @param finish_range_begin - 'Session finish times. ISO-8601 UTC time zero offset: "2022-04-01T15:45Z".
+ * @param finish_range_end - ISO-8601 UTC time zero offset: "2022-04-01T15:45Z". Exclusive. May be omitted if finish_range_begin is less than 90 days in the past.
+ * @param league_id - Include only sessions for this league.
+ * @param league_session_id - Include only sessions for the league session with this ID.
+ * @param car_id - One of the cars used by the session.
+ * @param track_id - The ID of the track used by the session.
+ * @param category_ids - License categories to include in the search.  Defaults to all. (ex. ?category_ids=1,2,3,4)
  */
-export const searchHostedSeriesResults = async ({}: {}) => {
-  const URL = `https://members-ng.iracing.com/data/results/search_hosted`
+export const searchHostedSeriesResults = async ({
+  start_range_begin,
+  start_range_end,
+  finish_range_begin,
+  finish_range_end,
+  cust_id,
+  team_id,
+  host_cust_id,
+  session_name,
+  league_id,
+  league_session_id,
+  car_id,
+  track_id,
+  category_ids,
+}: {
+  start_range_begin?: string
+  start_range_end?: string
+  finish_range_begin?: string
+  finish_range_end?: string
+  cust_id?: number
+  team_id?: number
+  host_cust_id?: number
+  session_name?: number
+  league_id?: number
+  league_session_id?: number
+  car_id?: number
+  track_id?: number
+  category_ids?: number
+}): Promise<SearchHostedResults | undefined> => {
+  let URL = "https://members-ng.iracing.com/data/results/search_hosted?"
+
+  if (!cust_id && !team_id && !host_cust_id && !session_name) {
+    throw new Error("One of the following is required: cust_id, team_id, host_cust_id, session_name.")
+  }
+
+  // First append one of the required params
+  let requiredParams = {
+    cust_id,
+    team_id,
+    host_cust_id,
+    session_name,
+  }
+  URL = appendParams(URL, requiredParams)
+
+  // Error checking for dates
+  if (dateParamErrorChecking({ start_range_begin, start_range_end, finish_range_begin, finish_range_end }) === "PASS") {
+    if (start_range_begin && start_range_end) {
+      URL += `&start_range_begin=${start_range_begin}&start_range_end=${start_range_end}`
+    }
+    if (finish_range_begin && finish_range_end) {
+      URL += `&finish_range_begin=${finish_range_begin}&finish_range_end=${finish_range_end}`
+    }
+  }
+
+  // Next add the rest of the params if available
+  const params = {
+    league_id,
+    league_session_id,
+    car_id,
+    track_id,
+    category_ids,
+  }
+  URL = appendParams(URL, params)
+
   try {
-    const { link } = await client.get(URL).then((res) => res.data)
-    const data = await client.get(link).then((res) => res.data)
+    const data = await client.get(URL).then((res) => res.data)
     return data
   } catch (error: any) {
     console.error(error.response.data)
@@ -186,10 +269,10 @@ export const searchHostedSeriesResults = async ({}: {}) => {
  * Required Params:
  * @param season_year - The year of the season to get the event log for. Required only when using season_quarter.
  * @param season_quarter - The quarter of the year to get the event log for. Required only when using season_year.
- * @param cust_id - Include only sessions in which this customer participated. Ignored if team_id is supplied.
- * @param team_id - Include only sessions in which this team participated. Takes priority over cust_id if both are supplied.
  *
  * Optional Params:
+ * @param cust_id - Include only sessions in which this customer participated. Ignored if team_id is supplied.
+ * @param team_id - Include only sessions in which this team participated. Takes priority over cust_id if both are supplied.
  * @param start_range_begin - Session start times. ISO-8601 UTC time zero offset: "2022-04-01T15:45Z".
  * @param start_range_end - ISO-8601 UTC time zero offset: "2022-04-01T15:45Z". Exclusive. May be omitted if start_range_begin is less than 90 days in the past.
  * @param finish_range_begin - 'Session finish times. ISO-8601 UTC time zero offset: "2022-04-01T15:45Z".
@@ -249,7 +332,7 @@ export const getSearchSeriesResults = async ({
     URL += `?season_year=${season_year}&season_quarter=${season_quarter}`
   }
 
-  // Error checking for start_range_begin and start_range_end
+  // Error checking for dates
   if (dateParamErrorChecking({ start_range_begin, start_range_end, finish_range_begin, finish_range_end }) === "PASS") {
     if (start_range_begin && start_range_end) {
       URL += `&start_range_begin=${start_range_begin}&start_range_end=${start_range_end}`

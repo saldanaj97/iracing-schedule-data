@@ -168,4 +168,13 @@ type SearchSeriesResults = {
   }
 }
 
-export { SearchSeriesResults, SessionData, Subsession, SubsessionEventInfo }
+type SearchHostedResults = {
+  type: string
+  data: {
+    success: boolean
+    chunk_info: ChunkInfo
+    params: Params
+  }
+}
+
+export { SearchHostedResults, SearchSeriesResults, SessionData, Subsession, SubsessionEventInfo }
