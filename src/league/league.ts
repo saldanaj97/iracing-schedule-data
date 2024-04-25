@@ -1,5 +1,5 @@
+import { client } from "../utils/axiosSetup"
 import { CustomLeagueSession, LeagueInfo, LeagueSeason } from "./types"
-import { client } from "./utils/axiosSetup"
 
 /**
  * Function to retrieve hosted sessions.
