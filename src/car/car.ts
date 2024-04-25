@@ -1,5 +1,5 @@
+import { client } from "../utils/axiosSetup"
 import { Car } from "./types"
-import { client } from "./utils/axiosSetup"
 
 /**
  * Function that will grab EVERY car available on the service

@@ -1,5 +1,5 @@
+import { client } from "../utils/axiosSetup"
 import { TeamInfo } from "./types"
-import { client } from "./utils/axiosSetup"
 
 /**
  * Function to retrieve a team's profile.

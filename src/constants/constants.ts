@@ -1,5 +1,5 @@
+import { client } from "../utils/axiosSetup"
 import { ConstantType } from "./types"
-import { client } from "./utils/axiosSetup"
 
 /**
  * Function that will grab all the constants available on the API

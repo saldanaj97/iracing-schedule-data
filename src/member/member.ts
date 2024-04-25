@@ -1,4 +1,4 @@
-import { client } from "./utils/axiosSetup"
+import { client } from "../utils/axiosSetup"
 
 /**
  * Return a list of awards for a specific member. If no cust_id is provided, the function will return the awards for the authenticated user.

@@ -1,5 +1,5 @@
+import { client } from "../utils/axiosSetup"
 import { Club } from "./types"
-import { client } from "./utils/axiosSetup"
 
 /**
  * Return the different clubs available on the service. Returns an earlier history if requirested quarter does not have a club history.

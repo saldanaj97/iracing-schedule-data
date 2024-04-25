@@ -1,6 +1,5 @@
-import { RacingSeason } from "../types"
 import { client } from "../utils/axiosSetup"
-import { PastSeries, Series, SeriesAssets } from "./types"
+import { PastSeries, RacingSeason, Series, SeriesAssets } from "./types"
 
 /**
  * Return all the assets tied to the series.

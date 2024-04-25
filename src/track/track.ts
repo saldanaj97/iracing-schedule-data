@@ -1,5 +1,5 @@
+import { client } from "../utils/axiosSetup"
 import { Track, TrackAssets } from "./types"
-import { client } from "./utils/axiosSetup"
 
 /**
  * Function to retrieve all tracks available on iRacing.
