@@ -33,7 +33,7 @@ export const getCarAssets = async (): Promise<CarDetails | undefined> => {
  */
 export const getAllCars = async (): Promise<CarInfo[] | undefined> => {
   try {
-    const URL = "https://members-ng.iracing.com/data/carclass/get"
+    const URL = "https://members-ng.iracing.com/data/car/get"
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
     return data
