@@ -1,3 +1,4 @@
+import { appendParams } from "../utils/appendParams"
 import { client } from "../utils/axiosSetup"
 import { HostedSession } from "./types"
 
@@ -16,8 +17,18 @@ export const getHostedSessions = async ({
   package_id?: number
   session_type: "sessions" | "combined_sessions"
 }): Promise<HostedSession[] | undefined> => {
-  // TODO: Add support for packacge_id param
-  const URL = `https://members-ng.iracing.com/data/hosted/${session_type}`
+  let URL = ""
+
+  if (session_type === "combined_sessions") {
+    URL = appendParams(`https://members-ng.iracing.com/data/hosted/combined_sessions?`, {
+      package_id,
+    })
+  } else if (session_type === "sessions") {
+    URL = `https://members-ng.iracing.com/data/hosted/sessions`
+  } else {
+    throw new Error("Invalid session type. 'session_type' param can only be 'sessions' or 'combined_sessions'")
+  }
+
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
