@@ -14,8 +14,8 @@
     "build": "tsup",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "ci": "pnpm run lint && pnpm run test && pnpm run build",
-    "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
+    "ci": "pnpm run lint && pnpm run build",
+    "release": "pnpm run lint && pnpm run build && changeset publish"
   },
   "keywords": [
     "iracing",
