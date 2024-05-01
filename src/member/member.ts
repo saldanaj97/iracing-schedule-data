@@ -87,7 +87,7 @@ export const getMemberData = async ({
   included_licenses?: boolean
 }) => {
   if (!cust_ids) throw new Error("Cannot complete request: Missing parameters. At least one cust_id is required.")
-  let URL = appendParams(`https://members-ng.iracing.com/data/member/get?cust_ids=${cust_ids}`, { included_licenses })
+  const URL = appendParams(`https://members-ng.iracing.com/data/member/get?cust_ids=${cust_ids}`, { included_licenses })
   console.log(`Attempting to retrieve member data from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)

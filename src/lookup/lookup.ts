@@ -72,7 +72,7 @@ export const lookupCountries = async () => {
  */
 export const lookupDrivers = async ({ cust_id, league_id }: { cust_id: string; league_id?: number }) => {
   if (!cust_id) throw new Error("Cannot complete request. Missing required parameters. (cust_id)")
-  let URL = appendParams(`https://members-ng.iracing.com/data/lookup/drivers?search_term=${cust_id}`, {
+  const URL = appendParams(`https://members-ng.iracing.com/data/lookup/drivers?search_term=${cust_id}`, {
     league_id,
   })
   console.log(`Attempting to retrieve driver data from ${URL}\n`)

@@ -544,7 +544,7 @@ export const getWorldRecords = async ({
   track_id: number
   season_year?: number
   season_quarter?: number
-}): Promise<any | undefined> => {
+}) => {
   if (!car_id || !track_id) throw new Error("Cannot complete request. Missing required parameters. (car_id, track_id)")
   const URL = appendParams("https://members-ng.iracing.com/data/stats/world_records?", {
     car_id,

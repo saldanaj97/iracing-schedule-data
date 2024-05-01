@@ -7,4 +7,5 @@ export default [
   { ignores: ["node_modules/*", "dist/*", "**/.*"] },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  { rules: { "@typescript-eslint/no-explicit-any": "warn" } },
 ]
