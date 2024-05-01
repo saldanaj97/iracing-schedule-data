@@ -33,7 +33,7 @@ export const getSeasonList = async ({
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.log(error)
     return undefined
   }
@@ -68,7 +68,7 @@ export const getRaceGuide = async ({
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.log(error)
     return undefined
   }
@@ -99,7 +99,7 @@ export const getSpectatorSubessionIDs = async ({
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.log(error)
     return undefined
   }

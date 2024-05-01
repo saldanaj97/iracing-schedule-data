@@ -18,8 +18,8 @@ export const getAllSeriesAsssets = async (): Promise<SeriesAssets | undefined> =
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
-    console.log(error.response.data)
+  } catch (error) {
+    console.log(error)
     return undefined
   }
 }
@@ -70,7 +70,7 @@ export const getPastSeasons = async (series_id: number): Promise<PastSeries | un
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -91,8 +91,8 @@ export const getCurrentSeasonsSeries = async (): Promise<RacingSeason[] | undefi
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
-    console.error(error.response.data)
+  } catch (error) {
+    console.error(error)
     return undefined
   }
 }
@@ -114,8 +114,8 @@ export const getStatsSeries = async (): Promise<SeriesStats | undefined> => {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
-    console.error(error.response.data)
+  } catch (error) {
+    console.error(error)
     return undefined
   }
 }

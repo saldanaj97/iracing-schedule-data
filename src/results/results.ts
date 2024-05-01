@@ -259,8 +259,8 @@ export const searchHostedSeriesResults = async ({
   try {
     const data = await client.get(URL).then((res) => res.data)
     return data
-  } catch (error: any) {
-    console.error(error.response.data)
+  } catch (error) {
+    console.error(error)
     return undefined
   }
 }
@@ -374,8 +374,8 @@ export const getSearchSeriesResults = async ({
   try {
     const data = await client.get(URL).then((res) => res.data)
     return data
-  } catch (error: any) {
-    console.error(error.response.data)
+  } catch (error) {
+    console.error(error)
     return undefined
   }
 }
@@ -415,8 +415,8 @@ export const getSeasonResults = async ({
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
     return data
-  } catch (error: any) {
-    console.error(error.response.data)
+  } catch (error) {
+    console.error(error)
     return undefined
   }
 }

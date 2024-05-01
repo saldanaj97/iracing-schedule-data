@@ -262,7 +262,7 @@ export const getLeagueSeasons = async ({
   retired?: boolean
 }): Promise<LeagueSeason | undefined> => {
   if (!league_id) throw new Error("Cannot complete request. Missing required parameters. (league_id)")
-  let URL = appendParams(`https://members-ng.iracing.com/data/league/seasons?league_id=${league_id}`, { retired })
+  const URL = appendParams(`https://members-ng.iracing.com/data/league/seasons?league_id=${league_id}`, { retired })
   console.log(`Attempting to retrieve league seasons from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
@@ -303,7 +303,7 @@ export const getLeagueSeasonStandings = async ({
 }): Promise<LeagueStandings | undefined> => {
   if (!league_id || !season_id)
     throw new Error("Cannot complete request. Missing required parameters. (league_id, season_id)")
-  let URL = appendParams(
+  const URL = appendParams(
     `https://members-ng.iracing.com/data/league/season_standings?league_id=${league_id}&season_id=${season_id}`,
     {
       car_class_id,
@@ -347,7 +347,7 @@ export const getLeagueSeasonSessions = async ({
 }): Promise<LeagueSessionData | undefined> => {
   if (!league_id || !season_id)
     throw new Error("Cannot complete request. Missing required parameters. (league_id, season_id)")
-  let URL = appendParams(
+  const URL = appendParams(
     `https://members-ng.iracing.com/data/league/season_sessions?league_id=${league_id}&season_id=${season_id}`,
     {
       results_only,
