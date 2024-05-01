@@ -4,11 +4,21 @@ import { HostedSession } from "./types"
 
 /**
  * Function to retrieve hosted sessions.
- * @param {number} [package_id] - If set, returns only sessions using this car or track package ID (per the official API docs).
- * @param {string} [session_type] - The type of session to retrieve.
+ *
+ * Example Usage:
+ * ```typescript
+ * const hostedSessions = await getHostedSessions({ session_type: "sessions" }) // Return all hosted sessions
+ * or
+ * const hostedSessions = await getHostedSessions({ package_id: 1, session_type: "combined_sessions" }) // Get hosted sessions for a specific package ID
+ * ```
+ *
+ * Required Params:
+ *  * @param {string} [session_type] - The type of session to retrieve.
  *   - `sessions`: Returns all sessions that can be joined as a driver, excluding spectator and non-league pending sessions for the user.
  *   - `combined_sessions`: Returns sessions that can be joined as a driver or spectator, including non-league pending sessions for the user.
- * @returns {Promise<HostedSession[] | undefined>} A list of sessions that can be joined as a driver or spectator, including non-league pending sessions for the user.
+ *
+ * Optional Params:
+ * @param {number} [package_id] - If set, returns only sessions using this car or track package ID (per the official API docs).
  */
 export const getHostedSessions = async ({
   package_id,
