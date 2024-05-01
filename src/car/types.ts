@@ -1,30 +1,23 @@
-type Car = {
-  car_class_id: number
-  cars_in_class: CarDetails[]
-  cust_id: number
-  name: string
-  rain_enabled: boolean
-  relative_speed: number
-  short_name: string
+type CarDetail = {
+  car_id: number
+  car_rules: any[]
+  detail_copy: string
+  detail_screen_shot_images: string
+  detail_techspecs_copy: string
+  folder: string
+  gallery_images: string
+  gallery_prefix: string | null
+  group_image: string | null
+  group_name: string | null
+  large_image: string
+  logo: string
+  small_image: string
+  sponsor_logo: string | null
+  template_path: string
 }
 
 type CarDetails = {
-  car_dirpath: string
-  car_id: number
-  rain_enabled: boolean
-  retired: boolean
-}
-
-type CarType = {
-  car_type: string
-}
-
-type CarRestriction = {
-  car_id: number
-  max_dry_tire_sets: number
-  max_pct_fuel_fill: number
-  power_adjust_pct: number
-  weight_penalty_kg: number
+  [key: string]: CarDetail
 }
 
 type CarInfo = {
@@ -64,4 +57,4 @@ type CarInfo = {
   sku: number
 }
 
-export { Car }
+export { CarDetails, CarInfo }

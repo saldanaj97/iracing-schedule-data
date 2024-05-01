@@ -1,35 +1,42 @@
 import { client } from "../utils/axiosSetup"
-import { Car } from "./types"
+import { CarDetails, CarInfo } from "./types"
 
 /**
- * Function that will grab EVERY car available on the service
- * @returns A list containing each cars id and the corresponding vehicle in natural language
+ * Function that will grab the assets of the cars on the service.
+ *
+ * Example Usage:
+ * ```typescript
+ * const carAssets = await getCarAssets()
+ * ```
+ *
+ * NOTE: Image paths are relative to https://images-static.iracing.com/ so you will need to append the links for the data you want to the URL
  */
-export const getListOfAllCars = async (): Promise<Car[] | undefined> => {
+export const getCarAssets = async (): Promise<CarDetails | undefined> => {
+  try {
+    const URL = `https://members-ng.iracing.com/data/car/assets`
+    const { link } = await client.get(URL).then((res) => res.data)
+    const data = await client.get(link).then((res) => res.data)
+    return data
+  } catch (error) {
+    console.error(error)
+    return undefined
+  }
+}
+
+/**
+ * Function that will fetch each car available on the service
+ *
+ *  * Example Usage:
+ * ```typescript
+ * const carList = await getAllCars()
+ * ```
+ */
+export const getAllCars = async (): Promise<CarInfo[] | undefined> => {
   try {
     const URL = "https://members-ng.iracing.com/data/carclass/get"
-    const { link } = (await client.get(URL)).data
-
-    const listOfAvailableCars: Car[] = []
-    const seen: Set<string> = new Set() // Use a set to efficiently check for duplicates
-
-    const response = (await client.get(link)).data
-    for (const car of response) {
-      const { car_class_id, cars_in_class, cust_id, name, rain_enabled, relative_speed, short_name } = car
-      if (!seen.has(name)) {
-        seen.add(name)
-        listOfAvailableCars.push({
-          car_class_id,
-          cars_in_class,
-          cust_id,
-          name,
-          rain_enabled,
-          relative_speed,
-          short_name,
-        })
-      }
-    }
-    return listOfAvailableCars
+    const { link } = await client.get(URL).then((res) => res.data)
+    const data = await client.get(link).then((res) => res.data)
+    return data
   } catch (error) {
     console.error(error)
     return undefined
