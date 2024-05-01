@@ -1,3 +1,4 @@
+import { appendParams } from "../utils/appendParams"
 import { client } from "../utils/axiosSetup"
 
 /**
@@ -8,10 +9,12 @@ import { client } from "../utils/axiosSetup"
  * getMemberAwards({ cust_id: 12345 })
  * ```
  *
+ * Optional Params:
  * @param cust_id: The member ID of the user to retrieve awards for.
  */
 export const getMemberAwards = async ({ cust_id }: { cust_id?: number }) => {
   let URL = "https://members-ng.iracing.com/data/member/awards"
+  console.log(`Attempting to retrieve member awards from ${URL}\n`)
   try {
     if (cust_id) URL += `?cust_id=${cust_id}`
     const { link } = await client.get(URL).then((res) => res.data)
@@ -46,11 +49,12 @@ export const getMemberChartData = async ({
   category_id: number
   chart_type: number
 }) => {
+  if (!category_id || !chart_type)
+    throw new Error("Cannot complete request: Missing required parameters. (category_id, chart_type)")
   let URL = "https://members-ng.iracing.com/data/member/chart_data"
+  console.log(`Attempting to retrieve member chart data from ${URL}\n`)
   try {
     if (cust_id) URL += `?cust_id=${cust_id}`
-    if (category_id === undefined) throw new Error("Cannot complete request: category_id is required.")
-    if (chart_type === undefined) throw new Error("Cannot complete request: chart_type is required.")
     URL += `&category_id=${category_id}&chart_type=${chart_type}`
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
@@ -71,6 +75,9 @@ export const getMemberChartData = async ({
  *
  * Required Params:
  * @param cust_ids: The member ID of the user to retrieve club data for. (ie. "123456, 12345" for multiple ids, or "123456" for a single id)
+ *
+ * Optional Params:
+ * @param included_licenses: Whether or not to include license data in the response. Defaults to false.
  */
 export const getMemberData = async ({
   cust_ids,
@@ -79,10 +86,10 @@ export const getMemberData = async ({
   cust_ids: string
   included_licenses?: boolean
 }) => {
-  let URL = `https://members-ng.iracing.com/data/member/get?cust_ids=${cust_ids}`
+  if (!cust_ids) throw new Error("Cannot complete request: Missing parameters. At least one cust_id is required.")
+  let URL = appendParams(`https://members-ng.iracing.com/data/member/get?cust_ids=${cust_ids}`, { included_licenses })
+  console.log(`Attempting to retrieve member data from ${URL}\n`)
   try {
-    if (!cust_ids) throw new Error("Cannot complete request: at least one cust_id is required.")
-    if (included_licenses) URL += `&included_licenses=1`
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
     return data
@@ -102,6 +109,7 @@ export const getMemberData = async ({
  */
 export const getPersonalInfo = async () => {
   const URL = "https://members-ng.iracing.com/data/member/info"
+  console.log(`Attempting to retrieve personal info from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
@@ -122,6 +130,7 @@ export const getPersonalInfo = async () => {
  */
 export const getPersonalParticipationCredits = async () => {
   const URL = "https://members-ng.iracing.com/data/member/participation_credits"
+  console.log(`Attempting to retrieve personal participation credits from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
@@ -145,6 +154,7 @@ export const getPersonalParticipationCredits = async () => {
  */
 export const getMemberProfile = async ({ cust_id }: { cust_id?: number }) => {
   let URL = "https://members-ng.iracing.com/data/member/profile"
+  console.log(`Attempting to retrieve member profile from ${URL}\n`)
   try {
     if (cust_id) URL += `?cust_id=${cust_id}`
     const { link } = await client.get(URL).then((res) => res.data)

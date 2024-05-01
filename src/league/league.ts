@@ -1,5 +1,14 @@
+import { appendParams } from "../utils/appendParams"
 import { client } from "../utils/axiosSetup"
-import { CustomLeagueSession, LeagueInfo, LeagueSeason } from "./types"
+import {
+  CustomLeagueSession,
+  LeagueData,
+  LeagueInfo,
+  LeagueSeason,
+  LeagueSessionData,
+  LeagueStandings,
+  PointsSystemsData,
+} from "./types"
 
 /**
  * Function to retrieve hosted sessions.
@@ -23,6 +32,7 @@ export const getCustomLeagueSession = async ({
   package_id?: number
 }): Promise<CustomLeagueSession | undefined> => {
   let URL = `https://members-ng.iracing.com/data/league/cust_league_sessions`
+  console.log(`Attempting to retrieve league sessions from ${URL}\n`)
   try {
     if (mine) URL += `?mine=1`
     if (package_id) URL += `?package_id=${package_id}`
@@ -86,31 +96,32 @@ export const getLeagueDirectory = async ({
   sort?: string
   order?: string
 }): Promise<CustomLeagueSession | undefined> => {
-  let URL = `https://members-ng.iracing.com/data/league/directory`
+  let URL = "https://members-ng.iracing.com/data/league/directory"
 
-  // FIX THESE BY CHANGING '?' TO '&'
   if (search !== undefined) {
     encodeURIComponent(search)
     URL += `?search=${search}`
   }
 
-  if (restrict_to_member !== undefined)
-    restrict_to_member === true ? (URL += `?restrict_to_member=1`) : (URL += `?restrict_to_member=0`)
+  URL = appendParams(URL, {
+    tag,
+    restrict_to_member,
+    restrict_to_recruiting,
+    restrict_to_friends,
+    restrict_to_watched,
+    minimum_roster_count,
+    maximum_roster_count,
+    lowerbound,
+    upperbound,
+    sort,
+    order,
+  })
 
-  if (restrict_to_recruiting !== undefined)
-    restrict_to_recruiting === true ? (URL += `?restrict_to_recruiting=1`) : (URL += `?restrict_to_recruiting=0`)
-
-  if (restrict_to_friends !== undefined)
-    restrict_to_friends === true ? (URL += `?restrict_to_friends=1`) : (URL += `?restrict_to_friends=0`)
-
-  if (restrict_to_watched !== undefined)
-    restrict_to_watched === true ? (URL += `?restrict_to_watched=1`) : (URL += `?restrict_to_watched=0`)
-
-  console.log(URL)
+  console.log(`Attempting to retrieve league directory from ${URL}`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
-    const { results_page } = await client.get(link).then((response) => response.data)
-    return results_page
+    const data = await client.get(link).then((response) => response.data)
+    return data
   } catch (error) {
     console.error(error)
     return undefined
@@ -138,8 +149,10 @@ export const getLeague = async ({
   league_id: number
   include_licenses?: boolean
 }): Promise<LeagueInfo | undefined> => {
+  if (!league_id) throw new Error("Cannot complete request. Missing required parameters. (league_id)")
   let URL = `https://members-ng.iracing.com/data/league/get?league_id=${league_id}`
   if (include_licenses !== undefined) include_licenses === true ? (URL += `&include_licenses=1`) : null
+  console.log(`Attempting to retrieve league from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
@@ -168,9 +181,19 @@ export const getLeague = async ({
  * Optional Params:
  * @param {number} season_id - If included and the season is using custom points (points_system_id:2) then the custom points option is included in the returned list. Otherwise the custom points option is not returned.
  */
-export const getLeaguePointSystem = async ({ league_id, season_id }: { league_id: number; season_id?: number }) => {
-  let URL = `https://members-ng.iracing.com/data/league/get_points_systems?league_id=${league_id}`
-  if (season_id !== undefined) URL += `&season_id=${season_id}`
+export const getLeaguePointSystem = async ({
+  league_id,
+  season_id,
+}: {
+  league_id: number
+  season_id?: number
+}): Promise<PointsSystemsData | undefined> => {
+  if (!league_id) throw new Error("Cannot complete request. Missing required parameters. (league_id)")
+  const URL = appendParams(`https://members-ng.iracing.com/data/league/get_points_system?league_id=${league_id}`, {
+    season_id,
+  })
+  console.log(`Attempting to retrieve league point system from ${URL}\n`)
+
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
@@ -186,7 +209,7 @@ export const getLeaguePointSystem = async ({ league_id, season_id }: { league_id
  *
  * Example usage:
  * ```typescript
- * getLeaguesOwnedByCustomer({ cust_id: 12345, include_league: true }) // Returns the leagues customer 12345 is the owner of if not set to private
+ * getLeaguesOwnedByCustomer({ cust_id: 12345, include_league: true }) // Returns the leagues customer 12345 if the owner of if not set to private
  * ```
  *
  * Required Params:
@@ -196,15 +219,17 @@ export const getLeaguePointSystem = async ({ league_id, season_id }: { league_id
  * - Only leagues for which the requested customer is an admin and the league roster is not private are returned
  * @param {boolean} include_league - If true, includes the league information in the response.
  */
-export const getLeaguesOwnedByCustomer = async ({
+export const getLeagueMembership = async ({
   cust_id,
   include_league,
 }: {
   cust_id: number
   include_league?: boolean
-}) => {
+}): Promise<LeagueData | undefined> => {
+  if (!cust_id) throw new Error("Cannot complete request. Missing required parameters. (cust_id)")
   let URL = `https://members-ng.iracing.com/data/league/membership?cust_id=${cust_id}`
   if (include_league) URL += `&include_league=1`
+  console.log(`Attempting to retrieve league membership from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
@@ -236,8 +261,9 @@ export const getLeagueSeasons = async ({
   league_id: number
   retired?: boolean
 }): Promise<LeagueSeason | undefined> => {
-  let URL = `https://members-ng.iracing.com/data/league/seasons?league_id=${league_id}`
-  if (retired) URL += `&retired=1`
+  if (!league_id) throw new Error("Cannot complete request. Missing required parameters. (league_id)")
+  let URL = appendParams(`https://members-ng.iracing.com/data/league/seasons?league_id=${league_id}`, { retired })
+  console.log(`Attempting to retrieve league seasons from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
@@ -274,10 +300,17 @@ export const getLeagueSeasonStandings = async ({
   season_id: number
   car_class_id?: number
   car_id?: number
-}) => {
-  let URL = `https://members-ng.iracing.com/data/league/season_standings?league_id=${league_id}&season_id=${season_id}`
-  if (car_class_id) URL += `&car_class_id=${car_class_id}`
-  if (car_id) URL += `&car_id=${car_id}`
+}): Promise<LeagueStandings | undefined> => {
+  if (!league_id || !season_id)
+    throw new Error("Cannot complete request. Missing required parameters. (league_id, season_id)")
+  let URL = appendParams(
+    `https://members-ng.iracing.com/data/league/season_standings?league_id=${league_id}&season_id=${season_id}`,
+    {
+      car_class_id,
+      car_id,
+    }
+  )
+  console.log(`Attempting to retrieve league season standings from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
@@ -311,9 +344,16 @@ export const getLeagueSeasonSessions = async ({
   league_id: number
   season_id: number
   results_only?: boolean
-}) => {
-  let URL = `https://members-ng.iracing.com/data/league/season_sessions?league_id=${league_id}&season_id=${season_id}`
-  if (results_only) URL += `&results_only=1`
+}): Promise<LeagueSessionData | undefined> => {
+  if (!league_id || !season_id)
+    throw new Error("Cannot complete request. Missing required parameters. (league_id, season_id)")
+  let URL = appendParams(
+    `https://members-ng.iracing.com/data/league/season_sessions?league_id=${league_id}&season_id=${season_id}`,
+    {
+      results_only,
+    }
+  )
+  console.log(`Attempting to retrieve league season session from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)

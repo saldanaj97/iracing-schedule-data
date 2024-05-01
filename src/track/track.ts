@@ -11,12 +11,12 @@ import { Track, TrackAssets } from "./types"
  * ```
  */
 export const getTrackData = async (): Promise<Track[] | undefined> => {
-  const trackData: Track[] = []
+  const URL = "https://members-ng.iracing.com/data/track/get"
+  console.log(`Attempting to retrieve track data from ${URL}\n`)
   try {
-    const URL = "https://members-ng.iracing.com/data/track/get"
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
-    return trackData
+    return data
   } catch (error) {
     console.error(error)
     return undefined
@@ -34,6 +34,7 @@ export const getTrackData = async (): Promise<Track[] | undefined> => {
  */
 export const getTrackAssets = async (): Promise<TrackAssets[] | undefined> => {
   const URL = "https://members-ng.iracing.com/data/track/assets"
+  console.log(`Attempting to retrieve track assets from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)

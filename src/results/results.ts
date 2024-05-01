@@ -25,14 +25,15 @@ export const getSubsessionResults = async ({
   subsession_id: number
   included_licenses?: boolean
 }) => {
-  const params = { subsession_id, included_licenses }
-  const URL = appendParams("https://members-ng.iracing.com/data/results/get?", params)
+  if (!subsession_id) throw new Error("Cannot complete request: Missing required parameters (subsession_id)")
+  const URL = appendParams("https://members-ng.iracing.com/data/results/get?", { subsession_id, included_licenses })
+  console.log(`Attempting to retrieve subsession results from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
     return data
-  } catch (error: any) {
-    console.error(error.response.data)
+  } catch (error) {
+    console.error(error)
     return undefined
   }
 }
@@ -56,15 +57,20 @@ export const getSubsessionEventLog = async ({
   subsession_id: number
   simsession_number: number
 }) => {
-  const params = { subsession_id, simsession_number }
-  const URL = appendParams("https://members-ng.iracing.com/data/results/event_log?", params)
+  if (!subsession_id || !simsession_number)
+    throw new Error("Cannot complete request: Missing required parameters (subsession_id, simsession_number)")
+  const URL = appendParams("https://members-ng.iracing.com/data/results/event_log?", {
+    subsession_id,
+    simsession_number,
+  })
+  console.log(`Attempting to retrieve subsession event log from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
     if (data.success) return data
     throw new Error("Failed to retrieve event log data")
-  } catch (error: any) {
-    console.error(error.response.data)
+  } catch (error) {
+    console.error(error)
     return undefined
   }
 }
@@ -88,14 +94,19 @@ export const getSubsessionLapChartData = async ({
   subsession_id: number
   simsession_number: number
 }) => {
-  const params = { subsession_id, simsession_number }
-  const URL = appendParams("https://members-ng.iracing.com/data/results/lap_chart_data?", params)
+  if (!subsession_id || !simsession_number)
+    throw new Error("Cannot complete request: Missing required parameters (subsession_id, simsession_number)")
+  const URL = appendParams("https://members-ng.iracing.com/data/results/lap_chart_data?", {
+    subsession_id,
+    simsession_number,
+  })
+  console.log(`Attempting to retrieve subsession lap chart data from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
     return data
-  } catch (error: any) {
-    console.error(error.response.data)
+  } catch (error) {
+    console.error(error)
     return undefined
   }
 }
@@ -114,7 +125,7 @@ export const getSubsessionLapChartData = async ({
  * @param cust_id - Required if the subsession was a single-driver event. Optional for team events. Required if the subsession was a single-driver event. Optional for team events. If omitted for a team event then the laps driven by all the team's drivers will be included.
  * @param team_id - Required if subsession was a team event
  */
-export const getSubsessionLapData = async ({
+export const getLapData = async ({
   subsession_id,
   simsession_number,
   cust_id,
@@ -125,14 +136,16 @@ export const getSubsessionLapData = async ({
   cust_id?: number
   team_id?: number
 }) => {
-  const params = { cust_id, team_id }
-  const URL = appendParams("https://members-ng.iracing.com/data/results/lap_data?", params)
+  if (!subsession_id || !simsession_number)
+    throw new Error("Cannot complete request: Missing required parameters (subsession_id, simsession_number)")
+  const URL = appendParams("https://members-ng.iracing.com/data/results/lap_data?", { cust_id, team_id })
+  console.log(`Attempting to retrieve lap data from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
     return data
-  } catch (error: any) {
-    console.error(error.response.data)
+  } catch (error) {
+    console.error(error)
     return undefined
   }
 }
@@ -208,11 +221,13 @@ export const searchHostedSeriesResults = async ({
   let URL = "https://members-ng.iracing.com/data/results/search_hosted?"
 
   if (!cust_id && !team_id && !host_cust_id && !session_name) {
-    throw new Error("One of the following is required: cust_id, team_id, host_cust_id, session_name.")
+    throw new Error(
+      "Cannot complete request. Missing required parameters. At least of the following is required: cust_id, team_id, host_cust_id, session_name."
+    )
   }
 
   // First append one of the required params
-  let requiredParams = {
+  const requiredParams = {
     cust_id,
     team_id,
     host_cust_id,
@@ -240,6 +255,7 @@ export const searchHostedSeriesResults = async ({
   }
   URL = appendParams(URL, params)
 
+  console.log(`Attempting to retrieve hosted series results from ${URL}\n`)
   try {
     const data = await client.get(URL).then((res) => res.data)
     return data
@@ -354,6 +370,7 @@ export const getSearchSeriesResults = async ({
   }
   URL = appendParams(URL, params)
 
+  console.log(`Attempting to retrieve series results from ${URL}\n`)
   try {
     const data = await client.get(URL).then((res) => res.data)
     return data
@@ -373,6 +390,8 @@ export const getSearchSeriesResults = async ({
  *
  * Required Params:
  * @param season_id - The ID of the season to get the results for.
+ *
+ * Optional Params:
  * @param event_type - Retrict to one event type: 2 - Practice; 3 - Qualify; 4 - Time Trial; 5 - Race.
  * @param race_week_num - The first race week of the season is 0.
  */
@@ -385,8 +404,13 @@ export const getSeasonResults = async ({
   event_type?: number
   race_week_num?: number
 }) => {
-  const params = { season_id, event_type, race_week_num }
-  const URL = appendParams("https://members-ng.iracing.com/data/results/season_results?", params)
+  if (!season_id) throw new Error("Cannot complete request: Missing required parameter (season_id)")
+  const URL = appendParams("https://members-ng.iracing.com/data/results/season_results?", {
+    season_id,
+    event_type,
+    race_week_num,
+  })
+  console.log(`Attempting to retrieve season results from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)

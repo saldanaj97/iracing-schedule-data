@@ -22,7 +22,9 @@ export const getSeasonList = async ({
   season_year: number
   season_quarter: number
 }): Promise<Series | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/season/list?", {
+  if (!season_year || !season_quarter)
+    throw new Error("Cannot complete request: Missing required parameters (season_year, season_quarter)")
+  const URL = appendParams("https://members-ng.iracing.com/data/season/list?", {
     season_year,
     season_quarter,
   })
@@ -57,7 +59,7 @@ export const getRaceGuide = async ({
   from?: string
   include_end_after_from?: boolean
 }): Promise<RaceGuide | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/season/race_guide?", {
+  const URL = appendParams("https://members-ng.iracing.com/data/season/race_guide?", {
     from,
     include_end_after_from,
   })
@@ -89,7 +91,7 @@ export const getSpectatorSubessionIDs = async ({
 }: {
   event_types?: number[]
 }): Promise<SpectatorSubsession | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/season/spectator_subsessionids?", {
+  const URL = appendParams("https://members-ng.iracing.com/data/season/spectator_subsessionids?", {
     event_types,
   })
   console.log("Retrieving spectator subsession IDs from:", URL)

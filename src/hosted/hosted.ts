@@ -27,8 +27,8 @@ export const getHostedSessions = async ({
   package_id?: number
   session_type: "sessions" | "combined_sessions"
 }): Promise<HostedSession[] | undefined> => {
+  if (!session_type) throw new Error("Cannot complete request. Missing required parameters. (session_type)")
   let URL = ""
-
   if (session_type === "combined_sessions") {
     URL = appendParams(`https://members-ng.iracing.com/data/hosted/combined_sessions?`, {
       package_id,
@@ -39,6 +39,7 @@ export const getHostedSessions = async ({
     throw new Error("Invalid session type. 'session_type' param can only be 'sessions' or 'combined_sessions'")
   }
 
+  console.log(`Attempting to retrieve hosted sessions from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)

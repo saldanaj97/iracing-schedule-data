@@ -1,3 +1,4 @@
+import { appendParams } from "../utils/appendParams"
 import { client } from "../utils/axiosSetup"
 import { Club } from "./types"
 
@@ -20,8 +21,10 @@ export const lookupClubHistory = async ({
   season_year: number
   season_quarter: number
 }): Promise<Club | undefined> => {
-  let URL = `https://members-ng.iracing.com/data/lookup/club_history?season_year=${season_year}&season_quarter=${season_quarter}`
-  if (season_year || !season_quarter) throw new Error("Please provide both a season year and quarter.")
+  if (!season_year || !season_quarter)
+    throw new Error("Cannot complete request. Missing required parameters. (season_year, season_quarter)")
+  const URL = `https://members-ng.iracing.com/data/lookup/club_history?season_year=${season_year}&season_quarter=${season_quarter}`
+  console.log(`Attempting to retrieve club history from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
@@ -42,6 +45,7 @@ export const lookupClubHistory = async ({
  */
 export const lookupCountries = async () => {
   const URL = "https://members-ng.iracing.com/data/lookup/countries"
+  console.log(`Attempting to retrieve country data from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
@@ -67,8 +71,11 @@ export const lookupCountries = async () => {
  * @param league_id - ID of the league you want to search in. Narrows the search to the roster of the given league.
  */
 export const lookupDrivers = async ({ cust_id, league_id }: { cust_id: string; league_id?: number }) => {
-  let URL = `https://members-ng.iracing.com/data/lookup/drivers?search_term=${cust_id}`
-  if (league_id) URL += `&league_id=${league_id}`
+  if (!cust_id) throw new Error("Cannot complete request. Missing required parameters. (cust_id)")
+  let URL = appendParams(`https://members-ng.iracing.com/data/lookup/drivers?search_term=${cust_id}`, {
+    league_id,
+  })
+  console.log(`Attempting to retrieve driver data from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)
@@ -89,6 +96,7 @@ export const lookupDrivers = async ({ cust_id, league_id }: { cust_id: string; l
  */
 export const lookupLicenses = async () => {
   const URL = "https://members-ng.iracing.com/data/lookup/licenses"
+  console.log(`Attempting to retrieve license data from ${URL}\n`)
   try {
     const { link } = await client.get(URL).then((res) => res.data)
     const data = await client.get(link).then((res) => res.data)

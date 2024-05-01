@@ -11,6 +11,7 @@ import { CarClass } from "./types"
  *
  */
 export const getCarClassData = async (): Promise<CarClass[] | undefined> => {
+  console.log(`Attempting to retrieve car class data from ${URL}\n`)
   try {
     const URL = "https://members-ng.iracing.com/data/carclass/get"
     const { link } = await client.get(URL).then((res) => res.data)
