@@ -32,13 +32,13 @@ export const getMemberBests = async ({
   member_id?: number
   car_id?: number
 }): Promise<MemberBests | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/member_bests?", { member_id, car_id })
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/member_bests?", { member_id, car_id })
   console.log(`Attempting to retrieve member bests stats from ${URL}`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -60,13 +60,13 @@ export const getMemberCareerStats = async ({
 }: {
   member_id?: number
 }): Promise<MemberCareer | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/member_career?", { member_id })
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/member_career?", { member_id })
   console.log(`Attempting to retrieve member career stats from ${URL}`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -91,13 +91,15 @@ export const getMemberDivisionStats = async ({
   season_id: number
   event_type: number
 }): Promise<DivisionData | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/member_division?", { season_id, event_type })
+  if (!season_id || !event_type)
+    throw new Error("Cannot complete request. Missing required parameters. (season_id, event_type)")
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/member_division?", { season_id, event_type })
   console.log(`Attempting to retrieve member division stats from ${URL}`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -125,13 +127,13 @@ export const getMemberRecap = async ({
   year?: number
   quarter?: number
 }): Promise<MemberRecap | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/member_recap?", { member_id, year, quarter })
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/member_recap?", { member_id, year, quarter })
   console.log(`Attempting to retrieve member recap from ${URL}`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -149,13 +151,13 @@ export const getMemberRecap = async ({
  * @param cust_id - Defaults to the authenticated member
  */
 export const getRecentRaces = async ({ cust_id }: { cust_id?: number }): Promise<RecentRaces | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/member_recent_races?", { cust_id })
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/member_recent_races?", { cust_id })
   console.log(`Attempting to retrieve members recent races from ${URL}`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -173,13 +175,13 @@ export const getRecentRaces = async ({ cust_id }: { cust_id?: number }): Promise
  * @param cust_id - Defaults to the authenticated member
  */
 export const getMemberSummary = async ({ cust_id }: { cust_id?: number }): Promise<MemberSummary | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/member_summary?", { cust_id })
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/member_summary?", { cust_id })
   console.log(`Attempting to retrieve members race summaries from ${URL}`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -197,13 +199,13 @@ export const getMemberSummary = async ({ cust_id }: { cust_id?: number }): Promi
  * @param cust_id - Defaults to the authenticated member
  */
 export const getYearlyStats = async ({ cust_id }: { cust_id?: number }): Promise<MemberYearlySummary | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/member_yearly?", { cust_id })
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/member_yearly?", { cust_id })
   console.log(`Attempting to retrieve members yearly race stats from ${URL}`)
   try {
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -241,7 +243,9 @@ export const getSeasonDriverStandings = async ({
   division?: number
   race_week_num?: number
 }): Promise<SeasonStandings | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/season_driver_standings?", {
+  if (!season_id || !car_class_id)
+    throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/season_driver_standings?", {
     season_id,
     car_class_id,
     club_id,
@@ -253,7 +257,7 @@ export const getSeasonDriverStandings = async ({
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -291,7 +295,9 @@ export const getSeasonSupersesssionStandings = async ({
   division?: number
   race_week_num?: number
 }): Promise<SeasonStandings | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/season_supersession_standings?", {
+  if (!season_id || !car_class_id)
+    throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/season_supersession_standings?", {
     season_id,
     car_class_id,
     club_id,
@@ -303,7 +309,7 @@ export const getSeasonSupersesssionStandings = async ({
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -334,7 +340,9 @@ export const getSeasonTeamStandings = async ({
   car_class_id: number
   race_week_num?: number
 }): Promise<SeasonStandings | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/season_team_standings?", {
+  if (!season_id || !car_class_id)
+    throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/season_team_standings?", {
     season_id,
     car_class_id,
     race_week_num,
@@ -344,7 +352,7 @@ export const getSeasonTeamStandings = async ({
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -382,7 +390,9 @@ export const getSeasonTimetrialStandings = async ({
   division?: number
   race_week_num?: number
 }): Promise<SeasonStandings | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/season_tt_standings?", {
+  if (!season_id || !car_class_id)
+    throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/season_tt_standings?", {
     season_id,
     car_class_id,
     club_id,
@@ -394,7 +404,7 @@ export const getSeasonTimetrialStandings = async ({
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -433,7 +443,9 @@ export const getSeasonTimetrialResults = async ({
   club_id?: number
   division?: number
 }): Promise<SeasonResults | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/season_tt_results?", {
+  if (!season_id || !car_class_id || !race_week_num)
+    throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id, race_week_num)")
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/season_tt_results?", {
     season_id,
     car_class_id,
     club_id,
@@ -445,7 +457,7 @@ export const getSeasonTimetrialResults = async ({
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -484,7 +496,9 @@ export const getSeasonQualifyingResults = async ({
   club_id?: number
   division?: number
 }): Promise<SeasonResults | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/season_qualify_results?", {
+  if (!season_id || !car_class_id || !race_week_num)
+    throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id, race_week_num)")
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/season_qualify_results?", {
     season_id,
     car_class_id,
     race_week_num,
@@ -496,7 +510,7 @@ export const getSeasonQualifyingResults = async ({
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }
@@ -531,7 +545,8 @@ export const getWorldRecords = async ({
   season_year?: number
   season_quarter?: number
 }): Promise<any | undefined> => {
-  let URL = appendParams("https://members-ng.iracing.com/data/stats/world_records?", {
+  if (!car_id || !track_id) throw new Error("Cannot complete request. Missing required parameters. (car_id, track_id)")
+  const URL = appendParams("https://members-ng.iracing.com/data/stats/world_records?", {
     car_id,
     track_id,
     season_year,
@@ -542,7 +557,7 @@ export const getWorldRecords = async ({
     const { link } = await client.get(URL).then((response) => response.data)
     const data = await client.get(link).then((response) => response.data)
     return data
-  } catch (error: any) {
+  } catch (error) {
     console.error(error)
     return undefined
   }

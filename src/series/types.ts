@@ -1,3 +1,10 @@
+type CarClass = {
+  car_class_id: number
+  name: string
+  relative_speed: number
+  short_name: string
+}
+
 type CarRestriction = {
   car_id: number
   max_dry_tire_sets: number
@@ -10,96 +17,67 @@ type CarType = {
   car_type: string
 }
 
-type LicenseRange = {
-  license_group: number
-  min_license_level: number
-  max_license_level: number
-  group_name: string
-}
-
-type SeriesAssets = {
-  [key: string]: {
-    large_image: string | null
-    logo: string
-    series_copy: string
-    series_id: number
-    small_image: string | null
-  }
-}
-
-type Series = {
-  allowed_licenses: LicenseRange[]
-  category: string
-  category_id: number
-  eligible: boolean
-  forum_url?: string
-  max_starters: number
-  min_starters: number
-  oval_caution_type: number
-  road_caution_type: number
-  search_filters?: string
-  series_id: number
-  series_name: string
-  series_short_name: string
-}
-
-type Track = {
-  track_id: number
-  track_name: string
-  config_name?: string
-}
-
 type License = {
-  parent_id: number
-  license_group: number
-  min_license_level: number
-  max_license_level: number
   group_name: string
+  license_group: number
+  max_license_level: number
+  min_license_level: number
+  parent_id: number
 }
 
-type CarClass = {
-  car_class_id: number
-  short_name: string
-  name: string
-  relative_speed: number
+type LicenseRange = {
+  group_name: string
+  license_group: number
+  max_license_level: number
+  min_license_level: number
 }
 
 type PastSeason = {
-  season_id: number
-  series_id: number
-  season_name: string
-  season_short_name: string
-  season_year: number
-  season_quarter: number
   active: boolean
-  official: boolean
+  car_classes: CarClass[]
   driver_changes: boolean
   fixed_setup: boolean
-  license_group: number
   has_supersessions: boolean
+  license_group: number
   license_group_types: { license_group_type: number }[]
-  car_classes: CarClass[]
-  race_weeks: {
-    season_id: number
-    race_week_num: number
-    track: Track
-  }[]
+  official: boolean
+  season_id: number
+  season_name: string
+  season_quarter: number
+  season_short_name: string
+  season_year: number
 }
 
 type PastSeries = {
+  active: boolean
+  allowed_licenses: License[]
+  category: string
+  category_id: number
+  fixed_setup: boolean
+  license_group: number
+  license_group_types: { license_group_type: number }[]
+  logo: string | null
+  official: boolean
+  seasons: PastSeason[]
   series_id: number
   series_name: string
   series_short_name: string
-  category_id: number
-  category: string
-  active: boolean
-  official: boolean
-  fixed_setup: boolean
-  logo: string | null
-  license_group: number
-  license_group_types: { license_group_type: number }[]
-  allowed_licenses: License[]
-  seasons: PastSeason[]
+}
+
+type RaceTimeDescriptor = {
+  day_offset?: number[]
+  first_session_time?: string
+  repeating: boolean
+  session_minutes: number
+  session_times?: Date[]
+  start_date?: string
+  super_session: boolean
+}
+
+type RaceWeek = {
+  season_id: number
+  race_week_num: number
+  track: Track
 }
 
 type RacingSeason = {
@@ -152,19 +130,7 @@ type RacingSeason = {
   season_name: string
 }
 
-type RaceTimeDescriptor = {
-  repeating: boolean
-  session_minutes: number
-  session_times?: Date[]
-  super_session: boolean
-  day_offset?: number[]
-  first_session_time?: string
-  start_date?: string
-}
-
 type Schedule = {
-  season_id: number
-  race_week_num: number
   car_restrictions: CarRestriction[]
   category: string
   category_id: number
@@ -177,6 +143,7 @@ type Schedule = {
   race_week_cars?: never[]
   restart_type: string
   schedule_name: string
+  season_id: number
   season_name: string
   series_id: number
   series_name: string
@@ -189,6 +156,73 @@ type Schedule = {
   track: TrackInfo
   track_state: { leave_marbles: boolean }
   weather: WeatherInfo
+}
+
+type Season = {
+  season_id: number
+  series_id: number
+  season_name: string
+  season_short_name: string
+  season_year: number
+  season_quarter: number
+  active: boolean
+  official: boolean
+  driver_changes: boolean
+  fixed_setup: boolean
+  license_group: number
+  has_supersessions: boolean
+  license_group_types: { license_group_type: number }[]
+  car_classes: CarClass[]
+  race_weeks: RaceWeek[]
+}
+
+type Series = {
+  allowed_licenses: LicenseRange[]
+  category: string
+  category_id: number
+  eligible: boolean
+  forum_url?: string
+  max_starters: number
+  min_starters: number
+  oval_caution_type: number
+  road_caution_type: number
+  search_filters?: string
+  series_id: number
+  series_name: string
+  series_short_name: string
+}
+
+type SeriesAssets = {
+  [key: string]: {
+    large_image: string | null
+    logo: string
+    series_copy: string
+    series_id: number
+    small_image: string | null
+  }
+}
+
+type SeriesStats = {
+  active: boolean
+  allowed_licenses: License[]
+  category: string
+  category_id: number
+  fixed_setup: boolean
+  license_group: number
+  license_group_types: { license_group_type: number }[]
+  logo: string
+  official: boolean
+  search_filters: string
+  series_id: number
+  series_name: string
+  series_short_name: string
+  seasons: Season[]
+}
+
+type Track = {
+  config_name?: string
+  track_id: number
+  track_name: string
 }
 
 type TrackInfo = {
@@ -219,4 +253,4 @@ type WeatherInfo = {
   wind_value: number
 }
 
-export { PastSeries, RacingSeason, Series, SeriesAssets }
+export { PastSeries, RacingSeason, Series, SeriesAssets, SeriesStats }

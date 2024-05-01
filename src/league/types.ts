@@ -197,6 +197,33 @@ type CustomLeagueSession = {
   max_ir: number
 }
 
+type DriverStandings = {
+  rownum: number
+  position: number
+  driver: {
+    cust_id: number
+    display_name: string
+    helmet: {
+      pattern: number
+      color1: string
+      color2: string
+      color3: string
+      face_type: number
+      helmet_type: number
+    }
+  }
+  car_number: null | string
+  driver_nickname: null | string
+  wins: number
+  average_start: number
+  average_finish: number
+  base_points: number
+  negative_adjustments: number
+  positive_adjustments: number
+  total_adjustments: number
+  total_points: number
+}
+
 type Helmet = {
   pattern: number
   color1: string
@@ -226,6 +253,17 @@ type League = {
   pending_application: boolean
   pending_invitation: boolean
   owner: LeagueOwner
+}
+
+type LeagueData = {
+  league_id: number
+  league_name: string
+  owner: boolean
+  admin: boolean
+  league_mail_opt_out: boolean
+  league_pm_opt_out: boolean
+  car_number: null | string // The type is union of null and string to accommodate the possibility of a null value
+  nick_name: null | string // Same as above
 }
 
 type LeagueInfo = {
@@ -331,6 +369,13 @@ type LeagueSession = {
   winner_name: string
 }
 
+type LeagueSessionData = {
+  sessions: LeagueSession[]
+  success: boolean
+  season_id: number
+  league_id: number
+}
+
 type LeagueSessionWeather = {
   allow_fog: boolean
   fog: number
@@ -347,6 +392,34 @@ type LeagueSessionWeather = {
   wind_dir: number
   wind_units: number
   wind_value: number
+}
+
+type LeagueStandings = {
+  car_class_id: number
+  success: boolean
+  season_id: number
+  car_id: number
+  standings: {
+    driver_standings: DriverStandings[]
+    team_standings: any[] // Type this accordingly if you have the structure for team standings
+  }
+  league_id: number
+}
+
+type PointsSystem = {
+  points_system_id: number
+  name: string
+  description: string
+  league_id: number
+  retired: boolean
+  iracing_system: boolean
+}
+
+type PointsSystemsData = {
+  subscribed: boolean
+  success: boolean
+  points_systems: PointsSystem[]
+  league_id: number
 }
 
 type Track = {
@@ -422,4 +495,13 @@ type TrackType = {
   track_type: string
 }
 
-export { CustomLeagueSession, League, LeagueInfo, LeagueSeason }
+export {
+  CustomLeagueSession,
+  League,
+  LeagueData,
+  LeagueInfo,
+  LeagueSeason,
+  LeagueSessionData,
+  LeagueStandings,
+  PointsSystemsData,
+}

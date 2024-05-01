@@ -23,7 +23,9 @@ export const getTeamProfile = async ({
   team_id: number
   include_licenses?: boolean
 }): Promise<TeamInfo | undefined> => {
+  if (!team_id) throw new Error("Cannot complete request: Missing required parameters (team_id)")
   let URL = `https://members-ng.iracing.com/data/team/get?team_id=${team_id}`
+  console.log(`Attempting to retrieve team profile data from ${URL}\n`)
   try {
     if (include_licenses) URL += "&include_licenses=1"
     const { link } = await client.get(URL).then((res) => res.data)
