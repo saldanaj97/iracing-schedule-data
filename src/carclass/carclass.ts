@@ -1,7 +1,16 @@
 import { client } from "../utils/axiosSetup"
 import { CarClass } from "./types"
 
-export const getCarClasses = async (): Promise<CarClass[] | undefined> => {
+/**
+ * Function that will grab car class data.
+ *
+ * Example Usage:
+ * ```typescript
+ * const carClassData = await getCarClassData()
+ * ```
+ *
+ */
+export const getCarClassData = async (): Promise<CarClass[] | undefined> => {
   try {
     const URL = "https://members-ng.iracing.com/data/carclass/get"
     const { link } = await client.get(URL).then((res) => res.data)
