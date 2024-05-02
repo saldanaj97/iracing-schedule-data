@@ -1,4 +1,4 @@
-import { client } from "../utils/axiosSetup"
+import { client } from "../auth/axiosSetup"
 import { CarDetails, CarInfo } from "./types"
 
 /**

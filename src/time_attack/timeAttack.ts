@@ -1,4 +1,4 @@
-import { client } from "../utils/axiosSetup"
+import { client } from "../auth/axiosSetup"
 
 /**
  * Function to retrieve an authenticated members time attack results.

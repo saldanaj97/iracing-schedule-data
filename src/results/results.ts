@@ -1,5 +1,5 @@
+import { client } from "../auth/axiosSetup"
 import { appendParams } from "../utils/appendParams"
-import { client } from "../utils/axiosSetup"
 import { dateParamErrorChecking } from "../utils/errorChecking"
 import type { SearchHostedResults, SearchSeriesResults } from "./types"
 
