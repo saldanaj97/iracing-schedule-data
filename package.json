@@ -1,6 +1,6 @@
 {
-  "name": "iracing-api-interface",
-  "version": "0.0.1",
+  "name": "iracing-client",
+  "version": "0.1.0",
   "description": "An npm package for interacting with the iRacing API",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -22,7 +22,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "ci": "pnpm run lint && pnpm run build",
-    "release": "pnpm run lint && pnpm run build && changeset publish"
+    "release": "pnpm run lint && pnpm run build && changeset && npm publish --access public"
   },
   "keywords": [
     "iracing",

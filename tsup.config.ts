@@ -2,7 +2,7 @@ import { defineConfig } from "tsup"
 
 export default defineConfig({
   entry: [
-    "src/index.ts",
+    "src/auth/auth.ts",
     "src/car/car.ts",
     "src/constants/constants.ts",
     "src/hosted/hosted.ts",
