@@ -6,11 +6,11 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "@saldanaj97:registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/saldanaj97/iracing-schedule-data"
+    "url": "git+https://github.com/saldanaj97/iracing-schedule-data.git"
   },
   "files": [
     "dist/"
@@ -55,5 +55,9 @@
     "tsup": "^8.0.2",
     "typescript": "^5.4.4",
     "typescript-eslint": "^7.6.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/saldanaj97/iracing-schedule-data/issues"
+  },
+  "homepage": "https://github.com/saldanaj97/iracing-schedule-data#readme"
 }
