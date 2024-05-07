@@ -23,7 +23,7 @@ describe("Constants API", () => {
   })
 
   it("should retrieve list of constants(categories)", async () => {
-    const mockFile = mockResponsePath + "/constants/categories.json"
+    const mockFile = mockResponsePath + "constants/categories.json"
     nockHelper().get("/data/constants/categories").replyWithFile(StatusCodes.OK, mockFile)
     await mockResouceGet(mockFile)
     const categories = await client.getConstants({ constant: "categories" })
@@ -31,7 +31,7 @@ describe("Constants API", () => {
   })
 
   it("should retrieve list of constants(divisions)", async () => {
-    const mockFile = mockResponsePath + "/constants/divisions.json"
+    const mockFile = mockResponsePath + "constants/divisions.json"
     nockHelper().get("/data/constants/divisions").replyWithFile(StatusCodes.OK, mockFile)
     await mockResouceGet(mockFile)
     const divisions = await client.getConstants({ constant: "divisions" })
@@ -39,7 +39,7 @@ describe("Constants API", () => {
   })
 
   it("should retrieve list of constants(event_types)", async () => {
-    const mockFile = mockResponsePath + "/constants/event_types.json"
+    const mockFile = mockResponsePath + "constants/event_types.json"
     nockHelper().get("/data/constants/event_types").replyWithFile(StatusCodes.OK, mockFile)
     await mockResouceGet(mockFile)
     const event_types = await client.getConstants({ constant: "event_types" })
