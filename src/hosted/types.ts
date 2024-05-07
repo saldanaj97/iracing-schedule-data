@@ -19,6 +19,7 @@ type HostedSession = {
   subscribed: boolean
   sequence: number
   sessions: HostedSessionData[]
+  success: boolean
 }
 
 type HostedSessionAdmin = {
