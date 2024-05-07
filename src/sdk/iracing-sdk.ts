@@ -5,6 +5,7 @@ import { CookieJar } from "tough-cookie"
 import { CarDetails, CarInfo } from "../car/types"
 import { CarClass } from "../carclass/types"
 import { ConstantType } from "../constants/types"
+import { HostedSession } from "../hosted/types"
 
 type SignedURL = {
   link: string
@@ -91,11 +92,6 @@ class IRacingSDK {
 
   /**
    * Function that will fetch each car available on the service
-   *
-   *  * Example Usage:
-   * ```typescript
-   * const carList = await getAllCars()
-   * ```
    */
   public async getAllCars(): Promise<CarInfo[]> {
     try {
@@ -110,12 +106,6 @@ class IRacingSDK {
 
   /**
    * Function that will grab car class data.
-   *
-   * Example Usage:
-   * ```typescript
-   * const carClassData = await getCarClassData()
-   * ```
-   *
    */
   public async getCarClassData(): Promise<CarClass[]> {
     try {
@@ -130,7 +120,7 @@ class IRacingSDK {
 
   /**
    * Function that will grab all the constants available on the API
-   * @returns A list containing each constant and its corresponding value
+   * @params constant - The constant you want to grab from the API (categories, divisions, event_types)
    */
   public async getConstants({
     constant,
@@ -141,6 +131,54 @@ class IRacingSDK {
       await this.authenticate()
       const res = await this.iracingAPI.get<ConstantType[]>(`/data/constants/${constant}`)
       return res.data
+    } catch (error) {
+      throw error
+    }
+  }
+
+  /**
+   * Function to retrieve hosted sessions.
+   *
+   * Example Usage:
+   * ```typescript
+   * const hostedSessions = await iRacingSDK.getHostedSessions(session_type: "sessions") // Return all hosted sessions
+   * or
+   * const hostedSessions = await iRacingSDK.getHostedSessions(session_type: "combined_sessions", package_id: 1) // Get hosted sessions for a specific package ID
+   * ```
+   *
+   * Required Params:
+   *  @param {string} [session_type] - The type of session to retrieve.
+   *   - `sessions`: Returns all sessions that can be joined as a driver, excluding spectator and non-league pending sessions for the user.
+   *   - `combined_sessions`: Returns sessions that can be joined as a driver or spectator, including non-league pending sessions for the user.
+   *
+   * Optional Params:
+   * @param {number} [package_id] - Can only be used with "combined_sessions" for the session type. If set, returns only sessions using this car or track package ID (per the official API docs).
+   */
+  public async getHostedSessions({
+    session_type,
+    package_id,
+  }: {
+    session_type: "sessions" | "combined_sessions"
+    package_id?: number
+  }): Promise<HostedSession> {
+    if (!session_type) throw new Error("Cannot complete request. Missing required parameters. (session_type)")
+    let URL = ""
+    if (session_type === "combined_sessions") {
+      URL = `/data/hosted/combined_sessions`
+      if (package_id) {
+        URL = URL + `?package_id=${package_id}`
+      }
+    } else if (session_type === "sessions") {
+      URL = `/data/hosted/sessions`
+    } else {
+      throw new Error("Invalid session type. 'session_type' param can only be 'sessions' or 'combined_sessions'")
+    }
+
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const sessionData = await this.request<HostedSession>(res.data?.link)
+      return sessionData
     } catch (error) {
       throw error
     }

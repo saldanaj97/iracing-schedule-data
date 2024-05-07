@@ -17,7 +17,7 @@ type HostedEventType = {
 
 type HostedSession = {
   subscribed: boolean
-  sequence: number
+  sequence?: number
   sessions: HostedSessionData[]
   success: boolean
 }

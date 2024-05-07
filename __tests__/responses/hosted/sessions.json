@@ -1,0 +1,5727 @@
+{
+  "subscribed": false,
+  "sessions": [
+    {
+      "admins": [
+        {
+          "cust_id": 704538,
+          "display_name": "Philipp Thaler",
+          "helmet": {
+            "pattern": 49,
+            "color1": "000000",
+            "color2": "89031f",
+            "color3": "ffffff",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 977816,
+          "display_name": "Daniel Seibel",
+          "helmet": {
+            "pattern": 36,
+            "color1": "60a678",
+            "color2": "58a63d",
+            "color3": "449f76",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "ai_max_skill": 56,
+      "ai_min_skill": 35,
+      "ai_roster_name": "Deskmop Racing- Training 1",
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "audi"
+        },
+        {
+          "car_type": "gt"
+        },
+        {
+          "car_type": "gt3"
+        },
+        {
+          "car_type": "gtd"
+        },
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "sportscar"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 132,
+          "car_name": "BMW M4 GT3",
+          "car_class_id": 4055,
+          "car_class_name": "NECGT324",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 343
+        },
+        {
+          "car_id": 169,
+          "car_name": "Porsche 911 GT3 R (992)",
+          "car_class_id": 4055,
+          "car_class_name": "NECGT324",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 438
+        },
+        {
+          "car_id": 156,
+          "car_name": "Mercedes-AMG GT3 2020",
+          "car_class_id": 4055,
+          "car_class_name": "NECGT324",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 401
+        },
+        {
+          "car_id": 173,
+          "car_name": "Ferrari 296 GT3",
+          "car_class_id": 4055,
+          "car_class_name": "NECGT324",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 449
+        },
+        {
+          "car_id": 176,
+          "car_name": "Audi R8 LMS EVO II GT3",
+          "car_class_id": 4055,
+          "car_class_name": "NECGT324",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 456
+        }
+      ],
+      "cars_left": 0,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "4055": 2
+      },
+      "count_by_car_id": {
+        "132": 0,
+        "156": 0,
+        "169": 0,
+        "173": 1,
+        "176": 1
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": true,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": false,
+        "own_car": true,
+        "own_track": true,
+        "purchase_skus": [
+          10567
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 2,
+      "event_types": [
+        {
+          "event_type": 5
+        }
+      ],
+      "farm": {
+        "farm_id": 11,
+        "display_name": "DE-Fra",
+        "image_path": "/member_images/flags/de.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": true,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 704538,
+        "display_name": "Philipp Thaler",
+        "helmet": {
+          "pattern": 49,
+          "color1": "000000",
+          "color2": "89031f",
+          "color3": "ffffff",
+          "face_type": 0,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T13:40:40Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 40,
+      "max_drivers": 60,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 2,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T14:37:55.429476317Z",
+      "order_id": 36189347,
+      "pace_car_class_id": 11,
+      "pace_car_id": 90,
+      "password_protected": true,
+      "pits_in_use": 0,
+      "practice_length": 100,
+      "private_session_id": 3926347,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 30,
+      "race_laps": 0,
+      "race_length": 50,
+      "restarts": 0,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": true,
+      "session_id": 237596118,
+      "session_name": "Deskmop Racing- Training 1",
+      "session_type": 3,
+      "session_types": [
+        {
+          "session_type": 3
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68626937,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 180,
+      "track": {
+        "category_id": 5,
+        "config_name": "Full Course",
+        "track_id": 465,
+        "track_name": "Virginia International Raceway"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 45,
+        "simulated_start_time": "2024-05-15T11:11:00",
+        "simulated_time_multiplier": 4,
+        "simulated_time_offsets": [
+          210,
+          270
+        ],
+        "skies": 1,
+        "temp_units": 0,
+        "temp_value": 78,
+        "time_of_day": 4,
+        "type": 0,
+        "version": 3,
+        "weather_summary": {
+          "max_precip_rate_desc": "None",
+          "precip_chance": 0
+        },
+        "weather_url": "https://scorpio-assets.s3.amazonaws.com/members/messaging-services/non_expiring/weather-forecast/hosted/3926347.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240507T151525Z&X-Amz-SignedHeaders=host&X-Amz-Expires=5700&X-Amz-Credential=AKIAUO6OO4A3357USLO7%2F20240507%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=7b2604a2f49d188e271e7c20eb8a44b85ab55eb79aa0b33fafdda0f0dabd0e98",
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 807663,
+          "display_name": "Conrad W Senbert2",
+          "helmet": {
+            "pattern": 24,
+            "color1": "fff100",
+            "color2": "000000",
+            "color3": "bfbfbf",
+            "face_type": 10,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "gt3"
+        },
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "sportscar"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 173,
+          "car_name": "Ferrari 296 GT3",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 90,
+          "weight_penalty_kg": 3,
+          "power_adjust_pct": -0.4,
+          "max_dry_tire_sets": 0,
+          "package_id": 449
+        }
+      ],
+      "cars_left": 58,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 3
+      },
+      "count_by_car_id": {
+        "173": 3
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": true,
+        "own_car": true,
+        "own_track": false,
+        "purchase_skus": [
+          10355
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 3,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 11,
+        "display_name": "DE-Fra",
+        "image_path": "/member_images/flags/de.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 807663,
+        "display_name": "Conrad W Senbert2",
+        "helmet": {
+          "pattern": 24,
+          "color1": "fff100",
+          "color2": "000000",
+          "color3": "bfbfbf",
+          "face_type": 10,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T13:14:47Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 62,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T15:15:11Z",
+      "order_id": 36188979,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 3,
+      "practice_length": 120,
+      "private_session_id": 3926330,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237594141,
+      "session_name": "Bathurst",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68626427,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 120,
+      "track": {
+        "category_id": 5,
+        "track_id": 219,
+        "track_name": "Mount Panorama Circuit"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": 70,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 75,
+        "simulated_start_time": "2024-05-11T09:30:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          50,
+          100
+        ],
+        "skies": 1,
+        "temp_units": 1,
+        "temp_value": 20,
+        "time_of_day": 4,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 1,
+        "wind_value": 3
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 379835,
+          "display_name": "Ewout van Cruijsen",
+          "helmet": {
+            "pattern": 59,
+            "color1": "15939b",
+            "color2": "2bfd00",
+            "color3": "000000",
+            "face_type": 1,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "aienabled"
+        },
+        {
+          "car_type": "audi"
+        },
+        {
+          "car_type": "gs"
+        },
+        {
+          "car_type": "gt"
+        },
+        {
+          "car_type": "gt3"
+        },
+        {
+          "car_type": "gt4"
+        },
+        {
+          "car_type": "gtd"
+        },
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "sportscar"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 119,
+          "car_name": "Porsche 718 Cayman GT4 Clubsport MR",
+          "car_class_id": 2268,
+          "car_class_name": "GT4 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 309
+        },
+        {
+          "car_id": 135,
+          "car_name": "McLaren 570S GT4",
+          "car_class_id": 2268,
+          "car_class_name": "GT4 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 349
+        },
+        {
+          "car_id": 132,
+          "car_name": "BMW M4 GT3",
+          "car_class_id": 4055,
+          "car_class_name": "NECGT324",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 343
+        },
+        {
+          "car_id": 157,
+          "car_name": "Mercedes-AMG GT4",
+          "car_class_id": 2268,
+          "car_class_name": "GT4 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 403
+        },
+        {
+          "car_id": 143,
+          "car_name": "Porsche 911 GT3 Cup (992)",
+          "car_class_id": 3104,
+          "car_class_name": "Porsche 911 GT3 Cup (992)",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 367
+        },
+        {
+          "car_id": 122,
+          "car_name": "BMW M4 GT4",
+          "car_class_id": 2268,
+          "car_class_name": "GT4 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 318
+        },
+        {
+          "car_id": 169,
+          "car_name": "Porsche 911 GT3 R (992)",
+          "car_class_id": 4055,
+          "car_class_name": "NECGT324",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 438
+        },
+        {
+          "car_id": 156,
+          "car_name": "Mercedes-AMG GT3 2020",
+          "car_class_id": 4055,
+          "car_class_name": "NECGT324",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 401
+        },
+        {
+          "car_id": 150,
+          "car_name": "Aston Martin Vantage GT4",
+          "car_class_id": 2268,
+          "car_class_name": "GT4 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 386
+        },
+        {
+          "car_id": 173,
+          "car_name": "Ferrari 296 GT3",
+          "car_class_id": 4055,
+          "car_class_name": "NECGT324",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 449
+        },
+        {
+          "car_id": 176,
+          "car_name": "Audi R8 LMS EVO II GT3",
+          "car_class_id": 4055,
+          "car_class_name": "NECGT324",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 456
+        }
+      ],
+      "cars_left": 16,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "2268": 3,
+        "3104": 1,
+        "4055": 19
+      },
+      "count_by_car_id": {
+        "119": 0,
+        "122": 1,
+        "132": 4,
+        "135": 0,
+        "143": 1,
+        "150": 1,
+        "156": 4,
+        "157": 1,
+        "169": 7,
+        "173": 2,
+        "176": 2
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": false,
+        "needs_purchase": false,
+        "own_car": true,
+        "own_track": true,
+        "purchase_skus": [
+          10497,
+          10567,
+          10473,
+          10523
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 23,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 11,
+        "display_name": "DE-Fra",
+        "image_path": "/member_images/flags/de.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 379835,
+        "display_name": "Ewout van Cruijsen",
+        "helmet": {
+          "pattern": 59,
+          "color1": "15939b",
+          "color2": "2bfd00",
+          "color3": "000000",
+          "face_type": 1,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T13:20:50Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 62,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 1,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T15:21:18Z",
+      "order_id": 36189200,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": false,
+      "pits_in_use": 21,
+      "practice_length": 120,
+      "private_session_id": 3926334,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237594526,
+      "session_name": "n24 test",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68626488,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 120,
+      "track": {
+        "category_id": 5,
+        "config_name": "Gesamtstrecke 24h",
+        "track_id": 252,
+        "track_name": "Nürburgring Combined"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "forecast_options": {
+          "forecast_type": 1,
+          "precipitation": 1,
+          "skies": 0,
+          "stop_precip": 4,
+          "temperature": 0,
+          "wind_dir": 0,
+          "wind_speed": 0
+        },
+        "precip_option": 0,
+        "rel_humidity": 45,
+        "simulated_start_time": "2024-05-18T00:00:00",
+        "simulated_time_multiplier": 1,
+        "simulated_time_offsets": [
+          110,
+          220
+        ],
+        "skies": 1,
+        "temp_units": 0,
+        "temp_value": 78,
+        "time_of_day": 4,
+        "type": 0,
+        "version": 1,
+        "weather_summary": {
+          "max_precip_rate": 0,
+          "max_precip_rate_desc": "None",
+          "precip_chance": 0,
+          "skies_high": 0,
+          "skies_low": 0,
+          "temp_high": 19.9,
+          "temp_low": 19.8,
+          "temp_units": 1,
+          "wind_high": 3,
+          "wind_low": 2.4,
+          "wind_units": 1
+        },
+        "weather_url": "https://scorpio-assets.s3.amazonaws.com/members/messaging-services/non_expiring/weather-forecast/hosted/3926334.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240507T151525Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=AKIAUO6OO4A3357USLO7%2F20240507%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=71e3d75e3f516eae4ed95bab30846e7d7ed9c442afdf32da7bd85678da78ec5c",
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 892999,
+          "display_name": "Mitchell Maynard",
+          "helmet": {
+            "pattern": 20,
+            "color1": "ffffff",
+            "color2": "ffffff",
+            "color3": "ffffff",
+            "face_type": 4,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "dirt"
+        },
+        {
+          "car_type": "dirtoval"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 95,
+          "car_name": "Dirt UMP Modified",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 250,
+          "power_adjust_pct": -5,
+          "max_dry_tire_sets": 0,
+          "qual_setup_id": 235397,
+          "qual_setup_filename": "Volusia_v3.0_LoO_IMCA_Modified_OFFICIAL.sto",
+          "race_setup_id": 235397,
+          "race_setup_filename": "Volusia_v3.0_LoO_IMCA_Modified_OFFICIAL.sto",
+          "package_id": 245
+        }
+      ],
+      "cars_left": 56,
+      "category": "dirt_road",
+      "category_id": 4,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 2
+      },
+      "count_by_car_id": {
+        "95": 2
+      },
+      "damage_model": 3,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": false,
+        "needs_purchase": true,
+        "own_car": true,
+        "own_track": false,
+        "purchase_skus": [
+          10427
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 2,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 6,
+        "display_name": "US-Bos",
+        "image_path": "/member_images/flags/e-boston.png",
+        "displayed": true
+      },
+      "fixed_setup": true,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 3,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 892999,
+        "display_name": "Mitchell Maynard",
+        "helmet": {
+          "pattern": 20,
+          "color1": "ffffff",
+          "color2": "ffffff",
+          "color3": "ffffff",
+          "face_type": 4,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T14:29:00Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 60,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": true,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T15:29:20Z",
+      "order_id": 36187456,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": false,
+      "pits_in_use": 1,
+      "practice_length": 60,
+      "private_session_id": 3926202,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237599334,
+      "session_name": "LoO IMCA Style Modified Series Practice",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68627434,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 60,
+      "track": {
+        "category_id": 4,
+        "track_id": 279,
+        "track_name": "Volusia Speedway Park"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": 15,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "dirt_oval"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 45,
+        "simulated_start_time": "2024-05-15T15:36:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          40
+        ],
+        "skies": 1,
+        "temp_units": 0,
+        "temp_value": 78,
+        "time_of_day": 0,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 822487,
+          "display_name": "Wai Sam Leung",
+          "helmet": {
+            "pattern": 58,
+            "color1": "ede321",
+            "color2": "01020d",
+            "color3": "ffffff",
+            "face_type": 2,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "ai_max_skill": 75,
+      "ai_min_skill": 60,
+      "ai_roster_name": "kop",
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "sportscar"
+        },
+        {
+          "car_type": "street circuit"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 160,
+          "car_name": "Toyota GR86",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 416
+        },
+        {
+          "car_id": 143,
+          "car_name": "Porsche 911 GT3 Cup (992)",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 367
+        }
+      ],
+      "cars_left": 47,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 9
+      },
+      "count_by_car_id": {
+        "143": 9,
+        "160": 0
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": false,
+        "own_car": true,
+        "own_track": true,
+        "purchase_skus": [],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 9,
+      "event_types": [
+        {
+          "event_type": 5
+        }
+      ],
+      "farm": {
+        "farm_id": 9,
+        "display_name": "AU-Syd",
+        "image_path": "/member_images/flags/au.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 822487,
+        "display_name": "Wai Sam Leung",
+        "helmet": {
+          "pattern": 58,
+          "color1": "ede321",
+          "color2": "01020d",
+          "color3": "ffffff",
+          "face_type": 2,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T14:59:00Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 4,
+      "max_drivers": 60,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T15:29:30Z",
+      "order_id": 36189435,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 13,
+      "practice_length": 15,
+      "private_session_id": 3926361,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 15,
+      "race_laps": 0,
+      "race_length": 30,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": false,
+      "session_full": false,
+      "session_id": 237601471,
+      "session_name": "Macau SIm",
+      "session_type": 3,
+      "session_types": [
+        {
+          "session_type": 3
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68627873,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 60,
+      "track": {
+        "category_id": 5,
+        "config_name": "Grand Prix Pits",
+        "track_id": 163,
+        "track_name": "Circuit de Spa-Francorchamps"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 45,
+        "simulated_start_time": "2024-05-15T12:00:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          25,
+          50
+        ],
+        "skies": 1,
+        "temp_units": 1,
+        "temp_value": 23,
+        "time_of_day": 4,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 1,
+        "wind_value": 3
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 196129,
+          "display_name": "Chris W Stewart",
+          "helmet": {
+            "pattern": 55,
+            "color1": "000000",
+            "color2": "000000",
+            "color3": "000000",
+            "face_type": 4,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "gt3"
+        },
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "sportscar"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 173,
+          "car_name": "Ferrari 296 GT3",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 449
+        },
+        {
+          "car_id": 169,
+          "car_name": "Porsche 911 GT3 R (992)",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 438
+        }
+      ],
+      "cars_left": 60,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 1
+      },
+      "count_by_car_id": {
+        "169": 1,
+        "173": 0
+      },
+      "damage_model": 3,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": false,
+        "own_car": true,
+        "own_track": true,
+        "purchase_skus": [],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 1,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 6,
+        "display_name": "US-Bos",
+        "image_path": "/member_images/flags/e-boston.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 196129,
+        "display_name": "Chris W Stewart",
+        "helmet": {
+          "pattern": 55,
+          "color1": "000000",
+          "color2": "000000",
+          "color3": "000000",
+          "face_type": 4,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T13:38:59Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 60,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T15:39:20Z",
+      "order_id": 36189335,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 1,
+      "practice_length": 120,
+      "private_session_id": 3926345,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237595994,
+      "session_name": "ChrisStewartTV",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68626928,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 120,
+      "track": {
+        "category_id": 5,
+        "config_name": "Grand Prix",
+        "track_id": 403,
+        "track_name": "Red Bull Ring"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": 50,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 45,
+        "simulated_start_time": "2024-05-15T08:00:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          30,
+          60
+        ],
+        "skies": 0,
+        "temp_units": 0,
+        "temp_value": 70,
+        "time_of_day": 4,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 29781,
+          "display_name": "Ray Phillips",
+          "helmet": {
+            "pattern": 18,
+            "color1": "031adc",
+            "color2": "fe2725",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "sportscar"
+        },
+        {
+          "car_type": "supercup"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 88,
+          "car_name": "[Legacy] Porsche 911 GT3 Cup (991)",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 229
+        }
+      ],
+      "cars_left": 60,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 2
+      },
+      "count_by_car_id": {
+        "88": 2
+      },
+      "damage_model": 3,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": true,
+        "own_car": false,
+        "own_track": false,
+        "purchase_skus": [
+          10513,
+          10212
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 2,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 6,
+        "display_name": "US-Bos",
+        "image_path": "/member_images/flags/e-boston.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 29781,
+        "display_name": "Ray Phillips",
+        "helmet": {
+          "pattern": 18,
+          "color1": "031adc",
+          "color2": "fe2725",
+          "color3": "000000",
+          "face_type": 0,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T14:00:00Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 62,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T16:00:18Z",
+      "order_id": 36188663,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 2,
+      "practice_length": 120,
+      "private_session_id": 3926293,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237597444,
+      "session_name": "Mid Ohio Test",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68627142,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 120,
+      "track": {
+        "category_id": 5,
+        "config_name": "Full Course",
+        "track_id": 153,
+        "track_name": "Mid-Ohio Sports Car Course"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 25,
+        "simulated_start_time": "2024-04-04T12:00:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          30,
+          60
+        ],
+        "skies": 1,
+        "temp_units": 0,
+        "temp_value": 65,
+        "time_of_day": 4,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 7
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 84181,
+          "display_name": "Enzo Mucci",
+          "helmet": {
+            "pattern": 68,
+            "color1": "f6d205",
+            "color2": "010c5f",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "formula3"
+        },
+        {
+          "car_type": "openwheel"
+        },
+        {
+          "car_type": "road"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 106,
+          "car_name": "Dallara F3",
+          "car_class_id": 870,
+          "car_class_name": "Dallara F3",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 274
+        }
+      ],
+      "cars_left": 60,
+      "category": "formula_car",
+      "category_id": 6,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "870": 2
+      },
+      "count_by_car_id": {
+        "106": 2
+      },
+      "damage_model": 3,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": false,
+        "own_car": true,
+        "own_track": true,
+        "purchase_skus": [],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 2,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 11,
+        "display_name": "DE-Fra",
+        "image_path": "/member_images/flags/de.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 3,
+      "host": {
+        "cust_id": 84181,
+        "display_name": "Enzo Mucci",
+        "helmet": {
+          "pattern": 68,
+          "color1": "f6d205",
+          "color2": "010c5f",
+          "color3": "000000",
+          "face_type": 0,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T15:06:05Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 62,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 2,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T16:06:32Z",
+      "order_id": 36189973,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 2,
+      "practice_length": 60,
+      "private_session_id": 3926423,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237602005,
+      "session_name": "EM Testing",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68627970,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 60,
+      "track": {
+        "category_id": 6,
+        "config_name": "International",
+        "track_id": 95,
+        "track_name": "Sebring International Raceway"
+      },
+      "track_state": {
+        "leave_marbles": false,
+        "practice_grip_compound": -1,
+        "practice_rubber": 100,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 0,
+        "simulated_start_time": "2024-05-15T08:16:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          40
+        ],
+        "skies": 0,
+        "temp_units": 0,
+        "temp_value": 65,
+        "time_of_day": 1,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 1
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 62032,
+          "display_name": "Ty Majeski",
+          "helmet": {
+            "pattern": 27,
+            "color1": "000000",
+            "color2": "1e1e1f",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "oval"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 164,
+          "car_name": "Late Model Stock",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 426
+        }
+      ],
+      "cars_left": 60,
+      "category": "oval",
+      "category_id": 1,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 2
+      },
+      "count_by_car_id": {
+        "164": 2
+      },
+      "damage_model": 3,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": true,
+        "own_car": false,
+        "own_track": true,
+        "purchase_skus": [
+          10550
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 2,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 6,
+        "display_name": "US-Bos",
+        "image_path": "/member_images/flags/e-boston.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 1,
+      "host": {
+        "cust_id": 62032,
+        "display_name": "Ty Majeski",
+        "helmet": {
+          "pattern": 27,
+          "color1": "000000",
+          "color2": "1e1e1f",
+          "color3": "000000",
+          "face_type": 0,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 17,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T14:06:36Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": true,
+      "max_ai_drivers": 0,
+      "max_drivers": 62,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T16:07:06Z",
+      "order_id": 36189507,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 2,
+      "practice_length": 120,
+      "private_session_id": 3926370,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 3,
+      "restrict_results": true,
+      "restrict_viewing": true,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237597824,
+      "session_name": "posse",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68627176,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 120,
+      "track": {
+        "category_id": 1,
+        "config_name": "Asphalt",
+        "track_id": 17,
+        "track_name": "Lanier National Speedway"
+      },
+      "track_state": {
+        "leave_marbles": false,
+        "practice_grip_compound": -1,
+        "practice_rubber": 100,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "oval"
+        }
+      ],
+      "unsport_conduct_rule_mode": 3,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 52,
+        "simulated_start_time": "2024-05-08T14:30:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          15,
+          30
+        ],
+        "skies": 2,
+        "temp_units": 0,
+        "temp_value": 80,
+        "time_of_day": 4,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 1,
+        "wind_units": 0,
+        "wind_value": 8
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 916293,
+          "display_name": "Marcel Laczycki",
+          "helmet": {
+            "pattern": 28,
+            "color1": "00ff47",
+            "color2": "00d1ff",
+            "color3": "111111",
+            "face_type": 8,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 1016774,
+          "display_name": "Archie Johnson",
+          "helmet": {
+            "pattern": 1,
+            "color1": "ffffff",
+            "color2": "111111",
+            "color3": "fc0706",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "street circuit"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 160,
+          "car_name": "Toyota GR86",
+          "car_class_id": 4012,
+          "car_class_name": "Toyota GR86",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 416
+        }
+      ],
+      "cars_left": 60,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "4012": 2
+      },
+      "count_by_car_id": {
+        "160": 2
+      },
+      "damage_model": 3,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": false,
+        "own_car": true,
+        "own_track": true,
+        "purchase_skus": [],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 2,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 11,
+        "display_name": "DE-Fra",
+        "image_path": "/member_images/flags/de.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 916293,
+        "display_name": "Marcel Laczycki",
+        "helmet": {
+          "pattern": 28,
+          "color1": "00ff47",
+          "color2": "00d1ff",
+          "color3": "111111",
+          "face_type": 8,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T15:08:18Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 60,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 1,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T16:08:49Z",
+      "order_id": 36189988,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 2,
+      "practice_length": 60,
+      "private_session_id": 3926427,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237602129,
+      "session_name": "gt44",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68627981,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 60,
+      "track": {
+        "category_id": 5,
+        "config_name": "National",
+        "track_id": 343,
+        "track_name": "Silverstone Circuit"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 8,
+        "rel_humidity": 45,
+        "simulated_start_time": "2024-05-15T21:00:00",
+        "simulated_time_multiplier": 1,
+        "simulated_time_offsets": [
+          30,
+          60
+        ],
+        "skies": 1,
+        "temp_units": 0,
+        "temp_value": 78,
+        "time_of_day": 4,
+        "type": 0,
+        "version": 1,
+        "weather_summary": {
+          "max_precip_rate": 4,
+          "max_precip_rate_desc": "Moderate",
+          "precip_chance": 100,
+          "skies_high": 3,
+          "skies_low": 3,
+          "temp_high": 19.3,
+          "temp_low": 19.3,
+          "temp_units": 1,
+          "wind_high": 1.8,
+          "wind_low": 1.8,
+          "wind_units": 1
+        },
+        "weather_url": "https://scorpio-assets.s3.amazonaws.com/members/messaging-services/non_expiring/weather-forecast/hosted/3926427.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240507T151525Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3720&X-Amz-Credential=AKIAUO6OO4A3357USLO7%2F20240507%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=04b1a175eae053b6ffa3dfee9869d6986a822dbe7133a5891e15a7ab79552952",
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 847610,
+          "display_name": "Mike Stek3",
+          "helmet": {
+            "pattern": 1,
+            "color1": "efd600",
+            "color2": "d7162d",
+            "color3": "111111",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "chevy"
+        },
+        {
+          "car_type": "classa"
+        },
+        {
+          "car_type": "cupcar"
+        },
+        {
+          "car_type": "nascar"
+        },
+        {
+          "car_type": "oval"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 103,
+          "car_name": "NASCAR Cup Series Chevrolet Camaro ZL1",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 266
+        }
+      ],
+      "cars_left": 61,
+      "category": "oval",
+      "category_id": 1,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 2
+      },
+      "count_by_car_id": {
+        "103": 2
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": true,
+        "own_car": false,
+        "own_track": false,
+        "purchase_skus": [
+          10016,
+          10447
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 2,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 6,
+        "display_name": "US-Bos",
+        "image_path": "/member_images/flags/e-boston.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 847610,
+        "display_name": "Mike Stek3",
+        "helmet": {
+          "pattern": 1,
+          "color1": "efd600",
+          "color2": "d7162d",
+          "color3": "111111",
+          "face_type": 0,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T15:12:41Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 62,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T16:12:55Z",
+      "order_id": 36190024,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 1,
+      "practice_length": 60,
+      "private_session_id": 3926429,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237602377,
+      "session_name": "rebel stek",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68627998,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 60,
+      "track": {
+        "category_id": 1,
+        "config_name": "Oval",
+        "track_id": 20,
+        "track_name": "Homestead Miami Speedway"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "oval"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 20,
+        "simulated_start_time": "2024-05-15T12:00:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          30,
+          60
+        ],
+        "skies": 2,
+        "temp_units": 0,
+        "temp_value": 70,
+        "time_of_day": 4,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 571755,
+          "display_name": "Rupian Castle",
+          "helmet": {
+            "pattern": 20,
+            "color1": "001e20",
+            "color2": "001e20",
+            "color3": "001e20",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "audi"
+        },
+        {
+          "car_type": "gt"
+        },
+        {
+          "car_type": "gt3"
+        },
+        {
+          "car_type": "gtd"
+        },
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "sportscar"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 176,
+          "car_name": "Audi R8 LMS EVO II GT3",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "qual_setup_id": 230695,
+          "qual_setup_filename": "fixed.sto",
+          "race_setup_id": 230695,
+          "race_setup_filename": "fixed.sto",
+          "package_id": 456
+        },
+        {
+          "car_id": 169,
+          "car_name": "Porsche 911 GT3 R (992)",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "qual_setup_id": 231017,
+          "qual_setup_filename": "fixed.sto",
+          "race_setup_id": 231017,
+          "race_setup_filename": "fixed.sto",
+          "package_id": 438
+        },
+        {
+          "car_id": 43,
+          "car_name": "McLaren MP4-12C GT3",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "qual_setup_id": 233335,
+          "qual_setup_filename": "fixed.sto",
+          "race_setup_id": 233335,
+          "race_setup_filename": "fixed.sto",
+          "package_id": 133
+        }
+      ],
+      "cars_left": 62,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 0
+      },
+      "count_by_car_id": {
+        "43": 0,
+        "169": 0,
+        "176": 0
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": true,
+        "own_car": true,
+        "own_track": false,
+        "purchase_skus": [
+          10355,
+          10567,
+          10335
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 0,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 6,
+        "display_name": "US-Bos",
+        "image_path": "/member_images/flags/e-boston.png",
+        "displayed": true
+      },
+      "fixed_setup": true,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 571755,
+        "display_name": "Rupian Castle",
+        "helmet": {
+          "pattern": 20,
+          "color1": "001e20",
+          "color2": "001e20",
+          "color3": "001e20",
+          "face_type": 0,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T15:13:58Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 21,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T16:14:10Z",
+      "order_id": 36190036,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 0,
+      "practice_length": 60,
+      "private_session_id": 3926431,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_desc": "Testing",
+      "session_full": false,
+      "session_id": 237602497,
+      "session_name": "RPM",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68628001,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 60,
+      "track": {
+        "category_id": 5,
+        "track_id": 219,
+        "track_name": "Mount Panorama Circuit"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "forecast_options": {
+          "forecast_type": 1,
+          "precipitation": 2,
+          "skies": 0,
+          "stop_precip": 0,
+          "temperature": 0,
+          "wind_dir": 0,
+          "wind_speed": 0
+        },
+        "precip_option": 8,
+        "rel_humidity": 45,
+        "simulated_start_time": "2024-05-15T10:00:00",
+        "simulated_time_multiplier": 1,
+        "simulated_time_offsets": [
+          30,
+          60
+        ],
+        "skies": 1,
+        "temp_units": 0,
+        "temp_value": 78,
+        "time_of_day": 4,
+        "type": 0,
+        "version": 1,
+        "weather_summary": {
+          "max_precip_rate": 0.2,
+          "max_precip_rate_desc": "Light",
+          "precip_chance": 20,
+          "skies_high": 2,
+          "skies_low": 2,
+          "temp_high": 19.1,
+          "temp_low": 19.1,
+          "temp_units": 1,
+          "wind_high": 23.3,
+          "wind_low": 22.7,
+          "wind_units": 1
+        },
+        "weather_url": "https://scorpio-assets.s3.amazonaws.com/members/messaging-services/non_expiring/weather-forecast/hosted/3926431.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240507T151525Z&X-Amz-SignedHeaders=host&X-Amz-Expires=4080&X-Amz-Credential=AKIAUO6OO4A3357USLO7%2F20240507%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=e6a33ba8d523c43aff55f094882c0a4a31c02c2b0da0aeb490b0c5e9e2a25353",
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 78890,
+          "display_name": "Ed Adams",
+          "helmet": {
+            "pattern": 60,
+            "color1": "ff0f0f",
+            "color2": "fff53d",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "audi"
+        },
+        {
+          "car_type": "gt"
+        },
+        {
+          "car_type": "gt3"
+        },
+        {
+          "car_type": "gtd"
+        },
+        {
+          "car_type": "huracan"
+        },
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "sportscar"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 132,
+          "car_name": "BMW M4 GT3",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 60,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "qual_setup_id": 230719,
+          "qual_setup_filename": "medium_downforce_sprint.sto",
+          "race_setup_id": 230719,
+          "race_setup_filename": "medium_downforce_sprint.sto",
+          "package_id": 343
+        },
+        {
+          "car_id": 176,
+          "car_name": "Audi R8 LMS EVO II GT3",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 60,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "qual_setup_id": 230701,
+          "qual_setup_filename": "medium_downforce_sprint.sto",
+          "race_setup_id": 230701,
+          "race_setup_filename": "medium_downforce_sprint.sto",
+          "package_id": 456
+        },
+        {
+          "car_id": 173,
+          "car_name": "Ferrari 296 GT3",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 60,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "qual_setup_id": 230877,
+          "qual_setup_filename": "medium_downforce_sprint.sto",
+          "race_setup_id": 230877,
+          "race_setup_filename": "medium_downforce_sprint.sto",
+          "package_id": 449
+        },
+        {
+          "car_id": 156,
+          "car_name": "Mercedes-AMG GT3 2020",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 60,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "qual_setup_id": 230994,
+          "qual_setup_filename": "medium_downforce_sprint.sto",
+          "race_setup_id": 230994,
+          "race_setup_filename": "medium_downforce_sprint.sto",
+          "package_id": 401
+        },
+        {
+          "car_id": 169,
+          "car_name": "Porsche 911 GT3 R (992)",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 60,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "qual_setup_id": 231023,
+          "qual_setup_filename": "medium_downforce_sprint.sto",
+          "race_setup_id": 231023,
+          "race_setup_filename": "medium_downforce_sprint.sto",
+          "package_id": 438
+        },
+        {
+          "car_id": 133,
+          "car_name": "Lamborghini Huracán GT3 EVO",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 60,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "qual_setup_id": 230930,
+          "qual_setup_filename": "medium_downforce_sprint.sto",
+          "race_setup_id": 230930,
+          "race_setup_filename": "medium_downforce_sprint.sto",
+          "package_id": 345
+        }
+      ],
+      "cars_left": 60,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "2708": 2
+      },
+      "count_by_car_id": {
+        "132": 0,
+        "133": 0,
+        "156": 1,
+        "169": 1,
+        "173": 0,
+        "176": 0
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": false,
+        "own_car": true,
+        "own_track": true,
+        "purchase_skus": [
+          10567,
+          10495
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 2,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 6,
+        "display_name": "US-Bos",
+        "image_path": "/member_images/flags/e-boston.png",
+        "displayed": true
+      },
+      "fixed_setup": true,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 78890,
+        "display_name": "Ed Adams",
+        "helmet": {
+          "pattern": 60,
+          "color1": "ff0f0f",
+          "color2": "fff53d",
+          "color3": "000000",
+          "face_type": 0,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T14:15:22Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 62,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 1,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T16:15:50Z",
+      "order_id": 36189503,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 2,
+      "practice_length": 120,
+      "private_session_id": 3926376,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237598335,
+      "session_name": "GoRacing Practice",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68627236,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 120,
+      "track": {
+        "category_id": 5,
+        "config_name": "Full Course",
+        "track_id": 47,
+        "track_name": "WeatherTech Raceway at Laguna Seca"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": 70,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": true,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 45,
+        "simulated_start_time": "2024-05-15T09:00:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          30,
+          60
+        ],
+        "skies": 2,
+        "temp_units": 0,
+        "temp_value": 68,
+        "time_of_day": 4,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 515024,
+          "display_name": "Scott Treds",
+          "helmet": {
+            "pattern": 36,
+            "color1": "0d1b1e",
+            "color2": "d741a7",
+            "color3": "427aa1",
+            "face_type": 8,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "openwheel"
+        },
+        {
+          "car_type": "oval"
+        },
+        {
+          "car_type": "road"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 99,
+          "car_name": "Dallara IR18",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 255
+        }
+      ],
+      "cars_left": 52,
+      "category": "formula_car",
+      "category_id": 6,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 3
+      },
+      "count_by_car_id": {
+        "99": 3
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": false,
+        "needs_purchase": true,
+        "own_car": false,
+        "own_track": true,
+        "purchase_skus": [
+          10440
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 3,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 6,
+        "display_name": "US-Bos",
+        "image_path": "/member_images/flags/e-boston.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 515024,
+        "display_name": "Scott Treds",
+        "helmet": {
+          "pattern": 36,
+          "color1": "0d1b1e",
+          "color2": "d741a7",
+          "color3": "427aa1",
+          "face_type": 8,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 25,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T12:32:00Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 38,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": true,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T16:32:24Z",
+      "order_id": 36188931,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": false,
+      "pits_in_use": 3,
+      "practice_length": 240,
+      "private_session_id": 3926307,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 3,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": false,
+      "session_desc": "Please write me your best haiku after joining the or i will invalidate all of your laps that are faster than mine.",
+      "session_full": false,
+      "session_id": 237591217,
+      "session_name": "Indy 500 Open Practice",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68625885,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 240,
+      "track": {
+        "category_id": 6,
+        "config_name": "Open Wheel Oval",
+        "track_id": 453,
+        "track_name": "Indianapolis Motor Speedway"
+      },
+      "track_state": {
+        "leave_marbles": false,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "oval"
+        }
+      ],
+      "unsport_conduct_rule_mode": 4,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": true,
+        "fog": 0,
+        "forecast_options": {
+          "forecast_type": 1,
+          "precipitation": 1,
+          "skies": 0,
+          "stop_precip": 4,
+          "temperature": 0,
+          "wind_dir": 0,
+          "wind_speed": 0
+        },
+        "precip_option": 0,
+        "rel_humidity": 45,
+        "simulated_start_time": "2024-05-25T12:00:00",
+        "simulated_time_multiplier": 1,
+        "simulated_time_offsets": [
+          15,
+          30
+        ],
+        "skies": 1,
+        "temp_units": 0,
+        "temp_value": 78,
+        "time_of_day": 4,
+        "type": 0,
+        "version": 1,
+        "weather_summary": {
+          "max_precip_rate": 0,
+          "max_precip_rate_desc": "None",
+          "precip_chance": 0,
+          "skies_high": 3,
+          "skies_low": 0,
+          "temp_high": 26.4,
+          "temp_low": 21.3,
+          "temp_units": 1,
+          "wind_high": 12.9,
+          "wind_low": 10.9,
+          "wind_units": 1
+        },
+        "weather_url": "https://scorpio-assets.s3.amazonaws.com/members/messaging-services/non_expiring/weather-forecast/hosted/3926307.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240507T151525Z&X-Amz-SignedHeaders=host&X-Amz-Expires=5160&X-Amz-Credential=AKIAUO6OO4A3357USLO7%2F20240507%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=c628076f508dbe740159d0b512e9e3b64a0907c09aea4ffed50f41a55965d6fd",
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 220163,
+          "display_name": "Roger Buff Sr",
+          "helmet": {
+            "pattern": 56,
+            "color1": "000000",
+            "color2": "000000",
+            "color3": "FFCC00",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 123648,
+          "display_name": "Everett F Lane",
+          "helmet": {
+            "pattern": 35,
+            "color1": "09090a",
+            "color2": "e51710",
+            "color3": "f5f506",
+            "face_type": 6,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 419975,
+          "display_name": "Mike Aiello Jr",
+          "helmet": {
+            "pattern": 32,
+            "color1": "E8F202",
+            "color2": "1614E6",
+            "color3": "080807",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 44803,
+          "display_name": "Jimmy Tolliver",
+          "helmet": {
+            "pattern": 65,
+            "color1": "980000",
+            "color2": "ffffff",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 185351,
+          "display_name": "Brad Neer",
+          "helmet": {
+            "pattern": 36,
+            "color1": "000000",
+            "color2": "eaeaea",
+            "color3": "eb2d2e",
+            "face_type": 4,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 80390,
+          "display_name": "Bart Murack",
+          "helmet": {
+            "pattern": 17,
+            "color1": "000000",
+            "color2": "000000",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 450319,
+          "display_name": "Daniel Lewis5",
+          "helmet": {
+            "pattern": 54,
+            "color1": "ffffff",
+            "color2": "ffffff",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 157448,
+          "display_name": "Frank Scott",
+          "helmet": {
+            "pattern": 32,
+            "color1": "fda708",
+            "color2": "f9b20b",
+            "color3": "f0b70c",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 67210,
+          "display_name": "Wayne Finley",
+          "helmet": {
+            "pattern": 17,
+            "color1": "008dd5",
+            "color2": "ffef26",
+            "color3": "fc0706",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 70154,
+          "display_name": "Ben Ivaldi",
+          "helmet": {
+            "pattern": 56,
+            "color1": "faf5f5",
+            "color2": "1d1b16",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 113933,
+          "display_name": "Kenneth Mikesell",
+          "helmet": {
+            "pattern": 32,
+            "color1": "fb8113",
+            "color2": "f8f8f6",
+            "color3": "090908",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 39693,
+          "display_name": "Bob Ziegler",
+          "helmet": {
+            "pattern": 48,
+            "color1": "d51313",
+            "color2": "000000",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 447497,
+          "display_name": "Rich Rankin",
+          "helmet": {
+            "pattern": 22,
+            "color1": "f4f1e8",
+            "color2": "e9eaee",
+            "color3": "2d2e8a",
+            "face_type": 5,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 82704,
+          "display_name": "Nicholas Doucette",
+          "helmet": {
+            "pattern": 59,
+            "color1": "00ff00",
+            "color2": "ffffff",
+            "color3": "000000",
+            "face_type": 8,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 243346,
+          "display_name": "Mitchell Wilkes",
+          "helmet": {
+            "pattern": 17,
+            "color1": "ff0101",
+            "color2": "000000",
+            "color3": "f0f0f0",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 245904,
+          "display_name": "Randy Minor",
+          "helmet": {
+            "pattern": 57,
+            "color1": "fff300",
+            "color2": "373ef3",
+            "color3": "371622",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 150295,
+          "display_name": "William Fugatt",
+          "helmet": {
+            "pattern": 17,
+            "color1": "ff0000",
+            "color2": "ffffff",
+            "color3": "000000",
+            "face_type": 4,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 75671,
+          "display_name": "Bruce Hansen",
+          "helmet": {
+            "pattern": 14,
+            "color1": "12C1ED",
+            "color2": "4AD1F7",
+            "color3": "7ED5F1",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 16794,
+          "display_name": "Bob Mertens",
+          "helmet": {
+            "pattern": 19,
+            "color1": "ED2129",
+            "color2": "feec04",
+            "color3": "0921f5",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 912017,
+          "display_name": "Justin Wallace3",
+          "helmet": {
+            "pattern": 9,
+            "color1": "000000",
+            "color2": "686868",
+            "color3": "ffffff",
+            "face_type": 4,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 42269,
+          "display_name": "Ed Salls",
+          "helmet": {
+            "pattern": 35,
+            "color1": "e60f2a",
+            "color2": "030303",
+            "color3": "09090a",
+            "face_type": 4,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 256670,
+          "display_name": "Matias Farias",
+          "helmet": {
+            "pattern": 2,
+            "color1": "ffffff",
+            "color2": "2efffd",
+            "color3": "000000",
+            "face_type": 8,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 145564,
+          "display_name": "Eric Riviere",
+          "helmet": {
+            "pattern": 60,
+            "color1": "0900ce",
+            "color2": "76ff0e",
+            "color3": "ffffff",
+            "face_type": 8,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 24993,
+          "display_name": "Ron Lanzafame",
+          "helmet": {
+            "pattern": 19,
+            "color1": "110E0E",
+            "color2": "DFDE3F",
+            "color3": "D03534",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 515237,
+          "display_name": "Rene Schiewer",
+          "helmet": {
+            "pattern": 3,
+            "color1": "00fddc",
+            "color2": "f9008a",
+            "color3": "00fff5",
+            "face_type": 9,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 77986,
+          "display_name": "Mitchell Qualls",
+          "helmet": {
+            "pattern": 56,
+            "color1": "192698",
+            "color2": "2a3795",
+            "color3": "ffffff",
+            "face_type": 4,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 553771,
+          "display_name": "Timothy J Miller Sr",
+          "helmet": {
+            "pattern": 57,
+            "color1": "fa0601",
+            "color2": "111111",
+            "color3": "070217",
+            "face_type": 8,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 20645,
+          "display_name": "Mike Hesch",
+          "helmet": {
+            "pattern": 3,
+            "color1": "ffee47",
+            "color2": "0300c2",
+            "color3": "111111",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 103084,
+          "display_name": "Greg McClendon",
+          "helmet": {
+            "pattern": 26,
+            "color1": "031adc",
+            "color2": "fef246",
+            "color3": "d90d26",
+            "face_type": 2,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 200750,
+          "display_name": "Gary Jenkins2",
+          "helmet": {
+            "pattern": 3,
+            "color1": "c54646",
+            "color2": "000000",
+            "color3": "ee1010",
+            "face_type": 8,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 142636,
+          "display_name": "April Thomas",
+          "helmet": {
+            "pattern": 23,
+            "color1": "20a0e9",
+            "color2": "ffffff",
+            "color3": "000000",
+            "face_type": 3,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 266804,
+          "display_name": "Anthony Handley",
+          "helmet": {
+            "pattern": 67,
+            "color1": "0B0A0A",
+            "color2": "b80505",
+            "color3": "f2f2f2",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 49330,
+          "display_name": "Joe Pascale",
+          "helmet": {
+            "pattern": 57,
+            "color1": "272500",
+            "color2": "877e00",
+            "color3": "000427",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 511282,
+          "display_name": "Christy Barnett",
+          "helmet": {
+            "pattern": 9,
+            "color1": "1850dd",
+            "color2": "a3f000",
+            "color3": "1131a2",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 922809,
+          "display_name": "Nick Cordova",
+          "helmet": {
+            "pattern": 24,
+            "color1": "ffd600",
+            "color2": "ffd404",
+            "color3": "ffd404",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 111289,
+          "display_name": "Rodney German",
+          "helmet": {
+            "pattern": 3,
+            "color1": "5e0e67",
+            "color2": "320836",
+            "color3": "730512",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 33978,
+          "display_name": "James Moughan",
+          "helmet": {
+            "pattern": 28,
+            "color1": "ffffff",
+            "color2": "0034d9",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 461114,
+          "display_name": "Josh Seay2",
+          "helmet": {
+            "pattern": 35,
+            "color1": "0cfe56",
+            "color2": "090a09",
+            "color3": "363636",
+            "face_type": 6,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 998351,
+          "display_name": "Camden Palmer2",
+          "helmet": {
+            "pattern": 8,
+            "color1": "fc0706",
+            "color2": "000000",
+            "color3": "111111",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 68675,
+          "display_name": "Riley Roush",
+          "helmet": {
+            "pattern": 12,
+            "color1": "5e029b",
+            "color2": "ffffff",
+            "color3": "000000",
+            "face_type": 2,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 102979,
+          "display_name": "Ryan McGouirk",
+          "helmet": {
+            "pattern": 20,
+            "color1": "fc0706",
+            "color2": "000000",
+            "color3": "fc0706",
+            "face_type": 8,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 719436,
+          "display_name": "Jimmy Crawford",
+          "helmet": {
+            "pattern": 17,
+            "color1": "030303",
+            "color2": "030303",
+            "color3": "030303",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 158926,
+          "display_name": "Kenneth Wright",
+          "helmet": {
+            "pattern": 17,
+            "color1": "251d6b",
+            "color2": "cccccc",
+            "color3": "666666",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 182604,
+          "display_name": "Dan Marcantonio",
+          "helmet": {
+            "pattern": 67,
+            "color1": "FD1E26",
+            "color2": "ffffff",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 115921,
+          "display_name": "Kevin McCarthy",
+          "helmet": {
+            "pattern": 17,
+            "color1": "0047ff",
+            "color2": "0010e6",
+            "color3": "fffd1d",
+            "face_type": 11,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 178130,
+          "display_name": "Sean Molczyk",
+          "helmet": {
+            "pattern": 56,
+            "color1": "C5040C",
+            "color2": "2A3795",
+            "color3": "E0DEDE",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 117844,
+          "display_name": "Bruce Mentzer",
+          "helmet": {
+            "pattern": 17,
+            "color1": "000000",
+            "color2": "ff200d",
+            "color3": "ffffff",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 570477,
+          "display_name": "Zack Peche",
+          "helmet": {
+            "pattern": 35,
+            "color1": "d400ff",
+            "color2": "000000",
+            "color3": "5f5f5f",
+            "face_type": 8,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 422753,
+          "display_name": "Giovanni Occhipinti",
+          "helmet": {
+            "pattern": 58,
+            "color1": "fffcfc",
+            "color2": "b01414",
+            "color3": "056810",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 37736,
+          "display_name": "Kiddhy Engström",
+          "helmet": {
+            "pattern": 32,
+            "color1": "4D4D4D",
+            "color2": "1A2160",
+            "color3": "8AA88B",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 15724,
+          "display_name": "Arthur Lucas",
+          "helmet": {
+            "pattern": 17,
+            "color1": "E70010",
+            "color2": "fcfefe",
+            "color3": "f5030c",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 278134,
+          "display_name": "Patrick Alvarado",
+          "helmet": {
+            "pattern": 19,
+            "color1": "000000",
+            "color2": "ed2129",
+            "color3": "d6ce4c",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 75385,
+          "display_name": "Rod Rhonemus Jr",
+          "helmet": {
+            "pattern": 57,
+            "color1": "000000",
+            "color2": "000000",
+            "color3": "8c0404",
+            "face_type": 4,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 387196,
+          "display_name": "Timmy Reed",
+          "helmet": {
+            "pattern": 32,
+            "color1": "ff9203",
+            "color2": "ffffff",
+            "color3": "ff9a03",
+            "face_type": 6,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 101754,
+          "display_name": "Rod Rhonemus Sr",
+          "helmet": {
+            "pattern": 20,
+            "color1": "181515",
+            "color2": "000000",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 1002738,
+          "display_name": "Michael Watson15",
+          "helmet": {
+            "pattern": 1,
+            "color1": "eba113",
+            "color2": "ef8011",
+            "color3": "1a1902",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 97534,
+          "display_name": "Robert Sundberg",
+          "helmet": {
+            "pattern": 19,
+            "color1": "c40100",
+            "color2": "000000",
+            "color3": "860000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 578935,
+          "display_name": "Mike Breeze",
+          "helmet": {
+            "pattern": 43,
+            "color1": "b02908",
+            "color2": "060606",
+            "color3": "ffffff",
+            "face_type": 4,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "alt_asset_id": 1,
+      "car_types": [
+        {
+          "car_type": "chevy"
+        },
+        {
+          "car_type": "cupcar"
+        },
+        {
+          "car_type": "nascar"
+        },
+        {
+          "car_type": "oval"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 141,
+          "car_name": "NASCAR Cup Series Next Gen Toyota Camry",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 66,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 361
+        },
+        {
+          "car_id": 140,
+          "car_name": "NASCAR Cup Series Next Gen Ford Mustang",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 66,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 359
+        },
+        {
+          "car_id": 139,
+          "car_name": "NASCAR Cup Series Next Gen Chevrolet Camaro ZL1",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 66,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 357
+        }
+      ],
+      "cars_left": 62,
+      "category": "oval",
+      "category_id": 1,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 0
+      },
+      "count_by_car_id": {
+        "139": 0,
+        "140": 0,
+        "141": 0
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": false,
+        "needs_purchase": true,
+        "own_car": false,
+        "own_track": false,
+        "purchase_skus": [
+          10065,
+          10503,
+          10504,
+          10505
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 0,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 21,
+        "display_name": "US-West",
+        "image_path": "/member_images/flags/w-amazon.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 3,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 77986,
+        "display_name": "Mitchell Qualls",
+        "helmet": {
+          "pattern": 56,
+          "color1": "192698",
+          "color2": "2a3795",
+          "color3": "ffffff",
+          "face_type": 4,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 36,
+      "incident_warn_mode": 1,
+      "incident_warn_param1": 21,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T15:01:00Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": true,
+      "max_ai_drivers": 0,
+      "max_drivers": 62,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T17:01:19Z",
+      "order_id": 36187095,
+      "pace_car_class_id": 11,
+      "pace_car_id": 90,
+      "password_protected": false,
+      "pits_in_use": 0,
+      "practice_length": 120,
+      "private_session_id": 3926170,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_desc": "\"R\" Rated Race Servers each have a 80 minute Practice, 5 minute Qualifying then a 35 minute, 30 LAP Race starting every 80 minutes. - RULES: All iRacing Rules apply Except Cussing, CUSSING is Allowed on this Server, No intentional Wrecking, No Swerving or Warming Tires on Pace Laps B4 Green or Under Cautions,, Race Clean & Have Fun. Medical Marijuana Buds, Beer and Alcohol are excepted in moderation, the more the better... if you were an ADMIN or Want to be an ADMIN please send a text message to Mitch @ 559-355-1547...",
+      "session_full": false,
+      "session_id": 237601627,
+      "session_name": "DARLINGTON*NOT*GOTTA*PIT*PRACTICE*",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68627930,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 120,
+      "track": {
+        "category_id": 1,
+        "track_id": 115,
+        "track_name": "Darlington Raceway"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "oval"
+        }
+      ],
+      "unsport_conduct_rule_mode": 3,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 0,
+        "simulated_start_time": "2024-05-15T06:18:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          90,
+          105
+        ],
+        "skies": 2,
+        "temp_units": 0,
+        "temp_value": 65,
+        "time_of_day": 5,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 6,
+        "wind_units": 0,
+        "wind_value": 1
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 1033940,
+          "display_name": "Brooklyn Breaden2",
+          "helmet": {
+            "pattern": 57,
+            "color1": "000000",
+            "color2": "710298",
+            "color3": "000000",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 1034212,
+          "display_name": "Adrian Butler2",
+          "helmet": {
+            "pattern": 1,
+            "color1": "0300c2",
+            "color2": "111111",
+            "color3": "ffee47",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "amg"
+        },
+        {
+          "car_type": "f1"
+        },
+        {
+          "car_type": "ford"
+        },
+        {
+          "car_type": "formula"
+        },
+        {
+          "car_type": "formula1"
+        },
+        {
+          "car_type": "formulavee"
+        },
+        {
+          "car_type": "openwheel"
+        },
+        {
+          "car_type": "oval"
+        },
+        {
+          "car_type": "prototype"
+        },
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "w12"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 163,
+          "car_name": "Ray FF1600",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 424
+        },
+        {
+          "car_id": 13,
+          "car_name": "Radical SR8",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 37
+        },
+        {
+          "car_id": 57,
+          "car_name": "[Legacy] Dallara DW12",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 161
+        },
+        {
+          "car_id": 148,
+          "car_name": "FIA F4",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 379
+        },
+        {
+          "car_id": 142,
+          "car_name": "Formula Vee",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 364
+        },
+        {
+          "car_id": 161,
+          "car_name": "Mercedes-AMG W13 E Performance",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 418
+        }
+      ],
+      "cars_left": 60,
+      "category": "formula_car",
+      "category_id": 6,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 1
+      },
+      "count_by_car_id": {
+        "13": 0,
+        "57": 0,
+        "142": 0,
+        "148": 1,
+        "161": 0,
+        "163": 0
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": false,
+        "own_car": true,
+        "own_track": true,
+        "purchase_skus": [],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 1,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 9,
+        "display_name": "AU-Syd",
+        "image_path": "/member_images/flags/au.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 1033940,
+        "display_name": "Brooklyn Breaden2",
+        "helmet": {
+          "pattern": 57,
+          "color1": "000000",
+          "color2": "710298",
+          "color3": "000000",
+          "face_type": 0,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T09:26:10Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 60,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T17:26:34Z",
+      "order_id": 36187966,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": true,
+      "pits_in_use": 0,
+      "practice_length": 480,
+      "private_session_id": 3926250,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237577916,
+      "session_name": "Racing",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68623257,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 480,
+      "track": {
+        "category_id": 6,
+        "track_id": 451,
+        "track_name": "Rudskogen Motorsenter"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 45,
+        "simulated_start_time": "2024-05-15T12:00:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          45,
+          75
+        ],
+        "skies": 1,
+        "temp_units": 0,
+        "temp_value": 78,
+        "time_of_day": 4,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 597657,
+          "display_name": "Aston Egelmeers",
+          "helmet": {
+            "pattern": 28,
+            "color1": "00e0ff",
+            "color2": "000000",
+            "color3": "ffffff",
+            "face_type": 8,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 680552,
+          "display_name": "Lars De Vaan",
+          "helmet": {
+            "pattern": 1,
+            "color1": "ffffff",
+            "color2": "447ac0",
+            "color3": "ee3442",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 581963,
+          "display_name": "Joshua G Wilson",
+          "helmet": {
+            "pattern": 66,
+            "color1": "00ffe8",
+            "color2": "000000",
+            "color3": "ffe449",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 450449,
+          "display_name": "Tim Morley",
+          "helmet": {
+            "pattern": 42,
+            "color1": "D9D9D9",
+            "color2": "1f2892",
+            "color3": "E2E54C",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 471679,
+          "display_name": "Tim Darracott",
+          "helmet": {
+            "pattern": 0,
+            "color1": "ffffff",
+            "color2": "ffffff",
+            "color3": "ffffff",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 591201,
+          "display_name": "Andrew Dawson4",
+          "helmet": {
+            "pattern": 56,
+            "color1": "f26522",
+            "color2": "0a0a0a",
+            "color3": "00aeef",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 635441,
+          "display_name": "Michael Vester",
+          "helmet": {
+            "pattern": 1,
+            "color1": "00aeef",
+            "color2": "0a0a0a",
+            "color3": "f26522",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 502029,
+          "display_name": "Danny Hoogendoorn",
+          "helmet": {
+            "pattern": 3,
+            "color1": "000000",
+            "color2": "ed2129",
+            "color3": "d69f0d",
+            "face_type": 6,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 432712,
+          "display_name": "Max Furtwängler",
+          "helmet": {
+            "pattern": 6,
+            "color1": "ebff00",
+            "color2": "000000",
+            "color3": "91ff16",
+            "face_type": 6,
+            "helmet_type": 0
+          }
+        },
+        {
+          "cust_id": 449337,
+          "display_name": "Jack M Wilson",
+          "helmet": {
+            "pattern": 36,
+            "color1": "35408D",
+            "color2": "FFFFFF",
+            "color3": "CC2314",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "aienabled"
+        },
+        {
+          "car_type": "audi"
+        },
+        {
+          "car_type": "gs"
+        },
+        {
+          "car_type": "gt"
+        },
+        {
+          "car_type": "gt3"
+        },
+        {
+          "car_type": "gt4"
+        },
+        {
+          "car_type": "gtd"
+        },
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "sportscar"
+        },
+        {
+          "car_type": "street circuit"
+        },
+        {
+          "car_type": "tcr"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 119,
+          "car_name": "Porsche 718 Cayman GT4 Clubsport MR",
+          "car_class_id": 2268,
+          "car_class_name": "GT4 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 309
+        },
+        {
+          "car_id": 132,
+          "car_name": "BMW M4 GT3",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 343
+        },
+        {
+          "car_id": 176,
+          "car_name": "Audi R8 LMS EVO II GT3",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 456
+        },
+        {
+          "car_id": 147,
+          "car_name": "Honda Civic Type R TCR",
+          "car_class_id": 3189,
+          "car_class_name": "Touring Car",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 377
+        },
+        {
+          "car_id": 143,
+          "car_name": "Porsche 911 GT3 Cup (992)",
+          "car_class_id": 3104,
+          "car_class_name": "Porsche 911 GT3 Cup (992)",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 367
+        },
+        {
+          "car_id": 122,
+          "car_name": "BMW M4 GT4",
+          "car_class_id": 2268,
+          "car_class_name": "GT4 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 318
+        },
+        {
+          "car_id": 173,
+          "car_name": "Ferrari 296 GT3",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 449
+        },
+        {
+          "car_id": 156,
+          "car_name": "Mercedes-AMG GT3 2020",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 401
+        },
+        {
+          "car_id": 160,
+          "car_name": "Toyota GR86",
+          "car_class_id": 4012,
+          "car_class_name": "Toyota GR86",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 416
+        },
+        {
+          "car_id": 169,
+          "car_name": "Porsche 911 GT3 R (992)",
+          "car_class_id": 2708,
+          "car_class_name": "GT3 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 438
+        },
+        {
+          "car_id": 150,
+          "car_name": "Aston Martin Vantage GT4",
+          "car_class_id": 2268,
+          "car_class_name": "GT4 Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 386
+        },
+        {
+          "car_id": 146,
+          "car_name": "Hyundai Elantra N TCR",
+          "car_class_id": 3189,
+          "car_class_name": "Touring Car",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 375
+        }
+      ],
+      "cars_left": 60,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "2268": 0,
+        "2708": 2,
+        "3104": 0,
+        "3189": 0,
+        "4012": 0
+      },
+      "count_by_car_id": {
+        "119": 0,
+        "122": 0,
+        "132": 0,
+        "143": 0,
+        "146": 0,
+        "147": 0,
+        "150": 0,
+        "156": 2,
+        "160": 0,
+        "169": 0,
+        "173": 0,
+        "176": 0
+      },
+      "damage_model": 0,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": true,
+        "needs_purchase": false,
+        "own_car": true,
+        "own_track": true,
+        "purchase_skus": [
+          10516,
+          10517,
+          10567,
+          10473,
+          10523
+        ],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 2,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 11,
+        "display_name": "DE-Fra",
+        "image_path": "/member_images/flags/de.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 597657,
+        "display_name": "Aston Egelmeers",
+        "helmet": {
+          "pattern": 28,
+          "color1": "00e0ff",
+          "color2": "000000",
+          "color3": "ffffff",
+          "face_type": 8,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-07T15:04:00Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 62,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 1,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-07T21:04:22Z",
+      "order_id": 36189946,
+      "pace_car_class_id": 11,
+      "pace_car_id": 108,
+      "password_protected": true,
+      "pits_in_use": 2,
+      "practice_length": 360,
+      "private_session_id": 3926417,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237601879,
+      "session_name": "24H Nurburgring practice EFFECT SIMULATIONS",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68627952,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 360,
+      "track": {
+        "category_id": 5,
+        "config_name": "Gesamtstrecke 24h",
+        "track_id": 252,
+        "track_name": "Nürburgring Combined"
+      },
+      "track_state": {
+        "leave_marbles": false,
+        "practice_grip_compound": -1,
+        "practice_rubber": 100,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 70,
+        "simulated_start_time": "2024-06-01T15:15:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          30,
+          60
+        ],
+        "skies": 3,
+        "temp_units": 0,
+        "temp_value": 70,
+        "time_of_day": 4,
+        "track_water": 0,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 6,
+        "wind_units": 0,
+        "wind_value": 8
+      }
+    },
+    {
+      "admins": [
+        {
+          "cust_id": 480354,
+          "display_name": "Carly Anthony",
+          "helmet": {
+            "pattern": 1,
+            "color1": "ed2129",
+            "color2": "ffffff",
+            "color3": "2a3795",
+            "face_type": 0,
+            "helmet_type": 0
+          }
+        }
+      ],
+      "ai_avoid_players": false,
+      "allowed_clubs": [],
+      "allowed_leagues": [],
+      "allowed_teams": [],
+      "car_types": [
+        {
+          "car_type": "road"
+        },
+        {
+          "car_type": "street circuit"
+        }
+      ],
+      "cars": [
+        {
+          "car_id": 160,
+          "car_name": "Toyota GR86",
+          "car_class_id": 0,
+          "car_class_name": "Hosted All Cars Class",
+          "max_pct_fuel_fill": 100,
+          "weight_penalty_kg": 0,
+          "power_adjust_pct": 0,
+          "max_dry_tire_sets": 0,
+          "package_id": 416
+        }
+      ],
+      "cars_left": 31,
+      "category": "sports_car",
+      "category_id": 5,
+      "consec_cautions_single_file": false,
+      "count_by_car_class_id": {
+        "0": 3
+      },
+      "count_by_car_id": {
+        "160": 3
+      },
+      "damage_model": 3,
+      "disallow_virtual_mirror": false,
+      "do_not_count_caution_laps": false,
+      "do_not_paint_cars": false,
+      "driver_change_rule": 0,
+      "driver_changes": false,
+      "elig": {
+        "session_full": false,
+        "can_spot": false,
+        "can_watch": false,
+        "can_drive": true,
+        "has_sess_password": false,
+        "needs_purchase": false,
+        "own_car": true,
+        "own_track": true,
+        "purchase_skus": [],
+        "registered": false
+      },
+      "enable_pitlane_collisions": false,
+      "entry_count": 3,
+      "event_types": [
+        {
+          "event_type": 2
+        }
+      ],
+      "farm": {
+        "farm_id": 6,
+        "display_name": "US-Bos",
+        "image_path": "/member_images/flags/e-boston.png",
+        "displayed": true
+      },
+      "fixed_setup": false,
+      "full_course_cautions": false,
+      "green_white_checkered_limit": 0,
+      "hardcore_level": 0,
+      "host": {
+        "cust_id": 480354,
+        "display_name": "Carly Anthony",
+        "helmet": {
+          "pattern": 1,
+          "color1": "ed2129",
+          "color2": "ffffff",
+          "color3": "2a3795",
+          "face_type": 0,
+          "helmet_type": 0
+        }
+      },
+      "incident_limit": 0,
+      "incident_warn_mode": 0,
+      "incident_warn_param1": 0,
+      "incident_warn_param2": 0,
+      "launch_at": "2024-05-06T23:48:04Z",
+      "league_id": 0,
+      "league_season_id": 0,
+      "license_group_types": [
+        {
+          "license_group_type": 1
+        },
+        {
+          "license_group_type": 2
+        },
+        {
+          "license_group_type": 3
+        },
+        {
+          "license_group_type": 4
+        },
+        {
+          "license_group_type": 5
+        },
+        {
+          "license_group_type": 6
+        },
+        {
+          "license_group_type": 7
+        }
+      ],
+      "lone_qualify": false,
+      "lucky_dog": false,
+      "max_ai_drivers": 0,
+      "max_drivers": 62,
+      "max_ir": -1,
+      "max_license_level": 28,
+      "max_team_drivers": 1,
+      "max_visor_tearoffs": -1,
+      "min_ir": -1,
+      "min_license_level": 1,
+      "min_team_drivers": 1,
+      "multiclass_type": 0,
+      "must_use_diff_tire_types_in_race": false,
+      "no_lapper_wave_arounds": false,
+      "num_fast_tows": -1,
+      "num_opt_laps": 0,
+      "open_reg_expires": "2024-05-08T00:48:20Z",
+      "order_id": 36181924,
+      "pace_car_class_id": null,
+      "pace_car_id": null,
+      "password_protected": false,
+      "pits_in_use": 3,
+      "practice_length": 1500,
+      "private_session_id": 3925618,
+      "qualifier_must_start_race": false,
+      "qualify_laps": 0,
+      "qualify_length": 0,
+      "race_laps": 0,
+      "race_length": 0,
+      "restarts": 2,
+      "restrict_results": false,
+      "restrict_viewing": false,
+      "rolling_starts": true,
+      "session_full": false,
+      "session_id": 237536297,
+      "session_name": "Slip n Slide",
+      "session_type": 1,
+      "session_types": [
+        {
+          "session_type": 1
+        }
+      ],
+      "short_parade_lap": false,
+      "start_on_qual_tire": false,
+      "start_zone": false,
+      "status": 2,
+      "subsession_id": 68614514,
+      "team_entry_count": 0,
+      "telemetry_force_to_disk": 0,
+      "telemetry_restriction": 0,
+      "time_limit": 1500,
+      "track": {
+        "category_id": 5,
+        "config_name": "Grand Prix",
+        "track_id": 229,
+        "track_name": "Circuit of the Americas"
+      },
+      "track_state": {
+        "leave_marbles": true,
+        "practice_grip_compound": -1,
+        "practice_rubber": -1,
+        "qualify_grip_compound": -1,
+        "qualify_rubber": -1,
+        "race_grip_compound": -1,
+        "race_rubber": -1,
+        "warmup_grip_compound": -1,
+        "warmup_rubber": -1
+      },
+      "track_types": [
+        {
+          "track_type": "road"
+        }
+      ],
+      "unsport_conduct_rule_mode": 0,
+      "warmup_length": 0,
+      "weather": {
+        "allow_fog": false,
+        "fog": 0,
+        "precip_option": 0,
+        "rel_humidity": 96,
+        "simulated_start_time": "2024-05-15T12:00:00",
+        "simulated_time_multiplier": 0,
+        "simulated_time_offsets": [
+          510,
+          1020
+        ],
+        "skies": 3,
+        "temp_units": 0,
+        "temp_value": 65,
+        "time_of_day": 4,
+        "track_water": 5,
+        "type": 0,
+        "version": 2,
+        "weather_var_initial": 0,
+        "weather_var_ongoing": 0,
+        "wind_dir": 0,
+        "wind_units": 0,
+        "wind_value": 2
+      }
+    }
+  ],
+  "success": true
+}
