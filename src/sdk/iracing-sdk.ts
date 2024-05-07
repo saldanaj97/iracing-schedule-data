@@ -47,7 +47,6 @@ class IRacingSDK {
   public async authenticate() {
     if (!this.authenticated) {
       try {
-        console.log("Attempting to authenticate with iRacing API...")
         const { data } = await this.iracingAPI.post("/auth", {
           email: this.email,
           password: this.encodeCredentials(this.email, this.password),
@@ -58,7 +57,6 @@ class IRacingSDK {
           throw new Error(data.message + "\n")
         }
         this.authenticated = true
-        console.log("Successfully authenticated with iRacing API")
       } catch (error) {
         this.authenticated = false
         console.error("Error occured while authenticating with iRacing API.", error)
