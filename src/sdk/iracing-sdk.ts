@@ -4,6 +4,7 @@ import CryptoJS from "crypto-js"
 import { CookieJar } from "tough-cookie"
 import { CarDetails, CarInfo } from "../car/types"
 import { CarClass } from "../carclass/types"
+import { ConstantType } from "../constants/types"
 
 type SignedURL = {
   link: string
@@ -55,10 +56,9 @@ class IRacingSDK {
         if (data.authcode === 0) {
           this.authenticated = false
           throw new Error(data.message + "\n")
-        } else {
-          this.authenticated = true
-          console.log("Successfully authenticated with iRacing API")
         }
+        this.authenticated = true
+        console.log("Successfully authenticated with iRacing API")
       } catch (error) {
         this.authenticated = false
         console.error("Error occured while authenticating with iRacing API.", error)
@@ -125,6 +125,24 @@ class IRacingSDK {
       const res = await this.iracingAPI.get<SignedURL>("/data/carclass/get")
       const carClassData = await this.request<CarClass[]>(res.data?.link)
       return carClassData
+    } catch (error) {
+      throw error
+    }
+  }
+
+  /**
+   * Function that will grab all the constants available on the API
+   * @returns A list containing each constant and its corresponding value
+   */
+  public async getConstants({
+    constant,
+  }: {
+    constant: "categories" | "divisions" | "event_types"
+  }): Promise<ConstantType[]> {
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<ConstantType[]>(`/data/constants/${constant}`)
+      return res.data
     } catch (error) {
       throw error
     }
