@@ -15,6 +15,14 @@ type CarDetails = {
   retired: boolean
 }
 
+type CustomLeague = {
+  mine: boolean
+  subscribed: boolean
+  sequence?: number
+  sessions: CustomLeagueSession[]
+  success: boolean
+}
+
 type CustomLeagueSession = {
   num_drivers: number
   num_spotters: number
@@ -310,6 +318,16 @@ type LeagueOwner = {
   nick_name: null | string
 }
 
+type LeagueRosterResponse = {
+  type: string
+  data: { subscribed: boolean; success: boolean; roster_count: number; league_id: number }
+  data_url: string
+}
+
+type LeagueRosterLink = {
+  data_url: string
+}
+
 type LeagueRosterMember = {
   cust_id: number
   display_name: string
@@ -321,6 +339,14 @@ type LeagueRosterMember = {
   league_member_since: string
   car_number: number | null
   nick_name: string | null
+}
+
+type LeagueSeasonList = {
+  subscribed: boolean
+  seasons: LeagueSeason[]
+  success: boolean
+  retired: boolean
+  league_id: number
 }
 
 type LeagueSeason = {
@@ -496,11 +522,13 @@ type TrackType = {
 }
 
 export {
-  CustomLeagueSession,
+  CustomLeague,
   League,
   LeagueData,
   LeagueInfo,
-  LeagueSeason,
+  LeagueRosterLink,
+  LeagueRosterResponse,
+  LeagueSeasonList,
   LeagueSessionData,
   LeagueStandings,
   PointsSystemsData,

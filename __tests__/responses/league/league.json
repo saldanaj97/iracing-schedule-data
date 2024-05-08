@@ -1,0 +1,733 @@
+{
+  "league_id": 1234,
+  "owner_id": 163674,
+  "league_name": "F1APS",
+  "created": "2014-09-02T05:06:21Z",
+  "hidden": false,
+  "message": "Velocidade Virtual ... Amizade Real ... Simulação total !!!\n\n\n\n",
+  "about": "Liga amadora de AV - Aqui encontra amigos em primeiro lugar depois PILOTOS!!!!\n[2014-09-02 @ 2015-09-02]\n\nPara resultados da temporada atual / última\n\nStar Mazda Championship: \nhttp://danlisa.com/scoring/season_standings.php?season_id=4184\n\nGT3 Series: \nhttp://danlisa.com/scoring/season_standings.php?season_id=4018\n",
+  "url": "http://www.f1aps.com/",
+  "recruiting": true,
+  "rules": "Amizade, Respeito e Competição, nesta ordem !!!",
+  "private_wall": false,
+  "private_roster": false,
+  "private_schedule": false,
+  "private_results": false,
+  "is_owner": false,
+  "is_admin": false,
+  "roster_count": 36,
+  "owner": {
+    "cust_id": 163674,
+    "display_name": "Flavio Clivati",
+    "helmet": {
+      "pattern": 17,
+      "color1": "fa0090",
+      "color2": "268ced",
+      "color3": "000000",
+      "face_type": 0,
+      "helmet_type": 0
+    },
+    "car_number": null,
+    "nick_name": null
+  },
+  "image": {
+    "small_logo": null,
+    "large_logo": null
+  },
+  "tags": {
+    "categorized": [],
+    "not_categorized": []
+  },
+  "league_applications": [],
+  "pending_requests": [],
+  "is_member": false,
+  "is_applicant": false,
+  "is_invite": false,
+  "is_ignored": false,
+  "roster": [
+    {
+      "cust_id": 163674,
+      "display_name": "Flavio Clivati",
+      "helmet": {
+        "pattern": 17,
+        "color1": "fa0090",
+        "color2": "268ced",
+        "color3": "000000",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": true,
+      "admin": true,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-03T14:43:36Z",
+      "car_number": "71",
+      "nick_name": null
+    },
+    {
+      "cust_id": 163149,
+      "display_name": "Andre Eisenlohr",
+      "helmet": {
+        "pattern": 48,
+        "color1": "FFFFFF",
+        "color2": "FFFFFF",
+        "color3": "FFFFFF",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": true,
+      "league_mail_opt_out": true,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-02T22:03:43Z",
+      "car_number": "21",
+      "nick_name": null
+    },
+    {
+      "cust_id": 167259,
+      "display_name": "Flavio Rubens",
+      "helmet": {
+        "pattern": 59,
+        "color1": "ff990f",
+        "color2": "ffffff",
+        "color3": "000000",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": true,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-11T18:48:14Z",
+      "car_number": "33",
+      "nick_name": null
+    },
+    {
+      "cust_id": 139663,
+      "display_name": "Jobson Souza",
+      "helmet": {
+        "pattern": 22,
+        "color1": "ffffff",
+        "color2": "000000",
+        "color3": "e29c1d",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": true,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-02T05:06:21Z",
+      "car_number": "73",
+      "nick_name": null
+    },
+    {
+      "cust_id": 119898,
+      "display_name": "Marcelo Schwarz",
+      "helmet": {
+        "pattern": 14,
+        "color1": "006501",
+        "color2": "999999",
+        "color3": "03a53e",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": true,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-02T21:05:22Z",
+      "car_number": "12",
+      "nick_name": null
+    },
+    {
+      "cust_id": 163559,
+      "display_name": "Rogério Galhiego",
+      "helmet": {
+        "pattern": 14,
+        "color1": "c52f26",
+        "color2": "eeeeec",
+        "color3": "bc271a",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": true,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-02T20:35:04Z",
+      "car_number": "11",
+      "nick_name": null
+    },
+    {
+      "cust_id": 483151,
+      "display_name": "Aleksey Raskin",
+      "helmet": {
+        "pattern": 48,
+        "color1": "cbcbc8",
+        "color2": "2a3795",
+        "color3": "ed2129",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2022-02-20T21:03:34Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 36205,
+      "display_name": "Anderson Paes",
+      "helmet": {
+        "pattern": 67,
+        "color1": "271200",
+        "color2": "fc0706",
+        "color3": "008701",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-08T10:03:15Z",
+      "car_number": "14",
+      "nick_name": null
+    },
+    {
+      "cust_id": 363092,
+      "display_name": "Andrew Abelnica",
+      "helmet": {
+        "pattern": 65,
+        "color1": "FFFFFF",
+        "color2": "000000",
+        "color3": "000000",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2021-02-18T23:22:11Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 158633,
+      "display_name": "Bruno Canovas",
+      "helmet": {
+        "pattern": 53,
+        "color1": "000000",
+        "color2": "000000",
+        "color3": "00f0ff",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2016-06-19T15:29:13Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 21683,
+      "display_name": "Doni Pereira",
+      "helmet": {
+        "pattern": 68,
+        "color1": "f30537",
+        "color2": "feec04",
+        "color3": "6876f9",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2016-05-31T00:43:02Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 110034,
+      "display_name": "Eduardo Emilio",
+      "helmet": {
+        "pattern": 58,
+        "color1": "cccccc",
+        "color2": "5b1c63",
+        "color3": "ffffff",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2016-01-13T02:17:09Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 109866,
+      "display_name": "Estíverson Oliveira",
+      "helmet": {
+        "pattern": 9,
+        "color1": "000000",
+        "color2": "ffffff",
+        "color3": "ed4621",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2016-01-11T16:51:22Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 94289,
+      "display_name": "Fernando Pinhal",
+      "helmet": {
+        "pattern": 42,
+        "color1": "fa4000",
+        "color2": "ffffff",
+        "color3": "191919",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-02T21:15:36Z",
+      "car_number": "23",
+      "nick_name": null
+    },
+    {
+      "cust_id": 151674,
+      "display_name": "Fred Fonseca",
+      "helmet": {
+        "pattern": 30,
+        "color1": "EDF21C",
+        "color2": "456F3E",
+        "color3": "c4c203",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2017-04-21T13:02:38Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 77481,
+      "display_name": "Glauber Martins",
+      "helmet": {
+        "pattern": 33,
+        "color1": "000000",
+        "color2": "000000",
+        "color3": "ce8b12",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-02T15:28:19Z",
+      "car_number": "177",
+      "nick_name": null
+    },
+    {
+      "cust_id": 28512,
+      "display_name": "Igor Kops",
+      "helmet": {
+        "pattern": 35,
+        "color1": "fd7704",
+        "color2": "000000",
+        "color3": "e20100",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-08T23:05:14Z",
+      "car_number": "12",
+      "nick_name": null
+    },
+    {
+      "cust_id": 220042,
+      "display_name": "Julio Riquelme",
+      "helmet": {
+        "pattern": 61,
+        "color1": "7de718",
+        "color2": "cccccc",
+        "color3": "666666",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2016-08-13T21:57:10Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 169643,
+      "display_name": "Junio M Santos",
+      "helmet": {
+        "pattern": 12,
+        "color1": "000000",
+        "color2": "27962c",
+        "color3": "666666",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-10-05T03:20:31Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 291808,
+      "display_name": "Leonan Martins",
+      "helmet": {
+        "pattern": 1,
+        "color1": "111111",
+        "color2": "391c83",
+        "color3": "ccff00",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2017-09-10T23:17:36Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 153348,
+      "display_name": "Leonardo Aouila",
+      "helmet": {
+        "pattern": 6,
+        "color1": "82d241",
+        "color2": "dadbd7",
+        "color3": "666666",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-02T16:16:26Z",
+      "car_number": "74",
+      "nick_name": null
+    },
+    {
+      "cust_id": 145069,
+      "display_name": "Luka Ferlic",
+      "helmet": {
+        "pattern": 28,
+        "color1": "190695",
+        "color2": "ffb612",
+        "color3": "006628",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2020-08-08T15:15:16Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 104619,
+      "display_name": "Marcelo Magalhães",
+      "helmet": {
+        "pattern": 62,
+        "color1": "edf000",
+        "color2": "ffffff",
+        "color3": "046100",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2015-01-20T02:47:35Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 166437,
+      "display_name": "Marco Clivati",
+      "helmet": {
+        "pattern": 27,
+        "color1": "0f2352",
+        "color2": "ffffff",
+        "color3": "9cc5f6",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-10T18:33:13Z",
+      "car_number": "30",
+      "nick_name": null
+    },
+    {
+      "cust_id": 146324,
+      "display_name": "Nelio Cunha",
+      "helmet": {
+        "pattern": 14,
+        "color1": "2bfc00",
+        "color2": "faff00",
+        "color3": "0012ff",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2019-05-18T02:03:00Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 455493,
+      "display_name": "Nicholas Wassenaar",
+      "helmet": {
+        "pattern": 30,
+        "color1": "DEE4E7",
+        "color2": "081B49",
+        "color3": "ECEBEA",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2021-02-18T23:22:05Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 203283,
+      "display_name": "Paulo Ferrari",
+      "helmet": {
+        "pattern": 60,
+        "color1": "ffffff",
+        "color2": "000000",
+        "color3": "ff0000",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2017-09-17T22:45:01Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 80533,
+      "display_name": "Ricardo Goncalves Silva",
+      "helmet": {
+        "pattern": 5,
+        "color1": "fc0706",
+        "color2": "fc0706",
+        "color3": "ffffff",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-02T15:33:16Z",
+      "car_number": "144",
+      "nick_name": null
+    },
+    {
+      "cust_id": 169085,
+      "display_name": "Rodrigo Barth",
+      "helmet": {
+        "pattern": 14,
+        "color1": "feff1a",
+        "color2": "098a00",
+        "color3": "f4f500",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-27T13:35:07Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 183915,
+      "display_name": "Romeu Augusto",
+      "helmet": {
+        "pattern": 14,
+        "color1": "0e9a20",
+        "color2": "c2e212",
+        "color3": "25f21c",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2015-02-18T17:41:49Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 240575,
+      "display_name": "Samir Vásquez",
+      "helmet": {
+        "pattern": 65,
+        "color1": "16a3df",
+        "color2": "000000",
+        "color3": "a4f024",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2017-04-22T01:11:06Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 281982,
+      "display_name": "Silvio Brizolla",
+      "helmet": {
+        "pattern": 13,
+        "color1": "F52424",
+        "color2": "ACEE6D",
+        "color3": "2B10CB",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2017-08-22T02:42:48Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 926222,
+      "display_name": "Telmo Ferreira",
+      "helmet": {
+        "pattern": 54,
+        "color1": "288023",
+        "color2": "c5c92c",
+        "color3": "f70101",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2023-09-08T21:49:08Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 163209,
+      "display_name": "Valdemir Francisco",
+      "helmet": {
+        "pattern": 36,
+        "color1": "0a0a0a",
+        "color2": "101c98",
+        "color3": "f0540f",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": true,
+      "league_pm_opt_out": false,
+      "league_member_since": "2014-09-02T17:16:11Z",
+      "car_number": "3",
+      "nick_name": null
+    },
+    {
+      "cust_id": 214002,
+      "display_name": "Vitor Torres2",
+      "helmet": {
+        "pattern": 60,
+        "color1": "f8ca0a",
+        "color2": "050d7c",
+        "color3": "020507",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2016-01-26T05:01:40Z",
+      "car_number": null,
+      "nick_name": null
+    },
+    {
+      "cust_id": 108610,
+      "display_name": "Wesley Batista",
+      "helmet": {
+        "pattern": 64,
+        "color1": "ECEF1A",
+        "color2": "07730B",
+        "color3": "FFFFFF",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": false,
+      "admin": false,
+      "league_mail_opt_out": false,
+      "league_pm_opt_out": false,
+      "league_member_since": "2017-04-21T14:03:58Z",
+      "car_number": null,
+      "nick_name": null
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "subscribed": false,
+  "seasons": [
+    {
+      "league_id": 4170,
+      "season_id": 50089,
+      "points_system_id": 4,
+      "season_name": "2020 season",
+      "active": true,
+      "hidden": false,
+      "num_drops": 0,
+      "no_drops_on_or_after_race_num": -1,
+      "points_cars": [
+        {
+          "car_id": 60,
+          "car_name": "[Legacy] V8 Supercar Holden VF Commodore - 2014"
+        }
+      ],
+      "driver_points_car_classes": [
+        {
+          "car_class_id": 0,
+          "name": "All Car Classes",
+          "cars_in_class": [
+            {
+              "car_id": 0,
+              "car_name": "All Cars"
+            },
+            {
+              "car_id": 60,
+              "car_name": "[Legacy] V8 Supercar Holden VF Commodore - 2014"
+            }
+          ]
+        }
+      ],
+      "team_points_car_classes": [
+        {
+          "car_class_id": 0,
+          "name": "All Car Classes",
+          "cars_in_class": [
+            {
+              "car_id": 0,
+              "car_name": "All Cars"
+            }
+          ]
+        }
+      ],
+      "points_system_name": "Grand Prix",
+      "points_system_desc": "Positions 1 through 10 awarded 25, 18, 15, 12, 10, 8, 6, 4, 2, and 1 points.  Remaining positions awarded 0 points."
+    },
+    {
+      "league_id": 4170,
+      "season_id": 55337,
+      "points_system_id": 3,
+      "season_name": "2021 season",
+      "active": true,
+      "hidden": false,
+      "num_drops": 0,
+      "no_drops_on_or_after_race_num": -1,
+      "points_cars": [
+        {
+          "car_id": 60,
+          "car_name": "[Legacy] V8 Supercar Holden VF Commodore - 2014"
+        }
+      ],
+      "driver_points_car_classes": [
+        {
+          "car_class_id": 0,
+          "name": "All Car Classes",
+          "cars_in_class": [
+            {
+              "car_id": 0,
+              "car_name": "All Cars"
+            },
+            {
+              "car_id": 60,
+              "car_name": "[Legacy] V8 Supercar Holden VF Commodore - 2014"
+            }
+          ]
+        }
+      ],
+      "team_points_car_classes": [
+        {
+          "car_class_id": 0,
+          "name": "All Car Classes",
+          "cars_in_class": [
+            {
+              "car_id": 0,
+              "car_name": "All Cars"
+            }
+          ]
+        }
+      ],
+      "points_system_name": "Oval",
+      "points_system_desc": "43 points for 1st.  Each subsequent position gets one less point, all the way own to 43rd with 1 point.  44th and onward get 0 points."
+    }
+  ],
+  "success": true,
+  "retired": false,
+  "league_id": 4170
+}
