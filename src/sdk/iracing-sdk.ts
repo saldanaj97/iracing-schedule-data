@@ -16,6 +16,7 @@ import {
   LeagueStandings,
   PointsSystemsData,
 } from "../league/types"
+import { Club, Country, Driver } from "../lookup/types"
 import { appendParams } from "../utils/appendParams"
 
 type SignedURL = {
@@ -561,6 +562,93 @@ class IRacingSDK {
       const res = await this.iracingAPI.get<SignedURL>(URL)
       const sessions = await this.request<LeagueSessionData>(res.data?.link)
       return sessions
+    } catch (error) {
+      throw error
+    }
+  }
+
+  /**
+   * Return the different clubs available on the service. Returns an earlier history if requirested quarter does not have a club history.
+   *
+   * Example usage:
+   * ```typescript
+   *  lookupClubHistory({ season_year: 2021, season_quarter: 1 }) // Returns club history for 2021S1
+   * ```
+   *
+   * Required Params:
+   * @param season_year: The year of the season you want to look up
+   * @param season_quarter: The quarter of the season you want to look up
+   */
+  public async lookupClubHistory({
+    season_year,
+    season_quarter,
+  }: {
+    season_year: number
+    season_quarter: number
+  }): Promise<Club[]> {
+    if (!season_year || !season_quarter)
+      throw new Error("Cannot complete request. Missing required parameters. (season_year, season_quarter)")
+    const URL = `/data/lookup/club_history?season_year=${season_year}&season_quarter=${season_quarter}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const clubHistory = await this.request<Club[]>(res.data?.link)
+      return clubHistory
+    } catch (error) {
+      throw error
+    }
+  }
+
+  /**
+   * Return the countries and their codes available on the service.
+   *
+   * Example usage:
+   * ```typescript
+   * lookupCountries() // Returns all countries and their codes
+   * ```
+   */
+  public async lookupCountries(): Promise<Country[]> {
+    const URL = "/data/lookup/countries"
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const countries = await this.request<Country[]>(res.data?.link)
+      return countries
+    } catch (error) {
+      throw error
+    }
+  }
+
+  /**
+   * Return the driver on the service with the given customer_id (search_term).
+   *
+   * Example usage:
+   * ```typescript
+   * lookupDrivers({search_term: 123456}) // Returns
+   * ```
+   *
+   * Required Params:
+   * @param cust_id - The customer_id of the driver you want to look up.
+   *
+   * Optional Params:
+   * @param league_id - ID of the league you want to search in. Narrows the search to the roster of the given league.
+   */
+  public async lookupDrivers({
+    cust_id,
+    league_id,
+  }: {
+    cust_id: number | string
+    league_id?: number
+  }): Promise<Driver[]> {
+    if (!cust_id) throw new Error("Cannot complete request. Missing required parameters. (cust_id)")
+    const URL = appendParams(`/data/lookup/drivers?search_term=${cust_id}`, {
+      league_id,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const drivers = await this.request<Driver[]>(res.data?.link)
+      return drivers
     } catch (error) {
       throw error
     }
