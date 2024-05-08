@@ -5,11 +5,11 @@ import { nockHelper } from "./helpers"
 const mockResponsePath = __dirname + "/responses/"
 
 describe("Constants API", () => {
-  let client: IRacingSDK = new IRacingSDK("email", "password")
+  const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
   const mockResouceGet = async (filePath: string) => {
-    getResource.mockResolvedValue(require(filePath))
+    getResource.mockResolvedValue(await import(filePath))
   }
 
   beforeAll(() => {
