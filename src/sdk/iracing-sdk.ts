@@ -16,6 +16,7 @@ import {
   LeagueStandings,
   PointsSystemsData,
 } from "../league/types"
+import { Club, Country, Driver } from "../lookup/types"
 import { appendParams } from "../utils/appendParams"
 
 type SignedURL = {
@@ -91,12 +92,13 @@ class IRacingSDK {
    * NOTE: Image paths are relative to https://images-static.iracing.com/ so you will need to append the links for the data you want to the URL
    */
   public async getCarAssets(): Promise<CarDetails> {
+    await this.authenticate()
     try {
-      await this.authenticate()
       const res = await this.iracingAPI.get<SignedURL>("/data/car/assets")
       const carAssets = await this.request<CarDetails>(res.data?.link)
       return carAssets
     } catch (error) {
+      console.log("Error occured while fetching car assets.", error)
       throw error
     }
   }
@@ -111,6 +113,7 @@ class IRacingSDK {
       const cars = await this.request<CarInfo[]>(res.data?.link)
       return cars
     } catch (error) {
+      console.log("Error occured while fetching car info.", error)
       throw error
     }
   }
@@ -125,6 +128,7 @@ class IRacingSDK {
       const carClassData = await this.request<CarClass[]>(res.data?.link)
       return carClassData
     } catch (error) {
+      console.log("Error occured while fetching car class data.", error)
       throw error
     }
   }
@@ -143,6 +147,7 @@ class IRacingSDK {
       const res = await this.iracingAPI.get<ConstantType[]>(`/data/constants/${constant}`)
       return res.data
     } catch (error) {
+      console.log("Error occured while fetching constants.", error)
       throw error
     }
   }
@@ -191,6 +196,7 @@ class IRacingSDK {
       const sessionData = await this.request<HostedSession>(res.data?.link)
       return sessionData
     } catch (error) {
+      console.log("Error occured while fetching hosted sessions.", error)
       throw error
     }
   }
@@ -225,6 +231,7 @@ class IRacingSDK {
       const sessionData = await this.request<CustomLeague>(res.data?.link)
       return sessionData
     } catch (error) {
+      console.log("Error occured while fetching custom league sessions.", error)
       throw error
     }
   }
@@ -308,6 +315,7 @@ class IRacingSDK {
       const leagueData = await this.request<CustomLeague>(res.data?.link)
       return leagueData
     } catch (error) {
+      console.log("Error occured while fetching league directory.", error)
       throw error
     }
   }
@@ -341,6 +349,7 @@ class IRacingSDK {
       const leagueData = await this.request<LeagueInfo>(res.data?.link)
       return leagueData
     } catch (error) {
+      console.log("Error occured while fetching league info.", error)
       throw error
     }
   }
@@ -380,6 +389,7 @@ class IRacingSDK {
       const pointSystem = await this.request<PointsSystemsData>(res.data?.link)
       return pointSystem
     } catch (error) {
+      console.log("Error occured while fetching league point system.", error)
       throw error
     }
   }
@@ -416,6 +426,7 @@ class IRacingSDK {
       const leagueMemberships = await this.request<LeagueData[]>(res.data?.link)
       return leagueMemberships
     } catch (error) {
+      console.log("Error occured while fetching league memberships.", error)
       throw error
     }
   }
@@ -448,6 +459,7 @@ class IRacingSDK {
       const res = await this.iracingAPI.get<LeagueRosterResponse>(URL)
       return res.data
     } catch (error) {
+      console.log("Error occured while fetching league roster.", error)
       throw error
     }
   }
@@ -480,6 +492,7 @@ class IRacingSDK {
       const leagueSeasons = await this.request<LeagueSeasonList>(res.data?.link)
       return leagueSeasons
     } catch (error) {
+      console.log("Error occured while fetching league seasons.", error)
       throw error
     }
   }
@@ -523,6 +536,7 @@ class IRacingSDK {
       const standings = await this.request<LeagueStandings>(res.data?.link)
       return standings
     } catch (error) {
+      console.log("Error occured while fetching league standings.", error)
       throw error
     }
   }
@@ -562,6 +576,97 @@ class IRacingSDK {
       const sessions = await this.request<LeagueSessionData>(res.data?.link)
       return sessions
     } catch (error) {
+      console.log("Error occured while fetching league sessions.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Return the different clubs available on the service. Returns an earlier history if requirested quarter does not have a club history.
+   *
+   * Example usage:
+   * ```typescript
+   *  lookupClubHistory({ season_year: 2021, season_quarter: 1 }) // Returns club history for 2021S1
+   * ```
+   *
+   * Required Params:
+   * @param season_year: The year of the season you want to look up
+   * @param season_quarter: The quarter of the season you want to look up
+   */
+  public async lookupClubHistory({
+    season_year,
+    season_quarter,
+  }: {
+    season_year: number
+    season_quarter: number
+  }): Promise<Club[]> {
+    if (!season_year || !season_quarter)
+      throw new Error("Cannot complete request. Missing required parameters. (season_year, season_quarter)")
+    const URL = `/data/lookup/club_history?season_year=${season_year}&season_quarter=${season_quarter}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const clubHistory = await this.request<Club[]>(res.data?.link)
+      return clubHistory
+    } catch (error) {
+      console.log("Error occured while fetching club history.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Return the countries and their codes available on the service.
+   *
+   * Example usage:
+   * ```typescript
+   * lookupCountries() // Returns all countries and their codes
+   * ```
+   */
+  public async lookupCountries(): Promise<Country[]> {
+    const URL = "/data/lookup/countries"
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const countries = await this.request<Country[]>(res.data?.link)
+      return countries
+    } catch (error) {
+      console.log("Error occured while fetching countries.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Return the driver on the service with the given customer_id (search_term).
+   *
+   * Example usage:
+   * ```typescript
+   * lookupDrivers({search_term: 123456}) // Returns
+   * ```
+   *
+   * Required Params:
+   * @param cust_id - The customer_id of the driver you want to look up.
+   *
+   * Optional Params:
+   * @param league_id - ID of the league you want to search in. Narrows the search to the roster of the given league.
+   */
+  public async lookupDrivers({
+    cust_id,
+    league_id,
+  }: {
+    cust_id: number | string
+    league_id?: number
+  }): Promise<Driver[]> {
+    if (!cust_id) throw new Error("Cannot complete request. Missing required parameters. (cust_id)")
+    const URL = appendParams(`/data/lookup/drivers?search_term=${cust_id}`, {
+      league_id,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const drivers = await this.request<Driver[]>(res.data?.link)
+      return drivers
+    } catch (error) {
+      console.log("Error occured while fetching drivers.", error)
       throw error
     }
   }

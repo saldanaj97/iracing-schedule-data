@@ -2,13 +2,6 @@ node_modules
 dist
 .env
 coverage
-.turbo
-<<<<<<< Updated upstream
-.npmrc
-=======
-<<<<<<< Updated upstream
-=======
 .npmrc
 .env.test
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+extra.ts
