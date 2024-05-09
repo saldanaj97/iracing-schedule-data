@@ -1,4 +1,4 @@
-export const appendParams = (URL: string, params: { [paramName: string]: any }) => {
+export const appendParams = (URL: string, params: { [paramName: string]: number | boolean | string | undefined }) => {
   Object.entries(params).forEach(([paramName, paramValue]) => {
     if (paramValue !== undefined) {
       if (typeof paramValue === "boolean") {
