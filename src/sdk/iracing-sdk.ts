@@ -813,7 +813,6 @@ class IRacingSDK {
    * ```
    */
   public async getPersonalInfo(): Promise<PersonalInfo> {
-    //TODO: Add return type
     const URL = "/data/member/info"
     try {
       await this.authenticate()
@@ -835,7 +834,6 @@ class IRacingSDK {
    * ```
    */
   public async getPersonalParticipationCredits(): Promise<ParticipationCreditData[]> {
-    //TODO: Add return type
     const URL = "/data/member/participation_credits"
     try {
       await this.authenticate()
@@ -860,7 +858,6 @@ class IRacingSDK {
    * @param cust_id: The member ID of the user to retrieve profile data for. Defaults to the authenticated member.
    */
   public async getMemberProfile({ cust_id }: { cust_id?: number }): Promise<MemberProfile> {
-    //TODO: Add return type
     const URL = `/data/member/profile${cust_id ? `?cust_id=${cust_id}` : ""}`
     try {
       await this.authenticate()
