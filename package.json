@@ -20,8 +20,8 @@
     "test:coverage": "jest --coverage",
     "build": "tsup",
     "lint": "eslint .",
-    "ci": "pnpm run lint && pnpm run build",
-    "release": "pnpm run lint && pnpm run build && changeset && npm publish --access public"
+    "ci": "pnpm run test && pnpm run lint && pnpm run build",
+    "release": "pnpm run test && pnpm run lint && pnpm run build && changeset && npm publish --access public"
   },
   "keywords": [
     "iracing",
