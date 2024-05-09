@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "cust_ids": [
+    693109
+  ],
+  "members": [
+    {
+      "cust_id": 693109,
+      "display_name": "Juan Saldana",
+      "helmet": {
+        "pattern": 35,
+        "color1": "eeeeee",
+        "color2": "000000",
+        "color3": "ed2229",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "last_login": "2024-05-04T01:51:48.566782968Z",
+      "member_since": "2021-11-10",
+      "club_id": 30,
+      "club_name": "Texas",
+      "ai": false
+    }
+  ]
+}

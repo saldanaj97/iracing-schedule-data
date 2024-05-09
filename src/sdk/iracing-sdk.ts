@@ -17,6 +17,15 @@ import {
   PointsSystemsData,
 } from "../league/types"
 import { Club, Country, Driver } from "../lookup/types"
+import {
+  Award,
+  AwardResponse,
+  ChartData,
+  MemberData,
+  MemberProfile,
+  ParticipationCreditData,
+  PersonalInfo,
+} from "../member/types"
 import { appendParams } from "../utils/appendParams"
 
 type SignedURL = {
@@ -667,6 +676,176 @@ class IRacingSDK {
       return drivers
     } catch (error) {
       console.log("Error occured while fetching drivers.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Return a list of awards for a specific member. If no cust_id is provided, the function will return the awards for the authenticated user.
+   *
+   * Example Usage:
+   * ```typescript
+   * getMemberAwards({ cust_id: 12345 })
+   * ```
+   *
+   * Optional Params:
+   * @param cust_id: The member ID of the user to retrieve awards for.
+   */
+  public async getMemberAwards({ cust_id }: { cust_id?: number }): Promise<Award[]> {
+    let URL = "/data/member/awards"
+    if (cust_id) URL += `?cust_id=${cust_id}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<AwardResponse>(URL)
+      const data = await this.request<Award[]>(res.data?.data_url)
+      return data
+    } catch (error) {
+      console.error("Error occured while fetching member awards.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve the chart data for a member. If no cust_is is provided, the function will return the chart data for the authenticated user.
+   *
+   * Example Usage:
+   * ```typescript
+   * getMemberChartData({ cust_id: 12345, category_id: 1, chart_type: '1' })
+   * ```
+   *
+   * Required Params:
+   * @param category_id - The category ID of the chart data to retrieve. (1 - Oval; 2 - Road; 3 - Dirt oval; 4 - Dirt road)
+   * @param chart_type - The type of chart data to retrieve. (1 - iRating; 2 - TT Rating; 3 - License/SR)
+   *
+   * Optional params:
+   * @param cust_id - The member ID of the user to retrieve chart data for.
+   */
+  public async getMemberChartData({
+    cust_id,
+    category_id,
+    chart_type,
+  }: {
+    cust_id?: number
+    category_id: 1 | 2 | 3 | 4 | 5
+    chart_type: 1 | 2 | 3
+  }): Promise<ChartData> {
+    if (!category_id || !chart_type)
+      throw new Error("Cannot complete request: Missing required parameters. (category_id, chart_type)")
+    const URL = appendParams(`/data/member/chart_data?category_id=${category_id}`, {
+      cust_id,
+      chart_type,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<ChartData>(res.data?.link)
+      return data
+    } catch (error) {
+      console.error("Error occured while fetching member chart data.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve the club data for a member. If no cust_id is provided, the function will return the club data for the authenticated user.
+   *
+   * Example Usage:
+   * ```typescript
+   * getMemberData({ cust_ids: "693109, 82554" }) // Returns club data for the specified members
+   * ```
+   *
+   * Required Params:
+   * @param cust_ids: The member ID of the user to retrieve club data for. (ie. "123456, 12345" for multiple ids, or "123456" for a single id)
+   *
+   * Optional Params:
+   * @param included_licenses: Whether or not to include license data in the response. Defaults to false.
+   */
+  public async getMemberData({
+    cust_ids,
+    included_licenses,
+  }: {
+    cust_ids: string
+    included_licenses?: boolean
+  }): Promise<MemberData> {
+    const URL = appendParams(`/data/member/get?${cust_ids}`, {
+      included_licenses,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<MemberData>(res.data?.link)
+      return data
+    } catch (error) {
+      console.error("Error occured while fetching member data.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve personal info.
+   *
+   * Example Usage:
+   * ```typescript
+   * getPersonalInfo()
+   * ```
+   */
+  public async getPersonalInfo(): Promise<PersonalInfo> {
+    //TODO: Add return type
+    const URL = "/data/member/info"
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<PersonalInfo>(res.data?.link)
+      return data
+    } catch (error) {
+      console.error("Error occured while fetching personal awards.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve personal participation credit data. Participation credits are rewarded for participating in certain licensed series and are awarded at the end
+   * of each season.
+   * Example Usage:
+   * ```typescript
+   * getPersonalParticipationCredits()
+   * ```
+   */
+  public async getPersonalParticipationCredits(): Promise<ParticipationCreditData[]> {
+    //TODO: Add return type
+    const URL = "/data/member/participation_credits"
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<ParticipationCreditData[]>(res.data?.link)
+      return data
+    } catch (error) {
+      console.error("Error occured while fetching personal participation credits.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve the specific member's profile. If no cust_id is provided, defaults to the authenticated user.
+   *
+   * Example Usage:
+   * ```typescript
+   * getMemberProfile({cust_id: 12345}) // Returns the profile for the specified member
+   * ```
+   *
+   * Required Params:
+   * @param cust_id: The member ID of the user to retrieve profile data for. Defaults to the authenticated member.
+   */
+  public async getMemberProfile({ cust_id }: { cust_id?: number }): Promise<MemberProfile> {
+    //TODO: Add return type
+    const URL = `/data/member/profile${cust_id ? `?cust_id=${cust_id}` : ""}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<MemberProfile>(res.data?.link)
+      return data
+    } catch (error) {
+      console.error("Error occured while fetching member awards.", error)
       throw error
     }
   }
