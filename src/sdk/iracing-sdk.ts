@@ -1,6 +1,7 @@
 import Axios, { AxiosInstance, AxiosResponse } from "axios"
 import { wrapper } from "axios-cookiejar-support"
 import CryptoJS from "crypto-js"
+import fs from "fs"
 import { CookieJar } from "tough-cookie"
 import { CarDetails, CarInfo } from "../car/types"
 import { CarClass } from "../carclass/types"
@@ -26,7 +27,17 @@ import {
   ParticipationCreditData,
   PersonalInfo,
 } from "../member/types"
+import {
+  DetailedSessionResult,
+  EventLogInfo,
+  HostedSearchResults,
+  LapChartInfo,
+  LapData,
+  SeasonSearchResults,
+  SeriesSearchResults,
+} from "../results/types"
 import { appendParams } from "../utils/appendParams"
+import { dateParamErrorChecking } from "../utils/errorChecking"
 
 type SignedURL = {
   link: string
@@ -79,9 +90,11 @@ class IRacingSDK {
           throw new Error(data.message + "\n")
         }
         this.authenticated = true
+        return this.authenticated
       } catch (error) {
         this.authenticated = false
         console.error("Error occured while authenticating with iRacing API.", error)
+        return this.authenticated
       }
     }
   }
@@ -93,6 +106,16 @@ class IRacingSDK {
     const response: AxiosResponse<T> = await this.iracingAPI.get(path)
     console.log(`Requesting data from ${path}...\n`, response)
     return response.data
+  }
+
+  public async writeToFile({ data, path }: { data: any; path: string }) {
+    fs.writeFile(path, JSON.stringify(data), (err: any) => {
+      if (err) {
+        if (err) return console.log(`An error occured while writing data to ${path}`, err)
+        return
+      }
+      console.log(`${path} has been created successfully!`)
+    })
   }
 
   /**
@@ -846,6 +869,431 @@ class IRacingSDK {
       return data
     } catch (error) {
       console.error("Error occured while fetching member awards.", error)
+      throw error
+    }
+  }
+
+  /**
+   *
+   * Get the results of a subsession, if authorized to view them. series_logo image paths are relative to https://images-static.iracing.com/img/logos/series/
+   *
+   * Example Usage:
+   *
+   * ```typescript
+   * getResults({subsession_id: 12345, included_licenses: true}) // Returns the results of the subsession.
+   * ```
+   *
+   * Required Params:
+   * @param subsession_id - The ID of the subsession to get results for.
+   *
+   * Optional Params:
+   * @param included_licenses - Whether or not to include license data in the response.
+   */
+  public async getResults({
+    subsession_id,
+    included_licenses,
+  }: {
+    subsession_id: number
+    included_licenses?: boolean
+  }): Promise<DetailedSessionResult> {
+    if (!subsession_id) throw new Error("Cannot complete request. Missing required parameters. (subsession_id)")
+    const URL = appendParams(`/data/results/get?subsession_id=${subsession_id}`, {
+      included_licenses,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<DetailedSessionResult>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching subsession results.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Get the event log of the provided subsession.
+   *
+   * Example Usage:
+   * ```typescript
+   * getEventLog({subsession_id: 12345, simsession_number: 0}) // Returns the event log for the subsession.
+   * ```
+   *
+   * Required Params:
+   * @param subsession_id - The ID of the subsession to get the event log for.
+   * @param simsession_number - The simsession number to get the event log for. The main event is 0; the preceding event is -1, and so on.
+   */
+  public async getEventLog({
+    subsession_id,
+    simsession_number,
+  }: {
+    subsession_id: number
+    simsession_number: number
+  }): Promise<EventLogInfo> {
+    if (subsession_id === undefined || simsession_number === undefined)
+      throw new Error("Cannot complete request. Missing required parameters. (subsession_id, simsession_number)")
+    const URL = `/data/results/event_log?subsession_id=${subsession_id}&simsession_number=${simsession_number}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<EventLogInfo>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching subsession event log.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Get the lap chart data for the provided subsession.
+   *
+   * Example Usage:
+   * ```typescript
+   * getLapChartData({subsession_id: 12345, simsession_number: 0}) // Returns the lap chart data
+   * ```
+   *
+   * Required Params:
+   * @param subsession_id - The ID of the subsession to get the event log for.
+   * @param simsession_number - The simsession number to get the event log for. The main event is 0; the preceding event is -1, and so on.
+   */
+  public async getLapChartData({
+    subsession_id,
+    simsession_number,
+  }: {
+    subsession_id: number
+    simsession_number: number
+  }): Promise<LapChartInfo> {
+    if (subsession_id === undefined || simsession_number === undefined)
+      throw new Error("Cannot complete request. Missing required parameters. (subsession_id, simsession_number)")
+    const URL = `/data/results/lap_chart_data?subsession_id=${subsession_id}&simsession_number=${simsession_number}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<LapChartInfo>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching subsession lap chart data.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Get the lap data for the provided subsession.
+   *
+   * Example Usage:
+   * ```typescript
+   * getLapData({subsession_id: 12345, simsession_number: 0, cust_id: 123456}) // Returns the lap chart data
+   * ```
+   *
+   * Required Params:
+   * @param subsession_id - The ID of the subsession to get the event log for.
+   * @param simsession_number - The simsession number to get the event log for. The main event is 0; the preceding event is -1, and so on.
+   * @param cust_id - Required if the subsession was a single-driver event. Optional for team events. Required if the subsession was a single-driver event. Optional for team events. If omitted for a team event then the laps driven by all the team's drivers will be included.
+   * @param team_id - Required if subsession was a team event
+   */
+  public async getLapData({
+    subsession_id,
+    simsession_number,
+    cust_id,
+    team_id,
+  }: {
+    subsession_id: number
+    simsession_number: number
+    cust_id?: number
+    team_id?: number
+  }): Promise<LapData> {
+    if (subsession_id === undefined || simsession_number === undefined)
+      throw new Error("Cannot complete request. Missing required parameters. (subsession_id, simsession_number)")
+    const URL = appendParams(
+      `/data/results/lap_data?subsession_id=${subsession_id}&simsession_number=${simsession_number}`,
+      { cust_id, team_id }
+    )
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<LapData>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching subsession lap data.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Hosted session search results. One of the primary filters needs to be included. Primary filters include host, driver, team, or session name.
+   *
+   * Hosted and league sessions.  Maximum time frame of 90 days. Results split into one or more files with chunks of results.
+   *
+   * For scraping results the most effective approach is to keep track of the maximum end_time found during
+   * a search then make the subsequent call using that date/time as the finish_range_begin and skip any subsessions that are duplicated.
+   * Results are ordered by subsessionid which is a proxy for start time. Requires one of: start_range_begin, finish_range_begin.
+   * Requires one of: cust_id, team_id, host_cust_id, session_name.
+   *
+   * Example Usage:
+   * ```typescript
+   * // Returns hosted session data for the host with customer ID 345352.
+   * getHostedSearchResults({
+   *    host_cust_id: 345352,
+   *    start_range_begin: "2024-03-31T00:00:00Z",
+   *    start_range_end: "2024-04-01T00:00:00Z",
+   *    finish_range_begin: "2024-03-31T00:00:00Z",
+   *    finish_range_end: "2024-04-01T00:00:00Z",
+   * })
+   * ```
+   *
+   * Required Params (One of the following is required):
+   * @param cust_id - Include only sessions in which this customer participated. Ignored if team_id is supplied.
+   * @param team_id - Include only sessions in which this team participated. Takes priority over cust_id if both are supplied.
+   * @param host_cust_id - The host's customer ID.
+   * @param session_name - Part or all of the session's name.
+   *
+   * Optional Params:
+   * @param start_range_begin - Session start times. ISO-8601 UTC time zero offset: "2022-04-01T15:45Z".
+   * @param start_range_end - ISO-8601 UTC time zero offset: "2022-04-01T15:45Z". Exclusive. May be omitted if start_range_begin is less than 90 days in the past.
+   * @param finish_range_begin - 'Session finish times. ISO-8601 UTC time zero offset: "2022-04-01T15:45Z".
+   * @param finish_range_end - ISO-8601 UTC time zero offset: "2022-04-01T15:45Z". Exclusive. May be omitted if finish_range_begin is less than 90 days in the past.
+   * @param league_id - Include only sessions for this league.
+   * @param league_session_id - Include only sessions for the league session with this ID.
+   * @param car_id - One of the cars used by the session.
+   * @param track_id - The ID of the track used by the session.
+   * @param category_ids - License categories to include in the search.  Defaults to all. (ex. ?category_ids=1,2,3,4)
+   */
+  public async getHostedSearchResults({
+    cust_id,
+    team_id,
+    host_cust_id,
+    session_name,
+    start_range_begin,
+    start_range_end,
+    finish_range_begin,
+    finish_range_end,
+    league_id,
+    league_session_id,
+    car_id,
+    track_id,
+    category_ids,
+  }: {
+    cust_id?: number
+    team_id?: number
+    host_cust_id?: number
+    session_name?: string
+    start_range_begin?: string
+    start_range_end?: string
+    finish_range_begin?: string
+    finish_range_end?: string
+    league_id?: number
+    league_session_id?: number
+    car_id?: number
+    track_id?: number
+    category_ids?: (1 | 2 | 3 | 4 | 5 | 6)[]
+  }): Promise<HostedSearchResults> {
+    if (!cust_id && !team_id && !host_cust_id && !session_name)
+      throw new Error(
+        "Cannot complete request. Missing required parameters. (cust_id, team_id, host_cust_id, session_name)"
+      )
+
+    let URL = appendParams("/data/results/search_hosted?", {
+      cust_id,
+      team_id,
+      host_cust_id,
+      session_name,
+      league_id,
+      league_session_id,
+      car_id,
+      track_id,
+      category_ids: category_ids ? category_ids.join(",") : undefined,
+    })
+
+    // Error check the dates before adding to the URL
+    const validDateCheck = dateParamErrorChecking({
+      start_range_begin,
+      start_range_end,
+      finish_range_begin,
+      finish_range_end,
+    })
+
+    // TODO: Potentially move this error check to the appendParams function by settings the date params to date type
+    if (validDateCheck === "PASS") {
+      if (start_range_begin && start_range_end) {
+        URL += `&start_range_begin=${start_range_begin}&start_range_end=${start_range_end}`
+      }
+      if (finish_range_begin && finish_range_end) {
+        URL += `&finish_range_begin=${finish_range_begin}&finish_range_end=${finish_range_end}`
+      }
+    }
+
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get(URL)
+      return res.data
+    } catch (error) {
+      console.log("Error occured while fetching hosted series results.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Official series search.  Maximum time frame of 90 days. Results split into one or more files with chunks of results.
+   *
+   * This request can take a bit of time to process and return the link to the results. A recommendation would be to make the URL yourself, and then use the link to get the data to verify
+   * that the data is what you are looking for.
+   *
+   * For scraping results, the most effective approach is to keep track of the maximum end_time found during a
+   * search then make the subsequent call using that date/time as the finish_range_begin and skip any subsessions that are duplicated.  Results are ordered by
+   * subsessionid which is a proxy for start time but groups together multiple splits of a series when multiple series launch sessions at the same time.
+   * Requires at least one of: season_year and season_quarter, start_range_begin, finish_range_begin.
+   *
+   * Example Usage:
+   * ```typescript
+   * // Returns all session data for customer 123456 in the 2024 season 2nd quarter.
+   * getSeriesSearchResults({season_year: 2024, season_quarter: 2, cust_id: 123456})
+   * ```
+   *
+   * Required Params:
+   * @param season_year - The year of the season to get the event log for. Required only when using season_quarter.
+   * @param season_quarter - The quarter of the year to get the event log for. Required only when using season_year.
+   *
+   * Optional Params:
+   * @param cust_id - Include only sessions in which this customer participated. Ignored if team_id is supplied.
+   * @param team_id - Include only sessions in which this team participated. Takes priority over cust_id if both are supplied.
+   * @param start_range_begin - Session start times. ISO-8601 UTC time zero offset: "2022-04-01T15:45Z".
+   * @param start_range_end - ISO-8601 UTC time zero offset: "2022-04-01T15:45Z". Exclusive. May be omitted if start_range_begin is less than 90 days in the past.
+   * @param finish_range_begin - 'Session finish times. ISO-8601 UTC time zero offset: "2022-04-01T15:45Z".
+   * @param finish_range_end - ISO-8601 UTC time zero offset: "2022-04-01T15:45Z". Exclusive. May be omitted if finish_range_begin is less than 90 days in the past.
+   * @param series_id - Include only sessions for series with this ID.
+   * @param race_week_num - Include only sessions with this race week number.
+   * @param official_only - If true, include only sessions earning championship points. Defaults to all.
+   * @param event_types - Types of events to include in the search. Defaults to all. (ex. ?event_types=2,3,4,5)
+   * @param category_ids - License categories to include in the search.  Defaults to all. (ex. ?category_ids=1,2,3,4)
+   */
+  public async getSeriesSearchResults({
+    season_year,
+    season_quarter,
+    cust_id,
+    team_id,
+    start_range_begin,
+    start_range_end,
+    finish_range_begin,
+    finish_range_end,
+    series_id,
+    race_week_num,
+    official_only,
+    event_types,
+    category_ids,
+  }: {
+    season_year?: number
+    season_quarter?: number
+    cust_id?: number
+    team_id?: number
+    start_range_begin?: string
+    start_range_end?: string
+    finish_range_begin?: string
+    finish_range_end?: string
+    series_id?: number
+    race_week_num?: number
+    official_only?: boolean
+    event_types?: (2 | 3 | 4 | 5)[]
+    category_ids?: (1 | 2 | 3 | 4 | 5 | 6)[]
+  }): Promise<SeriesSearchResults> {
+    let URL = `/data/results/search_series`
+
+    // Error checking for required params
+    if (
+      !(
+        (season_year !== undefined && season_quarter !== undefined) ||
+        (start_range_begin !== undefined && finish_range_begin !== undefined)
+      )
+    ) {
+      throw new Error(
+        "At least one of the following pairs is required: season_year and season_quarter, start_range_begin, finish_range_begin."
+      )
+    }
+
+    // Make sure if season_year is provided then season_quarter is also provided and vice versa
+    if ((season_year !== undefined) !== (season_quarter !== undefined)) {
+      const errorMessage = season_year === undefined ? "season_year" : "season_quarter"
+      throw new Error(`${errorMessage} is required when using the other.`)
+    } else if ((start_range_begin !== undefined) !== (finish_range_begin !== undefined)) {
+      const errorMessage = start_range_begin === undefined ? "start_range_begin" : "finish_range_begin"
+      throw new Error(`${errorMessage} is required when using the other.`)
+    }
+
+    // Append the season_year and season_quarter to the URL
+    if (season_year !== undefined && season_quarter !== undefined) {
+      URL += `?season_year=${season_year}&season_quarter=${season_quarter}`
+    }
+
+    // Error checking for dates
+    if (
+      dateParamErrorChecking({ start_range_begin, start_range_end, finish_range_begin, finish_range_end }) === "PASS"
+    ) {
+      if (start_range_begin && start_range_end) {
+        URL += `&start_range_begin=${start_range_begin}&start_range_end=${start_range_end}`
+      }
+      if (finish_range_begin && finish_range_end) {
+        URL += `&finish_range_begin=${finish_range_begin}&finish_range_end=${finish_range_end}`
+      }
+    }
+
+    // Append the rest of the params
+    const params = {
+      cust_id,
+      team_id,
+      series_id,
+      race_week_num,
+      official_only,
+      event_types: event_types ? event_types.join(",") : undefined,
+      category_ids: category_ids ? category_ids.join(",") : undefined,
+    }
+    URL = appendParams(URL, params)
+
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get(URL)
+      return res.data
+    } catch (error) {
+      console.log("Error occured while fetching series search results.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Get all results for a season.
+   *
+   * Example Usage:
+   * ```typescript
+   * getSeasonResults({season_id: 4753, event_type: 5, race_week_num: 0}) // Returns the lap chart data
+   * ```
+   *
+   * Required Params:
+   * @param season_id - The ID of the season to get the results for.
+   *
+   * Optional Params:
+   * @param event_type - Retrict to one event type: 2 - Practice; 3 - Qualify; 4 - Time Trial; 5 - Race.
+   * @param race_week_num - The first race week of the season is 0.
+   */
+  public async getSeasonResults({
+    season_id,
+    event_type,
+    race_week_num,
+  }: {
+    season_id: number
+    event_type?: 2 | 3 | 4 | 5
+    race_week_num?: number
+  }): Promise<SeasonSearchResults> {
+    if (!season_id) throw new Error("Cannot complete request. Missing required parameters. (season_id)")
+    const URL = appendParams(`/data/results/season_results?season_id=${season_id}`, {
+      event_type,
+      race_week_num,
+    })
+
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SeasonSearchResults>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching season results.", error)
       throw error
     }
   }
