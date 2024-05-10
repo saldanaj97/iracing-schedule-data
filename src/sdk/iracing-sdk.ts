@@ -1316,7 +1316,7 @@ class IRacingSDK {
     season_year: number
     season_quarter: number
   }): Promise<SeasonList> {
-    if (!season_year === undefined || !season_quarter === undefined)
+    if (!season_year || !season_quarter)
       throw new Error("Cannot complete request: Missing required parameters (season_year, season_quarter)")
     const URL = `/data/season/list?season_year=${season_year}&season_quarter=${season_quarter}`
     try {
