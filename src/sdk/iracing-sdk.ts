@@ -36,6 +36,7 @@ import {
   SeasonSearchResults,
   SeriesSearchResults,
 } from "../results/types"
+import { RaceGuide, SeasonList, SpectatorSubsession } from "../season/types"
 import { appendParams } from "../utils/appendParams"
 import { dateParamErrorChecking } from "../utils/errorChecking"
 
@@ -104,7 +105,7 @@ class IRacingSDK {
       await this.authenticate()
     }
     const response: AxiosResponse<T> = await this.iracingAPI.get(path)
-    console.log(`Requesting data from ${path}...\n`, response)
+    console.log(`Requesting data from ${path}...\n`)
     return response.data
   }
 
@@ -1291,6 +1292,104 @@ class IRacingSDK {
       return data
     } catch (error) {
       console.log("Error occured while fetching season results.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve the list of seasons for a specific year and quarter.
+   *
+   * Example Usage:
+   * ```typescript
+   * const seasonList = await getSeasonList({ season_year: 2024, season_quarter: 1 });
+   * ```
+   *
+   * Required Parameters:
+   * @param season_year The year of the season.
+   * @param season_quarter The quarter of the season.
+   */
+  public async getSeasonList({
+    season_year,
+    season_quarter,
+  }: {
+    season_year: number
+    season_quarter: number
+  }): Promise<SeasonList> {
+    if (!season_year === undefined || !season_quarter === undefined)
+      throw new Error("Cannot complete request: Missing required parameters (season_year, season_quarter)")
+    const URL = `/data/season/list?season_year=${season_year}&season_quarter=${season_quarter}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SeasonList>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching season list.", error)
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve the race guide for a specific date.
+   *
+   * Example Usage:
+   * ```typescript
+   * const raceGuideData = await getRaceGuide({from: "2024-05-10T16:30:00Z", include_end_after_from: true });
+   * ```
+   *
+   * Optional Parameters:
+   * @param from - ISO-8601 offset format. Defaults to the current time. Include sessions with start times up to 3 hours after this time. Times in the past will be rewritten to the current time.
+   * @param include_end_after_from - Include sessions which start before 'from' but end after.
+   */
+  public async getRaceGuide({
+    from,
+    include_end_after_from,
+  }: {
+    from?: string
+    include_end_after_from?: boolean
+  }): Promise<RaceGuide> {
+    const URL = appendParams("/data/season/race_guide?", {
+      from,
+      include_end_after_from,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<RaceGuide>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching race guide")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve the spectator subsession IDs for specific event types.
+   *
+   * Example Usage:
+   * ```typescript
+   * const spectatorSubsessionIDs = await getSpectatorSubessionIDs({ event_types: [1, 2, 3] });
+   * ```
+   *
+   * Optional Parameters:
+   * @param event_types An array of event types for which to retrieve spectator subsession IDs.
+   */
+  public async getSpectatorSubsessionIDs({
+    event_types,
+  }: {
+    event_types: (1 | 2 | 3 | 4 | 5)[]
+  }): Promise<SpectatorSubsession> {
+    if (event_types.length === 0) throw new Error("Cannot complete request. Missing required parameters. (event_types)")
+    const URL = appendParams("/data/season/spectator_subsessionids?", {
+      event_types: event_types.join(","),
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SpectatorSubsession>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching spectator subsession IDs.")
       throw error
     }
   }

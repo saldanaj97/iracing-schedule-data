@@ -1,3 +1,11 @@
+type RaceGuide = {
+  subscribed: boolean
+  sessions: Session[]
+  block_begin_time: string
+  block_end_time: string
+  success: boolean
+}
+
 type Series = {
   season_id: number
   series_id: number
@@ -11,10 +19,10 @@ type Series = {
   driver_changes: boolean
 }
 
-type SpectatorSubsession = {
-  event_types: number[]
-  success: boolean
-  subsession_ids: number[]
+type SeasonList = {
+  season_quarter: number
+  seasons: Series[]
+  season_year: number
 }
 
 type Session = {
@@ -28,9 +36,10 @@ type Session = {
   entry_count: number
 }
 
-type RaceGuide = {
-  subscribed: boolean
-  sessions: Session[]
+type SpectatorSubsession = {
+  event_types: number[]
+  success: boolean
+  subsession_ids: number[]
 }
 
-export { RaceGuide, Series, SpectatorSubsession }
+export { RaceGuide, SeasonList, Series, SpectatorSubsession }
