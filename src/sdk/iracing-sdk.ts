@@ -36,7 +36,8 @@ import {
   SeasonSearchResults,
   SeriesSearchResults,
 } from "../results/types"
-import { RaceGuide, SeasonList, SpectatorSubsession } from "../season/types"
+import { RaceGuide, SeasonList, Series, SpectatorSubsession } from "../season/types"
+import { PastSeries, RacingSeason, SeriesAssets, SeriesStats } from "../series/types"
 import { appendParams } from "../utils/appendParams"
 import { dateParamErrorChecking } from "../utils/errorChecking"
 
@@ -1390,6 +1391,126 @@ class IRacingSDK {
       return data
     } catch (error) {
       console.log("Error occured while fetching spectator subsession IDs.")
+      throw error
+    }
+  }
+
+  /**
+   * Return all the assets tied to the series.
+   *
+   * Image paths are relative to https://images-static.iracing.com/
+   *
+   * Example Usage:
+   * ```typescript
+   * const seriesAssets = await getAllSeriesAsssets()
+   * ```
+   */
+  public async getAllSeriesAssets(): Promise<SeriesAssets> {
+    const URL = "/data/series/assets"
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SeriesAssets>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching series assets.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve the general series data for all series in a season.
+   *
+   * This includes basic data such as (not exhaustive):
+   * - Category
+   * - Series ID
+   * - Series Name
+   * - Series Short Name
+   *
+   * Example Usage:
+   * ```typescript
+   * const series = await getAllSeries() // Return generalized series data
+   * ```
+   *
+   */
+  public async getAllSeries(): Promise<Series[]> {
+    const URL = "/data/series/get"
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<Series[]>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching all series.")
+      throw error
+    }
+  }
+
+  /**
+   * Get all seasons for a series. Filter list by official:true for seasons with standings.
+   *
+   * Example Usage:
+   * ```typescript
+   * const pastSeasonData = await getPastSeasons(123) // Return past season data for series ID 123
+   * ```
+   *
+   * Required Parameters:
+   * @param series_id The series ID to get the seasons for.
+   */
+  public async getPastSeasons({ series_id }: { series_id: number }): Promise<PastSeries> {
+    if (!series_id) throw new Error("Cannot complete request. Missing required parameters. (series_id)")
+    const URL = `/data/series/past_seasons?series_id=${series_id}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<PastSeries>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching past seasons.")
+      throw error
+    }
+  }
+
+  /**
+   * This function returns more detailed data about each series such as schedule, car classes, and track data.
+   *
+   * Example Usage:
+   * ```typescript
+   * const seriesData = await getCurrentSeasonsSeries() // Return detailed data for each series in the current season
+   *
+   */
+  public async getCurrentSeasonsSeries(): Promise<RacingSeason[]> {
+    const URL = "/data/series/seasons"
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<RacingSeason[]>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching current season series.")
+      throw error
+    }
+  }
+
+  /**
+   * Get all the series offered by iRacing whether active or inactive.
+   *
+   * To get series and seasons for which standings should be available, filter the list by official: true.
+   *
+   * Example Usage:
+   * ```typescript
+   * const schedule = await getSeriesStats() // Return a list of series with stats
+   * ```
+   */
+  public async getSeriesStats(): Promise<SeriesStats[]> {
+    const URL = "/data/series/stats_series"
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SeriesStats[]>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching series stats.")
       throw error
     }
   }

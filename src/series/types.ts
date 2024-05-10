@@ -49,19 +49,23 @@ type PastSeason = {
 }
 
 type PastSeries = {
-  active: boolean
-  allowed_licenses: License[]
-  category: string
-  category_id: number
-  fixed_setup: boolean
-  license_group: number
-  license_group_types: { license_group_type: number }[]
-  logo: string | null
-  official: boolean
-  seasons: PastSeason[]
+  success: boolean
+  series: {
+    active: boolean
+    allowed_licenses: License[]
+    category: string
+    category_id: number
+    fixed_setup: boolean
+    license_group: number
+    license_group_types: { license_group_type: number }[]
+    logo: string | null
+    official: boolean
+    seasons: PastSeason[]
+    series_id: number
+    series_name: string
+    series_short_name: string
+  }
   series_id: number
-  series_name: string
-  series_short_name: string
 }
 
 type RaceTimeDescriptor = {

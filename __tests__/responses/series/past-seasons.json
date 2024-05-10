@@ -1,0 +1,2792 @@
+{
+  "success": true,
+  "series": {
+    "series_id": 299,
+    "series_name": "iRacing Porsche Cup By Coach Dave Delta",
+    "series_short_name": "iRacing Porsche Cup",
+    "category_id": 5,
+    "category": "sports_car",
+    "active": true,
+    "official": true,
+    "fixed_setup": false,
+    "search_filters": "sportscars,road",
+    "logo": "seriesid_299.png",
+    "license_group": 3,
+    "license_group_types": [{ "license_group_type": 3 }],
+    "allowed_licenses": [
+      { "parent_id": 299, "license_group": 2, "min_license_level": 8, "max_license_level": 8, "group_name": "Class D" },
+      {
+        "parent_id": 299,
+        "license_group": 3,
+        "min_license_level": 9,
+        "max_license_level": 12,
+        "group_name": "Class C"
+      },
+      {
+        "parent_id": 299,
+        "license_group": 4,
+        "min_license_level": 13,
+        "max_license_level": 16,
+        "group_name": "Class B"
+      },
+      {
+        "parent_id": 299,
+        "license_group": 5,
+        "min_license_level": 17,
+        "max_license_level": 20,
+        "group_name": "Class A"
+      },
+      { "parent_id": 299, "license_group": 6, "min_license_level": 21, "max_license_level": 24, "group_name": "Pro" },
+      { "parent_id": 299, "license_group": 7, "min_license_level": 25, "max_license_level": 28, "group_name": "Pro/WC" }
+    ],
+    "seasons": [
+      {
+        "season_id": 4766,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2024 Season 2",
+        "season_short_name": "2024 Season 2",
+        "season_year": 2024,
+        "season_quarter": 2,
+        "active": true,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 4766,
+            "race_week_num": 0,
+            "track": { "config_name": "Grand Prix", "track_id": 390, "track_name": "Hockenheimring Baden-Württemberg" }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 1,
+            "track": { "config_name": "Indy", "track_id": 146, "track_name": "Brands Hatch Circuit" }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 2,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 3,
+            "track": { "config_name": "Full Course", "track_id": 465, "track_name": "Virginia International Raceway" }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 4,
+            "track": { "config_name": "Grand Prix", "track_id": 199, "track_name": "Circuit Zolder" }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 5,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 6,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 7,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 9,
+            "track": {
+              "config_name": "Gesamtstrecke Short w/out Arena",
+              "track_id": 263,
+              "track_name": "Nürburgring Combined"
+            }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 10,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 498,
+              "track_name": "Autodromo Internazionale del Mugello"
+            }
+          },
+          {
+            "season_id": 4766,
+            "race_week_num": 11,
+            "track": { "config_name": "Grand Prix", "track_id": 485, "track_name": "Circuit Zandvoort" }
+          }
+        ]
+      },
+      {
+        "season_id": 4607,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2024 Season 1",
+        "season_short_name": "2024 Season 1",
+        "season_year": 2024,
+        "season_quarter": 1,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 4607,
+            "race_week_num": 0,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 1,
+            "track": { "config_name": "Grand Prix", "track_id": 485, "track_name": "Circuit Zandvoort" }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 2,
+            "track": { "config_name": "Grand Prix", "track_id": 475, "track_name": "MotorLand Aragón" }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 3,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 4,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 5,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 6,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 7,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 41,
+              "track_name": "[Legacy] Silverstone Circuit - 2008"
+            }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 8,
+            "track": { "config_name": "NASCAR Short", "track_id": 48, "track_name": "Sonoma Raceway" }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 9,
+            "track": { "config_name": "Gesamtstrecke Long", "track_id": 264, "track_name": "Nürburgring Combined" }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 10,
+            "track": { "config_name": "Grand Prix", "track_id": 145, "track_name": "Brands Hatch Circuit" }
+          },
+          {
+            "season_id": 4607,
+            "race_week_num": 11,
+            "track": { "config_name": "Grand Prix", "track_id": 202, "track_name": "Oran Park Raceway" }
+          }
+        ]
+      },
+      {
+        "season_id": 4444,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2023 Season 4",
+        "season_short_name": "2023 Season 4",
+        "season_year": 2023,
+        "season_quarter": 4,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 4444,
+            "race_week_num": 0,
+            "track": {
+              "config_name": "Big Willow",
+              "track_id": 481,
+              "track_name": "Willow Springs International Raceway"
+            }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 1,
+            "track": {
+              "config_name": "Full Course",
+              "track_id": 47,
+              "track_name": "WeatherTech Raceway at Laguna Seca"
+            }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 2,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 3,
+            "track": { "config_name": "Moto", "track_id": 474, "track_name": "Circuito de Jerez - Ángel Nieto" }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 4,
+            "track": { "config_name": "Grand Prix", "track_id": 229, "track_name": "Circuit of the Americas" }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 5,
+            "track": { "config_name": "Belle Isle", "track_id": 319, "track_name": "Detroit Grand Prix at Belle Isle" }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 6,
+            "track": { "config_name": "Grand Prix", "track_id": 475, "track_name": "MotorLand Aragón" }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 7,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 8,
+            "track": { "config_name": "Classic", "track_id": 432, "track_name": "Watkins Glen International" }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 9,
+            "track": { "config_name": "Industriefahrten", "track_id": 249, "track_name": "Nürburgring Nordschleife" }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 10,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 4444,
+            "race_week_num": 11,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          }
+        ]
+      },
+      {
+        "season_id": 4301,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2023 Season 3",
+        "season_short_name": "2023 Season 3",
+        "season_year": 2023,
+        "season_quarter": 3,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 4301,
+            "race_week_num": 0,
+            "track": { "config_name": "2023 Cup", "track_id": 483, "track_name": "Chicago Street Course" }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 1,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 2,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 3,
+            "track": { "config_name": "Classic Pits", "track_id": 164, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 4,
+            "track": { "config_name": "Cup", "track_id": 433, "track_name": "Watkins Glen International" }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 5,
+            "track": { "config_name": "Grand Prix", "track_id": 233, "track_name": "Donington Park Racing Circuit" }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 6,
+            "track": { "config_name": "Full Course", "track_id": 465, "track_name": "Virginia International Raceway" }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 7,
+            "track": { "config_name": "Moto", "track_id": 474, "track_name": "Circuito de Jerez - Ángel Nieto" }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 8,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 9,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 10,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 41,
+              "track_name": "[Legacy] Silverstone Circuit - 2008"
+            }
+          },
+          {
+            "season_id": 4301,
+            "race_week_num": 11,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          }
+        ]
+      },
+      {
+        "season_id": 4164,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2023 Season 2",
+        "season_short_name": "2023 Season 2",
+        "season_year": 2023,
+        "season_quarter": 2,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 4164,
+            "race_week_num": 0,
+            "track": { "config_name": "Grand Prix", "track_id": 145, "track_name": "Brands Hatch Circuit" }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 1,
+            "track": { "config_name": "Full Course", "track_id": 465, "track_name": "Virginia International Raceway" }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 2,
+            "track": { "config_name": "Grand Prix", "track_id": 239, "track_name": "Autodromo Nazionale Monza" }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 3,
+            "track": { "config_name": "Grand Prix", "track_id": 199, "track_name": "Circuit Zolder" }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 4,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 5,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 6,
+            "track": {
+              "config_name": "24 Heures du Mans",
+              "track_id": 268,
+              "track_name": "Circuit des 24 Heures du Mans"
+            }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix", "track_id": 341, "track_name": "Silverstone Circuit" }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 8,
+            "track": { "config_name": "Gesamtstrecke 24h", "track_id": 252, "track_name": "Nürburgring Combined" }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 9,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 10,
+            "track": { "config_name": "Grand Prix", "track_id": 463, "track_name": "Circuit de Nevers Magny-Cours" }
+          },
+          {
+            "season_id": 4164,
+            "race_week_num": 11,
+            "track": { "track_id": 179, "track_name": "Long Beach Street Circuit" }
+          }
+        ]
+      },
+      {
+        "season_id": 4023,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2023 Season 1",
+        "season_short_name": "2023 Season 1",
+        "season_year": 2023,
+        "season_quarter": 1,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 4023,
+            "race_week_num": 0,
+            "track": { "config_name": "Intl w/out Brittens", "track_id": 184, "track_name": "Oulton Park Circuit" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 1,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 2,
+            "track": { "track_id": 144, "track_name": "Canadian Tire Motorsports Park" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 3,
+            "track": { "config_name": "Grand Prix", "track_id": 463, "track_name": "Circuit de Nevers Magny-Cours" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 4,
+            "track": { "config_name": "Grand Prix", "track_id": 390, "track_name": "Hockenheimring Baden-Württemberg" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 5,
+            "track": { "config_name": "Grand Prix", "track_id": 341, "track_name": "Silverstone Circuit" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 6,
+            "track": { "track_id": 451, "track_name": "Rudskogen Motorsenter" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 7,
+            "track": { "config_name": "Belle Isle", "track_id": 319, "track_name": "Detroit Grand Prix at Belle Isle" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 8,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 9,
+            "track": { "config_name": "Historic", "track_id": 349, "track_name": "Circuit de Barcelona Catalunya" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 10,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 4023,
+            "race_week_num": 11,
+            "track": {
+              "config_name": "Gesamtstrecke Short w/out Arena",
+              "track_id": 263,
+              "track_name": "Nürburgring Combined"
+            }
+          }
+        ]
+      },
+      {
+        "season_id": 3890,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2022 Season 4",
+        "season_short_name": "2022 Season 4",
+        "season_year": 2022,
+        "season_quarter": 4,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 3890,
+            "race_week_num": 0,
+            "track": { "config_name": "Boot", "track_id": 434, "track_name": "Watkins Glen International" }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 1,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 2,
+            "track": { "config_name": "Grand Prix", "track_id": 403, "track_name": "Red Bull Ring" }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 3,
+            "track": { "config_name": "Grand Prix", "track_id": 239, "track_name": "Autodromo Nazionale Monza" }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 4,
+            "track": { "config_name": "Grand Prix", "track_id": 444, "track_name": "Fuji International Speedway" }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 5,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 6,
+            "track": { "config_name": "Grand Prix", "track_id": 390, "track_name": "Hockenheimring Baden-Württemberg" }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 7,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 8,
+            "track": { "track_id": 152, "track_name": "Phillip Island Circuit" }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 9,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 10,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 3890,
+            "race_week_num": 11,
+            "track": { "config_name": "Gesamtstrecke VLN", "track_id": 262, "track_name": "Nürburgring Combined" }
+          }
+        ]
+      },
+      {
+        "season_id": 3766,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2022 Season 3",
+        "season_short_name": "2022 Season 3",
+        "season_year": 2022,
+        "season_quarter": 3,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 3766,
+            "race_week_num": 0,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 1,
+            "track": { "config_name": "National A", "track_id": 391, "track_name": "Hockenheimring Baden-Württemberg" }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 2,
+            "track": { "config_name": "Grand Prix", "track_id": 444, "track_name": "Fuji International Speedway" }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 3,
+            "track": { "config_name": "International", "track_id": 423, "track_name": "Knockhill Racing Circuit" }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 4,
+            "track": { "config_name": "Grand Prix - 2009", "track_id": 149, "track_name": "Circuit Park Zandvoort" }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 5,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 6,
+            "track": { "config_name": "International", "track_id": 342, "track_name": "Silverstone Circuit" }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 7,
+            "track": { "config_name": "National", "track_id": 404, "track_name": "Red Bull Ring" }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 8,
+            "track": { "config_name": "Classic", "track_id": 432, "track_name": "Watkins Glen International" }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 9,
+            "track": { "config_name": "Sprintstrecke", "track_id": 259, "track_name": "Nürburgring Grand-Prix-Strecke" }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 10,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 3766,
+            "race_week_num": 11,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          }
+        ]
+      },
+      {
+        "season_id": 3638,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2022 Season 2",
+        "season_short_name": "2022 Season 2",
+        "season_year": 2022,
+        "season_quarter": 2,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 3638,
+            "race_week_num": 0,
+            "track": { "config_name": "Classic Boot", "track_id": 435, "track_name": "Watkins Glen International" }
+          },
+          {
+            "season_id": 3638,
+            "race_week_num": 1,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 3638,
+            "race_week_num": 2,
+            "track": { "config_name": "National Circuit", "track_id": 439, "track_name": "Winton Motor Raceway" }
+          },
+          {
+            "season_id": 3638,
+            "race_week_num": 3,
+            "track": { "config_name": "Summit Point Raceway", "track_id": 9, "track_name": "Summit Point Raceway" }
+          },
+          {
+            "season_id": 3638,
+            "race_week_num": 4,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          },
+          {
+            "season_id": 3638,
+            "race_week_num": 5,
+            "track": { "config_name": "International", "track_id": 423, "track_name": "Knockhill Racing Circuit" }
+          },
+          {
+            "season_id": 3638,
+            "race_week_num": 6,
+            "track": { "config_name": "Grand Prix", "track_id": 239, "track_name": "Autodromo Nazionale Monza" }
+          },
+          {
+            "season_id": 3638,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix - 2009", "track_id": 149, "track_name": "Circuit Park Zandvoort" }
+          },
+          {
+            "season_id": 3638,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 3638,
+            "race_week_num": 9,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          { "season_id": 3638, "race_week_num": 10, "track": { "track_id": 413, "track_name": "Hungaroring" } },
+          {
+            "season_id": 3638,
+            "race_week_num": 11,
+            "track": {
+              "config_name": "Full Course",
+              "track_id": 47,
+              "track_name": "WeatherTech Raceway at Laguna Seca"
+            }
+          }
+        ]
+      },
+      {
+        "season_id": 3510,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2022 Season 1",
+        "season_short_name": "2022 Season 1",
+        "season_year": 2022,
+        "season_quarter": 1,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          { "season_id": 3510, "race_week_num": 0, "track": { "track_id": 413, "track_name": "Hungaroring" } },
+          {
+            "season_id": 3510,
+            "race_week_num": 1,
+            "track": { "config_name": "Full Course", "track_id": 166, "track_name": "Okayama International Circuit" }
+          },
+          {
+            "season_id": 3510,
+            "race_week_num": 2,
+            "track": { "config_name": "Gesamtstrecke VLN", "track_id": 262, "track_name": "Nürburgring Combined" }
+          },
+          {
+            "season_id": 3510,
+            "race_week_num": 3,
+            "track": { "config_name": "International", "track_id": 423, "track_name": "Knockhill Racing Circuit" }
+          },
+          {
+            "season_id": 3510,
+            "race_week_num": 4,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 3510,
+            "race_week_num": 5,
+            "track": { "config_name": "Full Course", "track_id": 153, "track_name": "Mid-Ohio Sports Car Course" }
+          },
+          {
+            "season_id": 3510,
+            "race_week_num": 6,
+            "track": { "config_name": "Grand Prix", "track_id": 403, "track_name": "Red Bull Ring" }
+          },
+          {
+            "season_id": 3510,
+            "race_week_num": 7,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 3510,
+            "race_week_num": 8,
+            "track": { "config_name": "Full Course", "track_id": 46, "track_name": "Barber Motorsports Park" }
+          },
+          {
+            "season_id": 3510,
+            "race_week_num": 9,
+            "track": { "config_name": "Classic Pits", "track_id": 164, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 3510,
+            "race_week_num": 10,
+            "track": { "config_name": "Grand Prix - 2009", "track_id": 149, "track_name": "Circuit Park Zandvoort" }
+          },
+          {
+            "season_id": 3510,
+            "race_week_num": 11,
+            "track": { "config_name": "International", "track_id": 180, "track_name": "Oulton Park Circuit" }
+          }
+        ]
+      },
+      {
+        "season_id": 3390,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2021 Season 4",
+        "season_short_name": "2021 Season 4",
+        "season_year": 2021,
+        "season_quarter": 4,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 3104,
+            "short_name": "Porsche 992",
+            "name": "Porsche 911 GT3 Cup (992)",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 3390,
+            "race_week_num": 0,
+            "track": { "config_name": "Roval", "track_id": 350, "track_name": "Charlotte Motor Speedway" }
+          },
+          { "season_id": 3390, "race_week_num": 1, "track": { "track_id": 413, "track_name": "Hungaroring" } },
+          {
+            "season_id": 3390,
+            "race_week_num": 2,
+            "track": { "config_name": "Gesamtstrecke VLN", "track_id": 262, "track_name": "Nürburgring Combined" }
+          },
+          {
+            "season_id": 3390,
+            "race_week_num": 3,
+            "track": { "config_name": "Prototype", "track_id": 405, "track_name": "Chicago Street Course" }
+          },
+          {
+            "season_id": 3390,
+            "race_week_num": 4,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 3390,
+            "race_week_num": 5,
+            "track": { "config_name": "Grand Prix", "track_id": 195, "track_name": "Mobility Resort Motegi" }
+          },
+          {
+            "season_id": 3390,
+            "race_week_num": 6,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 3390,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix", "track_id": 403, "track_name": "Red Bull Ring" }
+          },
+          {
+            "season_id": 3390,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 3390,
+            "race_week_num": 9,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 3390,
+            "race_week_num": 10,
+            "track": { "config_name": "Grand Prix", "track_id": 390, "track_name": "Hockenheimring Baden-Württemberg" }
+          },
+          {
+            "season_id": 3390,
+            "race_week_num": 11,
+            "track": { "config_name": "2000 Full", "track_id": 324, "track_name": "Tsukuba Circuit" }
+          }
+        ]
+      },
+      {
+        "season_id": 3272,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2021 Season 3",
+        "season_short_name": "2021 Season 3",
+        "season_year": 2021,
+        "season_quarter": 3,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 3272,
+            "race_week_num": 0,
+            "track": { "config_name": "Industriefahrten", "track_id": 249, "track_name": "Nürburgring Nordschleife" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 1,
+            "track": { "config_name": "Prototype", "track_id": 405, "track_name": "Chicago Street Course" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 2,
+            "track": { "track_id": 144, "track_name": "Canadian Tire Motorsports Park" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 3,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 4,
+            "track": { "config_name": "Classic", "track_id": 352, "track_name": "Lime Rock Park" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 5,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 6,
+            "track": { "config_name": "National A", "track_id": 391, "track_name": "Hockenheimring Baden-Württemberg" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 7,
+            "track": { "track_id": 152, "track_name": "Phillip Island Circuit" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix", "track_id": 403, "track_name": "Red Bull Ring" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 9,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 10,
+            "track": { "track_id": 179, "track_name": "Long Beach Street Circuit" }
+          },
+          {
+            "season_id": 3272,
+            "race_week_num": 11,
+            "track": { "config_name": "BES/WEC", "track_id": 255, "track_name": "Nürburgring Grand-Prix-Strecke" }
+          }
+        ]
+      },
+      {
+        "season_id": 3157,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2021 Season 2",
+        "season_short_name": "2021 Season 2",
+        "season_year": 2021,
+        "season_quarter": 2,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 3157,
+            "race_week_num": 0,
+            "track": {
+              "config_name": "[Retired] Boot",
+              "track_id": 107,
+              "track_name": "[Retired] Watkins Glen International"
+            }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 1,
+            "track": { "config_name": "Grand Prix", "track_id": 229, "track_name": "Circuit of the Americas" }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 2,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 3,
+            "track": {
+              "config_name": "[Retired] Full Course",
+              "track_id": 2,
+              "track_name": "[Retired] Virginia International Raceway"
+            }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 4,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 5,
+            "track": { "track_id": 179, "track_name": "Long Beach Street Circuit" }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 6,
+            "track": { "config_name": "Sprintstrecke", "track_id": 259, "track_name": "Nürburgring Grand-Prix-Strecke" }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix", "track_id": 202, "track_name": "Oran Park Raceway" }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix", "track_id": 390, "track_name": "Hockenheimring Baden-Württemberg" }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 9,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 10,
+            "track": {
+              "config_name": "Full Course",
+              "track_id": 47,
+              "track_name": "WeatherTech Raceway at Laguna Seca"
+            }
+          },
+          {
+            "season_id": 3157,
+            "race_week_num": 11,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          }
+        ]
+      },
+      {
+        "season_id": 3051,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2021 Season 1",
+        "season_short_name": "2021 Season 1",
+        "season_year": 2021,
+        "season_quarter": 1,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 3051,
+            "race_week_num": 0,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 1,
+            "track": { "config_name": "Summit Point Raceway", "track_id": 9, "track_name": "Summit Point Raceway" }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 2,
+            "track": {
+              "config_name": "[Retired] Cup",
+              "track_id": 106,
+              "track_name": "[Retired] Watkins Glen International"
+            }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 3,
+            "track": {
+              "config_name": "[Retired] Grand West",
+              "track_id": 5,
+              "track_name": "[Retired] Virginia International Raceway"
+            }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 4,
+            "track": {
+              "config_name": "24 Heures du Mans",
+              "track_id": 268,
+              "track_name": "Circuit des 24 Heures du Mans"
+            }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 5,
+            "track": { "config_name": "300", "track_id": 297, "track_name": "Snetterton Circuit" }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 6,
+            "track": { "track_id": 179, "track_name": "Long Beach Street Circuit" }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix", "track_id": 250, "track_name": "Nürburgring Grand-Prix-Strecke" }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 8,
+            "track": { "config_name": "NASCAR Long", "track_id": 98, "track_name": "Sonoma Raceway" }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 9,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 10,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          },
+          {
+            "season_id": 3051,
+            "race_week_num": 11,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          }
+        ]
+      },
+      {
+        "season_id": 2947,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2020 Season 4",
+        "season_short_name": "2020 Season 4",
+        "season_year": 2020,
+        "season_quarter": 4,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": true,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2947,
+            "race_week_num": 0,
+            "track": {
+              "config_name": "[Retired] Classic Boot",
+              "track_id": 108,
+              "track_name": "[Retired] Watkins Glen International"
+            }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 1,
+            "track": {
+              "config_name": "24 Heures du Mans",
+              "track_id": 268,
+              "track_name": "Circuit des 24 Heures du Mans"
+            }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 2,
+            "track": { "config_name": "Island", "track_id": 182, "track_name": "Oulton Park Circuit" }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 3,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 4,
+            "track": {
+              "config_name": "[Retired] Full Course",
+              "track_id": 2,
+              "track_name": "[Retired] Virginia International Raceway"
+            }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 5,
+            "track": { "config_name": "Full Course", "track_id": 166, "track_name": "Okayama International Circuit" }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 6,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 7,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 8,
+            "track": { "config_name": "Classic Pits", "track_id": 164, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 9,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 10,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          },
+          {
+            "season_id": 2947,
+            "race_week_num": 11,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          }
+        ]
+      },
+      {
+        "season_id": 2851,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2020 Season 3",
+        "season_short_name": "2020 Season 3",
+        "season_year": 2020,
+        "season_quarter": 3,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2851,
+            "race_week_num": 0,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 1,
+            "track": {
+              "config_name": "24 Heures du Mans",
+              "track_id": 268,
+              "track_name": "Circuit des 24 Heures du Mans"
+            }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 2,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 3,
+            "track": { "config_name": "Gesamtstrecke 24h", "track_id": 252, "track_name": "Nürburgring Combined" }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 4,
+            "track": { "config_name": "Belle Isle", "track_id": 319, "track_name": "Detroit Grand Prix at Belle Isle" }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 5,
+            "track": { "config_name": "Grand Prix", "track_id": 341, "track_name": "Silverstone Circuit" }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 6,
+            "track": { "config_name": "Grand Prix - 2009", "track_id": 149, "track_name": "Circuit Park Zandvoort" }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 7,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 8,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 9,
+            "track": { "config_name": "Grand Prix", "track_id": 145, "track_name": "Brands Hatch Circuit" }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 10,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 11,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 2851,
+            "race_week_num": 12,
+            "track": { "config_name": "Full Course", "track_id": 166, "track_name": "Okayama International Circuit" }
+          }
+        ]
+      },
+      {
+        "season_id": 2749,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2020 Season 2",
+        "season_short_name": "2020 Season 2",
+        "season_year": 2020,
+        "season_quarter": 2,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2749,
+            "race_week_num": 0,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 1,
+            "track": { "config_name": "Grand Prix", "track_id": 199, "track_name": "Circuit Zolder" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 2,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 3,
+            "track": { "config_name": "2000 Full", "track_id": 324, "track_name": "Tsukuba Circuit" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 4,
+            "track": { "config_name": "Belle Isle", "track_id": 319, "track_name": "Detroit Grand Prix at Belle Isle" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 5,
+            "track": { "config_name": "Indy", "track_id": 146, "track_name": "Brands Hatch Circuit" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 6,
+            "track": { "config_name": "Gesamtstrecke 24h", "track_id": 252, "track_name": "Nürburgring Combined" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix - 2009", "track_id": 149, "track_name": "Circuit Park Zandvoort" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix", "track_id": 345, "track_name": "Circuit de Barcelona Catalunya" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 9,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 10,
+            "track": { "config_name": "Grand Prix", "track_id": 233, "track_name": "Donington Park Racing Circuit" }
+          },
+          {
+            "season_id": 2749,
+            "race_week_num": 11,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          }
+        ]
+      },
+      {
+        "season_id": 2650,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2020 Season 1",
+        "season_short_name": "2020 Season 1",
+        "season_year": 2020,
+        "season_quarter": 1,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2650,
+            "race_week_num": 0,
+            "track": { "config_name": "Gesamtstrecke Long", "track_id": 264, "track_name": "Nürburgring Combined" }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 1,
+            "track": { "config_name": "Belle Isle", "track_id": 319, "track_name": "Detroit Grand Prix at Belle Isle" }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 2,
+            "track": { "config_name": "Roval", "track_id": 350, "track_name": "Charlotte Motor Speedway" }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 3,
+            "track": { "config_name": "Grand Prix", "track_id": 353, "track_name": "Lime Rock Park" }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 4,
+            "track": { "config_name": "Grand Prix - 2009", "track_id": 149, "track_name": "Circuit Park Zandvoort" }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 5,
+            "track": { "config_name": "Road Course", "track_id": 192, "track_name": "Daytona International Speedway" }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 6,
+            "track": { "config_name": "Historic", "track_id": 349, "track_name": "Circuit de Barcelona Catalunya" }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix", "track_id": 145, "track_name": "Brands Hatch Circuit" }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 9,
+            "track": {
+              "config_name": "[Retired] Full Course",
+              "track_id": 2,
+              "track_name": "[Retired] Virginia International Raceway"
+            }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 10,
+            "track": { "config_name": "Grand Prix", "track_id": 341, "track_name": "Silverstone Circuit" }
+          },
+          {
+            "season_id": 2650,
+            "race_week_num": 11,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          }
+        ]
+      },
+      {
+        "season_id": 2563,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2019 Season 4",
+        "season_short_name": "2019 Season 4",
+        "season_year": 2019,
+        "season_quarter": 4,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2563,
+            "race_week_num": 0,
+            "track": {
+              "config_name": "Full Course",
+              "track_id": 47,
+              "track_name": "WeatherTech Raceway at Laguna Seca"
+            }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 1,
+            "track": { "config_name": "Grand Prix", "track_id": 202, "track_name": "Oran Park Raceway" }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 2,
+            "track": { "config_name": "Grand Prix", "track_id": 239, "track_name": "Autodromo Nazionale Monza" }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 3,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 4,
+            "track": { "config_name": "International", "track_id": 342, "track_name": "Silverstone Circuit" }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 5,
+            "track": {
+              "config_name": "Road Course - 2009",
+              "track_id": 134,
+              "track_name": "Indianapolis Motor Speedway"
+            }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 6,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 8,
+            "track": { "config_name": "Sprintstrecke", "track_id": 259, "track_name": "Nürburgring Grand-Prix-Strecke" }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 9,
+            "track": { "config_name": "Grand Prix", "track_id": 345, "track_name": "Circuit de Barcelona Catalunya" }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 10,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 2563,
+            "race_week_num": 11,
+            "track": { "config_name": "Grand Prix", "track_id": 145, "track_name": "Brands Hatch Circuit" }
+          }
+        ]
+      },
+      {
+        "season_id": 2472,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2019 Season 3",
+        "season_short_name": "2019 Season 3",
+        "season_year": 2019,
+        "season_quarter": 3,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2472,
+            "race_week_num": 0,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 1,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 41,
+              "track_name": "[Legacy] Silverstone Circuit - 2008"
+            }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 2,
+            "track": {
+              "config_name": "[Retired] Boot",
+              "track_id": 107,
+              "track_name": "[Retired] Watkins Glen International"
+            }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 3,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 4,
+            "track": { "config_name": "Grand Prix", "track_id": 341, "track_name": "Silverstone Circuit" }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 5,
+            "track": { "config_name": "Summit Point Raceway", "track_id": 9, "track_name": "Summit Point Raceway" }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 6,
+            "track": { "config_name": "BES/WEC", "track_id": 255, "track_name": "Nürburgring Grand-Prix-Strecke" }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix", "track_id": 239, "track_name": "Autodromo Nazionale Monza" }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 8,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 9,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 10,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 2472,
+            "race_week_num": 11,
+            "track": { "config_name": "Road Course", "track_id": 192, "track_name": "Daytona International Speedway" }
+          }
+        ]
+      },
+      {
+        "season_id": 2379,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2019 Season 2",
+        "season_short_name": "2019 Season 2",
+        "season_year": 2019,
+        "season_quarter": 2,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2379,
+            "race_week_num": 0,
+            "track": { "config_name": "Full Course", "track_id": 166, "track_name": "Okayama International Circuit" }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 1,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 2,
+            "track": {
+              "config_name": "[Retired] Cup",
+              "track_id": 106,
+              "track_name": "[Retired] Watkins Glen International"
+            }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 3,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 4,
+            "track": { "config_name": "Full Course", "track_id": 46, "track_name": "Barber Motorsports Park" }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 5,
+            "track": { "config_name": "Grand Prix", "track_id": 239, "track_name": "Autodromo Nazionale Monza" }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 6,
+            "track": { "config_name": "Full Course", "track_id": 153, "track_name": "Mid-Ohio Sports Car Course" }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 7,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 9,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 10,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          },
+          {
+            "season_id": 2379,
+            "race_week_num": 11,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          }
+        ]
+      },
+      {
+        "season_id": 2294,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2019 Season 1",
+        "season_short_name": "2019 Season 1",
+        "season_year": 2019,
+        "season_quarter": 1,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2294,
+            "race_week_num": 0,
+            "track": { "config_name": "Classic Pits", "track_id": 164, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 2294,
+            "race_week_num": 1,
+            "track": { "config_name": "Roval - 2018", "track_id": 330, "track_name": "Charlotte Motor Speedway" }
+          },
+          {
+            "season_id": 2294,
+            "race_week_num": 2,
+            "track": { "config_name": "Gesamtstrecke VLN", "track_id": 262, "track_name": "Nürburgring Combined" }
+          }
+        ]
+      },
+      {
+        "season_id": 2218,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2018 Season 4",
+        "season_short_name": "2018 Season 4",
+        "season_year": 2018,
+        "season_quarter": 4,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2218,
+            "race_week_num": 0,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 1,
+            "track": { "config_name": "Belle Isle", "track_id": 319, "track_name": "Detroit Grand Prix at Belle Isle" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 2,
+            "track": { "config_name": "Full Course", "track_id": 1, "track_name": "[Legacy] Lime Rock Park - 2008" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 3,
+            "track": { "config_name": "Industriefahrten", "track_id": 249, "track_name": "Nürburgring Nordschleife" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 4,
+            "track": { "track_id": 152, "track_name": "Phillip Island Circuit" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 5,
+            "track": { "config_name": "Grand Prix", "track_id": 145, "track_name": "Brands Hatch Circuit" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 6,
+            "track": { "track_id": 144, "track_name": "Canadian Tire Motorsports Park" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 7,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix", "track_id": 229, "track_name": "Circuit of the Americas" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 9,
+            "track": { "config_name": "Intl w/no Chicanes", "track_id": 185, "track_name": "Oulton Park Circuit" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 10,
+            "track": { "config_name": "Full Course", "track_id": 153, "track_name": "Mid-Ohio Sports Car Course" }
+          },
+          {
+            "season_id": 2218,
+            "race_week_num": 11,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          }
+        ]
+      },
+      {
+        "season_id": 2136,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2018 Season 3",
+        "season_short_name": "2018 Season 3",
+        "season_year": 2018,
+        "season_quarter": 3,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2136,
+            "race_week_num": 0,
+            "track": { "config_name": "Gesamtstrecke Long", "track_id": 264, "track_name": "Nürburgring Combined" }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 1,
+            "track": { "config_name": "Belle Isle", "track_id": 319, "track_name": "Detroit Grand Prix at Belle Isle" }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 2,
+            "track": { "track_id": 152, "track_name": "Phillip Island Circuit" }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 3,
+            "track": { "track_id": 144, "track_name": "Canadian Tire Motorsports Park" }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 4,
+            "track": { "config_name": "Indy", "track_id": 146, "track_name": "Brands Hatch Circuit" }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 5,
+            "track": {
+              "config_name": "Full Course",
+              "track_id": 47,
+              "track_name": "WeatherTech Raceway at Laguna Seca"
+            }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 6,
+            "track": { "config_name": "Full Course", "track_id": 46, "track_name": "Barber Motorsports Park" }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix - 2009", "track_id": 149, "track_name": "Circuit Park Zandvoort" }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 8,
+            "track": { "config_name": "West", "track_id": 231, "track_name": "Circuit of the Americas" }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 9,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 10,
+            "track": { "config_name": "Chicane", "track_id": 154, "track_name": "Mid-Ohio Sports Car Course" }
+          },
+          {
+            "season_id": 2136,
+            "race_week_num": 11,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          }
+        ]
+      },
+      {
+        "season_id": 2056,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2018 Season 2",
+        "season_short_name": "2018 Season 2",
+        "season_year": 2018,
+        "season_quarter": 2,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 2056,
+            "race_week_num": 0,
+            "track": { "track_id": 152, "track_name": "Phillip Island Circuit" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 1,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 2,
+            "track": { "config_name": "300", "track_id": 297, "track_name": "Snetterton Circuit" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 3,
+            "track": { "config_name": "Grand Prix", "track_id": 145, "track_name": "Brands Hatch Circuit" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 4,
+            "track": { "config_name": "Summit Point Raceway", "track_id": 9, "track_name": "Summit Point Raceway" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 5,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 6,
+            "track": { "config_name": "NASCAR Long", "track_id": 98, "track_name": "Sonoma Raceway" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 7,
+            "track": { "config_name": "Sprintstrecke", "track_id": 259, "track_name": "Nürburgring Grand-Prix-Strecke" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix", "track_id": 229, "track_name": "Circuit of the Americas" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 9,
+            "track": { "config_name": "Club - 2009", "track_id": 148, "track_name": "Circuit Park Zandvoort" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 10,
+            "track": { "config_name": "Full Course", "track_id": 153, "track_name": "Mid-Ohio Sports Car Course" }
+          },
+          {
+            "season_id": 2056,
+            "race_week_num": 11,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          }
+        ]
+      },
+      {
+        "season_id": 1974,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2018 Season 1",
+        "season_short_name": "2018 Season 1",
+        "season_year": 2018,
+        "season_quarter": 1,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 1974,
+            "race_week_num": 0,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 1,
+            "track": { "config_name": "200", "track_id": 298, "track_name": "Snetterton Circuit" }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 2,
+            "track": {
+              "config_name": "[Retired] Classic Boot",
+              "track_id": 108,
+              "track_name": "[Retired] Watkins Glen International"
+            }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 3,
+            "track": {
+              "config_name": "Road Course",
+              "track_id": 37,
+              "track_name": "[Legacy] Charlotte Motor Speedway - 2008"
+            }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 4,
+            "track": {
+              "config_name": "[Retired] Full Course",
+              "track_id": 2,
+              "track_name": "[Retired] Virginia International Raceway"
+            }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 5,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 6,
+            "track": { "config_name": "National", "track_id": 234, "track_name": "Donington Park Racing Circuit" }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 7,
+            "track": { "config_name": "BES/WEC", "track_id": 255, "track_name": "Nürburgring Grand-Prix-Strecke" }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 9,
+            "track": { "config_name": "Grand Prix - 2009", "track_id": 149, "track_name": "Circuit Park Zandvoort" }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 10,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          },
+          {
+            "season_id": 1974,
+            "race_week_num": 11,
+            "track": { "config_name": "Grand Prix", "track_id": 239, "track_name": "Autodromo Nazionale Monza" }
+          }
+        ]
+      },
+      {
+        "season_id": 1905,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2017 Season 4",
+        "season_short_name": "2017 Season 4",
+        "season_year": 2017,
+        "season_quarter": 4,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 1905,
+            "race_week_num": 0,
+            "track": {
+              "config_name": "[Retired] Cup",
+              "track_id": 106,
+              "track_name": "[Retired] Watkins Glen International"
+            }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 1,
+            "track": { "config_name": "300", "track_id": 297, "track_name": "Snetterton Circuit" }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 2,
+            "track": { "config_name": "Full Course", "track_id": 127, "track_name": "Road Atlanta" }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 3,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 4,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 5,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 6,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix", "track_id": 233, "track_name": "Donington Park Racing Circuit" }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 8,
+            "track": { "config_name": "Grand Prix", "track_id": 212, "track_name": "Autódromo José Carlos Pace" }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 9,
+            "track": { "config_name": "Grand Prix", "track_id": 239, "track_name": "Autodromo Nazionale Monza" }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 10,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          },
+          {
+            "season_id": 1905,
+            "race_week_num": 11,
+            "track": { "config_name": "Full Course", "track_id": 166, "track_name": "Okayama International Circuit" }
+          }
+        ]
+      },
+      {
+        "season_id": 1841,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2017 Season 3",
+        "season_short_name": "2017 Season 3",
+        "season_year": 2017,
+        "season_quarter": 3,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 1841,
+            "race_week_num": 0,
+            "track": {
+              "config_name": "24 Heures du Mans",
+              "track_id": 268,
+              "track_name": "Circuit des 24 Heures du Mans"
+            }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 1,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 2,
+            "track": {
+              "config_name": "[Retired] Boot",
+              "track_id": 107,
+              "track_name": "[Retired] Watkins Glen International"
+            }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 3,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 4,
+            "track": { "config_name": "Industriefahrten", "track_id": 249, "track_name": "Nürburgring Nordschleife" }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 5,
+            "track": { "config_name": "National", "track_id": 234, "track_name": "Donington Park Racing Circuit" }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 6,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix", "track_id": 239, "track_name": "Autodromo Nazionale Monza" }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 8,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 9,
+            "track": { "config_name": "Classic Pits", "track_id": 164, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 10,
+            "track": { "config_name": "Full Course", "track_id": 1, "track_name": "[Legacy] Lime Rock Park - 2008" }
+          },
+          {
+            "season_id": 1841,
+            "race_week_num": 11,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 168,
+              "track_name": "Suzuka International Racing Course"
+            }
+          }
+        ]
+      },
+      {
+        "season_id": 1775,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2017 Season 2",
+        "season_short_name": "2017 Season 2",
+        "season_year": 2017,
+        "season_quarter": 2,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 1775,
+            "race_week_num": 0,
+            "track": { "config_name": "International", "track_id": 95, "track_name": "Sebring International Raceway" }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 1,
+            "track": { "track_id": 219, "track_name": "Mount Panorama Circuit" }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 2,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 3,
+            "track": { "config_name": "Indy", "track_id": 146, "track_name": "Brands Hatch Circuit" }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 4,
+            "track": { "config_name": "Gesamtstrecke 24h", "track_id": 252, "track_name": "Nürburgring Combined" }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 5,
+            "track": { "config_name": "Full Course", "track_id": 18, "track_name": "Road America" }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 6,
+            "track": {
+              "config_name": "Grand Prix",
+              "track_id": 266,
+              "track_name": "Autodromo Internazionale Enzo e Dino Ferrari"
+            }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 7,
+            "track": { "config_name": "Grand Prix Pits", "track_id": 163, "track_name": "Circuit de Spa-Francorchamps" }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 8,
+            "track": {
+              "config_name": "24 Heures du Mans",
+              "track_id": 268,
+              "track_name": "Circuit des 24 Heures du Mans"
+            }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 9,
+            "track": { "config_name": "Grand Prix", "track_id": 199, "track_name": "Circuit Zolder" }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 10,
+            "track": { "track_id": 152, "track_name": "Phillip Island Circuit" }
+          },
+          {
+            "season_id": 1775,
+            "race_week_num": 11,
+            "track": {
+              "config_name": "Full Course",
+              "track_id": 47,
+              "track_name": "WeatherTech Raceway at Laguna Seca"
+            }
+          }
+        ]
+      },
+      {
+        "season_id": 1743,
+        "series_id": 299,
+        "season_name": "iRacing Porsche Cup By Coach Dave Delta - 2017 Season 1",
+        "season_short_name": "2017 Season 1",
+        "season_year": 2017,
+        "season_quarter": 1,
+        "active": false,
+        "official": true,
+        "driver_changes": false,
+        "fixed_setup": false,
+        "license_group": 3,
+        "has_supersessions": false,
+        "license_group_types": [{ "license_group_type": 3 }],
+        "car_classes": [
+          {
+            "car_class_id": 95,
+            "short_name": "[L] Porsche 911",
+            "name": "[Legacy] Porsche 911 GT3 Cup",
+            "relative_speed": 51
+          }
+        ],
+        "race_weeks": [
+          {
+            "season_id": 1743,
+            "race_week_num": 0,
+            "track": { "config_name": "Industriefahrten", "track_id": 249, "track_name": "Nürburgring Nordschleife" }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 1,
+            "track": { "config_name": "Full Course", "track_id": 166, "track_name": "Okayama International Circuit" }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 2,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 3,
+            "track": {
+              "config_name": "24 Heures du Mans",
+              "track_id": 268,
+              "track_name": "Circuit des 24 Heures du Mans"
+            }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 4,
+            "track": { "config_name": "Summit Point Raceway", "track_id": 9, "track_name": "Summit Point Raceway" }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 5,
+            "track": {
+              "config_name": "[Retired] Boot",
+              "track_id": 107,
+              "track_name": "[Retired] Watkins Glen International"
+            }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 6,
+            "track": {
+              "config_name": "Full Course",
+              "track_id": 47,
+              "track_name": "WeatherTech Raceway at Laguna Seca"
+            }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 7,
+            "track": { "config_name": "Industriefahrten", "track_id": 249, "track_name": "Nürburgring Nordschleife" }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 8,
+            "track": { "config_name": "Full Course", "track_id": 166, "track_name": "Okayama International Circuit" }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 9,
+            "track": { "track_id": 218, "track_name": "Circuit Gilles Villeneuve" }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 10,
+            "track": {
+              "config_name": "24 Heures du Mans",
+              "track_id": 268,
+              "track_name": "Circuit des 24 Heures du Mans"
+            }
+          },
+          {
+            "season_id": 1743,
+            "race_week_num": 11,
+            "track": { "config_name": "Summit Point Raceway", "track_id": 9, "track_name": "Summit Point Raceway" }
+          }
+        ]
+      }
+    ]
+  },
+  "series_id": 299
+}
