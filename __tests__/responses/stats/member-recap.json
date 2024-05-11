@@ -1,0 +1,26 @@
+{
+  "year": 2024,
+  "stats": {
+    "starts": 19,
+    "wins": 0,
+    "top5": 2,
+    "avg_start_position": 15,
+    "avg_finish_position": 12,
+    "laps": 159,
+    "laps_led": 0,
+    "favorite_car": {
+      "car_id": 157,
+      "car_name": "Mercedes-AMG GT4",
+      "car_image": "https://images-static.iracing.com/img/cars/mercedesamggt4/mercedesamggt4-small.jpg"
+    },
+    "favorite_track": {
+      "track_id": 168,
+      "track_name": "Suzuka International Racing Course",
+      "config_name": "Grand Prix",
+      "track_logo": "https://images-static.iracing.com/img/logos/tracks/suzukainternationalracingcourse-logo.png"
+    }
+  },
+  "success": true,
+  "season": null,
+  "cust_id": 693109
+}

@@ -38,6 +38,19 @@ import {
 } from "../results/types"
 import { RaceGuide, SeasonList, Series, SpectatorSubsession } from "../season/types"
 import { PastSeries, RacingSeason, SeriesAssets, SeriesStats } from "../series/types"
+import {
+  DivisionData,
+  MemberBests,
+  MemberCareer,
+  MemberRecap,
+  MemberSummary,
+  MemberYearlySummary,
+  RecentRaces,
+  SeasonResults,
+  SeasonStandings,
+} from "../stats/types"
+import { TeamInfo } from "../team/types"
+import { Track, TrackAssets } from "../track/types"
 import { appendParams } from "../utils/appendParams"
 import { dateParamErrorChecking } from "../utils/errorChecking"
 
@@ -46,6 +59,9 @@ type SignedURL = {
   expires: Date
 }
 
+/**
+ * Represents the iRacing SDK for interacting with the iRacing API.
+ */
 class IRacingSDK {
   public authenticated: boolean
   private iracingAPI: AxiosInstance
@@ -1511,6 +1527,662 @@ class IRacingSDK {
       return data
     } catch (error) {
       console.log("Error occured while fetching series stats.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve member bests stats.
+   *
+   * If you want to retrieve stats for a specific car, first call should exclude car_id;
+   * use cars_driven list in return for subsequent calls.
+   *
+   * Example Usage:
+   * ```typescript
+   * const memberStats = await getMemberBests() // Return member best lap times
+   * ```
+   *
+   * Optional Params:
+   * @param member_id - Defaults to the authenticated member
+   * @param car_id - First call should exclude car_id; use cars_driven list in return for subsequent calls.
+   */
+  public async getMemberBests({ member_id, car_id }: { member_id?: number; car_id?: number }): Promise<MemberBests> {
+    const URL = appendParams(`/data/stats/member_bests?`, {
+      member_id,
+      car_id,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<MemberBests>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching member bests.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve members career stats. Defaults ot the authenticated member but member_id can be passed to retrieve stats for another member.
+   *
+   * Example Usage:
+   * ```typescript
+   * const memberStats = await getMemberCareerStats() // Return member career stats
+   * ```
+   *
+   * Optional Params:
+   * @param member_id - Defaults to the authenticated member
+   */
+  public async getMemberCareerStats({ member_id }: { member_id?: number }): Promise<MemberCareer> {
+    const URL = `/data/stats/member_career${member_id ? `?member_id=${member_id}` : ""}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<MemberCareer>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching member career stats.")
+      throw error
+    }
+  }
+
+  /**
+   * Retireve member division. Divisions are 0-based: 0 is Division 1, 10 is Rookie. See /data/constants/divisons for more information. Always for the authenticated member.
+   *
+   * Example Usage:
+   * ```typescript
+   * const memberDivisonStats = await getMemberDivisionStats() // Return member division stats
+   * ```
+   *
+   * Required Params:
+   * @param season_id - ID of the season you want data for
+   * @param event_type - The event type code for the division type: 4 - Time Trial; 5 - Race
+   */
+  public async getMemberDivisionStats({
+    season_id,
+    event_type,
+  }: {
+    season_id: number
+    event_type: 1 | 2 | 3 | 4 | 5
+  }): Promise<DivisionData> {
+    if (!season_id || !event_type)
+      throw new Error("Cannot complete request. Missing required parameters. (season_id, event_type)")
+    const URL = `/data/stats/member_division?season_id=${season_id}&event_type=${event_type}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<DivisionData>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching member division stats.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve member recap. Defaults to the authenticated member, but member_id can be passed to retrieve stats for another member.
+   *
+   * Example Usage:
+   * ```typescript
+   * const memberRecap = await getMemberRecap() // Return member recap stats
+   * ```
+   *
+   * Optional Params:
+   * @param member_id - Defaults to the authenticated member
+   * @param year - Season year; if not supplied the current calendar year (UTC) is used.
+   * @param quarter - Season (quarter) within the year; if not supplied the recap will be fore the entire year.
+   */
+  public async getMemberRecap({
+    member_id,
+    year,
+    quarter,
+  }: {
+    member_id?: number
+    year?: number
+    quarter?: number
+  }): Promise<MemberRecap> {
+    const URL = appendParams(`/data/stats/member_recap?`, {
+      member_id,
+      year,
+      quarter,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<MemberRecap>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching member recap stats.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve a members recent races. Defaults to the authenticated member, but member_id can be passed to retrieve stats for another member.
+   *
+   * Example Usage:
+   * ```typescript
+   * const recentRaces = await getRecentRaces({cust_id: 123456}) // Return recent races for member 123456
+   * ```
+   *
+   * Optional Params:
+   * @param cust_id - Defaults to the authenticated member
+   */
+  public async getRecentRaces({ cust_id }: { cust_id?: number }): Promise<RecentRaces> {
+    const URL = `/data/stats/member_recent_races${cust_id ? `?cust_id=${cust_id}` : ""}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<RecentRaces>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching members recent races.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve member summary. Defaults to the authenticated member, but member_id can be passed to retrieve stats for another member.
+   *
+   * Example Usage:
+   * ```typescript
+   * const memberSummary = await getMemberSummary({cust_id: 123456}) // Return member summary for member 123456
+   * ```
+   *
+   * Optional Params:
+   * @param cust_id - Defaults to the authenticated member
+   */
+  public async getMemberSummary({ cust_id }: { cust_id?: number }): Promise<MemberSummary> {
+    const URL = `/data/stats/member_summary${cust_id ? `?cust_id=${cust_id}` : ""}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<MemberSummary>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching member summary.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve member summary. Defaults to the authenticated member, but member_id can be passed to retrieve stats for another member.
+   *
+   * Example Usage:
+   * ```typescript
+   * const memberSummary = await getMemberSummary({cust_id: 123456}) // Return member summary for member 123456
+   * ```
+   *
+   * Optional Params:
+   * @param cust_id - Defaults to the authenticated member
+   */
+  public async getYearlyStats({ cust_id }: { cust_id?: number }): Promise<MemberYearlySummary> {
+    const URL = `/data/stats/member_yearly${cust_id ? `?cust_id=${cust_id}` : ""}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<MemberYearlySummary>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching member yearly stats.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve season driver standings. A base_download_url will be returned along with a list of chunk file names, which can be used to download the data. Simply
+   * attach the chunk file name to the base_download_url to download the file.
+   *
+   * Example Usage:
+   * ```typescript
+   * // Return season driver standings for season 1234 and car class 1234
+   * const seasonDriverStandings = await getSeasonDriverStandings({season_id: 4603, car_class_id: 870})
+   * ```
+   *
+   * Required Params:
+   * @param season_id - ID of the season you want data for
+   * @param car_class_id - ID of the car class you want data for
+   *
+   * Optional Params:
+   * @param club_id - ID of the club you want data for. Defaults to all (-1).
+   * @param division - Division you want data for. Divisions are 0-based: 0 is Division 1, 10 is Rookie. See /data/constants/divisons for more information. Defaults to all.
+   * @param race_week_num - Number of the race week. The first race week of a season is 0.
+   */
+  public async getSeasonDriverStandings({
+    season_id,
+    car_class_id,
+    club_id,
+    division,
+    race_week_num,
+  }: {
+    season_id: number
+    car_class_id: number
+    club_id?: -1
+    division?: number
+    race_week_num?: number
+  }): Promise<SeasonStandings> {
+    if (!season_id || !car_class_id)
+      throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+    const URL = appendParams(`/data/stats/season_driver_standings?`, {
+      season_id,
+      car_class_id,
+      club_id,
+      division,
+      race_week_num,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SeasonStandings>(res.data?.link)
+      return data
+    } catch (error: any) {
+      console.log("Error occured while fetching season driver standings.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve seasons supersession standings. A base_download_url will be returned along with a list of chunk file names, which can be used to download the data. Simply
+   * attach the chunk file name to the base_download_url to download the file.
+   *
+   * Example Usage:
+   * ```typescript
+   * // Return season driver standings for season 1234 and car class 1234
+   * const supersessionStandings = await getSeasonSupersesssionStandings({season_id: 1234, car_class_id: 1234})
+   * ```
+   *
+   * Required Params:
+   * @param season_id - ID of the season you want data for
+   * @param car_class_id - ID of the car class you want data for
+   *
+   * Optional Params:
+   * @param club_id - ID of the club you want data for. Defaults to all (-1).
+   * @param division - Division you want data for. Divisions are 0-based: 0 is Division 1, 10 is Rookie. See /data/constants/divisons for more information. Defaults to all.
+   * @param race_week_num - Number of the race week. The first race week of a season is 0.
+   */
+  public async getSeasonSupersessionStandings({
+    season_id,
+    car_class_id,
+    club_id,
+    division,
+    race_week_num,
+  }: {
+    season_id: number
+    car_class_id: number
+    club_id?: -1
+    division?: number
+    race_week_num?: number
+  }): Promise<SeasonStandings> {
+    if (!season_id || !car_class_id)
+      throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+    const URL = appendParams(`/data/stats/season_supersession_standings?`, {
+      season_id,
+      car_class_id,
+      club_id,
+      division,
+      race_week_num,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SeasonStandings>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching season supersession standings.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve season team standings. A base_download_url will be returned along with a list of chunk file names, which can be used to download the data. Simply
+   * attach the chunk file name to the base_download_url to download the file.
+   *
+   * Example Usage:
+   * ```typescript
+   * const seasonTeamStandings = await getSeasonTeamStandings({season_id: 1234, car_class_id: 123}) // Return team standings for season 1234 and car class 123
+   * ```
+   *
+   * Required Params:
+   * @param season_id - ID of the season you want data for
+   * @param car_class_id - ID of the car class you want data for
+   *
+   * Optional Params:
+   * @param race_week_num - Number of the race week. The first race week of a season is 0.
+   */
+  public async getSeasonTeamStandings({
+    season_id,
+    car_class_id,
+    race_week_num,
+  }: {
+    season_id: number
+    car_class_id: number
+    race_week_num?: number
+  }): Promise<SeasonStandings> {
+    if (!season_id || !car_class_id)
+      throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+    const URL = appendParams(`/data/stats/season_team_standings?`, {
+      season_id,
+      car_class_id,
+      race_week_num,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SeasonStandings>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching season team standings.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve season time trial standings. A base_download_url will be returned along with a list of chunk file names, which can be used to download the data. Simply
+   * attach the chunk file name to the base_download_url to download the file.
+   *
+   * Example Usage:
+   * ```typescript
+   * // Return season time trial season standings for season 4603 and car class 870
+   * const timeTrialStandings = await getSeasonTimetrialStandings({season_id: 4603, car_class_id: 870 })
+   * ```
+   *
+   * Required Params:
+   * @param season_id - ID of the season you want data for
+   * @param car_class_id - ID of the car class you want data for
+   *
+   * Optional Params:
+   * @param club_id - ID of the club you want data for. Defaults to all (-1).
+   * @param division - Division you want data for. Divisions are 0-based: 0 is Division 1, 10 is Rookie. See /data/constants/divisons for more information. Defaults to all.
+   * @param race_week_num - Number of the race week. The first race week of a season is 0.
+   */
+  public async getSeasonTimeTrialStandings({
+    season_id,
+    car_class_id,
+    club_id = -1,
+    division,
+    race_week_num,
+  }: {
+    season_id: number
+    car_class_id: number
+    club_id?: number
+    division?: number
+    race_week_num?: number
+  }): Promise<SeasonStandings> {
+    if (!season_id || !car_class_id)
+      throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+    const URL = appendParams(`/data/stats/season_tt_standings?`, {
+      season_id,
+      car_class_id,
+      club_id,
+      division,
+      race_week_num,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SeasonStandings>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching season time trial standings.")
+      throw error
+    }
+  }
+
+  /**
+ * Retrieve season time trial results. A base_download_url will be returned along with a list of chunk file names, which can be used to download the data. Simply
+ * attach the chunk file name to the base_download_url to download the file.
+ *
+ * Example Usage:
+ * ```typescript
+ * // Return time trials results for season 4603, car class 870, and race week 0
+ * const timetrialResults = await getSeasonTimetrialResults({season_id: 4603, car_class_id: 870, race_week_num: 0 })
+ * ```
+ *
+ * Required Params:
+ * @param season_id - ID of the season you want data for
+ * @param car_class_id - ID of the car class you want data for
+ * @param race_week_num - Number of the race week. The first race week of a season is 0.
+
+ *
+ * Optional Params:
+ * @param club_id - ID of the club you want data for. Defaults to all (-1).
+ * @param division - Division you want data for. Divisions are 0-based: 0 is Division 1, 10 is Rookie. See /data/constants/divisons for more information. Defaults to all.
+ */
+  public async getSeasonTimeTrialResults({
+    season_id,
+    car_class_id,
+    race_week_num,
+    club_id = -1,
+    division,
+  }: {
+    season_id: number
+    car_class_id: number
+    race_week_num: number
+    club_id?: number
+    division?: number
+  }): Promise<SeasonResults> {
+    if (!season_id || !car_class_id || !race_week_num)
+      throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id, race_week_num)")
+    const URL = appendParams(`/data/stats/season_timetrial_results?`, {
+      season_id,
+      car_class_id,
+      race_week_num,
+      club_id,
+      division,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SeasonResults>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching season time trial results.")
+      throw error
+    }
+  }
+
+  /**
+  * Retrieve season qualifying results. A base_download_url will be returned along with a list of chunk file names, which can be used to download the data. Simply
+  * attach the chunk file name to the base_download_url to download the file.
+  *
+  * Example Usage:
+  * ```typescript
+  * // Return time trials results for season 4603, car class 870, and race week 0
+  * const qualfyingResults = await getSeasonQualifyingResults({season_id: 4603, car_class_id: 870, race_week_num: 0 })
+  * ```
+  *
+  * Required Params:
+  * @param season_id - ID of the season you want data for
+  * @param car_class_id - ID of the car class you want data for
+  * @param race_week_num - Number of the race week. The first race week of a season is 0.
+
+  *
+  * Optional Params:
+  * @param club_id - ID of the club you want data for. Defaults to all (-1).
+  * @param division - Division you want data for. Divisions are 0-based: 0 is Division 1, 10 is Rookie. See /data/constants/divisons for more information. Defaults to all.
+  */
+  public async getSeasonQualifyingResults({
+    season_id,
+    car_class_id,
+    race_week_num,
+    club_id = -1,
+    division,
+  }: {
+    season_id: number
+    car_class_id: number
+    race_week_num: number
+    club_id?: number
+    division?: number
+  }): Promise<SeasonStandings> {
+    if (!season_id || !car_class_id)
+      throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+    const URL = appendParams(`/data/stats/season_qualify_results?`, {
+      season_id,
+      car_class_id,
+      race_week_num,
+      club_id,
+      division,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<SeasonStandings>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching season qualifying results.")
+      throw error
+    }
+  }
+
+  /**
+   * Retrieve world records. A base_download_url will be returned along with a list of chunk file names, which can be used to download the data. Simply
+   * attach the chunk file name to the base_download_url to download the file.
+   *
+   * Example Usage:
+   * ```typescript
+   * // Return time trials results for season 4603, car class 870, and race week 0
+   * const timetrialResults = await getSeasonTimetrialResults({season_id: 4603, car_class_id: 870, race_week_num: 0 })
+   * ```
+   *
+   * Required Params:
+   * @param car_id - ID of the car you want world record data for
+   * @param track_id - ID of the track you want data for
+   *
+   * Optional Params:
+   * @param season_year - Limit best time to a given year
+   * @param season_quarter - Limit best times to a given quarter; only applicable when year is used.
+   */
+  public async getWorldRecords({
+    car_id,
+    track_id,
+    season_year,
+    season_quarter,
+  }: {
+    car_id: number
+    track_id: number
+    season_year?: number
+    season_quarter?: number
+  }): Promise<any> {
+    if (!car_id || !track_id)
+      throw new Error("Cannot complete request. Missing required parameters. (car_id, track_id)")
+    const URL = appendParams(`/data/stats/world_records?`, {
+      car_id,
+      track_id,
+      season_year,
+      season_quarter,
+    })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<any>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching world records.")
+      throw error
+    }
+  }
+
+  /**
+   * Function to retrieve a team's profile.
+   *
+   * Example Usage:
+   *
+   * ```typescript
+   * getTeamProfile({team_id: 12345})
+   * ```
+   *
+   * Required Params:
+   * @param team_id - The team ID of the team to retrieve profile data for.
+   *
+   * Optional Params:
+   * @param include_licenses - Whether or not to include license data in the response. For faster responses, only request license data when needed.
+   */
+  public async getTeamProfile({
+    team_id,
+    include_licenses,
+  }: {
+    team_id: number
+    include_licenses?: boolean
+  }): Promise<TeamInfo> {
+    if (!team_id) throw new Error("Cannot complete request: Missing required parameters (team_id)")
+    const URL = appendParams(`/data/team/get?team_id=${team_id}`, { include_licenses })
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<TeamInfo>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching team info")
+      throw error
+    }
+  }
+
+  /**
+   * Function to retrieve an authenticated members time attack results.
+   *
+   * Example Usage:
+   *
+   * ```typescript
+   * getUserTimeAttackData({ta_comp_season_id: 12345})
+   * ```
+   *
+   * Required Params:
+   * @param ta_comp_season_id - The time attack competition season ID to retrieve data for. Defaults to the authenticated member but a season_id is still needed.
+   */
+  public async getUserTimeAttackData({ ta_comp_season_id }: { ta_comp_season_id: number }): Promise<any> {
+    if (!ta_comp_season_id) throw new Error("Cannot complete request: Missing required parameters (ta_comp_season_id)")
+    const URL = `/data/time_attack/member_season_results?ta_comp_season_id=${ta_comp_season_id}`
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<any>(res.data?.link) //TODO: find correct return type
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching user time attack data")
+      throw error
+    }
+  }
+
+  /**
+   * Function to retrieve all tracks available on iRacing.
+   *
+   * Example Usage:
+   *
+   * ```typescript
+   * getTrackData() // Returns an array of all tracks available on iRacing
+   * ```
+   */
+  public async getTrackData(): Promise<Track[]> {
+    const URL = "/data/track/get"
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<Track[]>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching tracks")
+      throw error
+    }
+  }
+
+  /**
+   * Function to retrieve track assets.
+   *
+   * Example Usage:
+   *
+   * ```typescript
+   * getTrackAssets() // Returns all assets for the tracks available on iRacing
+   * ```
+   */
+  public async getTrackAssets(): Promise<TrackAssets[]> {
+    const URL = "/data/track/assets"
+    try {
+      await this.authenticate()
+      const res = await this.iracingAPI.get<SignedURL>(URL)
+      const data = await this.request<TrackAssets[]>(res.data?.link)
+      return data
+    } catch (error) {
+      console.log("Error occured while fetching track assets")
       throw error
     }
   }

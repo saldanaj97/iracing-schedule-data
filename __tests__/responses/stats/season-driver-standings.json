@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "season_id": 4753,
+  "season_name": "Falken Tyre Sports Car Challenge - 2024 Season 2",
+  "season_short_name": "2024 Season 2",
+  "series_id": 502,
+  "series_name": "Falken Tyre Sports Car Challenge",
+  "car_class_id": 2268,
+  "race_week_num": -1,
+  "division": -1,
+  "club_id": -1,
+  "customer_rank": 5628,
+  "chunk_info": {
+    "chunk_size": 500,
+    "num_chunks": 21,
+    "rows": 10334,
+    "base_download_url": "https://members-assets.iracing.com/public/standings/season/4753/season-driver/2268/all/",
+    "chunk_file_names": [
+      "929369315a6709307888487e7a5440a79187a8567bc21e4f5f99a428b81caa07.json",
+      "006129e23a6d3d92ce5997f528fb4513680c2b900d5e91c53aa520f86bf9d9a1.json",
+      "7b7712144a8a3842aac93bcff56e28ee0b7184ad9cb87e7bf8858de914d76ede.json",
+      "1a3fe81e123ae3309210020d9eadce7bb52c500d107028915a8d1f803dbf9896.json",
+      "cdc98b964bdee8dfdb64d9d731d41d5dbb339c66cbed9b5c327cb9cbbadcf079.json",
+      "acb41a61e525cc66a3dd4076db4829b2c3636f1cf1eac104d3c9ab18ae3c7db3.json",
+      "2fa25ab776db19d6b6a355a8b467a2d13b2c0b4216d2199d6c9b500e0073ae4c.json",
+      "0a43958bfb93f7d68a143960aa5cf82fbbbceee97e6f62b1cd00b5a09178370e.json",
+      "a4c93099faf630c787cb18dd8610a3e6d018fb61d01f18eeb968b40dff3d31e2.json",
+      "72db3163d9a6fad97b142b13c0f13d4c778e239f8a3418a10b1fab56013305fe.json",
+      "e25186fe35a078c9fa3ce0c27d11081146456e677d3ba8658c769c1351aa8bfa.json",
+      "3f7fd0029e0c54d764fe5b1b0702f1dbe2cbe7c51564d555e4a5cd43dfed4d8f.json",
+      "2361d60ef2dd81ea2ad78e7c4ef4f80982350d62ffdabbe2055fbfb2488bccac.json",
+      "56d0dff686d98d8abe0e0b3119959c6abeb8f1f47de6de8a6f7589bdedf2796d.json",
+      "d9228cd7cf23402c176801833bbe17e0e33a1cf68e0f5540aa91f0c4a6ee7380.json",
+      "b82c71c4ce39038965aa71d23d9abb602985e8a4e931f29a374c6308076abbe5.json",
+      "f9954a184d4b21f8361e84066eb7cf5f998440cf8e0eb0705d4d5e3c0825ba76.json",
+      "041c5d1a142de701bd262d299d5520739c7101bb107b3e885b7837828a033659.json",
+      "85a690e00e1fec9fa89532c34789e28969ee4ed9868cec1ee22ba4a278a8ecd7.json",
+      "c8d4078c86c030ff404919c4b0840b0a68f9df0dbd09891c7c6d4cd967e1f4e7.json",
+      "83e9275795a5fccb02d56b80bfb9557c7da1127a32085de8eeae09778e3829b8.json"
+    ]
+  },
+  "last_updated": "2024-05-10T22:23:34.810116041Z"
+}

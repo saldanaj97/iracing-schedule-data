@@ -1,0 +1,53 @@
+{
+  "team_id": -12345,
+  "owner_id": 158166,
+  "team_name": "Team Steve Jansen",
+  "created": "2014-10-22T09:40:16Z",
+  "hidden": false,
+  "about": "",
+  "url": "",
+  "roster_count": 1,
+  "recruiting": true,
+  "private_wall": true,
+  "is_default": true,
+  "is_owner": false,
+  "is_admin": false,
+  "suit": { "pattern": 0, "color1": "ffffff", "color2": "ffffff", "color3": "ffffff" },
+  "owner": {
+    "cust_id": 158166,
+    "display_name": "Steve Jansen",
+    "helmet": {
+      "pattern": 0,
+      "color1": "ffffff",
+      "color2": "ffffff",
+      "color3": "ffffff",
+      "face_type": 0,
+      "helmet_type": 0
+    },
+    "owner": true,
+    "admin": true
+  },
+  "tags": { "categorized": [], "not_categorized": [] },
+  "team_applications": [],
+  "pending_requests": [],
+  "is_member": false,
+  "is_applicant": false,
+  "is_invite": false,
+  "is_ignored": false,
+  "roster": [
+    {
+      "cust_id": 158166,
+      "display_name": "Steve Jansen",
+      "helmet": {
+        "pattern": 0,
+        "color1": "ffffff",
+        "color2": "ffffff",
+        "color3": "ffffff",
+        "face_type": 0,
+        "helmet_type": 0
+      },
+      "owner": true,
+      "admin": true
+    }
+  ]
+}

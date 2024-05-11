@@ -78,7 +78,7 @@ type MemberRecap = {
 
 type MemberSummary = {
   this_year: {
-    num_official_session: number
+    num_official_sessions: number
     num_league_sessions: number
     num_official_wins: number
     num_league_wins: number
