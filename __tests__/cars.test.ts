@@ -26,7 +26,7 @@ describe("Car Functions", () => {
   })
 
   it("should retrieve car assets", async () => {
-    const mockFile = mockResponsePath + "car-assets.json"
+    const mockFile = mockResponsePath + "cars/car-assets.json"
     nockHelper().get("/data/car/assets").replyWithFile(StatusCodes.OK, mockFile)
     await mockResouceGet(mockFile)
     const carAssets = await client.getCarAssets()
@@ -34,7 +34,7 @@ describe("Car Functions", () => {
   })
 
   it("should retrieve all cars available on the service", async () => {
-    const mockFile = mockResponsePath + "car-info-list.json"
+    const mockFile = mockResponsePath + "cars/car-info-list.json"
     nockHelper().get("/data/car/get").replyWithFile(StatusCodes.OK, mockFile)
     await mockResouceGet(mockFile)
     const cars = await client.getAllCars()

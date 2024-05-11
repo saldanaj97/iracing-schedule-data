@@ -26,7 +26,7 @@ describe("Car Class API", () => {
   })
 
   it("should retrieve list of car classes", async () => {
-    const mockFile = mockResponsePath + "car-class.json"
+    const mockFile = mockResponsePath + "carclass/car-class.json"
     nockHelper().get("/data/carclass/get").replyWithFile(StatusCodes.OK, mockFile)
     await mockResouceGet(mockFile)
     const carAssets = await client.getCarClassData()
