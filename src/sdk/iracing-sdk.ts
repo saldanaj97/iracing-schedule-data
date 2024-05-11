@@ -3,10 +3,10 @@ import { wrapper } from "axios-cookiejar-support"
 import CryptoJS from "crypto-js"
 import fs from "fs"
 import { CookieJar } from "tough-cookie"
-import { CarDetails, CarInfo } from "../car/types"
-import { CarClass } from "../carclass/types"
-import { ConstantType } from "../constants/types"
-import { HostedSession } from "../hosted/types"
+import { CarDetails, CarInfo } from "../types/car.types"
+import { CarClass } from "../types/carclass.types"
+import { ConstantType } from "../types/constant.types"
+import { HostedSession } from "../types/hosted.types"
 import {
   CustomLeague,
   LeagueData,
@@ -16,8 +16,8 @@ import {
   LeagueSessionData,
   LeagueStandings,
   PointsSystemsData,
-} from "../league/types"
-import { Club, Country, Driver } from "../lookup/types"
+} from "../types/league.types"
+import { Club, Country, Driver } from "../types/lookup.types"
 import {
   Award,
   AwardResponse,
@@ -26,7 +26,7 @@ import {
   MemberProfile,
   ParticipationCreditData,
   PersonalInfo,
-} from "../member/types"
+} from "../types/member.types"
 import {
   DetailedSessionResult,
   EventLogInfo,
@@ -35,9 +35,9 @@ import {
   LapData,
   SeasonSearchResults,
   SeriesSearchResults,
-} from "../results/types"
-import { RaceGuide, SeasonList, Series, SpectatorSubsession } from "../season/types"
-import { PastSeries, RacingSeason, SeriesAssets, SeriesStats } from "../series/types"
+} from "../types/result.types"
+import { RaceGuide, SeasonList, Series, SpectatorSubsession } from "../types/season.types"
+import { PastSeries, RacingSeason, SeriesAssets, SeriesStats } from "../types/series.types"
 import {
   DivisionData,
   MemberBests,
@@ -48,9 +48,9 @@ import {
   RecentRaces,
   SeasonResults,
   SeasonStandings,
-} from "../stats/types"
-import { TeamInfo } from "../team/types"
-import { Track, TrackAssets } from "../track/types"
+} from "../types/stats.types"
+import { TeamInfo } from "../types/team.types"
+import { Track, TrackAssets } from "../types/track.types"
 import { appendParams } from "../utils/appendParams"
 import { dateParamErrorChecking } from "../utils/errorChecking"
 
