@@ -4,7 +4,7 @@ import { nockHelper } from "./helpers"
 
 const mockResponsePath = __dirname + "/responses/"
 
-describe("Series Functions", () => {
+describe("Stats Functions", () => {
   const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
