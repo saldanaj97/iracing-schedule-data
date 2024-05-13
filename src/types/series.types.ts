@@ -180,22 +180,6 @@ type Season = {
   race_weeks: RaceWeek[]
 }
 
-type Series = {
-  allowed_licenses: LicenseRange[]
-  category: string
-  category_id: number
-  eligible: boolean
-  forum_url?: string
-  max_starters: number
-  min_starters: number
-  oval_caution_type: number
-  road_caution_type: number
-  search_filters?: string
-  series_id: number
-  series_name: string
-  series_short_name: string
-}
-
 type SeriesAssets = {
   [key: string]: {
     large_image: string | null
@@ -257,4 +241,4 @@ type WeatherInfo = {
   wind_value: number
 }
 
-export { PastSeries, RacingSeason, Series, SeriesAssets, SeriesStats }
+export { PastSeries, RacingSeason, SeriesAssets, SeriesStats }

@@ -3,54 +3,58 @@ import { wrapper } from "axios-cookiejar-support"
 import CryptoJS from "crypto-js"
 import fs from "fs"
 import { CookieJar } from "tough-cookie"
-import { CarDetails, CarInfo } from "../types/car.types"
-import { CarClass } from "../types/carclass.types"
-import { ConstantType } from "../types/constant.types"
-import { HostedSession } from "../types/hosted.types"
 import {
+  Award,
+  AwardResponse,
+  CarClass,
+  CarDetails,
+  CarInfo,
+  ChartData,
+  Club,
+  ConstantType,
+  Country,
   CustomLeague,
+  DetailedSessionResult,
+  DivisionData,
+  Driver,
+  EventLogInfo,
+  HostedSearchResults,
+  HostedSession,
+  LapChartInfo,
+  LapData,
   LeagueData,
   LeagueInfo,
   LeagueRosterResponse,
   LeagueSeasonList,
   LeagueSessionData,
   LeagueStandings,
-  PointsSystemsData,
-} from "../types/league.types"
-import { Club, Country, Driver } from "../types/lookup.types"
-import {
-  Award,
-  AwardResponse,
-  ChartData,
-  MemberData,
-  MemberProfile,
-  ParticipationCreditData,
-  PersonalInfo,
-} from "../types/member.types"
-import {
-  DetailedSessionResult,
-  EventLogInfo,
-  HostedSearchResults,
-  LapChartInfo,
-  LapData,
-  SeasonSearchResults,
-  SeriesSearchResults,
-} from "../types/result.types"
-import { RaceGuide, SeasonList, Series, SpectatorSubsession } from "../types/season.types"
-import { PastSeries, RacingSeason, SeriesAssets, SeriesStats } from "../types/series.types"
-import {
-  DivisionData,
   MemberBests,
   MemberCareer,
+  MemberData,
+  MemberProfile,
   MemberRecap,
   MemberSummary,
   MemberYearlySummary,
+  ParticipationCreditData,
+  PastSeries,
+  PersonalInfo,
+  PointsSystemsData,
+  RaceGuide,
+  RacingSeason,
   RecentRaces,
+  SeasonList,
   SeasonResults,
+  SeasonSearchResults,
   SeasonStandings,
-} from "../types/stats.types"
-import { TeamInfo } from "../types/team.types"
-import { Track, TrackAssets } from "../types/track.types"
+  Series,
+  SeriesAssets,
+  SeriesSearchResults,
+  SeriesStats,
+  SpectatorSubsession,
+  TeamInfo,
+  Track,
+  TrackAssets,
+} from "../types"
 import { appendParams } from "../utils/appendParams"
 import { dateParamErrorChecking } from "../utils/errorChecking"
 
