@@ -25,13 +25,6 @@ type License = {
   parent_id: number
 }
 
-type LicenseRange = {
-  group_name: string
-  license_group: number
-  max_license_level: number
-  min_license_level: number
-}
-
 type PastSeason = {
   active: boolean
   car_classes: CarClass[]
