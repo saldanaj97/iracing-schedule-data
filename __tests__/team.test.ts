@@ -8,7 +8,7 @@ describe("Team Functions", () => {
   const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
-  const mockResouceGet = async (filePath: string) => {
+  const mockResourceGet = async (filePath: string) => {
     getResource.mockResolvedValue(await import(filePath))
   }
 
@@ -28,7 +28,7 @@ describe("Team Functions", () => {
   it("should retrieve team data", async () => {
     const mockFile = mockResponsePath + "team/team-profile.json"
     nockHelper().get("/data/team/team_profile").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const team = await client.getTeamProfile({
       team_id: 12345,
     })

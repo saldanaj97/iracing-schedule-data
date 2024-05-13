@@ -8,7 +8,7 @@ describe("Result Functions", () => {
   const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
-  const mockResouceGet = async (filePath: string) => {
+  const mockResourceGet = async (filePath: string) => {
     getResource.mockResolvedValue(await import(filePath))
   }
 
@@ -28,7 +28,7 @@ describe("Result Functions", () => {
   it("should retrieve detailed session results", async () => {
     const mockFile = mockResponsePath + "results/results.json"
     nockHelper().get("/data/results/get").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const results = await client.getResults({ subsession_id: 68476090 })
     expect(results.subsession_id).toBe(68476090)
   })
@@ -36,7 +36,7 @@ describe("Result Functions", () => {
   it("should retrieve sessions event log", async () => {
     const mockFile = mockResponsePath + "results/event-log.json"
     nockHelper().get("/data/results/event_log").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const eventLogs = await client.getEventLog({ subsession_id: 68476090, simsession_number: 0 })
     expect(eventLogs.success).toBe(true)
     expect(eventLogs.session_info.subsession_id).toBe(68476090)
@@ -45,7 +45,7 @@ describe("Result Functions", () => {
   it("should retrieve lap chart data", async () => {
     const mockFile = mockResponsePath + "results/lap-chart-data.json"
     nockHelper().get("/data/results/lap_chart_data").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const lapChartData = await client.getLapChartData({ subsession_id: 68476090, simsession_number: 0 })
     expect(lapChartData.success).toBe(true)
     expect(lapChartData.session_info.subsession_id).toBe(68476090)
@@ -54,7 +54,7 @@ describe("Result Functions", () => {
   it("should retrieve lap data", async () => {
     const mockFile = mockResponsePath + "results/lap-data.json"
     nockHelper().get("/data/results/lap_data").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const lapChartData = await client.getLapData({ subsession_id: 68476090, simsession_number: 0 })
     expect(lapChartData.success).toBe(true)
     expect(lapChartData.session_info.subsession_id).toBe(68476090)
@@ -63,7 +63,7 @@ describe("Result Functions", () => {
   it("should retrieve season results", async () => {
     const mockFile = mockResponsePath + "results/season-results.json"
     nockHelper().get("/data/results/season_results").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const seasonResults = await client.getSeasonResults({
       season_id: 4753,
       event_type: 5,

@@ -8,7 +8,7 @@ describe("Lookup Functions", () => {
   const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
-  const mockResouceGet = async (filePath: string) => {
+  const mockResourceGet = async (filePath: string) => {
     getResource.mockResolvedValue(await import(filePath))
   }
 
@@ -28,7 +28,7 @@ describe("Lookup Functions", () => {
   it("should retrieve club history", async () => {
     const mockFile = mockResponsePath + "lookup/club-history.json"
     nockHelper().get("/data/lookup/club_history").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const clubHistory = await client.lookupClubHistory({ season_year: 2024, season_quarter: 2 })
     expect(clubHistory[0].club_id).toBe(50)
     expect(clubHistory[0].club_name).toBe("Africa/South Africa")
@@ -37,7 +37,7 @@ describe("Lookup Functions", () => {
   it("should retrieve country codes", async () => {
     const mockFile = mockResponsePath + "lookup/countries.json"
     nockHelper().get("/data/lookup/countries").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const countries = await client.lookupCountries()
     expect(countries[0].country_code).toBe("AF")
     expect(countries[0].country_name).toBe("Afghanistan")
@@ -46,7 +46,7 @@ describe("Lookup Functions", () => {
   it("should retrieve driver list matching name or id", async () => {
     const mockFile = mockResponsePath + "lookup/driver-lookup.json"
     nockHelper().get("/data/lookup/drivers").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const driver = await client.lookupDrivers({ cust_id: "Test Driver" })
     expect(driver[0].cust_id).toBe(123456)
     expect(driver[0].display_name).toBe("Test Driver")

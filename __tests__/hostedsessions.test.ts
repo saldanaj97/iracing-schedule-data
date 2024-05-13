@@ -8,7 +8,7 @@ describe("Hosted Session Functions", () => {
   const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
-  const mockResouceGet = async (filePath: string) => {
+  const mockResourceGet = async (filePath: string) => {
     getResource.mockResolvedValue(await import(filePath))
   }
 
@@ -28,7 +28,7 @@ describe("Hosted Session Functions", () => {
   it("should retrieve hosted session data", async () => {
     const mockFile = mockResponsePath + "hosted/hosted-sessions.json"
     nockHelper().get("/data/hosted/combined_sessions").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const hostedSessions = await client.getHostedSessions({ session_type: "combined_sessions" })
     expect(hostedSessions.success).toBe(true)
   })
@@ -36,7 +36,7 @@ describe("Hosted Session Functions", () => {
   it("should retrieve session data", async () => {
     const mockFile = mockResponsePath + "hosted/sessions.json"
     nockHelper().get("/data/hosted/sessions").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const sessions = await client.getHostedSessions({ session_type: "sessions" })
     expect(sessions.success).toBe(true)
   })

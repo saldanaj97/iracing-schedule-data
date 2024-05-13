@@ -8,7 +8,7 @@ describe("Stats Functions", () => {
   const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
-  const mockResouceGet = async (filePath: string) => {
+  const mockResourceGet = async (filePath: string) => {
     getResource.mockResolvedValue(await import(filePath))
   }
 
@@ -28,7 +28,7 @@ describe("Stats Functions", () => {
   it("should retrieve member bests", async () => {
     const mockFile = mockResponsePath + "stats/member-bests.json"
     nockHelper().get("/data/stats/member_bests").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const memberBests = await client.getMemberBests({})
     expect(memberBests.cust_id).toEqual(693109)
     expect(memberBests.car_id).toEqual(159)
@@ -37,7 +37,7 @@ describe("Stats Functions", () => {
   it("should retrieve member career stats", async () => {
     const mockFile = mockResponsePath + "stats/member-career-stats.json"
     nockHelper().get("/data/stats/member_career_stats").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const memberStats = await client.getMemberCareerStats({})
     expect(memberStats.cust_id).toEqual(693109)
   })
@@ -45,7 +45,7 @@ describe("Stats Functions", () => {
   it("should retrieve member divison stats", async () => {
     const mockFile = mockResponsePath + "stats/member-division-stats.json"
     nockHelper().get("/data/stats/member_division_stats").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const memberDivisonStats = await client.getMemberDivisionStats({
       season_id: 1,
       event_type: 1,
@@ -57,7 +57,7 @@ describe("Stats Functions", () => {
   it("should retrieve member recap", async () => {
     const mockFile = mockResponsePath + "stats/member-recap.json"
     nockHelper().get("/data/stats/member_recap").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const memberRecap = await client.getMemberRecap({})
     expect(memberRecap.year).toEqual(2024)
     expect(memberRecap.success).toEqual(true)
@@ -66,7 +66,7 @@ describe("Stats Functions", () => {
   it("should retrieve recent races", async () => {
     const mockFile = mockResponsePath + "stats/recent-races.json"
     nockHelper().get("/data/stats/recent-races").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const recentRaces = await client.getRecentRaces({})
     expect(recentRaces.races[0].season_id).toEqual(4753)
     expect(recentRaces.cust_id).toEqual(693109)
@@ -75,7 +75,7 @@ describe("Stats Functions", () => {
   it("should retrieve member summary", async () => {
     const mockFile = mockResponsePath + "stats/member-summary.json"
     nockHelper().get("/data/stats/member-summary").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const memberSummary = await client.getMemberSummary({})
     expect(memberSummary.cust_id).toEqual(693109)
     expect(memberSummary.this_year.num_official_sessions).toEqual(50)
@@ -84,7 +84,7 @@ describe("Stats Functions", () => {
   it("should retrieve member yearly summary", async () => {
     const mockFile = mockResponsePath + "stats/member-yearly.json"
     nockHelper().get("/data/stats/member_yearly").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const memberYearlySummary = await client.getYearlyStats({})
     expect(memberYearlySummary.cust_id).toEqual(693109)
   })
@@ -92,7 +92,7 @@ describe("Stats Functions", () => {
   it("should retrieve season driver standings", async () => {
     const mockFile = mockResponsePath + "stats/season-driver-standings.json"
     nockHelper().get("/data/stats/season-driver-standings").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const seasonStandings = await client.getSeasonDriverStandings({
       season_id: 1,
       car_class_id: 1,
@@ -104,7 +104,7 @@ describe("Stats Functions", () => {
   it("should retrieve season qualifying standings", async () => {
     const mockFile = mockResponsePath + "stats/season-qualifying-results.json"
     nockHelper().get("/data/stats/season_qualifying_results").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const qualifyingResults = await client.getSeasonQualifyingResults({
       season_id: 1,
       car_class_id: 1,
@@ -117,7 +117,7 @@ describe("Stats Functions", () => {
   it("should retrieve season supersession standings", async () => {
     const mockFile = mockResponsePath + "stats/season-supersession-standings.json"
     nockHelper().get("/data/stats/season-driver-standings").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const supersessionStandings = await client.getSeasonSupersessionStandings({
       season_id: 1,
       car_class_id: 1,

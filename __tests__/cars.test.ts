@@ -8,7 +8,7 @@ describe("Car Functions", () => {
   const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
-  const mockResouceGet = async (filePath: string) => {
+  const mockResourceGet = async (filePath: string) => {
     getResource.mockResolvedValue(await import(filePath))
   }
 
@@ -28,7 +28,7 @@ describe("Car Functions", () => {
   it("should retrieve car assets", async () => {
     const mockFile = mockResponsePath + "cars/car-assets.json"
     nockHelper().get("/data/car/assets").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const carAssets = await client.getCarAssets()
     expect(carAssets["1"].car_id).toBe(1)
   })
@@ -36,7 +36,7 @@ describe("Car Functions", () => {
   it("should retrieve all cars available on the service", async () => {
     const mockFile = mockResponsePath + "cars/car-info-list.json"
     nockHelper().get("/data/car/get").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const cars = await client.getAllCars()
     expect(cars["0"].car_id).toBe(1)
   })

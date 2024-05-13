@@ -8,7 +8,7 @@ describe("Track Functions", () => {
   const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
-  const mockResouceGet = async (filePath: string) => {
+  const mockResourceGet = async (filePath: string) => {
     getResource.mockResolvedValue(await import(filePath))
   }
 
@@ -28,7 +28,7 @@ describe("Track Functions", () => {
   it("should retrieve track data", async () => {
     const mockFile = mockResponsePath + "track/track-data.json"
     nockHelper().get("/data/track/team_data").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const trackData = await client.getTrackData()
     expect(trackData[0].track_name).toEqual("[Legacy] Lime Rock Park - 2008")
   })
@@ -36,7 +36,7 @@ describe("Track Functions", () => {
   it("should retrieve track assets", async () => {
     const mockFile = mockResponsePath + "track/track-assets.json"
     nockHelper().get("/data/track/track_assets").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResouceGet(mockFile)
+    await mockResourceGet(mockFile)
     const trackAssets = await client.getTrackAssets()
     expect(trackAssets["1"].small_image).toEqual("limerockpark-small.jpg")
   })
