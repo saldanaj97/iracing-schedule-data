@@ -16,7 +16,7 @@
     "dist/"
   ],
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --verbose --coverage",
     "test:coverage": "jest --coverage",
     "build": "tsup",
     "lint": "eslint .",
