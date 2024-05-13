@@ -636,7 +636,7 @@ class IRacingSDK {
    *
    * Example usage:
    * ```typescript
-   *  lookupClubHistory({ season_year: 2021, season_quarter: 1 }) // Returns club history for 2021S1
+   *  iRacingSDK.lookupClubHistory({ season_year: 2021, season_quarter: 1 }) // Returns club history for 2021S1
    * ```
    *
    * Required Params:
@@ -669,7 +669,7 @@ class IRacingSDK {
    *
    * Example usage:
    * ```typescript
-   * lookupCountries() // Returns all countries and their codes
+   * iRacingSDK.lookupCountries() // Returns all countries and their codes
    * ```
    */
   public async lookupCountries(): Promise<Country[]> {
@@ -690,7 +690,7 @@ class IRacingSDK {
    *
    * Example usage:
    * ```typescript
-   * lookupDrivers({search_term: 123456}) // Returns
+   * iRacingSDK.lookupDrivers({search_term: 123456}) // Returns
    * ```
    *
    * Required Params:
@@ -726,7 +726,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * getMemberAwards({ cust_id: 12345 })
+   * iRacingSDK.getMemberAwards({ cust_id: 12345 })
    * ```
    *
    * Optional Params:
@@ -751,7 +751,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * getMemberChartData({ cust_id: 12345, category_id: 1, chart_type: '1' })
+   * iRacingSDK.getMemberChartData({ cust_id: 12345, category_id: 1, chart_type: '1' })
    * ```
    *
    * Required Params:
@@ -792,7 +792,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * getMemberData({ cust_ids: "693109, 82554" }) // Returns club data for the specified members
+   * iRacingSDK.getMemberData({ cust_ids: "693109, 82554" }) // Returns club data for the specified members
    * ```
    *
    * Required Params:
@@ -827,7 +827,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * getPersonalInfo()
+   * iRacingSDK.getPersonalInfo()
    * ```
    */
   public async getPersonalInfo(): Promise<PersonalInfo> {
@@ -848,7 +848,7 @@ class IRacingSDK {
    * of each season.
    * Example Usage:
    * ```typescript
-   * getPersonalParticipationCredits()
+   * iRacingSDK.getPersonalParticipationCredits()
    * ```
    */
   public async getPersonalParticipationCredits(): Promise<ParticipationCreditData[]> {
@@ -869,7 +869,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * getMemberProfile({cust_id: 12345}) // Returns the profile for the specified member
+   * iRacingSDK.getMemberProfile({cust_id: 12345}) // Returns the profile for the specified member
    * ```
    *
    * Required Params:
@@ -895,7 +895,7 @@ class IRacingSDK {
    * Example Usage:
    *
    * ```typescript
-   * getResults({subsession_id: 12345, included_licenses: true}) // Returns the results of the subsession.
+   * iRacingSDK.getResults({subsession_id: 12345, included_licenses: true}) // Returns the results of the subsession.
    * ```
    *
    * Required Params:
@@ -931,7 +931,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * getEventLog({subsession_id: 12345, simsession_number: 0}) // Returns the event log for the subsession.
+   * iRacingSDK.getEventLog({subsession_id: 12345, simsession_number: 0}) // Returns the event log for the subsession.
    * ```
    *
    * Required Params:
@@ -964,7 +964,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * getLapChartData({subsession_id: 12345, simsession_number: 0}) // Returns the lap chart data
+   * iRacingSDK.getLapChartData({subsession_id: 12345, simsession_number: 0}) // Returns the lap chart data
    * ```
    *
    * Required Params:
@@ -997,7 +997,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * getLapData({subsession_id: 12345, simsession_number: 0, cust_id: 123456}) // Returns the lap chart data
+   * iRacingSDK.getLapData({subsession_id: 12345, simsession_number: 0, cust_id: 123456}) // Returns the lap chart data
    * ```
    *
    * Required Params:
@@ -1047,7 +1047,7 @@ class IRacingSDK {
    * Example Usage:
    * ```typescript
    * // Returns hosted session data for the host with customer ID 345352.
-   * getHostedSearchResults({
+   * iRacingSDK.getHostedSearchResults({
    *    host_cust_id: 345352,
    *    start_range_begin: "2024-03-31T00:00:00Z",
    *    start_range_end: "2024-04-01T00:00:00Z",
@@ -1161,7 +1161,7 @@ class IRacingSDK {
    * Example Usage:
    * ```typescript
    * // Returns all session data for customer 123456 in the 2024 season 2nd quarter.
-   * getSeriesSearchResults({season_year: 2024, season_quarter: 2, cust_id: 123456})
+   * iRacingSDK.getSeriesSearchResults({season_year: 2024, season_quarter: 2, cust_id: 123456})
    * ```
    *
    * Required Params:
@@ -1277,7 +1277,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * getSeasonResults({season_id: 4753, event_type: 5, race_week_num: 0}) // Returns the lap chart data
+   * iRacingSDK.getSeasonResults({season_id: 4753, event_type: 5, race_week_num: 0}) // Returns the lap chart data
    * ```
    *
    * Required Params:
@@ -1318,7 +1318,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const seasonList = await getSeasonList({ season_year: 2024, season_quarter: 1 });
+   * iRacingSDK.const seasonList = await getSeasonList({ season_year: 2024, season_quarter: 1 });
    * ```
    *
    * Required Parameters:
@@ -1351,7 +1351,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const raceGuideData = await getRaceGuide({from: "2024-05-10T16:30:00Z", include_end_after_from: true });
+   * const raceGuideData = await iRacingSDK.getRaceGuide({from: "2024-05-10T16:30:00Z", include_end_after_from: true });
    * ```
    *
    * Optional Parameters:
@@ -1385,7 +1385,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const spectatorSubsessionIDs = await getSpectatorSubessionIDs({ event_types: [1, 2, 3] });
+   * const spectatorSubsessionIDs = await iRacingSDK.getSpectatorSubessionIDs({ event_types: [1, 2, 3] });
    * ```
    *
    * Optional Parameters:
@@ -1418,7 +1418,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const seriesAssets = await getAllSeriesAsssets()
+   * const seriesAssets = await iRacingSDK.getAllSeriesAsssets()
    * ```
    */
   public async getAllSeriesAssets(): Promise<SeriesAssets> {
@@ -1445,7 +1445,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const series = await getAllSeries() // Return generalized series data
+   * const series = await iRacingSDK.getAllSeries() // Return generalized series data
    * ```
    *
    */
@@ -1467,7 +1467,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const pastSeasonData = await getPastSeasons(123) // Return past season data for series ID 123
+   * const pastSeasonData = await iRacingSDK.getPastSeasons(123) // Return past season data for series ID 123
    * ```
    *
    * Required Parameters:
@@ -1492,7 +1492,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const seriesData = await getCurrentSeasonsSeries() // Return detailed data for each series in the current season
+   * const seriesData = await iRacingSDK.getCurrentSeasonsSeries() // Return detailed data for each series in the current season
    *
    */
   public async getCurrentSeasonsSeries(): Promise<RacingSeason[]> {
@@ -1515,7 +1515,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const schedule = await getSeriesStats() // Return a list of series with stats
+   * const schedule = await iRacingSDK.getSeriesStats() // Return a list of series with stats
    * ```
    */
   public async getSeriesStats(): Promise<SeriesStats[]> {
@@ -1539,7 +1539,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const memberStats = await getMemberBests() // Return member best lap times
+   * const memberStats = await iRacingSDK.getMemberBests() // Return member best lap times
    * ```
    *
    * Optional Params:
@@ -1567,7 +1567,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const memberStats = await getMemberCareerStats() // Return member career stats
+   * const memberStats = await iRacingSDK.getMemberCareerStats() // Return member career stats
    * ```
    *
    * Optional Params:
@@ -1591,7 +1591,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const memberDivisonStats = await getMemberDivisionStats() // Return member division stats
+   * const memberDivisonStats = await iRacingSDK.getMemberDivisionStats() // Return member division stats
    * ```
    *
    * Required Params:
@@ -1624,7 +1624,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const memberRecap = await getMemberRecap() // Return member recap stats
+   * const memberRecap = await iRacingSDK.getMemberRecap() // Return member recap stats
    * ```
    *
    * Optional Params:
@@ -1662,7 +1662,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const recentRaces = await getRecentRaces({cust_id: 123456}) // Return recent races for member 123456
+   * const recentRaces = await iRacingSDK.getRecentRaces({cust_id: 123456}) // Return recent races for member 123456
    * ```
    *
    * Optional Params:
@@ -1686,7 +1686,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const memberSummary = await getMemberSummary({cust_id: 123456}) // Return member summary for member 123456
+   * const memberSummary = await iRacingSDK.getMemberSummary({cust_id: 123456}) // Return member summary for member 123456
    * ```
    *
    * Optional Params:
@@ -1710,7 +1710,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const memberSummary = await getMemberSummary({cust_id: 123456}) // Return member summary for member 123456
+   * const memberSummary = await iRacingSDK.getMemberSummary({cust_id: 123456}) // Return member summary for member 123456
    * ```
    *
    * Optional Params:
@@ -1736,7 +1736,7 @@ class IRacingSDK {
    * Example Usage:
    * ```typescript
    * // Return season driver standings for season 1234 and car class 1234
-   * const seasonDriverStandings = await getSeasonDriverStandings({season_id: 4603, car_class_id: 870})
+   * const seasonDriverStandings = await iRacingSDK.getSeasonDriverStandings({season_id: 4603, car_class_id: 870})
    * ```
    *
    * Required Params:
@@ -1788,7 +1788,7 @@ class IRacingSDK {
    * Example Usage:
    * ```typescript
    * // Return season driver standings for season 1234 and car class 1234
-   * const supersessionStandings = await getSeasonSupersesssionStandings({season_id: 1234, car_class_id: 1234})
+   * const supersessionStandings = await iRacingSDK.getSeasonSupersesssionStandings({season_id: 1234, car_class_id: 1234})
    * ```
    *
    * Required Params:
@@ -1839,7 +1839,7 @@ class IRacingSDK {
    *
    * Example Usage:
    * ```typescript
-   * const seasonTeamStandings = await getSeasonTeamStandings({season_id: 1234, car_class_id: 123}) // Return team standings for season 1234 and car class 123
+   * const seasonTeamStandings = await iRacingSDK.getSeasonTeamStandings({season_id: 1234, car_class_id: 123}) // Return team standings for season 1234 and car class 123
    * ```
    *
    * Required Params:
@@ -1883,7 +1883,7 @@ class IRacingSDK {
    * Example Usage:
    * ```typescript
    * // Return season time trial season standings for season 4603 and car class 870
-   * const timeTrialStandings = await getSeasonTimetrialStandings({season_id: 4603, car_class_id: 870 })
+   * const timeTrialStandings = await iRacingSDK.getSeasonTimetrialStandings({season_id: 4603, car_class_id: 870 })
    * ```
    *
    * Required Params:
@@ -1935,7 +1935,7 @@ class IRacingSDK {
  * Example Usage:
  * ```typescript
  * // Return time trials results for season 4603, car class 870, and race week 0
- * const timetrialResults = await getSeasonTimetrialResults({season_id: 4603, car_class_id: 870, race_week_num: 0 })
+ * const timetrialResults = await iRacingSDK.getSeasonTimetrialResults({season_id: 4603, car_class_id: 870, race_week_num: 0 })
  * ```
  *
  * Required Params:
@@ -1988,7 +1988,7 @@ class IRacingSDK {
   * Example Usage:
   * ```typescript
   * // Return time trials results for season 4603, car class 870, and race week 0
-  * const qualfyingResults = await getSeasonQualifyingResults({season_id: 4603, car_class_id: 870, race_week_num: 0 })
+  * const qualfyingResults = await iRacingSDK.getSeasonQualifyingResults({season_id: 4603, car_class_id: 870, race_week_num: 0 })
   * ```
   *
   * Required Params:
@@ -2041,7 +2041,7 @@ class IRacingSDK {
    * Example Usage:
    * ```typescript
    * // Return time trials results for season 4603, car class 870, and race week 0
-   * const timetrialResults = await getSeasonTimetrialResults({season_id: 4603, car_class_id: 870, race_week_num: 0 })
+   * const timetrialResults = await iRacingSDK.getSeasonTimetrialResults({season_id: 4603, car_class_id: 870, race_week_num: 0 })
    * ```
    *
    * Required Params:
@@ -2088,7 +2088,7 @@ class IRacingSDK {
    * Example Usage:
    *
    * ```typescript
-   * getTeamProfile({team_id: 12345})
+   * iRacingSDK.getTeamProfile({team_id: 12345})
    * ```
    *
    * Required Params:
@@ -2123,7 +2123,7 @@ class IRacingSDK {
    * Example Usage:
    *
    * ```typescript
-   * getUserTimeAttackData({ta_comp_season_id: 12345})
+   * iRacingSDK.getUserTimeAttackData({ta_comp_season_id: 12345})
    * ```
    *
    * Required Params:
@@ -2149,7 +2149,7 @@ class IRacingSDK {
    * Example Usage:
    *
    * ```typescript
-   * getTrackData() // Returns an array of all tracks available on iRacing
+   * iRacingSDK.getTrackData() // Returns an array of all tracks available on iRacing
    * ```
    */
   public async getTrackData(): Promise<Track[]> {
@@ -2171,7 +2171,7 @@ class IRacingSDK {
    * Example Usage:
    *
    * ```typescript
-   * getTrackAssets() // Returns all assets for the tracks available on iRacing
+   * iRacingSDK.getTrackAssets() // Returns all assets for the tracks available on iRacing
    * ```
    */
   public async getTrackAssets(): Promise<TrackAssets[]> {
