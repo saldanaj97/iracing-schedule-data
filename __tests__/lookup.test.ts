@@ -78,11 +78,23 @@ describe("Lookup Function Error Testing", () => {
     await expect(client.lookupClubHistory({ season_year: 2024, season_quarter: 2 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when season_year and season_quarter are not provided in lookupClubHistory", async () => {
+    await expect(client.lookupClubHistory({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (season_year, season_quarter)"
+    )
+  })
+
   it("should throw an error when getting country codes", async () => {
     await expect(client.lookupCountries()).rejects.toThrow("Mocked error")
   })
 
   it("should throw an error when getting driver list", async () => {
     await expect(client.lookupDrivers({ cust_id: "Test Driver" })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when cust_id is not provided in lookupDrivers", async () => {
+    await expect(client.lookupDrivers({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (cust_id)"
+    )
   })
 })

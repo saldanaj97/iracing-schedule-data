@@ -77,6 +77,12 @@ describe("Season Function Error Testing", () => {
     await expect(client.getSeasonList({ season_quarter: 2, season_year: 2024 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when season_year or season_quarter is not provided in getSeasonList", async () => {
+    await expect(client.getSeasonList({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (season_year, season_quarter)"
+    )
+  })
+
   it("should throw an error when getting race guide", async () => {
     await expect(client.getRaceGuide({ from: "2024-04-25", include_end_after_from: false })).rejects.toThrow(
       "Mocked error"
@@ -85,5 +91,11 @@ describe("Season Function Error Testing", () => {
 
   it("should throw an error when getting spectator subsession ids", async () => {
     await expect(client.getSpectatorSubsessionIDs({ event_types: [1, 2, 3] })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when event_types is not provided in getSpectatorSubsessionIDs", async () => {
+    await expect(client.getSpectatorSubsessionIDs({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (event_types)"
+    )
   })
 })

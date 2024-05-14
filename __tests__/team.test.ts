@@ -62,4 +62,10 @@ describe("Team Function Error Testing", () => {
     nockHelper().get("/data/team/team_profile?").replyWithError("Mocked error")
     await expect(client.getTeamProfile({ team_id: 12345 })).rejects.toThrow("Mocked error")
   })
+
+  it("should throw an error when team_id is missing from getTeamProfile", async () => {
+    await expect(client.getTeamProfile({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (team_id)"
+    )
+  })
 })

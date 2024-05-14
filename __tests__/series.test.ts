@@ -103,6 +103,12 @@ describe("Series Function Error Testing", () => {
     await expect(client.getPastSeasons({ series_id: 299 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when a series_id is missing in getPastSeasons", async () => {
+    await expect(client.getPastSeasons({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (series_id)"
+    )
+  })
+
   it("should throw an error when getting all the current seasons series", async () => {
     await expect(client.getCurrentSeasonsSeries()).rejects.toThrow("Mocked error")
   })

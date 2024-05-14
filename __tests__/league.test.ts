@@ -126,9 +126,21 @@ describe("League Function Error Testing", () => {
     await expect(client.getLeagueById({ league_id: 1234 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw and error when league id is missing from getLeagueById", async () => {
+    await expect(client.getLeagueById({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (league_id)"
+    )
+  })
+
   it("should throw an error when getting league point system", async () => {
     nockHelper().get("/data/league/get_points_system?").replyWithError("Mocked error")
     await expect(client.getLeaguePointSystem({ league_id: 1234 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw and error when league id is missing from getLeaguePointSystem", async () => {
+    await expect(client.getLeaguePointSystem({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (league_id)"
+    )
   })
 
   it("should throw an error when getting league memberships", async () => {
@@ -136,9 +148,21 @@ describe("League Function Error Testing", () => {
     await expect(client.getLeagueMemberships({ cust_id: 445755 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when cust_id is missing from getLeagueMemberships", async () => {
+    await expect(client.getLeagueMemberships({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (cust_id)"
+    )
+  })
+
   it("should throw an error when getting league seasons", async () => {
     nockHelper().get("/data/league/seasons").replyWithError("Mocked error")
     await expect(client.getLeagueSeasons({ league_id: 4170 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when league_id is missing friom getLeagueSeasons", async () => {
+    await expect(client.getLeagueSeasons({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (league_id)"
+    )
   })
 
   it("should throw an error when getting league season standings", async () => {
@@ -146,8 +170,20 @@ describe("League Function Error Testing", () => {
     await expect(client.getLeagueSeasonStandings({ league_id: 4170, season_id: 55337 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when league_id and season_id are missing from getLeagueSeasonStandings", async () => {
+    await expect(client.getLeagueSeasonStandings({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (league_id, season_id)"
+    )
+  })
+
   it("should throw an error when getting league season sessions", async () => {
     nockHelper().get("/data/league/season_sessions").replyWithError("Mocked error")
     await expect(client.getLeagueSeasonSessions({ league_id: 4170, season_id: 55337 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when league_id and season_id are missing from getLeagueSeasonSessions", async () => {
+    await expect(client.getLeagueSeasonSessions({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (league_id, season_id)"
+    )
   })
 })

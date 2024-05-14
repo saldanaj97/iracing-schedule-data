@@ -103,8 +103,20 @@ describe("Member Function Error Testing", () => {
     await expect(client.getMemberChartData({ category_id: 1, chart_type: 1 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when category_id or chart_type is missing from getMemberChartData", async () => {
+    await expect(client.getMemberChartData({} as any)).rejects.toThrow(
+      "Cannot complete request: Missing required parameters. (category_id, chart_type)"
+    )
+  })
+
   it("should throw an error when getting member data", async () => {
     await expect(client.getMemberData({ cust_ids: [111111, 222222] })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when cust_ids is missing from getMemberData", async () => {
+    await expect(client.getMemberData({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (cust_ids)"
+    )
   })
 
   it("should throw an error when getting personal info", async () => {

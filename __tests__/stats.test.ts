@@ -161,6 +161,12 @@ describe("Stats Function Error Testing", () => {
     await expect(client.getMemberDivisionStats({ season_id: 1, event_type: 1 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when season_id and event_type are missing from getMemberDivisionStats", async () => {
+    await expect(client.getMemberDivisionStats({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (season_id, event_type)"
+    )
+  })
+
   it("should throw an error when getting member recap", async () => {
     await expect(client.getMemberRecap({})).rejects.toThrow("Mocked error")
   })
@@ -181,15 +187,33 @@ describe("Stats Function Error Testing", () => {
     await expect(client.getSeasonDriverStandings({ season_id: 1, car_class_id: 1 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when season_id and car_class_id are missing from getSeasonDriverStandings", async () => {
+    await expect(client.getSeasonDriverStandings({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (season_id, car_class_id)"
+    )
+  })
+
   it("should throw an error when getting season qualifying standings", async () => {
     await expect(
       client.getSeasonQualifyingResults({ season_id: 1, car_class_id: 1, race_week_num: 1 })
     ).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when season_id, car_class_id, and race_week_num are missing from getSeasonQualifyingResults", async () => {
+    await expect(client.getSeasonQualifyingResults({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (season_id, car_class_id, race_week_num)"
+    )
+  })
+
   it("should throw an error when getting season supersession standings", async () => {
     await expect(
       client.getSeasonSupersessionStandings({ season_id: 1, car_class_id: 1, race_week_num: 1 })
     ).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when season_id, car_class_id, and race_week_num are missing from getSeasonSupersessionStandings", async () => {
+    await expect(client.getSeasonSupersessionStandings({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (season_id, car_class_id, race_week_num)"
+    )
   })
 })

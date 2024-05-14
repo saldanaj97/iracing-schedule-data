@@ -67,4 +67,10 @@ describe("Hosted Session Error Testing", () => {
     await expect(client.getHostedSessions({ session_type: "combined_sessions" })).rejects.toThrow("Mocked error")
     await expect(client.getHostedSessions({ session_type: "sessions" })).rejects.toThrow("Mocked error")
   })
+
+  it("should throw an error when session_type is missing from getHostedSessions", async () => {
+    await expect(client.getHostedSessions({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (session_type)"
+    )
+  })
 })

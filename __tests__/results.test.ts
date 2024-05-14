@@ -147,8 +147,20 @@ describe("Result Function Error Testing", () => {
     await expect(client.getResults({ subsession_id: 123456 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when subsession_id is not provided in getResults", async () => {
+    await expect(client.getResults({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (subsession_id)"
+    )
+  })
+
   it("should throw an error when getting event log", async () => {
     await expect(client.getEventLog({ subsession_id: 123456, simsession_number: 0 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when subsession_id or simsession_number is not provided in getEventLog", async () => {
+    await expect(client.getEventLog({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (subsession_id, simsession_number)"
+    )
   })
 
   it("should throw an error when getting lap chart data", async () => {
@@ -157,12 +169,30 @@ describe("Result Function Error Testing", () => {
     )
   })
 
+  it("should throw an error when subsession_id or simsession_number is not provided in getLapChartData", async () => {
+    await expect(client.getLapChartData({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (subsession_id, simsession_number)"
+    )
+  })
+
   it("should throw an error when getting lap data", async () => {
     await expect(client.getLapData({ subsession_id: 123456, simsession_number: 0 })).rejects.toThrow("Mocked error")
   })
 
+  it("should throw an error when subsession_id or simsession_number is not provided in getLapData", async () => {
+    await expect(client.getLapData({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (subsession_id, simsession_number)"
+    )
+  })
+
   it("should throw an error when getting season results", async () => {
     await expect(client.getSeasonResults({ season_id: 123456 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when season_id is not provided in getSeasonResults", async () => {
+    await expect(client.getSeasonResults({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (season_id)"
+    )
   })
 })
 

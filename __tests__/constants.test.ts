@@ -66,4 +66,10 @@ describe("Constant Function Error Testing", () => {
     nockHelper().get("/data/constants/categories").replyWithError("Mocked error")
     await expect(client.getConstants({ constant: "categories" })).rejects.toThrow("Mocked error")
   })
+
+  it("should throw an error when constant is missing from getConstants", async () => {
+    await expect(client.getConstants({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (constant)"
+    )
+  })
 })
