@@ -277,7 +277,7 @@ class IRacingSDK {
     mine?: boolean
     package_id?: number
   }): Promise<CustomLeague> {
-    let URL = appendParams(`/data/league/cust_league_sessions?`, {
+    const URL = appendParams(`/data/league/cust_league_sessions?`, {
       mine,
       package_id,
     })
