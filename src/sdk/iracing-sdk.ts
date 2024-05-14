@@ -196,6 +196,7 @@ class IRacingSDK {
   }: {
     constant: "categories" | "divisions" | "event_types"
   }): Promise<ConstantType[]> {
+    if (!constant) throw new Error("Cannot complete request. Missing required parameters. (constant)")
     try {
       await this.authenticate()
       const res = await this.iracingAPI.get<ConstantType[]>(`/data/constants/${constant}`)
@@ -276,9 +277,10 @@ class IRacingSDK {
     mine?: boolean
     package_id?: number
   }): Promise<CustomLeague> {
-    let URL = `/data/league/cust_league_sessions`
-    if (mine) URL += `?mine=1`
-    if (package_id) URL += `?package_id=${package_id}`
+    let URL = appendParams(`/data/league/cust_league_sessions?`, {
+      mine,
+      package_id,
+    })
     try {
       await this.authenticate()
       const res = await this.iracingAPI.get<SignedURL>(URL)
@@ -395,8 +397,9 @@ class IRacingSDK {
     league_id: number
     include_licenses?: boolean
   }): Promise<LeagueInfo> {
+    if (!league_id) throw new Error("Cannot complete request. Missing required parameters. (league_id)")
     let URL = `/data/league/get?league_id=${league_id}`
-    if (include_licenses !== undefined) include_licenses === true ? (URL += `&include_licenses=1`) : null
+    if (include_licenses !== undefined) URL = appendParams(URL, { include_licenses })
     try {
       await this.authenticate()
       const res = await this.iracingAPI.get<SignedURL>(URL)
@@ -539,6 +542,7 @@ class IRacingSDK {
     league_id: number
     retired?: boolean
   }): Promise<LeagueSeasonList> {
+    if (!league_id) throw new Error("Cannot complete request. Missing required parameters. (league_id)")
     const URL = appendParams(`/data/league/seasons?league_id=${league_id}`, { retired })
     try {
       await this.authenticate()
@@ -694,7 +698,11 @@ class IRacingSDK {
    *
    * Example usage:
    * ```typescript
-   * iRacingSDK.lookupDrivers({search_term: 123456}) // Returns
+   * iRacingSDK.lookupDrivers({search_term: 123456})
+   *
+   * or
+   *
+   * iRacingSDK.lookupDrivers({search_term: "Richard Bobby"})
    * ```
    *
    * Required Params:
@@ -745,7 +753,7 @@ class IRacingSDK {
       const data = await this.request<Award[]>(res.data?.data_url)
       return data
     } catch (error) {
-      console.error("Error occured while fetching member awards.", error)
+      console.log("Error occured while fetching member awards.", error)
       throw error
     }
   }
@@ -786,7 +794,7 @@ class IRacingSDK {
       const data = await this.request<ChartData>(res.data?.link)
       return data
     } catch (error) {
-      console.error("Error occured while fetching member chart data.", error)
+      console.log("Error occured while fetching member chart data.", error)
       throw error
     }
   }
@@ -809,9 +817,11 @@ class IRacingSDK {
     cust_ids,
     included_licenses,
   }: {
-    cust_ids: string
+    cust_ids: number[]
     included_licenses?: boolean
   }): Promise<MemberData> {
+    if (!cust_ids || cust_ids.length === 0)
+      throw new Error("Cannot complete request. Missing required parameters. (cust_ids)")
     const URL = appendParams(`/data/member/get?${cust_ids}`, {
       included_licenses,
     })
@@ -821,7 +831,7 @@ class IRacingSDK {
       const data = await this.request<MemberData>(res.data?.link)
       return data
     } catch (error) {
-      console.error("Error occured while fetching member data.", error)
+      console.log("Error occured while fetching member data.", error)
       throw error
     }
   }
@@ -842,7 +852,7 @@ class IRacingSDK {
       const data = await this.request<PersonalInfo>(res.data?.link)
       return data
     } catch (error) {
-      console.error("Error occured while fetching personal awards.", error)
+      console.log("Error occured while fetching personal awards.", error)
       throw error
     }
   }
@@ -863,7 +873,7 @@ class IRacingSDK {
       const data = await this.request<ParticipationCreditData[]>(res.data?.link)
       return data
     } catch (error) {
-      console.error("Error occured while fetching personal participation credits.", error)
+      console.log("Error occured while fetching personal participation credits.", error)
       throw error
     }
   }
@@ -887,7 +897,7 @@ class IRacingSDK {
       const data = await this.request<MemberProfile>(res.data?.link)
       return data
     } catch (error) {
-      console.error("Error occured while fetching member awards.", error)
+      console.log("Error occured while fetching member awards.", error)
       throw error
     }
   }
@@ -1214,7 +1224,7 @@ class IRacingSDK {
     event_types?: (2 | 3 | 4 | 5)[]
     category_ids?: (1 | 2 | 3 | 4 | 5 | 6)[]
   }): Promise<SeriesSearchResults> {
-    let URL = `/data/results/search_series`
+    let URL = `/data/results/search_series?`
 
     // Error checking for required params
     if (
@@ -1239,7 +1249,7 @@ class IRacingSDK {
 
     // Append the season_year and season_quarter to the URL
     if (season_year !== undefined && season_quarter !== undefined) {
-      URL += `?season_year=${season_year}&season_quarter=${season_quarter}`
+      URL += `season_year=${season_year}&season_quarter=${season_quarter}`
     }
 
     // Error checking for dates
@@ -1337,7 +1347,7 @@ class IRacingSDK {
     season_quarter: number
   }): Promise<SeasonList> {
     if (!season_year || !season_quarter)
-      throw new Error("Cannot complete request: Missing required parameters (season_year, season_quarter)")
+      throw new Error("Cannot complete request. Missing required parameters. (season_year, season_quarter)")
     const URL = `/data/season/list?season_year=${season_year}&season_quarter=${season_quarter}`
     try {
       await this.authenticate()
@@ -1400,7 +1410,8 @@ class IRacingSDK {
   }: {
     event_types: (1 | 2 | 3 | 4 | 5)[]
   }): Promise<SpectatorSubsession> {
-    if (event_types.length === 0) throw new Error("Cannot complete request. Missing required parameters. (event_types)")
+    if (!event_types || event_types.length === 0)
+      throw new Error("Cannot complete request. Missing required parameters. (event_types)")
     const URL = appendParams("/data/season/spectator_subsessionids?", {
       event_types: event_types.join(","),
     })
@@ -1817,8 +1828,8 @@ class IRacingSDK {
     division?: number
     race_week_num?: number
   }): Promise<SeasonStandings> {
-    if (!season_id || !car_class_id)
-      throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+    if (!season_id || !car_class_id || !race_week_num)
+      throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id, race_week_num)")
     const URL = appendParams(`/data/stats/season_supersession_standings?`, {
       season_id,
       car_class_id,
@@ -2018,8 +2029,8 @@ class IRacingSDK {
     club_id?: number
     division?: number
   }): Promise<SeasonStandings> {
-    if (!season_id || !car_class_id)
-      throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id)")
+    if (!season_id || !car_class_id || !race_week_num)
+      throw new Error("Cannot complete request. Missing required parameters. (season_id, car_class_id, race_week_num)")
     const URL = appendParams(`/data/stats/season_qualify_results?`, {
       season_id,
       car_class_id,
@@ -2108,7 +2119,7 @@ class IRacingSDK {
     team_id: number
     include_licenses?: boolean
   }): Promise<TeamInfo> {
-    if (!team_id) throw new Error("Cannot complete request: Missing required parameters (team_id)")
+    if (!team_id) throw new Error("Cannot complete request. Missing required parameters. (team_id)")
     const URL = appendParams(`/data/team/get?team_id=${team_id}`, { include_licenses })
     try {
       await this.authenticate()
@@ -2124,6 +2135,8 @@ class IRacingSDK {
   /**
    * Function to retrieve an authenticated members time attack results.
    *
+   * NOTE: This function has not been thorougly tested and may not work as expected.
+   *
    * Example Usage:
    *
    * ```typescript
@@ -2134,7 +2147,7 @@ class IRacingSDK {
    * @param ta_comp_season_id - The time attack competition season ID to retrieve data for. Defaults to the authenticated member but a season_id is still needed.
    */
   public async getUserTimeAttackData({ ta_comp_season_id }: { ta_comp_season_id: number }): Promise<any> {
-    if (!ta_comp_season_id) throw new Error("Cannot complete request: Missing required parameters (ta_comp_season_id)")
+    if (!ta_comp_season_id) throw new Error("Cannot complete request. Missing required parameters. (ta_comp_season_id)")
     const URL = `/data/time_attack/member_season_results?ta_comp_season_id=${ta_comp_season_id}`
     try {
       await this.authenticate()
