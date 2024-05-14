@@ -73,4 +73,10 @@ describe("Hosted Session Error Testing", () => {
       "Cannot complete request. Missing required parameters. (session_type)"
     )
   })
+
+  it("should throw an error when session_type is not valid('combined_sessions' or 'sessions')", async () => {
+    await expect(client.getHostedSessions({ session_type: 123 } as any)).rejects.toThrow(
+      "Invalid session type. 'session_type' param can only be 'sessions' or 'combined_sessions'"
+    )
+  })
 })

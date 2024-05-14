@@ -213,7 +213,7 @@ describe("Result Function Error Testing (no signed URL)", () => {
 
   // NOT WORKING FOR SOME REASON - FIX
   // it("should throw an error when getting hosted search results", async () => {
-  //   nockHelper().get("/data/results/search_hosted?").replyWithError("Mocked error")
+  //   nockHelper().get("/data/results/search_hosted").replyWithError("Mocked error")
   //   await expect(
   //     client.getHostedSearchResults({
   //       host_cust_id: 345352,
@@ -224,6 +224,12 @@ describe("Result Function Error Testing (no signed URL)", () => {
   //     })
   //   ).rejects.toThrow("Mocked error")
   // })
+
+  it("should throw and error when cust_id, team_id, host_cust_id, or session_name is missing from getHostedSearchResults", async () => {
+    await expect(client.getHostedSearchResults({})).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (cust_id, team_id, host_cust_id, session_name)"
+    )
+  })
 
   it("should throw an error when getting series search results(pair of params error)", async () => {
     nockHelper()

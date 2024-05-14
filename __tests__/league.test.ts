@@ -16,6 +16,7 @@ describe("League Functions", () => {
     nockHelper()
       .post("/auth")
       .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
   })
 
   beforeEach(() => {

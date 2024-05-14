@@ -216,4 +216,46 @@ describe("Stats Function Error Testing", () => {
       "Cannot complete request. Missing required parameters. (season_id, car_class_id, race_week_num)"
     )
   })
+
+  it("should throw an error when getting season team standings", async () => {
+    await expect(client.getSeasonTeamStandings({ season_id: 1, car_class_id: 1 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when season_id or car_class_id is missing from getSeasonTeamStandings", async () => {
+    await expect(client.getSeasonTeamStandings({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (season_id, car_class_id)"
+    )
+  })
+
+  it("should throw an error when getting season time trial standings", async () => {
+    await expect(client.getSeasonTimeTrialStandings({ season_id: 1, car_class_id: 1 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when season_id or car_class_id is missing from getSeasonTimeTrialStandings", async () => {
+    await expect(client.getSeasonTimeTrialStandings({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (season_id, car_class_id)"
+    )
+  })
+
+  it("should throw an error when getting season time trial results", async () => {
+    await expect(client.getSeasonTimeTrialResults({ season_id: 1, car_class_id: 1, race_week_num: 1 })).rejects.toThrow(
+      "Mocked error"
+    )
+  })
+
+  it("should throw an error when season_id or car_class_id or race_week_num  is missing from getSeasonTimeTrailResults", async () => {
+    await expect(client.getSeasonTimeTrialResults({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (season_id, car_class_id, race_week_num)"
+    )
+  })
+
+  it("should throw an error when getting world records", async () => {
+    await expect(client.getWorldRecords({ car_id: 1, track_id: 1 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when car_id or track_id are missing from getWorldRecords", async () => {
+    await expect(client.getWorldRecords({} as any)).rejects.toThrow(
+      "Cannot complete request. Missing required parameters. (car_id, track_id)"
+    )
+  })
 })
