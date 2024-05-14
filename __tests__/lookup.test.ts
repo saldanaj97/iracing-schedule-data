@@ -52,3 +52,37 @@ describe("Lookup Functions", () => {
     expect(driver[0].display_name).toBe("Test Driver")
   })
 })
+
+describe("Lookup Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  beforeEach(() => {
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error when getting club history", async () => {
+    await expect(client.lookupClubHistory({ season_year: 2024, season_quarter: 2 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting country codes", async () => {
+    await expect(client.lookupCountries()).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting driver list", async () => {
+    await expect(client.lookupDrivers({ cust_id: "Test Driver" })).rejects.toThrow("Mocked error")
+  })
+})

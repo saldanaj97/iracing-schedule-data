@@ -8,7 +8,7 @@ describe("Car Class API", () => {
   const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
-  const mockResourceGet = async (filePath: string) => {
+  const mockResouceGet = async (filePath: string) => {
     getResource.mockResolvedValue(await import(filePath))
   }
 
@@ -16,6 +16,9 @@ describe("Car Class API", () => {
     nockHelper()
       .post("/auth")
       .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+
+    // Supress console.log output
+    jest.spyOn(console, "log").mockImplementation(() => {})
   })
 
   beforeEach(() => {
@@ -25,25 +28,43 @@ describe("Car Class API", () => {
       .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
   })
 
-  it("should retrieve list of car classes", async () => {
-    const mockFile = mockResponsePath + "carclass/car-class.json"
-    nockHelper().get("/data/carclass/get").replyWithFile(StatusCodes.OK, mockFile)
-    await mockResourceGet(mockFile)
-    const carAssets = await client.getCarClassData()
-    expect(carAssets["0"].car_class_id).toBe(1)
+  afterAll(() => {
+    jest.restoreAllMocks()
   })
 
   it("should retrieve list of car classes", async () => {
-    // Define the path to the mock JSON file
     const mockFile = mockResponsePath + "carclass/car-class.json"
-    // Mock the successful HTTP request with a file response
     nockHelper().get("/data/carclass/get").replyWithFile(StatusCodes.OK, mockFile)
-    // Mock the function that is being called within the try block to throw an error
-    jest.spyOn(client, "getCarClassData").mockRejectedValue(new Error("Mocked error"))
+    await mockResouceGet(mockFile)
+    const carAssets = await client.getCarClassData()
+    expect(carAssets["0"].car_class_id).toBe(1)
+  })
+})
 
-    // Expect that the function will reject with an error
+describe("Carclass Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+
+    // Supress console.log output
+    jest.spyOn(console, "log").mockImplementation(() => {})
+  })
+
+  beforeEach(() => {
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error to test error handling", async () => {
     await expect(client.getCarClassData()).rejects.toThrow("Mocked error")
-
-    // Optionally, you can assert other behaviors or states based on the error condition if needed
   })
 })

@@ -127,3 +127,69 @@ describe("Stats Functions", () => {
     expect(supersessionStandings.season_id).toEqual(4753)
   })
 })
+
+describe("Stats Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  beforeEach(() => {
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error when getting member bests", async () => {
+    await expect(client.getMemberBests({})).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting member career stats", async () => {
+    await expect(client.getMemberCareerStats({})).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting member divison stats", async () => {
+    await expect(client.getMemberDivisionStats({ season_id: 1, event_type: 1 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting member recap", async () => {
+    await expect(client.getMemberRecap({})).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting members recent races", async () => {
+    await expect(client.getRecentRaces({})).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting member summary", async () => {
+    await expect(client.getMemberSummary({})).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting member yearly summary", async () => {
+    await expect(client.getYearlyStats({})).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting season driver standings", async () => {
+    await expect(client.getSeasonDriverStandings({ season_id: 1, car_class_id: 1 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting season qualifying standings", async () => {
+    await expect(
+      client.getSeasonQualifyingResults({ season_id: 1, car_class_id: 1, race_week_num: 1 })
+    ).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting season supersession standings", async () => {
+    await expect(
+      client.getSeasonSupersessionStandings({ season_id: 1, car_class_id: 1, race_week_num: 1 })
+    ).rejects.toThrow("Mocked error")
+  })
+})

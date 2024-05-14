@@ -16,6 +16,9 @@ describe("Car Functions", () => {
     nockHelper()
       .post("/auth")
       .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+
+    // Supress console.log output
+    jest.spyOn(console, "log").mockImplementation(() => {})
   })
 
   beforeEach(() => {
@@ -23,6 +26,10 @@ describe("Car Functions", () => {
     nockHelper()
       .get(/[^/]+$/)
       .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
   })
 
   it("should retrieve car assets", async () => {
@@ -39,5 +46,34 @@ describe("Car Functions", () => {
     await mockResourceGet(mockFile)
     const cars = await client.getAllCars()
     expect(cars["0"].car_id).toBe(1)
+  })
+})
+
+describe("Car Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+
+    // Supress console.log output
+    jest.spyOn(console, "log").mockImplementation(() => {})
+  })
+
+  beforeEach(() => {
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error to test error handling for getAllCars and getCarAssets", async () => {
+    await expect(client.getAllCars()).rejects.toThrow("Mocked error")
+    await expect(client.getCarAssets()).rejects.toThrow("Mocked error")
   })
 })

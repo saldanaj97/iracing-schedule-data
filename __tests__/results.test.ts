@@ -74,7 +74,7 @@ describe("Result Functions", () => {
   })
 })
 
-describe("Result Functions that do not return signed URL", () => {
+describe("Result Functions (no signed URL)", () => {
   const client: IRacingSDK = new IRacingSDK("email", "password")
   let getResource: jest.SpyInstance
 
@@ -120,4 +120,97 @@ describe("Result Functions that do not return signed URL", () => {
     })
     expect(seriesSearchResults.data.success).toBe(true)
   })
+})
+
+describe("Result Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  beforeEach(() => {
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error when getting detailed session results", async () => {
+    await expect(client.getResults({ subsession_id: 123456 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting event log", async () => {
+    await expect(client.getEventLog({ subsession_id: 123456, simsession_number: 0 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting lap chart data", async () => {
+    await expect(client.getLapChartData({ subsession_id: 123456, simsession_number: 0 })).rejects.toThrow(
+      "Mocked error"
+    )
+  })
+
+  it("should throw an error when getting lap data", async () => {
+    await expect(client.getLapData({ subsession_id: 123456, simsession_number: 0 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting season results", async () => {
+    await expect(client.getSeasonResults({ season_id: 123456 })).rejects.toThrow("Mocked error")
+  })
+})
+
+describe("Result Function Error Testing (no signed URL)", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  // NOT WORKING FOR SOME REASON - FIX
+  // it("should throw an error when getting hosted search results", async () => {
+  //   nockHelper().get("/data/results/search_hosted?").replyWithError("Mocked error")
+  //   await expect(
+  //     client.getHostedSearchResults({
+  //       host_cust_id: 345352,
+  //       start_range_begin: "2024-03-31T00:00:00Z",
+  //       start_range_end: "2024-04-01T00:00:00Z",
+  //       finish_range_begin: "2024-03-31T00:00:00Z",
+  //       finish_range_end: "2024-04-01T00:00:00Z",
+  //     })
+  //   ).rejects.toThrow("Mocked error")
+  // })
+
+  it("should throw an error when getting series search results(pair of params error)", async () => {
+    nockHelper()
+      .get("/data/results/search_series")
+      .replyWithError(
+        "At least one of the following pairs is required: season_year and season_quarter, start_range_begin, finish_range_begin."
+      )
+    await expect(client.getSeriesSearchResults({ season_year: 2024 })).rejects.toThrow(
+      "At least one of the following pairs is required: season_year and season_quarter, start_range_begin, finish_range_begin."
+    )
+  })
+
+  // NOT WORKING FOR SOME REASON - FIX
+  // it("should throw an error when getting series search results(try-catch error)", async () => {
+  //   nockHelper().get("/data/results/search_series").replyWithError("Mocked error")
+  //   await expect(client.getSeriesSearchResults({ season_year: 2024, season_quarter: 1 })).rejects.toThrow(
+  //     "Mocked error"
+  //   )
+  // })
 })

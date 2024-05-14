@@ -45,7 +45,7 @@ describe("Member Functions", () => {
     const mockFile = mockResponsePath + "member/member-data.json"
     nockHelper().get("/data/lookup/get").replyWithFile(StatusCodes.OK, mockFile)
     await mockResouceGet(mockFile)
-    const memberData = await client.getMemberData({ cust_ids: "123456" })
+    const memberData = await client.getMemberData({ cust_ids: [123456] })
     expect(memberData.success).toBe(true)
   })
 
@@ -71,5 +71,51 @@ describe("Member Functions", () => {
     await mockResouceGet(mockFile)
     const memberProfile = await client.getMemberProfile({ cust_id: 123456 })
     expect(memberProfile.member_info.cust_id).toBe(693109)
+  })
+})
+
+describe("Member Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  beforeEach(() => {
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error when getting member awards", async () => {
+    await expect(client.getMemberAwards({})).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting member chart data", async () => {
+    await expect(client.getMemberChartData({ category_id: 1, chart_type: 1 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting member data", async () => {
+    await expect(client.getMemberData({ cust_ids: [111111, 222222] })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting personal info", async () => {
+    await expect(client.getPersonalInfo()).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting personal participation credits", async () => {
+    await expect(client.getPersonalParticipationCredits()).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting member profile", async () => {
+    await expect(client.getMemberProfile({})).rejects.toThrow("Mocked error")
   })
 })

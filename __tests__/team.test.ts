@@ -36,3 +36,30 @@ describe("Team Functions", () => {
     expect(team.owner_id).toEqual(158166)
   })
 })
+
+describe("Team Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  beforeEach(() => {
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error when getting team data", async () => {
+    nockHelper().get("/data/team/team_profile?").replyWithError("Mocked error")
+    await expect(client.getTeamProfile({ team_id: 12345 })).rejects.toThrow("Mocked error")
+  })
+})

@@ -41,3 +41,33 @@ describe("Track Functions", () => {
     expect(trackAssets["1"].small_image).toEqual("limerockpark-small.jpg")
   })
 })
+
+describe("Track Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  beforeEach(() => {
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error when getting track data", async () => {
+    await expect(client.getTrackData()).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting track assets", async () => {
+    await expect(client.getTrackAssets()).rejects.toThrow("Mocked error")
+  })
+})

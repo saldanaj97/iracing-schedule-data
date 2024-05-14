@@ -69,3 +69,45 @@ describe("Series Functions", () => {
     expect(seriesStats[0].category_id).toEqual(1)
   })
 })
+
+describe("Series Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  beforeEach(() => {
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error when getting all series assets", async () => {
+    await expect(client.getAllSeriesAssets()).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting all series", async () => {
+    await expect(client.getAllSeries()).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting past season data for a series", async () => {
+    await expect(client.getPastSeasons({ series_id: 299 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting all the current seasons series", async () => {
+    await expect(client.getCurrentSeasonsSeries()).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting the series stats", async () => {
+    await expect(client.getSeriesStats()).rejects.toThrow("Mocked error")
+  })
+})

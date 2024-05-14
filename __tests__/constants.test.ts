@@ -46,3 +46,24 @@ describe("Constants API", () => {
     expect(event_types[0].value).toBe(2)
   })
 })
+
+describe("Constant Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error to test error handling", async () => {
+    nockHelper().get("/data/constants/categories").replyWithError("Mocked error")
+    await expect(client.getConstants({ constant: "categories" })).rejects.toThrow("Mocked error")
+  })
+})

@@ -51,3 +51,39 @@ describe("Season Functions", () => {
     expect(subsessionIds.success).toEqual(true)
   })
 })
+
+describe("Season Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  beforeEach(() => {
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error when getting season list", async () => {
+    await expect(client.getSeasonList({ season_quarter: 2, season_year: 2024 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting race guide", async () => {
+    await expect(client.getRaceGuide({ from: "2024-04-25", include_end_after_from: false })).rejects.toThrow(
+      "Mocked error"
+    )
+  })
+
+  it("should throw an error when getting spectator subsession ids", async () => {
+    await expect(client.getSpectatorSubsessionIDs({ event_types: [1, 2, 3] })).rejects.toThrow("Mocked error")
+  })
+})

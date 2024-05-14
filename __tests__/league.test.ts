@@ -89,3 +89,65 @@ describe("League Functions", () => {
     expect(league.success).toBe(true)
   })
 })
+
+describe("League Function Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  beforeEach(() => {
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error when getting custom league sessions", async () => {
+    nockHelper().get("/data/league/cust_league_sessions").replyWithError("Mocked error")
+    await expect(client.getCustLeagueSessions({})).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting league directory", async () => {
+    nockHelper().get("/data/league/directory").replyWithError("Mocked error")
+    await expect(client.getLeagueDirectory({})).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting league by id", async () => {
+    nockHelper().get("/data/league/get").replyWithError("Mocked error")
+    await expect(client.getLeagueById({ league_id: 1234 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting league point system", async () => {
+    nockHelper().get("/data/league/get_points_system?").replyWithError("Mocked error")
+    await expect(client.getLeaguePointSystem({ league_id: 1234 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting league memberships", async () => {
+    nockHelper().get("/data/league/membership?").replyWithError("Mocked error")
+    await expect(client.getLeagueMemberships({ cust_id: 445755 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting league seasons", async () => {
+    nockHelper().get("/data/league/seasons").replyWithError("Mocked error")
+    await expect(client.getLeagueSeasons({ league_id: 4170 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting league season standings", async () => {
+    nockHelper().get("/data/league/season_standings").replyWithError("Mocked error")
+    await expect(client.getLeagueSeasonStandings({ league_id: 4170, season_id: 55337 })).rejects.toThrow("Mocked error")
+  })
+
+  it("should throw an error when getting league season sessions", async () => {
+    nockHelper().get("/data/league/season_sessions").replyWithError("Mocked error")
+    await expect(client.getLeagueSeasonSessions({ league_id: 4170, season_id: 55337 })).rejects.toThrow("Mocked error")
+  })
+})

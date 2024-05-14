@@ -41,3 +41,30 @@ describe("Hosted Session Functions", () => {
     expect(sessions.success).toBe(true)
   })
 })
+
+describe("Hosted Session Error Testing", () => {
+  const client: IRacingSDK = new IRacingSDK("email", "password")
+
+  beforeAll(() => {
+    nockHelper()
+      .post("/auth")
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "auth.json")
+    jest.spyOn(console, "log").mockImplementation(() => {})
+    jest.spyOn(client, "request").mockRejectedValue(new Error("Mocked error"))
+  })
+
+  beforeEach(() => {
+    nockHelper()
+      .get(/[^/]+$/)
+      .replyWithFile(StatusCodes.OK, mockResponsePath + "signed-url.json")
+  })
+
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  it("should throw an error to test error handling", async () => {
+    await expect(client.getHostedSessions({ session_type: "combined_sessions" })).rejects.toThrow("Mocked error")
+    await expect(client.getHostedSessions({ session_type: "sessions" })).rejects.toThrow("Mocked error")
+  })
+})
