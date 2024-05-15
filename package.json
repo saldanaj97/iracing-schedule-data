@@ -1,6 +1,6 @@
 {
-  "name": "iracing-client",
-  "version": "0.1.0",
+  "name": "iracing-web-sdk",
+  "version": "1.0.0",
   "description": "An npm package for interacting with the iRacing API",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
