@@ -1,14 +1,19 @@
-# iRacing Client
+<h1 align='center'>iRacing Web SDK</h1>
 
-## Coverage
-![CI Workflow](https://github.com/saldanaj97/iracing-schedule-data/actions/workflows/main.yml/badge.svg)
+<p align="center">
+  <img src="https://github.com/saldanaj97/iracing-schedule-data/actions/workflows/main.yml/badge.svg" />
+  <img src="https://github.com/saldanaj97/iracing-schedule-data/blob/main/badges/coverage-branches.svg" />
+  <img src="https://github.com/saldanaj97/iracing-schedule-data/blob/main/badges/coverage-functions.svg" />
+  <img src="https://github.com/saldanaj97/iracing-schedule-data/blob/main/badges/coverage-jest%20coverage.svg" />
+  <img src="https://github.com/saldanaj97/iracing-schedule-data/blob/main/badges/coverage-lines.svg" />
+  <img src="https://github.com/saldanaj97/iracing-schedule-data/blob/main/badges/coverage-statements.svg" />
+</p>
 
-
-https://github.com/saldanaj97/iracing-schedule-data/
-Client for interacting with the iRacing API. This will allow users to be able to create their projects without the confusion of authenticating and pulling data from the API. 
+<p align="center">
+  <strong>Web SDK for interacting with the iRacing API. This will allow users to easily create their projects without the hassle of having to set up authentication, cookies, and API calls. </strong>
+</p>
 
 ## Table of Contents
-
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
@@ -27,24 +32,7 @@ pnpm install iracing-client
 
 ## Usage
 
-### Authentication
-To use the package, you have to be authenticated by using the code below. 
-
-```javascript
-// Authenticate with the iRacing servers
-const authenticate = await fetchAuthCookie({username: '***', password: '***'})
-```
-
-If you wish to save the cookie data in a cookie-jar, the 'fetchAuthCookie' function returns the authentication cookie data so you can choose to use it as needed, but it is **NOT** required as a client wrapper is already implemented into the functions. 
-
-### Example
-Once authenticated you can use any of the functions provided in the package. For example, this is how you would fetch a list of the cars on the service. 
-```javascript
-// Returns a list of all cars available on the service
-const carList = getAllCars()
-```
-
-
+Currently being written. 
 
 ## License
 MIT License
