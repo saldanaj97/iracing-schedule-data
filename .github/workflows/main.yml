@@ -9,6 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+                
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
         with:
@@ -20,3 +21,8 @@ jobs:
 
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm run ci
+      
+      - name: Generating coverage badges
+        uses: jpb06/jest-badges-action@latest
+        with:
+          branches: main
