@@ -14,27 +14,94 @@
 </p>
 
 ## Table of Contents
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 
 ## Installation
 
-To install and use in your project run the following command: 
+To install and use in your project run the following command:
 
 ```bash
 npm install iracing-client
 ```
-or 
+
+or
+
 ```bash
 pnpm install iracing-client
 ```
 
 ## Usage
 
-Currently being written. 
+Note: You must have an active iRacing account to use the SDK.
+
+### Authentication
+
+First, you must authenticate with the iRacing API to be able to use the functions in the SDK.
+
+```javascript
+import IRacingSDK from "iracing-web-sdk"
+
+async function login() {
+  const sdk = new IRacingSDK("email", "password")
+  await sdk.authenticate()
+  return sdk.authen
+}
+```
+
+### Example Authentication Flow
+
+```javascript
+import IRacingSDK from "iracing-web-sdk"
+
+async function login() {
+  const sdk = new IRacingSDK("email", "password")
+  await sdk.authenticate()
+  return sdk.authenticated
+}
+
+async function main() {
+  const authenticated = await login()
+  if (!authenticated) {
+    console.error("Failed to authenticate")
+    return
+  }
+  console.log("Authenticated Successfully!")
+}
+
+main()
+```
+
+### Example Function Usage
+
+Once authenticated, you can then use any functions in the SDK.
+
+```javascript
+import IRacingSDK from "iracing-web-sdk"
+
+async function login() {
+  const sdk = new IRacingSDK("email", "password")
+  await sdk.authenticate()
+  return sdk
+}
+
+async function fetchAllCars({ sdk }: { sdk: IRacingSDK }) {
+  const cars = await sdk.getAllCars()
+  return cars
+}
+
+async function main() {
+  const authenicatedSDKClient = await login()
+  const cars = await fetchAllCars({ sdk: authenicatedSDKClient })
+}
+
+main()
+```
 
 ## License
+
 MIT License
 
 Copyright (c) 2024 Juan Saldana
