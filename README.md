@@ -1,5 +1,10 @@
 # iRacing Client
 
+## Coverage
+![CI Workflow](https://github.com/saldanaj97/iracing-schedule-data/actions/workflows/main.yml/badge.svg)
+
+
+https://github.com/saldanaj97/iracing-schedule-data/
 Client for interacting with the iRacing API. This will allow users to be able to create their projects without the confusion of authenticating and pulling data from the API. 
 
 ## Table of Contents
