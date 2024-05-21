@@ -261,9 +261,9 @@ class IRacingSDK {
    *
    * Example usage:
    * ```typescript
-   * const sessions = iRacingSDK.getHostedSessions({ mine: true }) //  Returns only sessions created by the user
+   * const sessions = iRacingSDK.getCustLeagueSessions({ mine: true }) //  Returns only sessions created by the user
    * or
-   * const sessions = iRacingSDK.getHostedSessions({ }) //  Returns all league sessions
+   * const sessions = iRacingSDK.getCustLeagueSessions({ }) //  Returns all league sessions
    * ```
    *
    * Optional Params:
