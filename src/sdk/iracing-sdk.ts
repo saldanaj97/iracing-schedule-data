@@ -218,12 +218,12 @@ class IRacingSDK {
    * ```
    *
    * Required Params:
-   *  @param {string} [session_type] - The type of session to retrieve.
+   *  @param {string} session_type - The type of session to retrieve.
    *   - `sessions`: Returns all sessions that can be joined as a driver, excluding spectator and non-league pending sessions for the user.
    *   - `combined_sessions`: Returns sessions that can be joined as a driver or spectator, including non-league pending sessions for the user.
    *
    * Optional Params:
-   * @param {number} [package_id] - Can only be used with "combined_sessions" for the session type. If set, returns only sessions using this car or track package ID (per the official API docs).
+   * @param {number} package_id - Can only be used with "combined_sessions" for the session type. If set, returns only sessions using this car or track package ID (per the official API docs).
    */
   public async getHostedSessions({
     session_type,
@@ -257,7 +257,7 @@ class IRacingSDK {
   }
 
   /**
-   * Function to retrieve hosted sessions.
+   * Function to retrieve custom league sessions.
    *
    * Example usage:
    * ```typescript
@@ -267,8 +267,8 @@ class IRacingSDK {
    * ```
    *
    * Optional Params:
-   * @param {boolean} [mine] - If true, returns only sessions created by the user.
-   * @param {number} [package_id] - If set, returns only sessions using this car or track package ID (per the official API docs).
+   * @param {boolean} mine - If true, returns only sessions created by the user.
+   * @param {number} package_id - If set, returns only sessions using this car or track package ID (per the official API docs).
    */
   public async getCustLeagueSessions({
     mine,
@@ -302,7 +302,7 @@ class IRacingSDK {
    * iRacingSDK.getLeagueDirectory({ search: "NASCAR"}) // Returns all leagues with "NASCAR" in the name, description, owner, or league ID.
    * ```
    *
-   * Optional Params (only choose one for now):
+   * Optional Params:
    * - `search`: Will search against league name, description, owner, and league ID.
    * - `tag`: One or more tags, comma-separated.
    * - `restrict_to_member`: If true include only leagues for which customer is a member.
@@ -456,7 +456,7 @@ class IRacingSDK {
    *
    * Example usage:
    * ```typescript
-   * iRacingSDK.getLeaguesOwnedByCustomer({ cust_id: 12345, include_league: true }) // Returns the leagues customer 12345 if the owner of if not set to private
+   * iRacingSDK.getLeagueMemberships({ cust_id: 12345, include_league: true }) // Returns the leagues customer 12345 if the owner of if not set to private
    * ```
    *
    * Required Params:

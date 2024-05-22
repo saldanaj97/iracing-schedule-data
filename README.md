@@ -2,11 +2,11 @@
 
 <p align="center">
   <img src="https://github.com/saldanaj97/iracing-schedule-data/actions/workflows/main.yml/badge.svg" />
-  <img src="https://github.com/saldanaj97/iracing-schedule-data/blob/main/badges/coverage-branches.svg" />
-  <img src="https://github.com/saldanaj97/iracing-schedule-data/blob/main/badges/coverage-functions.svg" />
-  <img src="https://github.com/saldanaj97/iracing-schedule-data/blob/main/badges/coverage-jest%20coverage.svg" />
-  <img src="https://github.com/saldanaj97/iracing-schedule-data/blob/main/badges/coverage-lines.svg" />
-  <img src="https://github.com/saldanaj97/iracing-schedule-data/blob/main/badges/coverage-statements.svg" />
+  <img src="./badges/coverage-branches.svg" />
+  <img src="./badges/coverage-functions.svg" />
+  <img src="./badges/coverage-jest coverage.svg" />
+  <img src="./badges/coverage-lines.svg" />
+  <img src="./badges/coverage-statements.svg" />
 </p>
 
 <p align="center">
@@ -15,6 +15,7 @@
 
 ## Table of Contents
 
+- [Docs](./docs/docs.md)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
